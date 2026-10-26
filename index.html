@@ -328,7 +328,7 @@ footer b{color:var(--text-2);font-weight:600}
   .hero{padding:36px 0 24px}
   .semester-grid{grid-template-columns:1fr}
   .filters-row{flex-direction:column}
-  .multiselect{width:100%;flex:0 0 auto;} /* <-- The spacing fix */
+  .multiselect{width:100%;flex:0 0 auto;}
   .toolbar{flex-wrap:wrap}
   .sort-group{width:100%}
   .sort-select{flex:1}
@@ -504,7 +504,7 @@ footer b{color:var(--text-2);font-weight:600}
 <script>
 'use strict';
 
-const APP_VERSION = "1.3.0";
+const APP_VERSION = "1.3.3";
 const DATA_BASE = "https://abdraoufbenabbes.github.io/qcmify-data/";
 const PAGE_SIZE = 20;
 
@@ -803,8 +803,7 @@ function loadModule(slug) {
 }
 
 function ensureModules(slugs) {
-  return Promise.all([...new Set(slugs)].map(loadModule))
-    .then(refreshVisibleModuleCards);
+  return Promise.all([...new Set(slugs)].map(loadModule));
 }
 
 function allSlugsForYear(y) {
@@ -817,10 +816,14 @@ function allSlugsForYear(y) {
   return out;
 }
 
+let refreshTimeout;
 function refreshVisibleModuleCards() {
   if (state.view !== 'home' || !state.selectedYear) return;
-  renderOtherModules();
-  renderModules();
+  clearTimeout(refreshTimeout);
+  refreshTimeout = setTimeout(() => {
+    renderOtherModules(false);
+    renderModules(false);
+  }, 50);
 }
 
 /* ════════════ STATE ════════════ */
@@ -956,7 +959,7 @@ async function applyRoute() {
     const y = +yearStr;
     state.selectedYear = y;
     state.selectedSemester = semStr ? +semStr : null;
-    renderHome();
+    renderHome(true);
     
     if (y === 1) ensureModules(getOtherModules(1).map(m => m.slug));
     else ensureModules(allSlugsForYear(y));
@@ -969,7 +972,7 @@ async function applyRoute() {
   } else {
     state.selectedYear = null;
     state.selectedSemester = null;
-    renderHome();
+    renderHome(true);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }
@@ -1099,7 +1102,7 @@ function showToast(msg) {
 }
 
 /* ════════════ HOME RENDER ════════════ */
-function renderHome() {
+function renderHome(animate = true) {
   $('view-home').style.display = 'block';
   $('view-module').style.display = 'none';
 
@@ -1115,19 +1118,34 @@ function renderHome() {
   $('nav-years').textContent = t('navYears');
   $('nav-years').style.display = state.selectedYear !== null ? '' : 'none';
 
-  renderYears();
-  renderSemesters();
-  renderOtherModules();
-  renderModules();
+  renderYears(animate);
+  renderSemesters(animate);
+  renderOtherModules(animate);
+  renderModules(animate);
   updateBarVisibility();
 }
 
-function renderYears() {
+function renderYears(animate = true) {
   const years = [1,2,3,4,5,6];
-  $('years-grid').innerHTML = years.map((y, i) => {
+  const grid = $('years-grid');
+  const isRendered = grid.children.length === years.length;
+
+  if (isRendered) {
+    [...grid.children].forEach((card, i) => {
+      const y = years[i];
+      card.classList.toggle('active', state.selectedYear === y);
+      card.querySelector('.year-label').textContent = t('yearLabel')(y);
+      card.querySelector('.year-count').textContent = t('modCount')(yearTotalModules(y));
+    });
+    return;
+  }
+
+  grid.innerHTML = years.map((y, i) => {
     const total = yearTotalModules(y);
     const isActive = state.selectedYear === y ? ' active' : '';
-    return `<button class="year-card slide-in${isActive}" style="animation-delay:${i*40}ms" data-year="${y}">
+    const anim = animate ? ' slide-in' : '';
+    const delay = animate ? ` style="animation-delay:${i*40}ms"` : '';
+    return `<button class="year-card${anim}${isActive}"${delay} data-year="${y}">
       <span class="year-big">${y}</span>
       <span class="year-info">
         <span class="year-label">${t('yearLabel')(y)}</span>
@@ -1137,15 +1155,32 @@ function renderYears() {
   }).join('');
 }
 
-function renderSemesters() {
+function renderSemesters(animate = true) {
   const sec = $('semester-section');
   if (state.selectedYear !== 1) { sec.style.display = 'none'; return; }
   sec.style.display = 'block';
-  $('semester-grid').innerHTML = [1,2].map((s, i) => {
+  const grid = $('semester-grid');
+  const isRendered = grid.children.length === 2;
+
+  if (isRendered) {
+    [...grid.children].forEach((card, i) => {
+      const s = i + 1;
+      card.classList.toggle('active', state.selectedSemester === s);
+      const mods = getSemesterModules(1, s);
+      const label = s === 1 ? t('sem1') : t('sem2');
+      card.querySelector('h3').textContent = label;
+      card.querySelector('p').textContent = t('modCount')(mods.length);
+    });
+    return;
+  }
+
+  grid.innerHTML = [1,2].map((s, i) => {
     const mods = getSemesterModules(1, s);
     const label = s === 1 ? t('sem1') : t('sem2');
     const isActive = state.selectedSemester === s ? ' active' : '';
-    return `<button class="semester-card slide-in${isActive}" style="animation-delay:${i*80}ms" data-semester="${s}">
+    const anim = animate ? ' slide-in' : '';
+    const delay = animate ? ` style="animation-delay:${i*80}ms"` : '';
+    return `<button class="semester-card${anim}${isActive}"${delay} data-semester="${s}">
       <div class="semester-badge">S${s}</div>
       <h3>${label}</h3>
       <p>${t('modCount')(mods.length)}</p>
@@ -1153,16 +1188,20 @@ function renderSemesters() {
   }).join('');
 }
 
-function renderOtherModules() {
+function renderOtherModules(animate = true) {
   const sec = $('other-section');
   if (state.selectedYear !== 1) { sec.style.display = 'none'; return; }
   const list = getOtherModules(1);
   if (!list.length) { sec.style.display = 'none'; return; }
   sec.style.display = 'block';
-  $('other-grid').innerHTML = list.map((m, i) => renderModuleCard(m, i)).join('');
+
+  const grid = $('other-grid');
+  const isRendered = grid.children.length === list.length;
+  const shouldAnimate = animate && !isRendered;
+  grid.innerHTML = list.map((m, i) => renderModuleCard(m, i, shouldAnimate)).join('');
 }
 
-function renderModules() {
+function renderModules(animate = true) {
   const sec = $('modules-section');
   let list = [];
   if (!state.selectedYear) { sec.style.display = 'none'; return; }
@@ -1186,10 +1225,10 @@ function renderModules() {
     $('mod-sub-section').textContent = t('modSubYear').replace('{year}', t('yearLabel')(state.selectedYear)).replace('{n}', list.length);
   }
 
-  $('modules-grid').innerHTML = list.map((m, i) => renderModuleCard(m, i)).join('');
+  $('modules-grid').innerHTML = list.map((m, i) => renderModuleCard(m, i, animate)).join('');
 }
 
-function renderModuleCard(m, i) {
+function renderModuleCard(m, i, animate = true) {
   const name = state.lang === 'fr' ? m.name.fr : m.name.en;
   const status = moduleStatus(m.slug);
   const missing = status === 'missing';
@@ -1206,7 +1245,9 @@ function renderModuleCard(m, i) {
   } else {
     stats = `<p>…</p>`;
   }
-  return `<button class="module-card slide-in${cs}" style="animation-delay:${i*30}ms" data-module-slug="${m.slug}" data-module-name="${esc(name)}">
+  const anim = animate ? ' slide-in' : '';
+  const delay = animate ? ` style="animation-delay:${i*30}ms"` : '';
+  return `<button class="module-card${anim}${cs}"${delay} data-module-slug="${m.slug}" data-module-name="${esc(name)}">
     <div class="module-icon">${ICONS[m.icon] || ICONS.flask}</div>
     <div class="module-info">
       <h3>${esc(name)} ${badge}</h3>
@@ -1479,15 +1520,29 @@ function setLang(lang) {
 }
 
 function selectYear(y) {
-  window.location.hash = 'year=' + y;
+  const targetHash = 'year=' + y;
+  if (window.location.hash === '#' + targetHash) {
+    applyRoute(); // Force update if hash is the same
+  } else {
+    window.location.hash = targetHash;
+  }
 }
 
 function selectSemester(s) {
-  window.location.hash = 'year=1&sem=' + s;
+  const targetHash = 'year=1&sem=' + s;
+  if (window.location.hash === '#' + targetHash) {
+    applyRoute();
+  } else {
+    window.location.hash = targetHash;
+  }
 }
 
 function goToYearGrid() {
-  window.location.hash = '';
+  if (window.location.hash === '' || window.location.hash === '#') {
+    applyRoute();
+  } else {
+    window.location.hash = '';
+  }
 }
 
 function goBackFromModule() {
