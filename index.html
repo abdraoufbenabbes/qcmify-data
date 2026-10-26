@@ -52,22 +52,15 @@ html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;background:var(--
 body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter",Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.5;letter-spacing:-.011em;min-height:100vh;background-image:radial-gradient(ellipse 90% 60% at 50% -10%,rgba(52,199,89,.04),transparent 60%),radial-gradient(ellipse 50% 40% at 90% 20%,rgba(255,149,0,.03),transparent 50%);background-attachment:fixed;transition:background-color .2s var(--ease),color .2s var(--ease)}
 html.theme-dark body{background-image:radial-gradient(ellipse 90% 60% at 50% -10%,rgba(147,51,234,.16),transparent 60%),radial-gradient(ellipse 50% 40% at 90% 20%,rgba(236,72,153,.08),transparent 55%)}
 
-::view-transition-old(root),
-::view-transition-new(root){
-  animation-duration:220ms;
-  animation-timing-function:cubic-bezier(.4,0,.2,1);
-  mix-blend-mode:normal;
-}
-@media(prefers-reduced-motion:reduce){
-  ::view-transition-old(root),::view-transition-new(root){animation-duration:.001ms !important}
-  html,body{transition-duration:.001ms !important}
-}
+::view-transition-old(root){animation:none;mix-blend-mode:normal}
+::view-transition-new(root){mix-blend-mode:normal;animation:theme-circle 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;will-change:clip-path}
+@keyframes theme-circle{from{clip-path:circle(0px at var(--vt-x, 50vw) var(--vt-y, 0px))}to{clip-path:circle(var(--vt-r, 150vmax) at var(--vt-x, 50vw) var(--vt-y, 0px))}}
+@media (prefers-reduced-motion: reduce){::view-transition-old(root),::view-transition-new(root){animation-duration:0.001ms !important}html, body{transition-duration:0.001ms !important}}
 
 .container{max-width:1080px;margin:0 auto;padding:0 24px}
 svg{display:block}
 button{font-family:inherit}
 
-/* HEADER */
 .site-header{position:sticky;top:0;z-index:100;background:color-mix(in srgb,var(--bg) 78%,transparent);-webkit-backdrop-filter:saturate(180%) blur(24px);backdrop-filter:saturate(180%) blur(24px);border-bottom:1px solid var(--border)}
 @supports not (background:color-mix(in srgb,red,blue)){.site-header{background:var(--bg)}}
 .site-header .container{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
@@ -75,9 +68,6 @@ button{font-family:inherit}
 .logo-mark{width:30px;height:30px;background:linear-gradient(135deg,var(--accent),#20b2aa);border-radius:9px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:15px;letter-spacing:-.02em}
 .logo-text{font-weight:600;font-size:16px;letter-spacing:-.02em}
 .header-right{display:flex;align-items:center;gap:8px}
-.nav-link{color:var(--text-2);font-size:13.5px;font-weight:500;padding:6px 10px;border-radius:8px;transition:all .2s var(--ease);cursor:pointer;border:none;background:transparent}
-.nav-link:hover{color:var(--text);background:rgba(0,0,0,.04)}
-html.theme-dark .nav-link:hover{background:rgba(255,255,255,.06)}
 .lang-toggle{display:inline-flex;background:rgba(0,0,0,.05);border-radius:var(--radius-pill);padding:3px;gap:2px}
 html.theme-dark .lang-toggle{background:rgba(255,255,255,.06)}
 .lang-toggle button{padding:5px 12px;background:transparent;border:none;border-radius:var(--radius-pill);font-size:12px;font-weight:600;color:var(--text-2);cursor:pointer;transition:all .2s var(--ease);letter-spacing:.02em}
@@ -90,7 +80,6 @@ html.theme-dark .theme-btn:hover{background:rgba(255,255,255,.06)}
 html.theme-dark .theme-btn .sun{display:block}
 html.theme-dark .theme-btn .moon{display:none}
 
-/* HERO */
 .hero{padding:56px 0 40px;text-align:center}
 .hero h1{font-size:clamp(1.9rem,4.5vw,2.8rem);font-weight:700;letter-spacing:-.04em;line-height:1.05;margin-bottom:12px}
 .hero h1 span{background:linear-gradient(135deg,var(--accent),#20b2aa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
@@ -100,19 +89,22 @@ html.theme-dark .hero h1 span{background:linear-gradient(135deg,#c084fc,#9333ea 
 .eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);animation:pulse 2s var(--ease) infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
 
-/* SECTIONS */
 .section{padding:20px 0 40px}
+#semester-section, #modules-section { scroll-margin-top: 80px; }
 .section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:20px;flex-wrap:wrap}
 .section-head h2{font-size:clamp(1.25rem,2.4vw,1.55rem);font-weight:700;letter-spacing:-.03em;margin-bottom:3px}
 .section-head p{font-size:14px;color:var(--text-2)}
+.sub-header{font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-3);margin-bottom:12px;margin-top:4px}
+.sub-header:not(:first-child){margin-top:28px;}
 
-/* ANIMATIONS */
-@keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.slide-in{animation:slideUp .4s var(--ease-out) both}
+@keyframes cardIn { 
+  from { opacity: 0; transform: translateY(24px) scale(0.98); } 
+  to   { opacity: var(--final-opacity, 1); transform: translateY(0) scale(1); } 
+}
+.animate-in { animation: cardIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
 
-/* YEARS */
 .years-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.year-card{display:flex;align-items:center;gap:14px;padding:16px 18px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);cursor:pointer;text-align:left;transition:all .25s var(--ease);width:100%;color:var(--text)}
+.year-card{display:flex;align-items:center;gap:14px;padding:16px 18px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);cursor:pointer;text-align:left;transition:border-color .25s var(--ease),background-color .25s var(--ease),transform .25s var(--ease),box-shadow .25s var(--ease);width:100%;color:var(--text)}
 .year-card:hover{border-color:var(--border-2);transform:translateY(-2px);box-shadow:var(--shadow-md)}
 .year-card.active{border-color:var(--accent);background:var(--accent-soft);box-shadow:0 0 0 3px var(--accent-soft)}
 .year-big{font-size:2rem;font-weight:700;letter-spacing:-.04em;line-height:1;min-width:38px;font-variant-numeric:tabular-nums;color:var(--text)}
@@ -121,9 +113,8 @@ html.theme-dark .hero h1 span{background:linear-gradient(135deg,#c084fc,#9333ea 
 .year-label{font-size:14px;font-weight:600;letter-spacing:-.01em}
 .year-count{font-size:11.5px;color:var(--text-3);font-weight:500}
 
-/* SEMESTERS */
 .semester-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.semester-card{position:relative;padding:24px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);cursor:pointer;text-align:left;transition:all .25s var(--ease);overflow:hidden;width:100%;color:var(--text)}
+.semester-card{position:relative;padding:24px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);cursor:pointer;text-align:left;transition:border-color .25s var(--ease),background-color .25s var(--ease),transform .25s var(--ease),box-shadow .25s var(--ease);overflow:hidden;width:100%;color:var(--text)}
 .semester-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--accent-soft),transparent 60%);opacity:0;transition:opacity .3s var(--ease);pointer-events:none}
 .semester-card:hover{border-color:var(--border-2);transform:translateY(-2px);box-shadow:var(--shadow-md)}
 .semester-card:hover::before,.semester-card.active::before{opacity:1}
@@ -133,11 +124,11 @@ html.theme-dark .hero h1 span{background:linear-gradient(135deg,#c084fc,#9333ea 
 .semester-card h3{font-size:17px;font-weight:700;letter-spacing:-.02em;margin-bottom:4px;position:relative}
 .semester-card p{font-size:13px;color:var(--text-3);font-weight:500;position:relative}
 
-/* MODULES */
-.modules-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.module-card{display:flex;align-items:center;gap:14px;padding:16px 18px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);cursor:pointer;text-align:left;transition:all .25s var(--ease);width:100%;color:var(--text)}
+.modules-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:32px}
+.modules-grid:last-child{margin-bottom:0}
+.module-card{display:flex;align-items:center;gap:14px;padding:16px 18px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);cursor:pointer;text-align:left;transition:border-color .25s var(--ease),background-color .25s var(--ease),transform .25s var(--ease),box-shadow .25s var(--ease),opacity .3s var(--ease);width:100%;color:var(--text);order:0}
 .module-card:hover:not(.coming-soon){border-color:var(--border-2);transform:translateY(-2px);box-shadow:var(--shadow-md)}
-.module-card.coming-soon{opacity:.72;cursor:help}
+.module-card.coming-soon{--final-opacity: 0.72; opacity: 0.72; cursor:help; order:1}
 .module-card.coming-soon:hover{border-color:var(--border);transform:none;box-shadow:var(--shadow-sm)}
 .module-icon{width:42px;height:42px;border-radius:11px;background:var(--bg-2);display:flex;align-items:center;justify-content:center;color:var(--text-2);flex-shrink:0;transition:all .25s var(--ease)}
 .module-card:hover:not(.coming-soon) .module-icon{background:var(--accent-soft);color:var(--accent)}
@@ -151,7 +142,8 @@ html.theme-dark .hero h1 span{background:linear-gradient(135deg,#c084fc,#9333ea 
 .module-card:hover:not(.coming-soon) .module-arrow{transform:translateX(3px);color:var(--accent)}
 .module-card.coming-soon .module-arrow{opacity:.4}
 
-/* TAGS */
+.pending { opacity: 0 !important; pointer-events: none !important; }
+
 .tag{display:inline-flex;align-items:center;padding:3px 9px;border-radius:var(--radius-pill);font-size:11px;font-weight:600;letter-spacing:.01em;line-height:1.4}
 .tag-year{background:var(--accent-soft);color:var(--accent)}
 .tag-rot{background:var(--accent-soft);color:var(--accent)}
@@ -159,14 +151,12 @@ html.theme-dark .hero h1 span{background:linear-gradient(135deg,#c084fc,#9333ea 
 .tag-lesson{background:rgba(0,0,0,.05);color:var(--text-2);font-weight:500}
 html.theme-dark .tag-lesson{background:rgba(255,255,255,.06)}
 
-/* BTN */
 .btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:var(--radius-pill);font-size:13.5px;font-weight:500;border:1px solid transparent;cursor:pointer;transition:all .2s var(--ease);white-space:nowrap}
 .btn-secondary{background:rgba(0,0,0,.04);color:var(--text)}
 .btn-secondary:hover{background:rgba(0,0,0,.07)}
 html.theme-dark .btn-secondary{background:rgba(255,255,255,.06)}
 html.theme-dark .btn-secondary:hover{background:rgba(255,255,255,.10)}
 
-/* MODULE VIEW */
 .module-hero{padding:28px 0 20px}
 .back-btn{display:inline-flex;align-items:center;gap:6px;padding:6px 12px 6px 8px;background:rgba(0,0,0,.04);border:none;border-radius:var(--radius-pill);font-size:13px;font-weight:500;color:var(--text-2);cursor:pointer;margin-bottom:18px;transition:all .2s var(--ease)}
 html.theme-dark .back-btn{background:rgba(255,255,255,.06)}
@@ -179,7 +169,6 @@ html.theme-dark .back-btn:hover{background:rgba(255,255,255,.10)}
 .module-header h1{font-size:clamp(1.5rem,2.8vw,2rem);font-weight:700;letter-spacing:-.03em;margin-bottom:3px}
 .module-header p{font-size:13.5px;color:var(--text-2);font-weight:500}
 
-/* CONTROLS — non-sticky, scrolls with page */
 .controls{position:relative;z-index:50;padding:12px 0 14px;background:var(--bg);border-bottom:1px solid var(--border)}
 .search-wrap{position:relative;margin-bottom:10px}
 .search-wrap svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--text-3);pointer-events:none;width:16px;height:16px}
@@ -189,7 +178,6 @@ html.theme-dark .search-wrap input{background:rgba(255,255,255,.06)}
 html.theme-dark .search-wrap input:focus{background:var(--card)}
 .search-wrap input::placeholder{color:var(--text-3)}
 
-/* MULTISELECT */
 .filters-row{display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap}
 .multiselect{position:relative;flex:1 1 160px;min-width:0}
 .ms-trigger{width:100%;display:flex;align-items:center;position:relative;padding:10px 36px 10px 13px;background:rgba(0,0,0,.04);border:1px solid transparent;border-radius:var(--radius-sm);font-family:inherit;font-size:13.5px;font-weight:500;color:var(--text);cursor:pointer;transition:all .2s var(--ease);text-align:left}
@@ -216,7 +204,6 @@ html.theme-dark .ms-option:hover{background:rgba(255,255,255,.06)}
 .ms-option.checked{background:var(--accent-soft);color:var(--accent);font-weight:500}
 .ms-option.checked:hover{background:var(--accent-soft)}
 
-/* TOOLBAR + SORTS */
 .toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .sort-group{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .sort-select{padding:7px 30px 7px 32px;background-color:rgba(0,0,0,.04);border:1px solid transparent;border-radius:var(--radius-pill);font-family:inherit;font-size:12.5px;font-weight:500;color:var(--text);cursor:pointer;appearance:none;background-image:var(--sort-icon, none),url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%2386868b' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");background-repeat:no-repeat,no-repeat;background-position:left 10px center,right 10px center;background-size:14px 14px,10px 10px;transition:all .2s var(--ease)}
@@ -231,9 +218,8 @@ html.theme-dark .sort-select{background-color:rgba(255,255,255,.06);background-i
 .result-count{margin-left:auto;font-size:12.5px;color:var(--text-3);font-weight:500;min-height:1em}
 .result-count b{color:var(--text);font-weight:600}
 
-/* QUESTIONS */
 main{padding:14px 0 80px}
-.q-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:22px;margin-bottom:12px;transition:border-color .2s var(--ease),box-shadow .2s var(--ease);animation:slideUp .35s var(--ease-out) both}
+.q-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:22px;margin-bottom:12px;transition:border-color .2s var(--ease),box-shadow .2s var(--ease);animation:cardIn .5s var(--ease-out) both}
 .q-card:hover{border-color:var(--border-2);box-shadow:var(--shadow-md)}
 .q-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:12px;flex-wrap:wrap}
 .q-meta{display:flex;gap:6px;flex-wrap:wrap}
@@ -280,32 +266,27 @@ html.theme-dark .clear-btn:hover{background:rgba(255,255,255,.10)}
 .feedback.partial{background:var(--warning-soft);color:var(--warning)}
 .feedback .dot{width:6px;height:6px;border-radius:50%;background:currentColor}
 
-/* WELCOME (module view, pre-filter) */
-.welcome{text-align:center;padding:60px 20px 50px;animation:slideUp .35s var(--ease-out) both}
+.welcome{text-align:center;padding:60px 20px 50px;animation:cardIn .5s var(--ease-out) both}
 .welcome-icon{width:72px;height:72px;margin:0 auto 20px;background:var(--accent-soft);border-radius:20px;display:flex;align-items:center;justify-content:center;color:var(--accent)}
 .welcome-icon svg{width:34px;height:34px}
 .welcome h2{font-size:clamp(1.4rem,2.6vw,1.75rem);font-weight:700;letter-spacing:-.03em;margin-bottom:8px}
 .welcome p{font-size:14.5px;color:var(--text-2);max-width:440px;margin:0 auto;line-height:1.55}
 
-/* LOAD MORE */
 .load-more-wrap{text-align:center;padding:20px 0 8px}
 .btn-load-more{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;background:var(--card);border:1px solid var(--border-2);border-radius:var(--radius-pill);font-family:inherit;font-size:13.5px;font-weight:600;color:var(--text);cursor:pointer;transition:all .2s var(--ease);box-shadow:var(--shadow-sm)}
 .btn-load-more:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px);box-shadow:var(--shadow-md)}
 .btn-load-more:active{transform:translateY(0)}
 
-/* EMPTY */
 .empty{text-align:center;padding:70px 20px}
 .empty-icon{width:60px;height:60px;margin:0 auto 18px;background:rgba(0,0,0,.04);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--text-3)}
 html.theme-dark .empty-icon{background:rgba(255,255,255,.05)}
 .empty h3{font-size:18px;font-weight:600;margin-bottom:6px}
 .empty p{font-size:14px;color:var(--text-2)}
 
-/* TOAST */
 .toast{position:fixed;bottom:32px;left:50%;transform:translate(-50%,20px);padding:12px 20px;background:var(--card);border:1px solid var(--border-2);border-radius:var(--radius-pill);box-shadow:var(--shadow-lg);font-size:13px;font-weight:500;color:var(--text);opacity:0;pointer-events:none;transition:opacity .3s var(--ease),transform .3s var(--ease);z-index:3000;max-width:calc(100vw - 48px);text-align:center}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 .toast b{color:var(--accent)}
 
-/* BACK-TO-FILTERS */
 .back-to-filters{position:fixed;bottom:24px;left:50%;z-index:60;display:inline-flex;align-items:center;gap:8px;padding:12px 20px;background:color-mix(in srgb,var(--card) 92%,transparent);-webkit-backdrop-filter:blur(20px) saturate(180%);backdrop-filter:blur(20px) saturate(180%);border:1px solid var(--border-2);border-radius:var(--radius-pill);box-shadow:0 8px 32px rgba(0,0,0,.14),0 2px 8px rgba(0,0,0,.06);font-family:inherit;font-size:14px;font-weight:600;color:var(--text);cursor:pointer;visibility:hidden;opacity:0;pointer-events:none;transform:translate(-50%,calc(100% + 24px));transition:transform .45s cubic-bezier(.16,1,.3,1),opacity .3s var(--ease),visibility 0s linear .45s,border-color .2s var(--ease),box-shadow .2s var(--ease)}
 @supports not (background:color-mix(in srgb,red,blue)){.back-to-filters{background:var(--card)}}
 .back-to-filters svg{width:16px;height:16px;flex-shrink:0;color:var(--accent)}
@@ -316,7 +297,12 @@ html.theme-dark .back-to-filters{box-shadow:0 8px 32px rgba(0,0,0,.55),0 0 24px 
 html.theme-dark .back-to-filters.visible{box-shadow:0 8px 32px rgba(0,0,0,.55),0 0 28px rgba(147,51,234,.28)}
 @media(max-width:500px){.back-to-filters{bottom:18px;padding:11px 18px;font-size:13px;gap:6px}.back-to-filters svg{width:14px;height:14px}}
 
-footer{padding:28px 24px;text-align:center;font-size:12.5px;color:var(--text-3);border-top:1px solid var(--border);background:var(--bg-2);margin-top:40px}
+footer{padding:40px 24px;text-align:center;font-size:12.5px;color:var(--text-3);border-top:1px solid var(--border);background:var(--bg-2);margin-top:40px;display:flex;flex-direction:column;align-items:center;gap:20px}
+.footer-contact{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:var(--accent-soft);color:var(--accent);border-radius:var(--radius-pill);font-size:14px;font-weight:600;text-decoration:none;transition:all .2s var(--ease)}
+.footer-contact:hover{background:var(--accent);color:#fff;transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.footer-contact svg{width:16px;height:16px;transition:transform .2s var(--ease)}
+.footer-contact:hover svg{transform:translate(1px, -1px)}
+footer p{margin:0}
 footer b{color:var(--text-2);font-weight:600}
 
 @media(max-width:860px){
@@ -350,7 +336,6 @@ footer b{color:var(--text-2);font-weight:600}
       <span class="logo-text">QCMify</span>
     </button>
     <div class="header-right">
-      <button class="nav-link" data-action="home" id="nav-years" style="display:none">Années</button>
       <div class="lang-toggle" role="group" aria-label="Language">
         <button id="lang-fr" class="active" data-lang="fr">FR</button>
         <button id="lang-en" data-lang="en">EN</button>
@@ -363,7 +348,6 @@ footer b{color:var(--text-2);font-weight:600}
   </div>
 </header>
 
-<!-- HOME VIEW -->
 <div id="view-home">
   <section class="hero">
     <div class="container">
@@ -417,12 +401,11 @@ footer b{color:var(--text-2);font-weight:600}
           <p id="mod-sub-section"></p>
         </div>
       </div>
-      <div class="modules-grid" id="modules-grid"></div>
+      <div id="modules-grid"></div>
     </div>
   </section>
 </div>
 
-<!-- MODULE VIEW -->
 <div id="view-module" style="display:none">
   <section class="module-hero">
     <div class="container">
@@ -499,12 +482,18 @@ footer b{color:var(--text-2);font-weight:600}
   </button>
 </div>
 
-<footer><b>QCMify</b> · Banque de QCM · 2026</footer>
+<footer>
+  <a class="footer-contact" href="https://t.me/abdrraovf" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+    <span id="footer-contact-text"></span>
+  </a>
+  <p><b>QCMify</b> · Banque de QCM · 2026</p>
+</footer>
 
 <script>
 'use strict';
 
-const APP_VERSION = "1.3.3";
+const APP_VERSION = "1.6.2";
 const DATA_BASE = "https://abdraoufbenabbes.github.io/qcmify-data/";
 const PAGE_SIZE = 20;
 
@@ -542,7 +531,7 @@ const T = {
     heroSub: 'Sélectionnez votre année pour accéder aux modules.',
     yearsTitle: 'Choisissez votre année',
     yearsSub: '6 années disponibles',
-    navYears: 'Années',
+    footerContact: 'Contactez-moi sur Telegram',
     semTitle: 'Choisissez le semestre',
     semSub: 'Les modules du semestre sélectionné apparaîtront ci-dessous.',
     sem1: 'Semestre 1', sem2: 'Semestre 2',
@@ -572,12 +561,15 @@ const T = {
     comingSoon: 'Bientôt disponible',
     comingSoonSub: 'Les questions seront ajoutées prochainement.',
     comingSoonToast: 'Bientôt disponible',
+    moduleNotFound: 'Module introuvable',
     welcomeTitle: 'Prêt à réviser ?',
     welcomeSub: (n) => `${n} questions disponibles · utilisez les filtres ci-dessus pour commencer.`,
     loadMore: 'Afficher plus',
     loadMoreRemaining: (n) => `${n} restante${n > 1 ? 's' : ''}`,
     yearLabel: (y) => y === 1 ? '1ère Année' : `${y}ème Année`,
-    modCount: (n) => `${n} module${n > 1 ? 's' : ''}`
+    modCount: (n) => `${n} module${n > 1 ? 's' : ''}`,
+    msAll: 'Tout',
+    msNone: 'Effacer'
   },
   en: {
     heroBadge: 'QCM Bank',
@@ -585,7 +577,7 @@ const T = {
     heroSub: 'Select your year to access modules.',
     yearsTitle: 'Choose your year',
     yearsSub: '6 years available',
-    navYears: 'Years',
+    footerContact: 'Contact me on Telegram',
     semTitle: 'Choose the semester',
     semSub: 'The modules of the selected semester will appear below.',
     sem1: 'Semester 1', sem2: 'Semester 2',
@@ -615,12 +607,15 @@ const T = {
     comingSoon: 'Coming soon',
     comingSoonSub: 'Questions will be added soon.',
     comingSoonToast: 'Coming soon',
+    moduleNotFound: 'Module not found',
     welcomeTitle: 'Ready to review?',
     welcomeSub: (n) => `${n} questions available · use the filters above to start.`,
     loadMore: 'Load more',
     loadMoreRemaining: (n) => `${n} remaining`,
     yearLabel: (y) => y === 1 ? '1st Year' : `Year ${y}`,
-    modCount: (n) => `${n} module${n > 1 ? 's' : ''}`
+    modCount: (n) => `${n} module${n > 1 ? 's' : ''}`,
+    msAll: 'All',
+    msNone: 'Clear'
   }
 };
 
@@ -653,22 +648,26 @@ const CURRICULUM = {
     ]
   },
   2: {
-    modules: [
+    unities: [
       { slug: 'cardio-resp-y2', name: { fr:"L'appareil Cardio-Respiratoire",      en:'Cardio-Respiratory System' }, icon: 'heart' },
       { slug: 'digestif-y2',    name: { fr:"L'appareil Digestif",                 en:'Digestive System'          }, icon: 'pill' },
       { slug: 'urinaire-y2',    name: { fr:"L'appareil Urinaire",                 en:'Urinary System'            }, icon: 'droplet' },
       { slug: 'endocrine-y2',   name: { fr:"L'appareil Endocrinologique",         en:'Endocrine System'          }, icon: 'activity' },
-      { slug: 'snv-y2',         name: { fr:'Système Nerveux et Organes des Sens', en:'Nervous System & Sense Organs' }, icon: 'brain' },
+      { slug: 'snv-y2',         name: { fr:'Système Nerveux et Organes des Sens', en:'Nervous System & Sense Organs' }, icon: 'brain' }
+    ],
+    modules: [
       { slug: 'genetique-y2',   name: { fr:'Génétique',                           en:'Genetics'                  }, icon: 'dna' },
       { slug: 'immuno-y2',      name: { fr:'Immunologie',                         en:'Immunology'                }, icon: 'shield' }
     ]
   },
   3: {
-    modules: [
+    unities: [
       { slug: 'cardio-resp-psy-y3', name: { fr:'Appareil Cardio-Vasculaire et Respiratoire, Psychologie Médicale et Sémiologie Générale', en:'Cardio-Vascular & Respiratory, Psychology & General Semiology' }, icon: 'heart' },
       { slug: 'neuro-loco-cut-y3',  name: { fr:'Appareil Neurologique, Locomoteur et Cutané', en:'Neurological, Locomotor & Cutaneous System' }, icon: 'brain' },
       { slug: 'endo-repro-uri-y3',  name: { fr:'Appareil Endocrinien, Reproducteur et Urinaire', en:'Endocrine, Reproductive & Urinary System' }, icon: 'activity' },
-      { slug: 'digestif-hemato-y3', name: { fr:'Appareil Digestif et Organes Hématopoïétiques', en:'Digestive & Hematopoietic Systems' }, icon: 'pill' },
+      { slug: 'digestif-hemato-y3', name: { fr:'Appareil Digestif et Organes Hématopoïétiques', en:'Digestive & Hematopoietic Systems' }, icon: 'pill' }
+    ],
+    modules: [
       { slug: 'anapath-y3',    name: { fr:'Anatomie et Cytologie Pathologique', en:'Anatomy & Pathological Cytology' }, icon: 'microscope' },
       { slug: 'immuno-y3',     name: { fr:'Immunologie',                        en:'Immunology' },                      icon: 'shield' },
       { slug: 'microbio-y3',   name: { fr:'Microbiologie Médicale',             en:'Medical Microbiology' },            icon: 'bug' },
@@ -740,10 +739,18 @@ function moduleHasData(slug) {
 
 function sortLessons(arr) {
   return [...arr].sort((a, b) => {
-    const aTd = /^(TD|Sim|TP)\b/.test(a);
-    const bTd = /^(TD|Sim|TP)\b/.test(b);
+    const aTd = /^(TD|Sim|TP)(?![a-zA-Z])/.test(a);
+    const bTd = /^(TD|Sim|TP)(?![a-zA-Z])/.test(b);
     if (aTd !== bTd) return aTd ? 1 : -1;
     return a.localeCompare(b, 'fr', { sensitivity: 'base' });
+  });
+}
+
+function sortByStatus(list) {
+  return [...list].sort((a, b) => {
+    const aMissing = moduleStatus(a.slug) === 'missing';
+    const bMissing = moduleStatus(b.slug) === 'missing';
+    return aMissing === bMissing ? 0 : (aMissing ? 1 : -1);
   });
 }
 
@@ -795,9 +802,6 @@ function loadModule(slug) {
       DATA_STATE[slug] = 'missing';
       delete DATA_PROMISES[slug];
       console.warn('[QCMify] ' + slug + '.json unavailable — ' + err.message);
-    })
-    .finally(() => {
-      refreshVisibleModuleCards();
     });
   return DATA_PROMISES[slug];
 }
@@ -812,18 +816,74 @@ function allSlugsForYear(y) {
   const out = [];
   if (c.semesters)    c.semesters.forEach(s => s.modules.forEach(m => out.push(m.slug)));
   if (c.otherModules) c.otherModules.forEach(m => out.push(m.slug));
+  if (c.unities)      c.unities.forEach(m => out.push(m.slug));
   if (c.modules)      c.modules.forEach(m => out.push(m.slug));
   return out;
 }
 
-let refreshTimeout;
 function refreshVisibleModuleCards() {
   if (state.view !== 'home' || !state.selectedYear) return;
-  clearTimeout(refreshTimeout);
-  refreshTimeout = setTimeout(() => {
-    renderOtherModules(false);
-    renderModules(false);
-  }, 50);
+
+  document.querySelectorAll('.module-card').forEach(card => {
+    const slug = card.dataset.moduleSlug;
+    if (!slug) return;
+    const status = moduleStatus(slug);
+    const missing = status === 'missing';
+
+    let stats;
+    if (status === 'ready') {
+      const d = MODULE_DATA[slug];
+      stats = `<p>${d.questions.length} ${t('questions')} · ${d.lessons.length} ${t('courses')}</p>`;
+    } else if (missing) {
+      stats = `<p>${t('comingSoonSub')}</p>`;
+    } else {
+      stats = `<p>…</p>`;
+    }
+    const p = card.querySelector('.module-info p');
+    if (p) p.outerHTML = stats;
+
+    if (missing) {
+      card.classList.add('coming-soon');
+      if (!card.querySelector('.badge-soon')) {
+        card.querySelector('.module-info h3').insertAdjacentHTML('beforeend',
+          `<span class="badge-soon">${ICONS.clock}${t('comingSoon')}</span>`);
+      }
+    } else {
+      card.classList.remove('coming-soon');
+      const badge = card.querySelector('.badge-soon');
+      if (badge) badge.remove();
+    }
+  });
+
+  document.querySelectorAll('.modules-grid').forEach(grid => {
+    const cards = [...grid.querySelectorAll('.module-card')];
+    cards.sort((a, b) => {
+      const aComing = a.classList.contains('coming-soon') ? 1 : 0;
+      const bComing = b.classList.contains('coming-soon') ? 1 : 0;
+      return aComing - bComing;
+    });
+    cards.forEach(card => grid.appendChild(card));
+  });
+
+  let globalIndex = 0;
+
+  document.querySelectorAll('.semester-card.pending').forEach((card, i) => {
+    card.classList.remove('pending');
+    card.style.animationDelay = `${i * 300}ms`;
+    card.classList.add('animate-in');
+  });
+
+  const moduleStartDelay = (state.selectedYear === 1 && state.selectedSemester === null) ? 1000 : 0;
+  document.querySelectorAll('.modules-grid').forEach(grid => {
+    if (grid.offsetParent === null) return;
+    const cards = [...grid.querySelectorAll('.module-card')];
+    cards.forEach(card => {
+      card.classList.remove('pending');
+      card.style.animationDelay = `${moduleStartDelay + globalIndex * 300}ms`;
+      card.classList.add('animate-in');
+      globalIndex++;
+    });
+  });
 }
 
 /* ════════════ STATE ════════════ */
@@ -848,11 +908,16 @@ const state = {
 
 let msYear = null, msRot = null, msUnit = null, msLesson = null;
 let lastModuleSlug = null;
+let routeGeneration = 0;
 
 /* ════════════ HELPERS ════════════ */
 function getYearModules(y) {
   const c = CURRICULUM[y];
-  return c && c.modules ? c.modules : [];
+  if (!c) return [];
+  if (c.unities || c.modules) {
+    return [...(c.unities || []), ...(c.modules || [])];
+  }
+  return [];
 }
 function getSemesterModules(y, semId) {
   const c = CURRICULUM[y];
@@ -869,6 +934,7 @@ function findModule(year, slug) {
   if (!c) return null;
   if (c.semesters) for (const s of c.semesters) { const m = s.modules.find(x => x.slug === slug); if (m) return m; }
   if (c.otherModules) { const m = c.otherModules.find(x => x.slug === slug); if (m) return m; }
+  if (c.unities) { const m = c.unities.find(x => x.slug === slug); if (m) return m; }
   if (c.modules) { const m = c.modules.find(x => x.slug === slug); if (m) return m; }
   return null;
 }
@@ -886,7 +952,7 @@ function yearTotalModules(y) {
     const semCount = c.semesters.reduce((n, s) => n + s.modules.length, 0);
     return semCount + (c.otherModules ? c.otherModules.length : 0);
   }
-  return (c.modules ? c.modules.length : 0);
+  return (c.unities ? c.unities.length : 0) + (c.modules ? c.modules.length : 0);
 }
 
 function shouldShowRotation(year, slug) {
@@ -908,49 +974,53 @@ function shouldShowUnit(slug) {
 
 /* ════════════ ROUTER ════════════ */
 async function applyRoute() {
+  const gen = ++routeGeneration;
   const hash = window.location.hash.replace(/^#\/?/, '');
   const params = new URLSearchParams(hash);
   const moduleSlug = params.get('module');
   const yearStr = params.get('year');
   const semStr = params.get('sem');
 
-  // --- MODULE VIEW ---
   if (moduleSlug) {
     const found = findModuleBySlug(moduleSlug);
-    if (found) {
-      state.selectedYear = found.year;
-      state.currentModule = found.module;
-      state.view = 'module';
+    if (!found) {
+      showToast(`<b>${t('moduleNotFound')}</b>`);
+      window.location.hash = '';
+      return;
+    }
 
-      if (!moduleHasData(moduleSlug)) await loadModule(moduleSlug);
+    state.selectedYear = found.year;
+    state.currentModule = found.module;
+    state.view = 'module';
 
-      if (moduleHasData(moduleSlug)) {
-        if (lastModuleSlug !== moduleSlug) {
-          state.filterYear = [];
-          state.filterRot = [];
-          state.filterUnit = [];
-          state.filterLesson = [];
-          state.filterSearch = '';
-          state.sortYear = 'desc';
-          state.sortLesson = 'asc';
-          state.userAnswers = {};
-          state.checkedQuestions = {};
-          state.modulePhase = 'welcome';
-          state.visibleCount = PAGE_SIZE;
-        }
-        lastModuleSlug = moduleSlug;
-        renderModuleView();
-        window.scrollTo(0, 0);
-        return;
-      } else {
-        showToast(`<b>${t('comingSoonToast')}</b>`);
-        window.location.hash = 'year=' + found.year;
-        return;
+    if (!moduleHasData(moduleSlug)) await loadModule(moduleSlug);
+    if (gen !== routeGeneration) return;
+
+    if (moduleHasData(moduleSlug)) {
+      if (lastModuleSlug !== moduleSlug) {
+        state.filterYear = [];
+        state.filterRot = [];
+        state.filterUnit = [];
+        state.filterLesson = [];
+        state.filterSearch = '';
+        state.sortYear = 'desc';
+        state.sortLesson = 'asc';
+        state.userAnswers = {};
+        state.checkedQuestions = {};
+        state.modulePhase = 'welcome';
+        state.visibleCount = PAGE_SIZE;
       }
+      lastModuleSlug = moduleSlug;
+      renderModuleView();
+      window.scrollTo(0, 0);
+      return;
+    } else {
+      showToast(`<b>${t('comingSoonToast')}</b>`);
+      window.location.hash = 'year=' + found.year;
+      return;
     }
   }
 
-  // --- HOME VIEW ---
   lastModuleSlug = null;
   state.view = 'home';
   state.currentModule = null;
@@ -959,20 +1029,48 @@ async function applyRoute() {
     const y = +yearStr;
     state.selectedYear = y;
     state.selectedSemester = semStr ? +semStr : null;
-    renderHome(true);
-    
-    if (y === 1) ensureModules(getOtherModules(1).map(m => m.slug));
-    else ensureModules(allSlugsForYear(y));
 
-    setTimeout(() => {
+    $('semester-grid').innerHTML = '';
+    $('other-grid').innerHTML = '';
+    $('modules-grid').innerHTML = '';
+
+    renderHome(false, true);
+
+    requestAnimationFrame(() => {
       const target = (y === 1 && !semStr) ? 'semester-section' : 'modules-section';
       const el = $(target);
-      if (el && el.style.display !== 'none') el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 150);
+      if (el && el.style.display !== 'none') {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
+
+    let slugs = [];
+    if (y === 1) {
+      if (state.selectedSemester) {
+        slugs = getSemesterModules(1, state.selectedSemester).map(m => m.slug);
+      } else {
+        slugs = [
+          ...getSemesterModules(1, 1).map(m => m.slug),
+          ...getSemesterModules(1, 2).map(m => m.slug),
+          ...getOtherModules(1).map(m => m.slug)
+        ];
+      }
+    } else {
+      slugs = allSlugsForYear(y);
+    }
+
+    ensureModules(slugs).then(() => {
+      if (gen !== routeGeneration) return;
+      refreshVisibleModuleCards();
+    });
   } else {
     state.selectedYear = null;
     state.selectedSemester = null;
-    renderHome(true);
+    $('semester-grid').innerHTML = '';
+    $('other-grid').innerHTML = '';
+    $('modules-grid').innerHTML = '';
+    $('years-grid').innerHTML = '';
+    renderHome(true, false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }
@@ -988,8 +1086,8 @@ function createMultiselect(rootEl, opts) {
     </button>
     <div class="ms-panel" role="listbox" aria-labelledby="${uid}-trigger">
       <div class="ms-actions">
-        <button type="button" data-ms-all>Tout</button>
-        <button type="button" data-ms-none>Effacer</button>
+        <button type="button" data-ms-all>${t('msAll')}</button>
+        <button type="button" data-ms-none>${t('msNone')}</button>
       </div>
       <div class="ms-list">
         ${items.map(item => `
@@ -1102,7 +1200,7 @@ function showToast(msg) {
 }
 
 /* ════════════ HOME RENDER ════════════ */
-function renderHome(animate = true) {
+function renderHome(animate = true, pending = false) {
   $('view-home').style.display = 'block';
   $('view-module').style.display = 'none';
 
@@ -1115,22 +1213,21 @@ function renderHome(animate = true) {
   $('sem-sub').textContent = t('semSub');
   $('other-title').textContent = t('otherTitle');
   $('other-sub').textContent = t('otherSub');
-  $('nav-years').textContent = t('navYears');
-  $('nav-years').style.display = state.selectedYear !== null ? '' : 'none';
 
-  renderYears(animate);
-  renderSemesters(animate);
-  renderOtherModules(animate);
-  renderModules(animate);
+  $('footer-contact-text').textContent = t('footerContact');
+
+  renderYears(animate, false);
+  renderSemesters(animate, pending);
+  renderOtherModules(animate, pending);
+  renderModules(animate, pending);
   updateBarVisibility();
 }
 
-function renderYears(animate = true) {
+function renderYears(animate = true, pending = false) {
   const years = [1,2,3,4,5,6];
   const grid = $('years-grid');
-  const isRendered = grid.children.length === years.length;
 
-  if (isRendered) {
+  if (grid.children.length > 0) {
     [...grid.children].forEach((card, i) => {
       const y = years[i];
       card.classList.toggle('active', state.selectedYear === y);
@@ -1143,9 +1240,10 @@ function renderYears(animate = true) {
   grid.innerHTML = years.map((y, i) => {
     const total = yearTotalModules(y);
     const isActive = state.selectedYear === y ? ' active' : '';
-    const anim = animate ? ' slide-in' : '';
-    const delay = animate ? ` style="animation-delay:${i*40}ms"` : '';
-    return `<button class="year-card${anim}${isActive}"${delay} data-year="${y}">
+    const pendingClass = pending ? ' pending' : '';
+    const animClass = (!pending && animate) ? ' animate-in' : '';
+    const delay = (!pending && animate) ? ` style="animation-delay:${i*300}ms"` : '';
+    return `<button class="year-card${animClass}${isActive}${pendingClass}"${delay} data-year="${y}">
       <span class="year-big">${y}</span>
       <span class="year-info">
         <span class="year-label">${t('yearLabel')(y)}</span>
@@ -1155,14 +1253,17 @@ function renderYears(animate = true) {
   }).join('');
 }
 
-function renderSemesters(animate = true) {
+function renderSemesters(animate = true, pending = false) {
   const sec = $('semester-section');
-  if (state.selectedYear !== 1) { sec.style.display = 'none'; return; }
+  if (state.selectedYear !== 1) { 
+    sec.style.display = 'none'; 
+    $('semester-grid').innerHTML = '';
+    return; 
+  }
   sec.style.display = 'block';
   const grid = $('semester-grid');
-  const isRendered = grid.children.length === 2;
 
-  if (isRendered) {
+  if (grid.children.length > 0) {
     [...grid.children].forEach((card, i) => {
       const s = i + 1;
       card.classList.toggle('active', state.selectedSemester === s);
@@ -1178,9 +1279,10 @@ function renderSemesters(animate = true) {
     const mods = getSemesterModules(1, s);
     const label = s === 1 ? t('sem1') : t('sem2');
     const isActive = state.selectedSemester === s ? ' active' : '';
-    const anim = animate ? ' slide-in' : '';
-    const delay = animate ? ` style="animation-delay:${i*80}ms"` : '';
-    return `<button class="semester-card${anim}${isActive}"${delay} data-semester="${s}">
+    const pendingClass = pending ? ' pending' : '';
+    const animClass = (!pending && animate) ? ' animate-in' : '';
+    const delay = (!pending && animate) ? ` style="animation-delay:${i*300}ms"` : '';
+    return `<button class="semester-card${animClass}${isActive}${pendingClass}"${delay} data-semester="${s}">
       <div class="semester-badge">S${s}</div>
       <h3>${label}</h3>
       <p>${t('modCount')(mods.length)}</p>
@@ -1188,47 +1290,86 @@ function renderSemesters(animate = true) {
   }).join('');
 }
 
-function renderOtherModules(animate = true) {
+function renderOtherModules(animate = true, pending = false) {
   const sec = $('other-section');
-  if (state.selectedYear !== 1) { sec.style.display = 'none'; return; }
+  if (state.selectedYear !== 1 || state.selectedSemester !== null) { 
+    sec.style.display = 'none'; 
+    $('other-grid').innerHTML = '';
+    return; 
+  }
   const list = getOtherModules(1);
   if (!list.length) { sec.style.display = 'none'; return; }
   sec.style.display = 'block';
 
   const grid = $('other-grid');
-  const isRendered = grid.children.length === list.length;
-  const shouldAnimate = animate && !isRendered;
-  grid.innerHTML = list.map((m, i) => renderModuleCard(m, i, shouldAnimate)).join('');
+  const sortedList = sortByStatus(list);
+  grid.innerHTML = sortedList.map((m, i) => renderModuleCard(m, i, animate, pending)).join('');
 }
 
-function renderModules(animate = true) {
+function renderModules(animate = true, pending = false) {
   const sec = $('modules-section');
-  let list = [];
-  if (!state.selectedYear) { sec.style.display = 'none'; return; }
-
-  if (state.selectedYear === 1) {
-    if (state.selectedSemester === null) { sec.style.display = 'none'; return; }
-    list = getSemesterModules(1, state.selectedSemester);
-  } else {
-    list = getYearModules(state.selectedYear);
+  if (!state.selectedYear) { 
+    sec.style.display = 'none'; 
+    $('modules-grid').innerHTML = '';
+    return; 
   }
 
-  if (!list.length) { sec.style.display = 'none'; return; }
-  sec.style.display = 'block';
-
   if (state.selectedYear === 1) {
+    if (state.selectedSemester === null) { 
+      sec.style.display = 'none'; 
+      $('modules-grid').innerHTML = '';
+      return; 
+    }
+    const list = getSemesterModules(1, state.selectedSemester);
+    if (!list.length) { sec.style.display = 'none'; return; }
+    sec.style.display = 'block';
+
+    const sortedList = sortByStatus(list);
+
     const semLabel = state.selectedSemester === 1 ? t('sem1') : t('sem2');
     $('mod-title-section').textContent = `${t('modTitleSem')} ${semLabel}`;
-    $('mod-sub-section').textContent = t('modSubTemplate').replace('{year}', t('yearLabel')(1)).replace('{sem}', semLabel).replace('{n}', list.length);
-  } else {
-    $('mod-title-section').textContent = t('modTitleYear');
-    $('mod-sub-section').textContent = t('modSubYear').replace('{year}', t('yearLabel')(state.selectedYear)).replace('{n}', list.length);
+    $('mod-sub-section').textContent = t('modSubTemplate').replace('{year}', t('yearLabel')(1)).replace('{sem}', semLabel).replace('{n}', sortedList.length);
+
+    $('modules-grid').innerHTML = `<div class="modules-grid">` + sortedList.map((m, i) => renderModuleCard(m, i, animate, pending)).join('') + `</div>`;
+    return;
   }
 
-  $('modules-grid').innerHTML = list.map((m, i) => renderModuleCard(m, i, animate)).join('');
+  const c = CURRICULUM[state.selectedYear];
+  if (!c) { sec.style.display = 'none'; return; }
+
+  const unities = sortByStatus(c.unities || []);
+  const modules = sortByStatus(c.modules || []);
+
+  if (!unities.length && !modules.length) { sec.style.display = 'none'; return; }
+  sec.style.display = 'block';
+
+  $('mod-title-section').textContent = t('modTitleYear');
+  $('mod-sub-section').textContent = t('modSubYear').replace('{year}', t('yearLabel')(state.selectedYear)).replace('{n}', unities.length + modules.length);
+
+  let html = '';
+  let startIndex = 0;
+
+  if (unities.length) {
+    html += `<h3 class="sub-header">Unités</h3>`;
+    html += `<div class="modules-grid">`;
+    html += unities.map((m, i) => renderModuleCard(m, i, animate, pending)).join('');
+    html += `</div>`;
+    startIndex = unities.length;
+  }
+
+  if (modules.length) {
+    if (unities.length) {
+      html += `<h3 class="sub-header">Modules</h3>`;
+    }
+    html += `<div class="modules-grid">`;
+    html += modules.map((m, i) => renderModuleCard(m, i + startIndex, animate, pending)).join('');
+    html += `</div>`;
+  }
+
+  $('modules-grid').innerHTML = html;
 }
 
-function renderModuleCard(m, i, animate = true) {
+function renderModuleCard(m, i, animate = true, pending = false) {
   const name = state.lang === 'fr' ? m.name.fr : m.name.en;
   const status = moduleStatus(m.slug);
   const missing = status === 'missing';
@@ -1245,9 +1386,10 @@ function renderModuleCard(m, i, animate = true) {
   } else {
     stats = `<p>…</p>`;
   }
-  const anim = animate ? ' slide-in' : '';
-  const delay = animate ? ` style="animation-delay:${i*30}ms"` : '';
-  return `<button class="module-card${anim}${cs}"${delay} data-module-slug="${m.slug}" data-module-name="${esc(name)}">
+  const pendingClass = pending ? ' pending' : '';
+  const animClass = (!pending && animate) ? ' animate-in' : '';
+  const delay = (!pending && animate) ? ` style="animation-delay:${i * 300}ms"` : '';
+  return `<button class="module-card${animClass}${cs}${pendingClass}"${delay} data-module-slug="${m.slug}" data-module-name="${esc(name)}">
     <div class="module-icon">${ICONS[m.icon] || ICONS.flask}</div>
     <div class="module-info">
       <h3>${esc(name)} ${badge}</h3>
@@ -1258,7 +1400,7 @@ function renderModuleCard(m, i, animate = true) {
 }
 
 /* ════════════ MODULE VIEW ════════════ */
-function renderModuleView() {
+function renderModuleView(preserveVisibleCount = false) {
   const m = state.currentModule;
   $('view-home').style.display = 'none';
   $('view-module').style.display = 'block';
@@ -1278,7 +1420,7 @@ function renderModuleView() {
   $('mod-icon-view').innerHTML = ICONS[m.icon] || ICONS.flask;
 
   rebuildFilterOptions();
-  renderModuleBody();
+  renderModuleBody(preserveVisibleCount);
   updateBarVisibility();
 }
 
@@ -1348,8 +1490,7 @@ function rebuildFilterOptions() {
   });
 }
 
-/* ── Welcome vs results phase ── */
-function renderModuleBody() {
+function renderModuleBody(preserveVisibleCount = false) {
   const w = $('module-welcome');
   if (state.modulePhase === 'welcome') {
     w.style.display = '';
@@ -1362,7 +1503,7 @@ function renderModuleBody() {
     $('module-welcome-sub').textContent = t('welcomeSub')(data.questions.length);
   } else {
     w.style.display = 'none';
-    renderQuestions(true);
+    renderQuestions(!preserveVisibleCount);
   }
 }
 
@@ -1401,7 +1542,7 @@ function compareQuestions(a, b) {
     : a.lesson.localeCompare(b.lesson, 'fr', { sensitivity: 'base' });
 }
 
-function renderQuestions(reset) {
+function renderQuestions(reset, append = false) {
   if (state.modulePhase !== 'results') return;
   const list = getFilteredQuestions();
   if (reset) state.visibleCount = PAGE_SIZE;
@@ -1415,15 +1556,23 @@ function renderQuestions(reset) {
     return;
   }
   $('empty').style.display = 'none';
-  renderVisibleQuestions(list);
+  renderVisibleQuestions(list, append);
 }
 
-function renderVisibleQuestions(list) {
+function renderVisibleQuestions(list, append = false) {
+  const container = $('questions-container');
   const visible = list.slice(0, state.visibleCount);
-  $('questions-container').innerHTML = visible.map((q, idx) => {
+  const start = append ? Math.max(0, visible.length - PAGE_SIZE) : 0;
+
+  const html = visible.slice(start).map((q, i) => {
+    const idx = start + i;
     const qid = questionId(state.currentModule.slug, q, q._idx);
     return `<div class="q-card" data-qid="${qid}">${renderQuestionCard(q, idx, qid)}</div>`;
   }).join('');
+
+  if (append) container.insertAdjacentHTML('beforeend', html);
+  else        container.innerHTML = html;
+
   updateLoadMoreButton(list.length);
 }
 
@@ -1511,18 +1660,22 @@ function updateCard(qid) {
 /* ════════════ NAVIGATION ════════════ */
 function setLang(lang) {
   if (state.lang === lang) return;
+  routeGeneration++; 
   state.lang = lang;
   $('lang-fr').classList.toggle('active', lang === 'fr');
   $('lang-en').classList.toggle('active', lang === 'en');
   document.documentElement.lang = lang;
-  if (state.view === 'home') renderHome();
-  else renderModuleView();
+  if (state.view === 'home') {
+    renderHome();
+  } else {
+    renderModuleView(true);
+  }
 }
 
 function selectYear(y) {
   const targetHash = 'year=' + y;
   if (window.location.hash === '#' + targetHash) {
-    applyRoute(); // Force update if hash is the same
+    applyRoute();
   } else {
     window.location.hash = targetHash;
   }
@@ -1538,10 +1691,16 @@ function selectSemester(s) {
 }
 
 function goToYearGrid() {
-  if (window.location.hash === '' || window.location.hash === '#') {
-    applyRoute();
-  } else {
+  state.selectedYear = null;
+  state.selectedSemester = null;
+  $('semester-grid').innerHTML = '';
+  $('other-grid').innerHTML = '';
+  $('modules-grid').innerHTML = '';
+  $('years-grid').innerHTML = '';
+  if (window.location.hash && window.location.hash !== '#') {
     window.location.hash = '';
+  } else {
+    applyRoute();
   }
 }
 
@@ -1564,6 +1723,8 @@ function resetFilters() {
   state.sortLesson = 'asc';
   state.modulePhase = 'welcome';
   state.visibleCount = PAGE_SIZE;
+  state.userAnswers = {};
+  state.checkedQuestions = {};
   $('f-search').value = '';
   $('sort-year').value = 'desc';
   $('sort-lesson').value = 'asc';
@@ -1577,7 +1738,7 @@ function resetFilters() {
 /* ════════════ THEME ════════════ */
 const THEME_KEY = 'qcm-theme';
 let activeThemeVT = null;
-function toggleTheme() {
+function toggleTheme(btn) {
   const apply = () => {
     const isDark = document.documentElement.classList.contains('theme-dark');
     document.documentElement.classList.toggle('theme-dark', !isDark);
@@ -1585,7 +1746,17 @@ function toggleTheme() {
   };
   const canVT = typeof document.startViewTransition === 'function'
     && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   if (canVT) {
+    if (btn) {
+      const r = btn.getBoundingClientRect();
+      const x = r.left + r.width / 2;
+      const y = r.top  + r.height / 2;
+      const R = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
+      document.documentElement.style.setProperty('--vt-x', x + 'px');
+      document.documentElement.style.setProperty('--vt-y', y + 'px');
+      document.documentElement.style.setProperty('--vt-r', R + 'px');
+    }
     if (activeThemeVT) { try { activeThemeVT.skipTransition(); } catch(e) {} }
     activeThemeVT = document.startViewTransition(apply);
     activeThemeVT.finished.finally(() => { activeThemeVT = null; });
@@ -1598,7 +1769,10 @@ function toggleTheme() {
 document.addEventListener('click', (e) => {
   const langBtn = e.target.closest('[data-lang]');
   if (langBtn) { setLang(langBtn.dataset.lang); return; }
-  if (e.target.closest('#theme-btn')) { toggleTheme(); return; }
+
+  const themeBtn = e.target.closest('#theme-btn');
+  if (themeBtn) { toggleTheme(themeBtn); return; }
+
   if (e.target.closest('[data-action="home"]')) { goToYearGrid(); return; }
   if (e.target.closest('[data-action="back-from-module"]')) { goBackFromModule(); return; }
   if (e.target.closest('[data-action="reset-filters"]')) { resetFilters(); return; }
@@ -1611,7 +1785,7 @@ document.addEventListener('click', (e) => {
   const modCard = e.target.closest('[data-module-slug]');
   if (modCard) {
     if (modCard.classList.contains('coming-soon')) {
-      showToast(`<b>${t('comingSoonToast')}</b> — ${modCard.dataset.moduleName}`);
+      showToast(`<b>${t('comingSoonToast')}</b> — ${esc(modCard.dataset.moduleName)}`);
       return;
     }
     window.location.hash = 'module=' + modCard.dataset.moduleSlug;
@@ -1679,7 +1853,7 @@ $('back-to-filters').addEventListener('click', () => {
 
 $('btn-load-more').addEventListener('click', () => {
   state.visibleCount += PAGE_SIZE;
-  renderQuestions(false);
+  renderQuestions(false, true);
 });
 
 window.addEventListener('scroll', updateBarVisibility, { passive: true });
@@ -1690,9 +1864,7 @@ try {
   if (saved === 'dark') document.documentElement.classList.add('theme-dark');
 } catch(e) {}
 
-// Listen to URL changes (back/forward button)
 window.addEventListener('hashchange', applyRoute);
-// Run router on initial load
 applyRoute();
 
 console.info('[QCMify] v' + APP_VERSION + ' · data source: ' + DATA_BASE);
