@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="QCMify · Banque de QCM médicaux">
+<meta name="description" id="meta-desc" content="QCMify · Banque de QCM médicaux">
 <title>QCMify · Banque de QCM</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%2334c759' rx='20'/><text x='50' y='60' font-family='Arial,sans-serif' font-weight='900' font-size='42' fill='white' text-anchor='middle' letter-spacing='-2'>Q</text></svg>">
 <script>(function(){try{if(localStorage.getItem('qcm-theme')==='dark')document.documentElement.classList.add('theme-dark');}catch(e){}})();</script>
@@ -14,12 +14,12 @@
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
   --bg:#fbfbfd;--bg-2:#f5f5f7;--card:#fff;
-  --text:#1d1d1f;--text-2:#6e6e73;--text-3:#86868b;--text-4:#a1a1a6;
+  --text:#1d1d1f;--text-2:#55555a;--text-3:#6e6e73;--text-4:#767676;
   --border:rgba(0,0,0,.07);--border-2:rgba(0,0,0,.12);
-  --accent:#34c759;--accent-hover:#28a745;--accent-soft:rgba(52,199,89,.08);
-  --success:#34c759;--success-soft:rgba(52,199,89,.09);--success-border:rgba(52,199,89,.3);
-  --danger:#ff3b30;--danger-soft:rgba(255,59,48,.08);--danger-border:rgba(255,59,48,.3);
-  --warning:#ff9500;--warning-soft:rgba(255,149,0,.10);--warning-border:rgba(255,149,0,.30);
+  --accent:#34c759;--accent-hover:#28a745;--accent-soft:rgba(52,199,89,.08);--accent-text:#34c759;--accent-btn:#34c759;--accent-btn-hover:#28a745;
+  --success:#34c759;--success-soft:rgba(52,199,89,.09);--success-border:rgba(52,199,89,.3);--success-text:#137a38;
+  --danger:#ff3b30;--danger-soft:rgba(255,59,48,.08);--danger-border:rgba(255,59,48,.3);--danger-text:#d70015;
+  --warning:#ff9500;--warning-soft:rgba(255,149,0,.10);--warning-border:rgba(255,149,0,.30);--warning-text:#a35500;
   --shadow-sm:0 1px 2px rgba(0,0,0,.03);
   --shadow-md:0 2px 8px rgba(0,0,0,.04),0 1px 2px rgba(0,0,0,.03);
   --shadow-lg:0 12px 32px rgba(0,0,0,.08);
@@ -33,12 +33,12 @@
 }
 html.theme-dark{
   --bg:#0a0611;--bg-2:#120a1e;--card:#180e26;
-  --text:#f5f0ff;--text-2:#c9bce0;--text-3:#9184a8;--text-4:#5f5273;
+  --text:#f5f0ff;--text-2:#c9bce0;--text-3:#9184a8;--text-4:#8c7fa3;
   --border:rgba(168,85,247,.14);--border-2:rgba(168,85,247,.32);
-  --accent:#a855f7;--accent-hover:#c084fc;--accent-soft:rgba(147,51,234,.14);
-  --success:#22d3ee;--success-soft:rgba(34,211,238,.10);--success-border:rgba(34,211,238,.42);
-  --danger:#ec4899;--danger-soft:rgba(236,72,153,.14);--danger-border:rgba(236,72,153,.42);
-  --warning:#fbbf24;--warning-soft:rgba(251,191,36,.12);--warning-border:rgba(251,191,36,.40);
+  --accent:#a855f7;--accent-hover:#c084fc;--accent-soft:rgba(147,51,234,.14);--accent-text:#c084fc;--accent-btn:#7e22ce;--accent-btn-hover:#6b21a8;
+  --success:#22d3ee;--success-soft:rgba(34,211,238,.10);--success-border:rgba(34,211,238,.42);--success-text:#22d3ee;
+  --danger:#ec4899;--danger-soft:rgba(236,72,153,.14);--danger-border:rgba(236,72,153,.42);--danger-text:#f472b6;
+  --warning:#fbbf24;--warning-soft:rgba(251,191,36,.12);--warning-border:rgba(251,191,36,.40);--warning-text:#fbbf24;
   --shadow-sm:0 1px 2px rgba(0,0,0,.4);
   --shadow-md:0 2px 8px rgba(0,0,0,.5);
   --shadow-lg:0 12px 32px rgba(0,0,0,.6);
@@ -49,13 +49,13 @@ html.theme-dark{
   --icon-sort-za:       url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239184a8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M3 8l4-4 4 4'/><path d='M7 4v16'/><path d='M11 12h10'/><path d='M11 16h7'/><path d='M11 20h4'/></svg>");
 }
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;background:var(--bg);transition:background-color .2s var(--ease)}
-body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter",Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.5;letter-spacing:-.011em;min-height:100vh;background-image:radial-gradient(ellipse 90% 60% at 50% -10%,rgba(52,199,89,.04),transparent 60%),radial-gradient(ellipse 50% 40% at 90% 20%,rgba(255,149,0,.03),transparent 50%);background-attachment:fixed;transition:background-color .2s var(--ease),color .2s var(--ease)}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter",Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.5;letter-spacing:-.011em;min-height:100vh;min-height:100dvh;background-image:radial-gradient(ellipse 90% 60% at 50% -10%,rgba(52,199,89,.04),transparent 60%),radial-gradient(ellipse 50% 40% at 90% 20%,rgba(255,149,0,.03),transparent 50%);background-attachment:fixed;transition:background-color .2s var(--ease),color .2s var(--ease)}
 html.theme-dark body{background-image:radial-gradient(ellipse 90% 60% at 50% -10%,rgba(147,51,234,.16),transparent 60%),radial-gradient(ellipse 50% 40% at 90% 20%,rgba(236,72,153,.08),transparent 55%)}
 
 ::view-transition-old(root){animation:none;mix-blend-mode:normal}
 ::view-transition-new(root){mix-blend-mode:normal;animation:theme-circle 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;will-change:clip-path}
 @keyframes theme-circle{from{clip-path:circle(0px at var(--vt-x, 50vw) var(--vt-y, 0px))}to{clip-path:circle(var(--vt-r, 150vmax) at var(--vt-x, 50vw) var(--vt-y, 0px))}}
-@media (prefers-reduced-motion: reduce){::view-transition-old(root),::view-transition-new(root){animation-duration:0.001ms !important}html, body{transition-duration:0.001ms !important}}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms !important;animation-delay:0s !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;transition-delay:0s !important;scroll-behavior:auto !important}::view-transition-old(root),::view-transition-new(root){animation-duration:0.001ms !important}}
 
 .container{max-width:1080px;margin:0 auto;padding:0 24px}
 svg{display:block}
@@ -85,7 +85,7 @@ html.theme-dark .theme-btn .moon{display:none}
 .hero h1 span{background:linear-gradient(135deg,var(--accent),#20b2aa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 html.theme-dark .hero h1 span{background:linear-gradient(135deg,#c084fc,#9333ea 55%,#22d3ee);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .hero p{font-size:1rem;color:var(--text-2);max-width:560px;margin:0 auto}
-.eyebrow{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;background:var(--accent-soft);color:var(--accent);border-radius:var(--radius-pill);font-size:12px;font-weight:600;margin-bottom:18px}
+.eyebrow{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;background:var(--accent-soft);color:var(--accent-text);border-radius:var(--radius-pill);font-size:12px;font-weight:600;margin-bottom:18px}
 .eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);animation:pulse 2s var(--ease) infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
 
@@ -101,14 +101,14 @@ html.theme-dark .hero h1 span{background:linear-gradient(135deg,#c084fc,#9333ea 
   from { opacity: 0; transform: translateY(24px) scale(0.98); } 
   to   { opacity: var(--final-opacity, 1); transform: translateY(0) scale(1); } 
 }
-.animate-in { animation: cardIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.animate-in { animation: cardIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) backwards; }
 
 .years-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .year-card{display:flex;align-items:center;gap:14px;padding:16px 18px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);cursor:pointer;text-align:left;transition:border-color .25s var(--ease),background-color .25s var(--ease),transform .25s var(--ease),box-shadow .25s var(--ease);width:100%;color:var(--text)}
 .year-card:hover{border-color:var(--border-2);transform:translateY(-2px);box-shadow:var(--shadow-md)}
 .year-card.active{border-color:var(--accent);background:var(--accent-soft);box-shadow:0 0 0 3px var(--accent-soft)}
 .year-big{font-size:2rem;font-weight:700;letter-spacing:-.04em;line-height:1;min-width:38px;font-variant-numeric:tabular-nums;color:var(--text)}
-.year-card.active .year-big{color:var(--accent)}
+.year-card.active .year-big{color:var(--accent-text)}
 .year-info{display:flex;flex-direction:column;gap:2px;flex:1;min-width:0}
 .year-label{font-size:14px;font-weight:600;letter-spacing:-.01em}
 .year-count{font-size:11.5px;color:var(--text-3);font-weight:500}
@@ -120,7 +120,7 @@ html.theme-dark .hero h1 span{background:linear-gradient(135deg,#c084fc,#9333ea 
 .semester-card:hover::before,.semester-card.active::before{opacity:1}
 .semester-card.active{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
 .semester-badge{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;background:var(--bg-2);border-radius:12px;font-weight:700;font-size:14px;margin-bottom:14px;position:relative}
-.semester-card.active .semester-badge{background:var(--accent);color:#fff}
+.semester-card.active .semester-badge{background:var(--accent-btn);color:#fff}
 .semester-card h3{font-size:17px;font-weight:700;letter-spacing:-.02em;margin-bottom:4px;position:relative}
 .semester-card p{font-size:13px;color:var(--text-3);font-weight:500;position:relative}
 
@@ -131,23 +131,23 @@ html.theme-dark .hero h1 span{background:linear-gradient(135deg,#c084fc,#9333ea 
 .module-card.coming-soon{--final-opacity: 0.72; opacity: 0.72; cursor:help; order:1}
 .module-card.coming-soon:hover{border-color:var(--border);transform:none;box-shadow:var(--shadow-sm)}
 .module-icon{width:42px;height:42px;border-radius:11px;background:var(--bg-2);display:flex;align-items:center;justify-content:center;color:var(--text-2);flex-shrink:0;transition:all .25s var(--ease)}
-.module-card:hover:not(.coming-soon) .module-icon{background:var(--accent-soft);color:var(--accent)}
+.module-card:hover:not(.coming-soon) .module-icon{background:var(--accent-soft);color:var(--accent-text)}
 .module-icon svg{width:20px;height:20px}
 .module-info{flex:1;min-width:0}
 .module-info h3{font-size:14.5px;font-weight:600;letter-spacing:-.015em;margin-bottom:2px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .module-info p{font-size:12px;color:var(--text-3);font-weight:500}
-.badge-soon{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;background:var(--warning-soft);color:var(--warning);border-radius:var(--radius-pill);font-size:10px;font-weight:600}
+.badge-soon{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;background:var(--warning-soft);color:var(--warning-text);border-radius:var(--radius-pill);font-size:10px;font-weight:600}
 .badge-soon svg{width:9px;height:9px}
 .module-arrow{width:16px;height:16px;color:var(--text-4);flex-shrink:0;transition:all .2s var(--ease)}
-.module-card:hover:not(.coming-soon) .module-arrow{transform:translateX(3px);color:var(--accent)}
+.module-card:hover:not(.coming-soon) .module-arrow{transform:translateX(3px);color:var(--accent-text)}
 .module-card.coming-soon .module-arrow{opacity:.4}
 
 .pending { opacity: 0 !important; pointer-events: none !important; }
 
 .tag{display:inline-flex;align-items:center;padding:3px 9px;border-radius:var(--radius-pill);font-size:11px;font-weight:600;letter-spacing:.01em;line-height:1.4}
-.tag-year{background:var(--accent-soft);color:var(--accent)}
-.tag-rot{background:var(--accent-soft);color:var(--accent)}
-.tag-unit{background:var(--accent-soft);color:var(--accent);font-weight:500}
+.tag-year{background:var(--accent-soft);color:var(--accent-text)}
+.tag-rot{background:var(--accent-soft);color:var(--accent-text)}
+.tag-unit{background:var(--accent-soft);color:var(--accent-text);font-weight:500}
 .tag-lesson{background:rgba(0,0,0,.05);color:var(--text-2);font-weight:500}
 html.theme-dark .tag-lesson{background:rgba(255,255,255,.06)}
 
@@ -164,7 +164,7 @@ html.theme-dark .back-btn{background:rgba(255,255,255,.06)}
 html.theme-dark .back-btn:hover{background:rgba(255,255,255,.10)}
 .back-btn svg{width:14px;height:14px}
 .module-header{display:flex;align-items:center;gap:16px}
-.module-icon-lg{width:60px;height:60px;border-radius:15px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;color:var(--accent);flex-shrink:0}
+.module-icon-lg{width:60px;height:60px;border-radius:15px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;color:var(--accent-text);flex-shrink:0}
 .module-icon-lg svg{width:28px;height:28px}
 .module-header h1{font-size:clamp(1.5rem,2.8vw,2rem);font-weight:700;letter-spacing:-.03em;margin-bottom:3px}
 .module-header p{font-size:13.5px;color:var(--text-2);font-weight:500}
@@ -185,7 +185,7 @@ html.theme-dark .ms-trigger{background:rgba(255,255,255,.06)}
 .ms-trigger:hover{filter:brightness(0.97)}
 .ms-trigger:focus-visible,.ms-trigger[aria-expanded="true"]{outline:none;background:var(--card);border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
 html.theme-dark .ms-trigger:focus-visible,html.theme-dark .ms-trigger[aria-expanded="true"]{background:var(--card)}
-.ms-trigger.has-selection{color:var(--accent);font-weight:600}
+.ms-trigger.has-selection{color:var(--accent-text);font-weight:600}
 .ms-label{flex:1;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;min-width:0}
 .ms-trigger::after{content:'';position:absolute;right:14px;top:50%;width:7px;height:7px;border-right:1.5px solid var(--text-3);border-bottom:1.5px solid var(--text-3);transform:translateY(-65%) rotate(45deg);pointer-events:none;transition:transform .2s var(--ease),border-color .2s var(--ease)}
 .ms-trigger[aria-expanded="true"]::after{border-color:var(--accent);transform:translateY(-35%) rotate(-135deg)}
@@ -195,13 +195,13 @@ html.theme-dark .ms-trigger:focus-visible,html.theme-dark .ms-trigger[aria-expan
 .ms-actions{display:flex;gap:6px;padding:8px 10px;border-bottom:1px solid var(--border);flex-shrink:0}
 .ms-actions button{flex:1;padding:5px 8px;background:rgba(0,0,0,.04);border:none;border-radius:6px;font-family:inherit;font-size:11.5px;font-weight:600;color:var(--text-2);cursor:pointer;transition:background .15s var(--ease),color .15s var(--ease)}
 html.theme-dark .ms-actions button{background:rgba(255,255,255,.06)}
-.ms-actions button:hover{background:var(--accent-soft);color:var(--accent)}
+.ms-actions button:hover{background:var(--accent-soft);color:var(--accent-text)}
 .ms-list{flex:1;overflow-y:auto;overscroll-behavior:contain;padding:5px}
 .ms-option{display:flex;align-items:center;gap:10px;padding:7px 9px;border-radius:6px;font-size:13px;color:var(--text);cursor:pointer;user-select:none;transition:background .1s var(--ease)}
 .ms-option:hover{background:rgba(0,0,0,.04)}
 html.theme-dark .ms-option:hover{background:rgba(255,255,255,.06)}
 .ms-option input{width:15px;height:15px;cursor:pointer;accent-color:var(--accent);flex-shrink:0}
-.ms-option.checked{background:var(--accent-soft);color:var(--accent);font-weight:500}
+.ms-option.checked{background:var(--accent-soft);color:var(--accent-text);font-weight:500}
 .ms-option.checked:hover{background:var(--accent-soft)}
 
 .toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
@@ -233,26 +233,26 @@ html.theme-dark .opt{background:rgba(255,255,255,.03)}
 .opt:hover:not(:disabled){background:rgba(0,0,0,.05)}
 html.theme-dark .opt:hover:not(:disabled){background:rgba(255,255,255,.06)}
 .opt.selected{background:var(--accent-soft);border-color:var(--accent)}
-.opt.selected .letter{color:var(--accent)}
+.opt.selected .letter{color:var(--accent-text)}
 .opt.correct{background:var(--success-soft);border-color:var(--success-border)}
-.opt.correct .letter{color:var(--success)}
-.opt.correct .text{color:var(--success);font-weight:500}
+.opt.correct .letter{color:var(--success-text)}
+.opt.correct .text{color:var(--success-text);font-weight:500}
 .opt.incorrect{background:var(--danger-soft);border-color:var(--danger-border)}
-.opt.incorrect .letter{color:var(--danger)}
-.opt.incorrect .text{color:var(--danger)}
+.opt.incorrect .letter{color:var(--danger-text)}
+.opt.incorrect .text{color:var(--danger-text)}
 .opt.partial{background:var(--warning-soft);border-color:var(--warning-border)}
-.opt.partial .letter{color:var(--warning)}
-.opt.partial .text{color:var(--warning)}
+.opt.partial .letter{color:var(--warning-text)}
+.opt.partial .text{color:var(--warning-text)}
 .opt .check,.opt .cross,.opt .half{display:none;font-weight:700;font-size:14px;flex-shrink:0;margin-left:auto}
-.opt .check{color:var(--success)}
-.opt .cross{color:var(--danger)}
-.opt .half{color:var(--warning)}
+.opt .check{color:var(--success-text)}
+.opt .cross{color:var(--danger-text)}
+.opt .half{color:var(--warning-text)}
 .opt.correct .check,.opt.incorrect .cross,.opt.partial .half{display:inline-block;animation:checkIn .2s var(--ease-out)}
 @keyframes checkIn{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:scale(1)}}
 .q-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:12px;border-top:1px solid var(--border);flex-wrap:wrap}
 .action-btns{display:flex;gap:8px}
-.validate-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 15px;background:var(--accent);color:#fff;border:none;border-radius:var(--radius-pill);font-family:inherit;font-size:12.5px;font-weight:600;cursor:pointer;transition:all .2s var(--ease)}
-.validate-btn:hover:not(:disabled){background:var(--accent-hover)}
+.validate-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 15px;background:var(--accent-btn);color:#fff;border:none;border-radius:var(--radius-pill);font-family:inherit;font-size:12.5px;font-weight:600;cursor:pointer;transition:all .2s var(--ease)}
+.validate-btn:hover:not(:disabled){background:var(--accent-btn-hover)}
 .validate-btn:disabled{opacity:.5;cursor:not-allowed}
 .clear-btn{display:inline-flex;padding:7px 13px;background:rgba(0,0,0,.04);color:var(--text);border:none;border-radius:var(--radius-pill);font-family:inherit;font-size:12.5px;font-weight:500;cursor:pointer;transition:all .2s var(--ease)}
 html.theme-dark .clear-btn{background:rgba(255,255,255,.06)}
@@ -261,20 +261,20 @@ html.theme-dark .clear-btn:hover{background:rgba(255,255,255,.10)}
 .feedback{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:var(--radius-pill);font-size:12.5px;font-weight:600;opacity:0;transform:scale(.95);transition:all .2s var(--ease-out);pointer-events:none}
 .feedback.show{opacity:1;transform:scale(1);animation:feedbackPop .28s var(--ease-out)}
 @keyframes feedbackPop{0%{opacity:0;transform:scale(.85)}60%{opacity:1;transform:scale(1.04)}100%{opacity:1;transform:scale(1)}}
-.feedback.correct{background:var(--success-soft);color:var(--success)}
-.feedback.incorrect{background:var(--danger-soft);color:var(--danger)}
-.feedback.partial{background:var(--warning-soft);color:var(--warning)}
+.feedback.correct{background:var(--success-soft);color:var(--success-text)}
+.feedback.incorrect{background:var(--danger-soft);color:var(--danger-text)}
+.feedback.partial{background:var(--warning-soft);color:var(--warning-text)}
 .feedback .dot{width:6px;height:6px;border-radius:50%;background:currentColor}
 
 .welcome{text-align:center;padding:60px 20px 50px;animation:cardIn .5s var(--ease-out) both}
-.welcome-icon{width:72px;height:72px;margin:0 auto 20px;background:var(--accent-soft);border-radius:20px;display:flex;align-items:center;justify-content:center;color:var(--accent)}
+.welcome-icon{width:72px;height:72px;margin:0 auto 20px;background:var(--accent-soft);border-radius:20px;display:flex;align-items:center;justify-content:center;color:var(--accent-text)}
 .welcome-icon svg{width:34px;height:34px}
 .welcome h2{font-size:clamp(1.4rem,2.6vw,1.75rem);font-weight:700;letter-spacing:-.03em;margin-bottom:8px}
 .welcome p{font-size:14.5px;color:var(--text-2);max-width:440px;margin:0 auto;line-height:1.55}
 
 .load-more-wrap{text-align:center;padding:20px 0 8px}
 .btn-load-more{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;background:var(--card);border:1px solid var(--border-2);border-radius:var(--radius-pill);font-family:inherit;font-size:13.5px;font-weight:600;color:var(--text);cursor:pointer;transition:all .2s var(--ease);box-shadow:var(--shadow-sm)}
-.btn-load-more:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px);box-shadow:var(--shadow-md)}
+.btn-load-more:hover{border-color:var(--accent);color:var(--accent-text);transform:translateY(-1px);box-shadow:var(--shadow-md)}
 .btn-load-more:active{transform:translateY(0)}
 
 .empty{text-align:center;padding:70px 20px}
@@ -285,11 +285,11 @@ html.theme-dark .empty-icon{background:rgba(255,255,255,.05)}
 
 .toast{position:fixed;bottom:32px;left:50%;transform:translate(-50%,20px);padding:12px 20px;background:var(--card);border:1px solid var(--border-2);border-radius:var(--radius-pill);box-shadow:var(--shadow-lg);font-size:13px;font-weight:500;color:var(--text);opacity:0;pointer-events:none;transition:opacity .3s var(--ease),transform .3s var(--ease);z-index:3000;max-width:calc(100vw - 48px);text-align:center}
 .toast.show{opacity:1;transform:translate(-50%,0)}
-.toast b{color:var(--accent)}
+.toast b{color:var(--accent-text)}
 
 .back-to-filters{position:fixed;bottom:24px;left:50%;z-index:60;display:inline-flex;align-items:center;gap:8px;padding:12px 20px;background:color-mix(in srgb,var(--card) 92%,transparent);-webkit-backdrop-filter:blur(20px) saturate(180%);backdrop-filter:blur(20px) saturate(180%);border:1px solid var(--border-2);border-radius:var(--radius-pill);box-shadow:0 8px 32px rgba(0,0,0,.14),0 2px 8px rgba(0,0,0,.06);font-family:inherit;font-size:14px;font-weight:600;color:var(--text);cursor:pointer;visibility:hidden;opacity:0;pointer-events:none;transform:translate(-50%,calc(100% + 24px));transition:transform .45s cubic-bezier(.16,1,.3,1),opacity .3s var(--ease),visibility 0s linear .45s,border-color .2s var(--ease),box-shadow .2s var(--ease)}
 @supports not (background:color-mix(in srgb,red,blue)){.back-to-filters{background:var(--card)}}
-.back-to-filters svg{width:16px;height:16px;flex-shrink:0;color:var(--accent)}
+.back-to-filters svg{width:16px;height:16px;flex-shrink:0;color:var(--accent-text)}
 .back-to-filters:hover{border-color:var(--accent);transform:translate(-50%,-2px);box-shadow:0 12px 40px rgba(0,0,0,.18),0 0 24px var(--accent-soft)}
 .back-to-filters.visible{visibility:visible;opacity:1;pointer-events:auto;transform:translate(-50%,0);transition:transform .45s cubic-bezier(.16,1,.3,1),opacity .3s var(--ease),visibility 0s,border-color .2s var(--ease),box-shadow .2s var(--ease)}
 .back-to-filters.visible:hover{transform:translate(-50%,-2px)}
@@ -298,8 +298,8 @@ html.theme-dark .back-to-filters.visible{box-shadow:0 8px 32px rgba(0,0,0,.55),0
 @media(max-width:500px){.back-to-filters{bottom:18px;padding:11px 18px;font-size:13px;gap:6px}.back-to-filters svg{width:14px;height:14px}}
 
 footer{padding:40px 24px;text-align:center;font-size:12.5px;color:var(--text-3);border-top:1px solid var(--border);background:var(--bg-2);margin-top:40px;display:flex;flex-direction:column;align-items:center;gap:20px}
-.footer-contact{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:var(--accent-soft);color:var(--accent);border-radius:var(--radius-pill);font-size:14px;font-weight:600;text-decoration:none;transition:all .2s var(--ease)}
-.footer-contact:hover{background:var(--accent);color:#fff;transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.footer-contact{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:var(--accent-soft);color:var(--accent-text);border-radius:var(--radius-pill);font-size:14px;font-weight:600;text-decoration:none;transition:all .2s var(--ease)}
+.footer-contact:hover{background:var(--accent-btn);color:#fff;transform:translateY(-2px);box-shadow:var(--shadow-md)}
 .footer-contact svg{width:16px;height:16px;transition:transform .2s var(--ease)}
 .footer-contact:hover svg{transform:translate(1px, -1px)}
 footer p{margin:0}
@@ -325,6 +325,9 @@ footer b{color:var(--text-2);font-weight:600}
   .year-big{font-size:1.8rem;min-width:32px}
   .welcome{padding:40px 16px 32px}
 }
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.route-loading{padding:96px 20px;text-align:center;color:var(--text-3);font-size:14px;font-weight:500}
+@media (pointer:coarse){.search-wrap input,.sort-select{font-size:16px}}
 </style>
 
 <!-- Google tag (gtag.js) -->
@@ -339,6 +342,8 @@ footer b{color:var(--text-2);font-weight:600}
 
 </head>
 <body>
+<noscript><p style="padding:40px 20px;text-align:center;font-family:sans-serif">QCMify nécessite JavaScript · QCMify requires JavaScript.</p></noscript>
+<div id="sr-status" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
 
 <header class="site-header">
   <div class="container">
@@ -348,8 +353,8 @@ footer b{color:var(--text-2);font-weight:600}
     </button>
     <div class="header-right">
       <div class="lang-toggle" role="group" aria-label="Language">
-        <button id="lang-fr" class="active" data-lang="fr">FR</button>
-        <button id="lang-en" data-lang="en">EN</button>
+        <button id="lang-fr" class="active" data-lang="fr" aria-pressed="true">FR</button>
+        <button id="lang-en" data-lang="en" aria-pressed="false">EN</button>
       </div>
       <button class="theme-btn" id="theme-btn" aria-label="Changer de thème">
         <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
@@ -358,6 +363,8 @@ footer b{color:var(--text-2);font-weight:600}
     </div>
   </div>
 </header>
+
+<div id="route-loading" class="route-loading" style="display:none" role="status"></div>
 
 <div id="view-home">
   <section class="hero">
@@ -438,7 +445,7 @@ footer b{color:var(--text-2);font-weight:600}
     <div class="container">
       <div class="search-wrap">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-        <input type="text" id="f-search" autocomplete="off">
+        <input type="text" id="f-search" autocomplete="off" aria-label="Rechercher dans les questions">
       </div>
       <div class="filters-row">
         <div class="multiselect" id="ms-year"></div>
@@ -458,7 +465,7 @@ footer b{color:var(--text-2);font-weight:600}
             <option value="desc">Cours Z→A</option>
           </select>
         </div>
-        <div class="result-count" id="result-count"></div>
+        <div class="result-count" id="result-count" role="status" aria-live="polite" aria-atomic="true"></div>
       </div>
     </div>
   </div>
@@ -498,7 +505,7 @@ footer b{color:var(--text-2);font-weight:600}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
     <span id="footer-contact-text"></span>
   </a>
-  <p><b>QCMify</b> · Banque de QCM · 2026</p>
+  <p><b>QCMify</b> · <span id="footer-tag">Banque de QCM</span> · 2026</p>
 </footer>
 
 <script>
@@ -507,6 +514,7 @@ footer b{color:var(--text-2);font-weight:600}
 const APP_VERSION = "1.6.2";
 const DATA_BASE = "https://abdraoufbenabbes.github.io/qcmify-data/";
 const PAGE_SIZE = 20;
+const FETCH_TIMEOUT_MS = 12000;
 
 /* ════════════ ICONS ════════════ */
 const ICONS = {
@@ -538,6 +546,11 @@ const ICONS = {
 const T = {
   fr: {
     heroBadge: 'Banque de QCM',
+    docTitle: 'QCMify · Banque de QCM',
+    metaDesc: 'QCMify · Banque de QCM médicaux',
+    searchLabel: 'Rechercher dans les questions',
+    loading: 'Chargement…',
+    qLabel: 'Question',
     heroTitle: 'Révisez <span>intelligemment</span>',
     heroSub: 'Sélectionnez votre année pour accéder aux modules.',
     yearsTitle: 'Choisissez votre année',
@@ -573,6 +586,10 @@ const T = {
     comingSoonSub: 'Les questions seront ajoutées prochainement.',
     comingSoonToast: 'Bientôt disponible',
     moduleNotFound: 'Module introuvable',
+    loadError: 'Chargement impossible · touchez pour réessayer',
+    unitsHeader: 'Unités', modulesHeader: 'Modules',
+    footerTag: 'Banque de QCM',
+    themeLabel: 'Changer de thème', sortYearLabel: 'Trier par année', sortLessonLabel: 'Trier par cours',
     welcomeTitle: 'Prêt à réviser ?',
     welcomeSub: (n) => `${n} questions disponibles · utilisez les filtres ci-dessus pour commencer.`,
     loadMore: 'Afficher plus',
@@ -584,6 +601,11 @@ const T = {
   },
   en: {
     heroBadge: 'QCM Bank',
+    docTitle: 'QCMify · QCM Bank',
+    metaDesc: 'QCMify · Medical QCM bank',
+    searchLabel: 'Search questions',
+    loading: 'Loading…',
+    qLabel: 'Question',
     heroTitle: 'Study <span>smarter</span>',
     heroSub: 'Select your year to access modules.',
     yearsTitle: 'Choose your year',
@@ -619,6 +641,10 @@ const T = {
     comingSoonSub: 'Questions will be added soon.',
     comingSoonToast: 'Coming soon',
     moduleNotFound: 'Module not found',
+    loadError: 'Could not load · tap to retry',
+    unitsHeader: 'Units', modulesHeader: 'Modules',
+    footerTag: 'QCM Bank',
+    themeLabel: 'Toggle theme', sortYearLabel: 'Sort by year', sortLessonLabel: 'Sort by course',
     welcomeTitle: 'Ready to review?',
     welcomeSub: (n) => `${n} questions available · use the filters above to start.`,
     loadMore: 'Load more',
@@ -729,12 +755,22 @@ const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const t = k => T[state.lang][k];
 const LETTERS = ['A','B','C','D','E'];
+const fold = s => String(s).normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/œ/g, 'oe').replace(/æ/g, 'ae');
+
+const prefersReducedMotion = () => !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+const smoothBehavior = () => prefersReducedMotion() ? 'auto' : 'smooth';
+function scrollInstantTop() {
+  const root = document.documentElement;
+  root.style.scrollBehavior = 'auto';
+  window.scrollTo(0, 0);
+  root.style.scrollBehavior = '';
+}
 
 function rotName(r) {
   const L = state.lang;
   if (r === 0) return L === 'fr' ? 'Rattrapage' : 'Make-up';
   if (r === 4) return 'Constantine';
-  const suffix = r === 1 ? (L === 'fr' ? 'ère' : 'st') : (L === 'fr' ? 'ème' : 'th');
+  const suffix = L === 'fr' ? (r === 1 ? 'ère' : 'ème') : (['th','st','nd','rd'][r] || 'th');
   return `${r}${suffix} Rotation`;
 }
 
@@ -748,13 +784,15 @@ function moduleHasData(slug) {
     && MODULE_DATA[slug].questions.length > 0;
 }
 
+const TD_RE = /^(TD|Sim|TP)(?![a-zA-Z])/;
+function lessonCompare(a, b) {
+  const aTd = TD_RE.test(a), bTd = TD_RE.test(b);
+  if (aTd !== bTd) return aTd ? 1 : -1;
+  return a.localeCompare(b, 'fr', { sensitivity: 'base', numeric: true });
+}
+
 function sortLessons(arr) {
-  return [...arr].sort((a, b) => {
-    const aTd = /^(TD|Sim|TP)(?![a-zA-Z])/.test(a);
-    const bTd = /^(TD|Sim|TP)(?![a-zA-Z])/.test(b);
-    if (aTd !== bTd) return aTd ? 1 : -1;
-    return a.localeCompare(b, 'fr', { sensitivity: 'base' });
-  });
+  return [...arr].sort(lessonCompare);
 }
 
 function sortByStatus(list) {
@@ -774,25 +812,43 @@ function moduleStatus(slug) {
   return DATA_STATE[slug] || 'unknown';
 }
 
-function normalizeModuleData(raw) {
+function normalizeModuleData(raw, slug) {
   if (!raw || !Array.isArray(raw.questions)) throw new Error('missing "questions" array');
-  const questions = raw.questions.map(q => ({
-    year: +q.year,
-    rot: q.rot == null ? 0 : +q.rot,
-    unit: String(q.unit == null ? '' : q.unit).trim(),
-    lesson: String(q.lesson == null ? '' : q.lesson).trim(),
-    text: String(q.text == null ? '' : q.text),
-    options: (q.options || []).map(o => String(o)),
-    answer: String(q.answer || '').toUpperCase().replace(/[^A-Z]/g, '')
-  })).filter(q =>
-    q.text && q.options.length >= 2 && q.answer &&
-    q.answer.split('').every(c => LETTERS.includes(c) && LETTERS.indexOf(c) < q.options.length)
-  );
+  if (raw.questions.length === 0) {
+    const e = new Error('questions array is empty (placeholder file)');
+    e.empty = true;
+    throw e;
+  }
+  let dropped = 0;
+  const questions = [];
+  raw.questions.forEach(q => {
+    if (!q || typeof q !== 'object' || !Array.isArray(q.options)) { dropped++; return; }
+    const year = Number(q.year);
+    const rot = q.rot == null ? 0 : Number(q.rot);
+    const text = String(q.text == null ? '' : q.text);
+    const options = q.options.slice(0, LETTERS.length).map(o => String(o == null ? '' : o));
+    while (options.length && !options[options.length - 1].trim()) options.pop();
+    const answer = [...new Set(String(q.answer || '').toUpperCase().replace(/[^A-Z]/g, ''))].join('');
+    const ok = Number.isFinite(year) && Number.isFinite(rot) && text.trim()
+      && options.length >= 2 && options.every(o => o.trim())
+      && answer && answer.split('').every(c => LETTERS.indexOf(c) !== -1 && LETTERS.indexOf(c) < options.length);
+    if (!ok) { dropped++; return; }
+    questions.push({
+      year, rot,
+      unit: String(q.unit == null ? '' : q.unit).trim(),
+      lesson: String(q.lesson == null ? '' : q.lesson).trim() || '—',
+      text, options, answer,
+      _hay: fold(text + '\n' + options.join('\n'))
+    });
+  });
+  if (dropped) console.warn('[QCMify] ' + (slug || 'module') + '.json: ' + dropped + ' invalid question(s) skipped');
   if (!questions.length) throw new Error('no valid questions after normalisation');
-  const lessons = (Array.isArray(raw.lessons) && raw.lessons.length)
-    ? raw.lessons.map(String)
-    : [...new Set(questions.map(q => q.lesson))];
-  return { lessons, questions };
+  return {
+    lessons: [...new Set(questions.map(q => q.lesson))],
+    questions,
+    rotCount: new Set(questions.map(q => q.rot)).size,
+    unitCount: new Set(questions.map(q => q.unit).filter(Boolean)).size
+  };
 }
 
 function loadModule(slug) {
@@ -800,20 +856,27 @@ function loadModule(slug) {
   if (DATA_PROMISES[slug]) return DATA_PROMISES[slug];
 
   DATA_STATE[slug] = 'loading';
-  DATA_PROMISES[slug] = fetch(DATA_BASE + slug + '.json', { cache: 'no-cache' })
-    .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+  const ctrl = (typeof AbortController === 'function') ? new AbortController() : null;
+  const timer = ctrl ? setTimeout(() => ctrl.abort(), FETCH_TIMEOUT_MS) : null;
+  DATA_PROMISES[slug] = fetch(DATA_BASE + slug + '.json', ctrl ? { cache: 'no-cache', signal: ctrl.signal } : { cache: 'no-cache' })
+    .then(r => {
+      if (r.status === 404) { const e = new Error('HTTP 404'); e.notFound = true; throw e; }
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    })
     .then(raw => {
-      MODULE_DATA[slug] = normalizeModuleData(raw);
+      MODULE_DATA[slug] = normalizeModuleData(raw, slug);
       DATA_STATE[slug] = 'ready';
       console.info('[QCMify] ' + slug + '.json loaded: '
         + MODULE_DATA[slug].questions.length + ' questions · '
         + MODULE_DATA[slug].lessons.length + ' lessons');
     })
     .catch(err => {
-      DATA_STATE[slug] = 'missing';
+      DATA_STATE[slug] = (err.notFound || err.empty) ? 'missing' : 'error';
       delete DATA_PROMISES[slug];
-      console.warn('[QCMify] ' + slug + '.json unavailable — ' + err.message);
-    });
+      console.warn('[QCMify] ' + slug + '.json unavailable — ' + (err.name === 'AbortError' ? 'timeout' : err.message));
+    })
+    .finally(() => { if (timer) clearTimeout(timer); });
   return DATA_PROMISES[slug];
 }
 
@@ -847,6 +910,8 @@ function refreshVisibleModuleCards() {
       stats = `<p>${d.questions.length} ${t('questions')} · ${d.lessons.length} ${t('courses')}</p>`;
     } else if (missing) {
       stats = `<p>${t('comingSoonSub')}</p>`;
+    } else if (status === 'error') {
+      stats = `<p>${t('loadError')}</p>`;
     } else {
       stats = `<p>…</p>`;
     }
@@ -899,7 +964,7 @@ function refreshVisibleModuleCards() {
 
 /* ════════════ STATE ════════════ */
 const state = {
-  lang: 'fr',
+  lang: (function () { try { const l = localStorage.getItem('qcm-lang'); return (l === 'en' || l === 'fr') ? l : 'fr'; } catch (e) { return 'fr'; } })(),
   view: 'home',
   selectedYear: null,
   selectedSemester: null,
@@ -922,14 +987,6 @@ let lastModuleSlug = null;
 let routeGeneration = 0;
 
 /* ════════════ HELPERS ════════════ */
-function getYearModules(y) {
-  const c = CURRICULUM[y];
-  if (!c) return [];
-  if (c.unities || c.modules) {
-    return [...(c.unities || []), ...(c.modules || [])];
-  }
-  return [];
-}
 function getSemesterModules(y, semId) {
   const c = CURRICULUM[y];
   if (!c || !c.semesters) return [];
@@ -968,22 +1025,21 @@ function yearTotalModules(y) {
 
 function shouldShowRotation(year, slug) {
   if (year === 1 || year === 2 || year === 3) return false;
-  if (!MODULE_DATA[slug]) return false;
-  const rots = new Set(MODULE_DATA[slug].questions.map(q => q.rot || 0));
-  return rots.size >= 2;
+  const d = MODULE_DATA[slug];
+  return !!d && d.rotCount >= 2;
 }
 
 function shouldShowUnit(slug) {
-  if (!MODULE_DATA[slug]) return false;
-  const units = new Set(
-    MODULE_DATA[slug].questions
-      .map(q => q.unit || '')
-      .filter(Boolean)
-  );
-  return units.size >= 2;
+  const d = MODULE_DATA[slug];
+  return !!d && d.unitCount >= 2;
 }
 
 /* ════════════ ROUTER ════════════ */
+function replaceRoute(hash) {
+  history.replaceState(null, '', window.location.pathname + window.location.search + (hash ? '#' + hash : ''));
+  return applyRoute();
+}
+
 async function applyRoute() {
   const gen = ++routeGeneration;
   const hash = window.location.hash.replace(/^#\/?/, '');
@@ -996,15 +1052,21 @@ async function applyRoute() {
     const found = findModuleBySlug(moduleSlug);
     if (!found) {
       showToast(`<b>${t('moduleNotFound')}</b>`);
-      window.location.hash = '';
-      return;
+      return replaceRoute('');
     }
 
     state.selectedYear = found.year;
     state.currentModule = found.module;
     state.view = 'module';
 
-    if (!moduleHasData(moduleSlug)) await loadModule(moduleSlug);
+    if (!moduleHasData(moduleSlug)) {
+      $('view-home').style.display = 'none';
+      $('view-module').style.display = 'none';
+      const rl = $('route-loading');
+      rl.textContent = t('loading');
+      rl.style.display = 'block';
+      await loadModule(moduleSlug);
+    }
     if (gen !== routeGeneration) return;
 
     if (moduleHasData(moduleSlug)) {
@@ -1023,12 +1085,11 @@ async function applyRoute() {
       }
       lastModuleSlug = moduleSlug;
       renderModuleView();
-      window.scrollTo(0, 0);
+      scrollInstantTop();
       return;
     } else {
-      showToast(`<b>${t('comingSoonToast')}</b>`);
-      window.location.hash = 'year=' + found.year;
-      return;
+      showToast(`<b>${t(DATA_STATE[moduleSlug] === 'error' ? 'loadError' : 'comingSoonToast')}</b>`);
+      return replaceRoute('year=' + found.year);
     }
   }
 
@@ -1037,9 +1098,15 @@ async function applyRoute() {
   state.currentModule = null;
 
   if (yearStr) {
-    const y = +yearStr;
+    const y = Number(yearStr);
+    if (!Number.isInteger(y) || !CURRICULUM[y]) return replaceRoute('');
+    let sem = null;
+    if (semStr) {
+      sem = Number(semStr);
+      if (y !== 1 || (sem !== 1 && sem !== 2)) return replaceRoute('year=' + y);
+    }
     state.selectedYear = y;
-    state.selectedSemester = semStr ? +semStr : null;
+    state.selectedSemester = sem;
 
     $('semester-grid').innerHTML = '';
     $('other-grid').innerHTML = '';
@@ -1048,10 +1115,10 @@ async function applyRoute() {
     renderHome(false, true);
 
     requestAnimationFrame(() => {
-      const target = (y === 1 && !semStr) ? 'semester-section' : 'modules-section';
+      const target = (y === 1 && !state.selectedSemester) ? 'semester-section' : 'modules-section';
       const el = $(target);
       if (el && el.style.display !== 'none') {
-        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        el.scrollIntoView({ behavior: smoothBehavior(), block: 'center' });
       }
     });
 
@@ -1060,11 +1127,7 @@ async function applyRoute() {
       if (state.selectedSemester) {
         slugs = getSemesterModules(1, state.selectedSemester).map(m => m.slug);
       } else {
-        slugs = [
-          ...getSemesterModules(1, 1).map(m => m.slug),
-          ...getSemesterModules(1, 2).map(m => m.slug),
-          ...getOtherModules(1).map(m => m.slug)
-        ];
+        slugs = getOtherModules(1).map(m => m.slug);
       }
     } else {
       slugs = allSlugsForYear(y);
@@ -1082,7 +1145,7 @@ async function applyRoute() {
     $('modules-grid').innerHTML = '';
     $('years-grid').innerHTML = '';
     renderHome(true, false);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: smoothBehavior() });
   }
 }
 
@@ -1092,10 +1155,10 @@ function createMultiselect(rootEl, opts) {
   const uid = 'ms-' + stateKey;
 
   rootEl.innerHTML = `
-    <button class="ms-trigger" type="button" aria-haspopup="listbox" aria-expanded="false" id="${uid}-trigger">
+    <button class="ms-trigger" type="button" aria-haspopup="true" aria-expanded="false" id="${uid}-trigger">
       <span class="ms-label">${allLabel}</span>
     </button>
-    <div class="ms-panel" role="listbox" aria-labelledby="${uid}-trigger">
+    <div class="ms-panel" role="group" aria-labelledby="${uid}-trigger">
       <div class="ms-actions">
         <button type="button" data-ms-all>${t('msAll')}</button>
         <button type="button" data-ms-none>${t('msNone')}</button>
@@ -1210,8 +1273,27 @@ function showToast(msg) {
   toastTimeout = setTimeout(() => toast.classList.remove('show'), 2400);
 }
 
+/* ════════════ PAGE CHROME (language-dependent, view-independent) ════════════ */
+function renderChrome() {
+  const L = state.lang;
+  document.documentElement.lang = L;
+  document.title = t('docTitle');
+  const md = $('meta-desc');
+  if (md) md.setAttribute('content', t('metaDesc'));
+  $('footer-contact-text').textContent = t('footerContact');
+  $('footer-tag').textContent = t('footerTag');
+  $('theme-btn').setAttribute('aria-label', t('themeLabel'));
+  $('f-search').setAttribute('aria-label', t('searchLabel'));
+  ['fr', 'en'].forEach(l => {
+    const b = $('lang-' + l);
+    b.classList.toggle('active', L === l);
+    b.setAttribute('aria-pressed', String(L === l));
+  });
+}
+
 /* ════════════ HOME RENDER ════════════ */
 function renderHome(animate = true, pending = false) {
+  $('route-loading').style.display = 'none';
   $('view-home').style.display = 'block';
   $('view-module').style.display = 'none';
 
@@ -1225,7 +1307,7 @@ function renderHome(animate = true, pending = false) {
   $('other-title').textContent = t('otherTitle');
   $('other-sub').textContent = t('otherSub');
 
-  $('footer-contact-text').textContent = t('footerContact');
+  renderChrome();
 
   renderYears(animate, false);
   renderSemesters(animate, pending);
@@ -1361,7 +1443,7 @@ function renderModules(animate = true, pending = false) {
   let startIndex = 0;
 
   if (unities.length) {
-    html += `<h3 class="sub-header">Unités</h3>`;
+    html += `<h3 class="sub-header">${t('unitsHeader')}</h3>`;
     html += `<div class="modules-grid">`;
     html += unities.map((m, i) => renderModuleCard(m, i, animate, pending)).join('');
     html += `</div>`;
@@ -1370,7 +1452,7 @@ function renderModules(animate = true, pending = false) {
 
   if (modules.length) {
     if (unities.length) {
-      html += `<h3 class="sub-header">Modules</h3>`;
+      html += `<h3 class="sub-header">${t('modulesHeader')}</h3>`;
     }
     html += `<div class="modules-grid">`;
     html += modules.map((m, i) => renderModuleCard(m, i + startIndex, animate, pending)).join('');
@@ -1394,6 +1476,8 @@ function renderModuleCard(m, i, animate = true, pending = false) {
     stats = `<p>${d.questions.length} ${t('questions')} · ${d.lessons.length} ${t('courses')}</p>`;
   } else if (missing) {
     stats = `<p>${t('comingSoonSub')}</p>`;
+  } else if (status === 'error') {
+    stats = `<p>${t('loadError')}</p>`;
   } else {
     stats = `<p>…</p>`;
   }
@@ -1413,11 +1497,15 @@ function renderModuleCard(m, i, animate = true, pending = false) {
 /* ════════════ MODULE VIEW ════════════ */
 function renderModuleView(preserveVisibleCount = false) {
   const m = state.currentModule;
+  $('route-loading').style.display = 'none';
   $('view-home').style.display = 'none';
   $('view-module').style.display = 'block';
 
   $('back-label').textContent = t('back');
   $('back-to-filters-label').textContent = t('backToFilters');
+  $('back-to-filters').setAttribute('aria-label', t('backToFilters'));
+  $('sort-year').setAttribute('aria-label', t('sortYearLabel'));
+  $('sort-lesson').setAttribute('aria-label', t('sortLessonLabel'));
   $('reset-label').textContent = t('reset');
   $('empty-title').textContent = t('emptyTitle');
   $('empty-sub').textContent = t('emptySub');
@@ -1477,7 +1565,7 @@ function rebuildFilterOptions() {
   $('ms-unit').style.display = showUnit ? '' : 'none';
   if (showUnit) {
     const unitVals = [...new Set(data.questions.map(q => q.unit).filter(Boolean))]
-      .sort((a, b) => a.localeCompare(b, 'fr', { sensitivity: 'base' }));
+      .sort((a, b) => a.localeCompare(b, 'fr', { sensitivity: 'base', numeric: true }));
     msUnit = createMultiselect($('ms-unit'), {
       stateKey: 'filterUnit',
       allLabel: t('filterUnit'),
@@ -1524,14 +1612,14 @@ function onFilterChange() {
   state.visibleCount = PAGE_SIZE;
   renderModuleBody();
   if (wasWelcome && window.scrollY > 120) {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: smoothBehavior() });
   }
 }
 
 function getFilteredQuestions() {
   if (!state.currentModule) return [];
   const data = MODULE_DATA[state.currentModule.slug];
-  const search = state.filterSearch.trim().toLowerCase();
+  const search = fold(state.filterSearch.trim());
   return data.questions
     .map((q, idx) => ({ ...q, _idx: idx }))
     .filter(q => {
@@ -1539,7 +1627,7 @@ function getFilteredQuestions() {
       if (state.filterRot.length && !state.filterRot.includes(q.rot || 0)) return false;
       if (state.filterUnit.length && !state.filterUnit.includes(q.unit || '')) return false;
       if (state.filterLesson.length && !state.filterLesson.includes(q.lesson)) return false;
-      if (search && !(q.text.toLowerCase().includes(search) || q.options.some(o => o.toLowerCase().includes(search)))) return false;
+      if (search && !q._hay.includes(search)) return false;
       return true;
     })
     .sort(compareQuestions);
@@ -1548,9 +1636,7 @@ function getFilteredQuestions() {
 function compareQuestions(a, b) {
   const yearCmp = state.sortYear === 'asc' ? a.year - b.year : b.year - a.year;
   if (yearCmp !== 0) return yearCmp;
-  return state.sortLesson === 'desc'
-    ? b.lesson.localeCompare(a.lesson, 'fr', { sensitivity: 'base' })
-    : a.lesson.localeCompare(b.lesson, 'fr', { sensitivity: 'base' });
+  return state.sortLesson === 'desc' ? lessonCompare(b.lesson, a.lesson) : lessonCompare(a.lesson, b.lesson);
 }
 
 function renderQuestions(reset, append = false) {
@@ -1573,12 +1659,12 @@ function renderQuestions(reset, append = false) {
 function renderVisibleQuestions(list, append = false) {
   const container = $('questions-container');
   const visible = list.slice(0, state.visibleCount);
-  const start = append ? Math.max(0, visible.length - PAGE_SIZE) : 0;
+  const start = append ? Math.max(0, state.visibleCount - PAGE_SIZE) : 0;
 
   const html = visible.slice(start).map((q, i) => {
     const idx = start + i;
     const qid = questionId(state.currentModule.slug, q, q._idx);
-    return `<div class="q-card" data-qid="${qid}">${renderQuestionCard(q, idx, qid)}</div>`;
+    return `<div class="q-card" data-qid="${qid}" data-idx="${q._idx}" data-pos="${idx}">${renderQuestionCard(q, idx, qid)}</div>`;
   }).join('');
 
   if (append) container.insertAdjacentHTML('beforeend', html);
@@ -1617,7 +1703,7 @@ function renderQuestionCard(q, idx, qid) {
       else if (isCor && !isSel) { cls += ' correct'; icon = '<span class="check">✓</span>'; }
       else if (!isCor && isSel) { cls += ' incorrect'; icon = '<span class="cross">✕</span>'; }
     } else if (isSel) cls += ' selected';
-    return `<button class="${cls}" data-opt-qid="${qid}" data-letter="${L}" ${isChecked ? 'disabled' : ''}>
+    return `<button class="${cls}" data-opt-qid="${qid}" data-letter="${L}" aria-pressed="${isSel}" ${isChecked ? 'disabled' : ''}>
       <span class="letter">${L}</span>
       <span class="text">${esc(c)}</span>${icon}
     </button>`;
@@ -1661,32 +1747,62 @@ function classifyAnswer(userSet, correctAns) {
 function updateCard(qid) {
   const card = document.querySelector(`.q-card[data-qid="${CSS.escape(qid)}"]`);
   if (!card) return;
-  const list = getFilteredQuestions();
-  const q = list.find(x => questionId(state.currentModule.slug, x, x._idx) === qid);
+  const q = MODULE_DATA[state.currentModule.slug].questions[+card.dataset.idx];
   if (!q) return;
-  const idx = list.indexOf(q);
-  card.innerHTML = renderQuestionCard(q, idx, qid);
+
+  // remember what had keyboard focus so it survives the innerHTML swap
+  const ae = document.activeElement;
+  let prefs = null;
+  if (ae && card.contains(ae)) {
+    if (ae.dataset && ae.dataset.letter) prefs = ['[data-letter="' + ae.dataset.letter + '"]', '.opt:not(:disabled)'];
+    else if (ae.hasAttribute('data-validate-qid')) prefs = ['[data-validate-qid]', '.clear-btn', '.opt:not(:disabled)'];
+    else if (ae.hasAttribute('data-clear-qid')) prefs = ['.opt:not(:disabled)'];
+  }
+
+  card.innerHTML = renderQuestionCard(q, +card.dataset.pos, qid);
+
+  if (prefs) {
+    for (const sel of prefs) {
+      const el = card.querySelector(sel);
+      if (el && !el.disabled && el.offsetParent !== null) { el.focus({ preventScroll: true }); break; }
+    }
+  }
+}
+
+function announce(msg) {
+  const el = $('sr-status');
+  if (!el) return;
+  el.textContent = '';
+  setTimeout(() => { el.textContent = msg; }, 50);
+}
+
+function announceResult(qid) {
+  const card = document.querySelector(`.q-card[data-qid="${CSS.escape(qid)}"]`);
+  if (!card) return;
+  const q = MODULE_DATA[state.currentModule.slug].questions[+card.dataset.idx];
+  if (!q) return;
+  const res = classifyAnswer(state.userAnswers[qid], q.answer.split(''));
+  announce(`${t('qLabel')} ${+card.dataset.pos + 1} · ${t(res)}`);
 }
 
 /* ════════════ NAVIGATION ════════════ */
 function setLang(lang) {
   if (state.lang === lang) return;
-  routeGeneration++; 
   state.lang = lang;
-  $('lang-fr').classList.toggle('active', lang === 'fr');
-  $('lang-en').classList.toggle('active', lang === 'en');
-  document.documentElement.lang = lang;
+  try { localStorage.setItem('qcm-lang', lang); } catch (e) {}
+  renderChrome();
   if (state.view === 'home') {
-    renderHome();
-  } else {
+    renderHome(false);
+  } else if (state.currentModule && moduleHasData(state.currentModule.slug)) {
     renderModuleView(true);
   }
+  // else: the in-flight applyRoute() renders the module (in the new language) once loaded
 }
 
 function selectYear(y) {
   const targetHash = 'year=' + y;
   if (window.location.hash === '#' + targetHash) {
-    applyRoute();
+    runRoute();
   } else {
     window.location.hash = targetHash;
   }
@@ -1695,7 +1811,7 @@ function selectYear(y) {
 function selectSemester(s) {
   const targetHash = 'year=1&sem=' + s;
   if (window.location.hash === '#' + targetHash) {
-    applyRoute();
+    runRoute();
   } else {
     window.location.hash = targetHash;
   }
@@ -1711,7 +1827,7 @@ function goToYearGrid() {
   if (window.location.hash && window.location.hash !== '#') {
     window.location.hash = '';
   } else {
-    applyRoute();
+    runRoute();
   }
 }
 
@@ -1744,6 +1860,7 @@ function resetFilters() {
   msUnit?.refresh();
   msLesson?.refresh();
   renderModuleBody();
+  updateBarVisibility();
 }
 
 /* ════════════ THEME ════════════ */
@@ -1769,8 +1886,15 @@ function toggleTheme(btn) {
       document.documentElement.style.setProperty('--vt-r', R + 'px');
     }
     if (activeThemeVT) { try { activeThemeVT.skipTransition(); } catch(e) {} }
-    activeThemeVT = document.startViewTransition(apply);
-    activeThemeVT.finished.finally(() => { activeThemeVT = null; });
+    try {
+      const vt = document.startViewTransition(apply);
+      activeThemeVT = vt;
+      vt.ready.catch(() => {});
+      vt.finished.catch(() => {}).finally(() => { if (activeThemeVT === vt) activeThemeVT = null; });
+    } catch (e) {
+      apply();
+      activeThemeVT = null;
+    }
   } else {
     apply();
   }
@@ -1778,6 +1902,7 @@ function toggleTheme(btn) {
 
 /* ════════════ EVENTS ════════════ */
 document.addEventListener('click', (e) => {
+  if (!e.target.closest('.multiselect')) closeAllPanels();
   const langBtn = e.target.closest('[data-lang]');
   if (langBtn) { setLang(langBtn.dataset.lang); return; }
 
@@ -1820,6 +1945,7 @@ document.addEventListener('click', (e) => {
     if (state.userAnswers[qid] && state.userAnswers[qid].size > 0) {
       state.checkedQuestions[qid] = true;
       updateCard(qid);
+      announceResult(qid);
     }
     return;
   }
@@ -1831,8 +1957,6 @@ document.addEventListener('click', (e) => {
     updateCard(qid);
     return;
   }
-
-  if (!e.target.closest('.multiselect')) closeAllPanels();
 });
 
 document.addEventListener('change', (e) => {
@@ -1859,7 +1983,7 @@ $('back-to-filters').addEventListener('click', () => {
   const ctrl = $('controls');
   if (!ctrl) return;
   const y = ctrl.getBoundingClientRect().top + window.scrollY - 16;
-  window.scrollTo({ top: y, behavior: 'smooth' });
+  window.scrollTo({ top: y, behavior: smoothBehavior() });
 });
 
 $('btn-load-more').addEventListener('click', () => {
@@ -1870,13 +1994,10 @@ $('btn-load-more').addEventListener('click', () => {
 window.addEventListener('scroll', updateBarVisibility, { passive: true });
 
 /* ════════════ INIT ════════════ */
-try {
-  const saved = localStorage.getItem(THEME_KEY);
-  if (saved === 'dark') document.documentElement.classList.add('theme-dark');
-} catch(e) {}
-
-window.addEventListener('hashchange', applyRoute);
-applyRoute();
+function runRoute() { return applyRoute().catch(err => console.error('[QCMify] route error', err)); }
+window.addEventListener('hashchange', runRoute);
+renderChrome();
+runRoute();
 
 console.info('[QCMify] v' + APP_VERSION + ' · data source: ' + DATA_BASE);
 </script>
