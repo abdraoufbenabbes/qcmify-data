@@ -1,0 +1,1892 @@
+{
+  "lessons": [
+    "Céphalées et migraines.",
+    "Ataxies.",
+    "Hémorragies sous-arachnoïdiennes.",
+    "Accidents vasculaires cérébraux.",
+    "Hypertension intracrânienne.",
+    "Traumatismes crânio-encéphaliques.",
+    "Sclérose latérale amyotrophique.",
+    "Épilepsies.",
+    "Comas neurologiques.",
+    "Compressions médullaires lentes.",
+    "Hydrocéphalies.",
+    "Infections et parasitoses du SNC.",
+    "Encéphalites.",
+    "Sclérose en plaques.",
+    "Tumeurs cérébrales.",
+    "Malformations occipito-vertébrales.",
+    "Craniosténose.",
+    "Myasthénie.",
+    "Malformations vertébro-médullaires.",
+    "Maladie de Parkinson.",
+    "Démences.",
+    "Dystrophies musculaires progressives.",
+    "Myopathies inflammatoires.",
+    "Polyneuropathies.",
+    "PRNA : Guillain-Barré.",
+    "L’examen neurologique.",
+    "Les syndromes topographiques.",
+    "Les syndromes médullaires.",
+    "CAT devant une hémiplégie.",
+    "Imagerie en pathologie neurologique."
+  ],
+  "questions": [
+    {
+      "year": 2024,
+      "rot": 2,
+      "lesson": "Myopathies inflammatoires.",
+      "text": "Dans les polymyosites, le déficit moteur est :",
+      "options": ["Proximal", "Distal", "Proximo-distal", "Absent"],
+      "answer": "A"
+    },
+    {
+      "year": 2024,
+      "rot": 2,
+      "lesson": "Sclérose latérale amyotrophique.",
+      "text": "Les fasciculations peuvent se voir dans le syndrome neurogène périphérique. Elles témoignent d'une atteinte :",
+      "options": ["D'un tronc nerveux", "D'une racine nerveuse", "De la corne antérieure", "D'un ganglion rachidien"],
+      "answer": "C"
+    },
+    {
+      "year": 2024,
+      "rot": 2,
+      "lesson": "Démences.",
+      "text": "La maladie d'Alzheimer est due à :",
+      "options": ["Une accumulation anormale de la protéine TAU", "Une accumulation de corps de Lewy", "Une accumulation de corps de Pick", "Un développement anormal de protéines Béta-amyloïdes"],
+      "answer": "AD"
+    },
+    {
+      "year": 2024,
+      "rot": 2,
+      "lesson": "Hydrocéphalies.",
+      "text": "Quels sont les mécanismes qui donnent une hydrocéphalie ?",
+      "options": ["Une augmentation de la sécrétion du LCS", "Une dilatation du canal épendymaire", "Une obstruction de l'aqueduc de Sylvius", "Un défaut de résorption du LCS par les villosités de Pacchioni"],
+      "answer": "ACD"
+    },
+    {
+      "year": 2024,
+      "rot": 2,
+      "lesson": "Dystrophies musculaires progressives.",
+      "text": "Un déficit moteur proximal est plus volontiers prédominant au cours de :",
+      "options": ["Polymyosite", "Myopathie de Duchenne", "Polynévrite éthylique", "Neuropathie diabétique"],
+      "answer": "AB"
+    },
+    {
+      "year": 2024,
+      "rot": 2,
+      "lesson": "Accidents vasculaires cérébraux.",
+      "text": "Quel(s) symptôme(s) évoque(nt) un AIT dans le territoire carotidien :",
+      "options": ["Cécité monoculaire", "Un syndrome alterne", "Vertige rotatoire", "Trouble de l'équilibre"],
+      "answer": "A"
+    },
+    {
+      "year": 2024,
+      "rot": 2,
+      "lesson": "Myasthénie.",
+      "text": "Parmi ces signes oculomoteurs, lesquels peuvent se voir au cours d'une myasthénie ?",
+      "options": ["Myosis", "Ptosis", "Diplopie", "Nystagmus"],
+      "answer": "BC"
+    },
+    {
+      "year": 2024,
+      "rot": 2,
+      "lesson": "Accidents vasculaires cérébraux.",
+      "text": "Le traitement de l'infarctus cérébral à la phase aiguë comprend :",
+      "options": ["Un abaissement des chiffres tensionnels", "Une thrombolyse IV", "Le traitement de l'hyperglycémie", "L'anti agrégation plaquettaire"],
+      "answer": "BCD"
+    },
+    {
+      "year": 2024,
+      "rot": 2,
+      "lesson": "Maladie de Parkinson.",
+      "text": "La dégénérescence parkinsonienne entraîne une diminution de :",
+      "options": ["L'acétylcholine", "L'adrénaline", "La dopamine", "La noradrénaline"],
+      "answer": "C"
+    },
+    {
+      "year": 2024,
+      "rot": 2,
+      "lesson": "Maladie de Parkinson.",
+      "text": "Le tremblement est l'un des signes principaux de la maladie de Parkinson. Quelle est sa caractéristique ?",
+      "options": ["tremblement de repos", "tremblement d'action", "tremblement d'attitude", "tremblement intentionnel"],
+      "answer": "A"
+    },
+    {
+      "year": 2024,
+      "rot": 2,
+      "lesson": "Polyneuropathies.",
+      "text": "Une polyneuropathie est une atteinte :",
+      "options": ["Symétrique et synchrone des nerfs périphériques", "Asymétrique et asynchrone des troncs nerveux", "Symétrique et synchrone des racines et des nerfs périphériques", "Asymétrique et asynchrone des racines et des nerfs périphériques"],
+      "answer": "A"
+    },
+    {
+      "year": 2024,
+      "rot": 2,
+      "lesson": "Sclérose latérale amyotrophique.",
+      "text": "La sclérose latérale amyotrophique est :",
+      "options": ["Une maladie inflammatoire et auto-immune du système nerveux périphérique", "Une maladie dégénérative du motoneurone", "Caractérisée par l'atteinte du nerf moteur central et périphérique", "Une maladie incurable et d'évolution souvent fatale"],
+      "answer": "BCD"
+    },
+    {
+      "year": 2024,
+      "rot": 2,
+      "lesson": "Sclérose en plaques.",
+      "text": "Le traitement de la SEP repose sur :",
+      "options": ["Les anticholinestérasiques", "Les immunosuppresseurs", "Les corticoïdes", "Les interférons"],
+      "answer": "BCD"
+    },
+    {
+      "year": 2024,
+      "rot": 2,
+      "lesson": "Encéphalites.",
+      "text": "Concernant l'encéphalite herpétique :",
+      "options": ["Elle est la cause la plus fréquente des encéphalites", "Elle est due au virus HSV1", "Le traitement par l'aciclovir doit être débuté sans attendre les résultats de la PCR", "Le traitement par l'aciclovir ne doit être débuté qu'après résultats de la PCR"],
+      "answer": "ABC"
+    },
+    {
+      "year": 2024,
+      "rot": 2,
+      "lesson": "Ataxies.",
+      "text": "L'ataxie cérébelleuse se manifeste par :",
+      "options": ["Un Tremblement de repos", "Un Tremblement d'action", "Une dysmétrie", "Une démarche ébrieuse"],
+      "answer": "BCD"
+    },
+    {
+      "year": 2024,
+      "rot": 2,
+      "lesson": "Les syndromes topographiques.",
+      "text": "La paralysie aiguë de la IIIème paire crânienne entraîne :",
+      "options": ["Un strabisme divergent", "Un strabisme convergent", "Une mydriase paralytique", "Un ptosis"],
+      "answer": "ACD"
+    },
+    {
+      "year": 2024,
+      "rot": 2,
+      "lesson": "Sclérose en plaques.",
+      "text": "Quels sont les signes couramment retrouvés au cours d'une poussée de SEP :",
+      "options": ["Une névrite optique", "Des paresthésies", "Une crise convulsive", "Une aphasie"],
+      "answer": "AB"
+    },
+    {
+      "year": 2024,
+      "rot": 2,
+      "lesson": "Dystrophies musculaires progressives.",
+      "text": "Dans les dystrophinopathies, les troubles moteurs sont représentés par :",
+      "options": ["Un déficit moteur proximal", "Un déficit moteur distal", "Une amyotrophie des mollets", "Une pseudohypertrophie des mollets"],
+      "answer": "AD"
+    },
+    {
+      "year": 2024,
+      "rot": 2,
+      "lesson": "Myopathies inflammatoires.",
+      "text": "Le diagnostic des polymyosites repose sur :",
+      "options": ["La vitesse de sédimentation", "Les enzymes musculaires", "L'EMG", "La biopsie musculaire"],
+      "answer": "ABCD"
+    },
+    {
+      "year": 2024,
+      "rot": 2,
+      "lesson": "Céphalées et migraines.",
+      "text": "L'algie vasculaire de la face s'accompagne :",
+      "options": ["D'une aphasie", "D'une paralysie faciale", "D'un syndrome de Claude Bernard Horner", "D'un œdème de la paupière"],
+      "answer": "CD"
+    },
+    {
+      "year": 2024,
+      "rot": 2,
+      "lesson": "Céphalées et migraines.",
+      "text": "Le traitement de fond de la migraine comporte :",
+      "options": ["Les antalgiques", "Les anti-inflammatoires non stéroïdiens", "Les bétabloquants", "Les triptans"],
+      "answer": "C"
+    },
+    {
+      "year": 2024,
+      "rot": 2,
+      "lesson": "Céphalées et migraines.",
+      "text": "L'aura migraineuse peut être :",
+      "options": ["Visuelle", "Motrice", "Sensitive", "Aphasique"],
+      "answer": "ABCD"
+    },
+    {
+      "year": 2024,
+      "rot": 2,
+      "lesson": "Maladie de Parkinson.",
+      "text": "La maladie de Wilson est un syndrome extrapyramidal dû à un trouble du métabolisme :",
+      "options": ["Du fer", "Du sodium", "Du potassium", "Du cuivre"],
+      "answer": "D"
+    },
+    {
+      "year": 2024,
+      "rot": 2,
+      "lesson": "Traumatismes crânio-encéphaliques.",
+      "text": "La TDM cérébrale est la meilleure exploration des traumatismes crâniens :",
+      "options": ["L'hématome extra dural apparaît spontanément hyperdense", "L'hématome extra dural apparaît sous forme d'une image semi-lunaire", "L'hématome sous dural aigu apparaît spontanément hypodense", "L'hématome sous dural chronique apparaît spontanément isodense"],
+      "answer": "A"
+    },
+    {
+      "year": 2024,
+      "rot": 2,
+      "lesson": "Traumatismes crânio-encéphaliques.",
+      "text": "L'hématome extradural est une collection de sang qui siège entre la dure-mère et la table interne de la voûte crânienne.",
+      "options": ["Un trait de fracture temporal est fréquemment retrouvé à la radio simple", "Le scanner objective une image spontanément hyperdense en forme de boule de canon", "touche avec prédilection le sujet âgé", "dans sa forme typique on note une perte de conscience brève suivie d'un intervalle libre puis une hémiparésie controlatérale à la lésion"],
+      "answer": "AD"
+    },
+    {
+      "year": 2024,
+      "rot": 2,
+      "lesson": "Traumatismes crânio-encéphaliques.",
+      "text": "L'embarrure est une complication des traumatismes crâniens.",
+      "options": ["le déplacement des fragments osseux se fait vers l'extérieur de la boîte crânienne", "En regard de la région rolandique, une embarrure donne une aphasie motrice", "L'embarrure siège du côté opposé au point d'impact (en contre coup)", "les embarrures en balle de ping pong représentent la forme typique chez le nourrisson"],
+      "answer": "D"
+    },
+    {
+      "year": 2024,
+      "rot": 2,
+      "lesson": "Accidents vasculaires cérébraux.",
+      "text": "Une thrombose veineuse cérébrale est due à :",
+      "options": ["Une HTA", "L'usage de la contraception œstro-progestative", "Un état de thrombophilie", "Une infection de la sphère ORL"],
+      "answer": "BCD"
+    },
+    {
+      "year": 2024,
+      "rot": 2,
+      "lesson": "Épilepsies.",
+      "text": "Quelles sont les thérapeutiques utilisées en 1<sup>ère</sup> ligne en cas d'état de mal épileptique :",
+      "options": ["Le Diazépam", "Le Midazolam", "Le phénobarbital", "Le levetiracetam"],
+      "answer": "AB"
+    },
+    {
+      "year": 2024,
+      "rot": 2,
+      "lesson": "Dystrophies musculaires progressives.",
+      "text": "La myopathie de Becker se différencie de la myopathie de Duchenne de Boulogne par :",
+      "options": ["La protéine musculaire en cause", "L'âge de début plus tardif", "Des signes cliniques moins graves", "Le décès plus tardif"],
+      "answer": "BCD"
+    },
+    {
+      "year": 2024,
+      "rot": 2,
+      "lesson": "PRNA : Guillain-Barré.",
+      "text": "Le syndrome de Guillain Barré peut être précédé :",
+      "options": ["D'un syndrome infectieux des voies aériennes supérieures", "De douleurs gastriques", "D'une vaccination post-rabique", "D'une crise épileptique"],
+      "answer": "AC"
+    },
+    {
+      "year": 2024,
+      "rot": 3,
+      "lesson": "Sclérose en plaques.",
+      "text": "Tous ces signes peuvent être révélateurs d'une sclérose en plaques <strong>sauf un</strong> :",
+      "options": ["marche à petits pas", "baisse de l'acuité visuelle", "diplopie", "Fourmillement"],
+      "answer": "A"
+    },
+    {
+      "year": 2024,
+      "rot": 3,
+      "lesson": "Accidents vasculaires cérébraux.",
+      "text": "Parmi ces facteurs de risque, quel est celui dont le risque relatif est le plus élevé pour les accidents vasculaires cérébraux :",
+      "options": ["tabagisme", "hypertension artérielle", "obésité", "Hypercholestérolémie"],
+      "answer": "B"
+    },
+    {
+      "year": 2024,
+      "rot": 3,
+      "lesson": "Accidents vasculaires cérébraux.",
+      "text": "Quel est le siège d'un infarctus cérébral annoncé par un grand vertige et s'exprimant par une atteinte du IX, du X et du V sensitif de façon homolatérale :",
+      "options": ["lobe frontal", "capsule interne", "pédoncule cérébral", "bulbe"],
+      "answer": "D"
+    },
+    {
+      "year": 2024,
+      "rot": 3,
+      "lesson": "Épilepsies.",
+      "text": "Parmi les signes suivants lesquels peuvent se voir en post critique d'une crise convulsive tonico-clonique généralisée ?",
+      "options": ["la morsure latérale de la langue", "une paralysie de Todd", "une émission d'urine", "Un coma post-critique"],
+      "answer": "ABCD"
+    },
+    {
+      "year": 2024,
+      "rot": 3,
+      "lesson": "Démences.",
+      "text": "La maladie d'Alzheimer se caractérise par les signes suivants <strong>sauf un</strong> :",
+      "options": ["aphasie", "apraxie", "agnosie", "syndrome pyramidal"],
+      "answer": "D"
+    },
+    {
+      "year": 2024,
+      "rot": 3,
+      "lesson": "Myasthénie.",
+      "text": "Tous ces traitements sont utilisés dans la myasthénie <strong>sauf un</strong> :",
+      "options": ["thymectomie", "corticothérapie", "immunosuppresseurs", "interféron Beta"],
+      "answer": "D"
+    },
+    {
+      "year": 2024,
+      "rot": 3,
+      "lesson": "Épilepsies.",
+      "text": "Quelles sont les thérapeutiques utilisées en 1<sup>ère</sup> ligne en cas d'état de mal épileptique :",
+      "options": ["le diazépam", "le midazolam", "la carbamazépine", "L'acide valproïque"],
+      "answer": "AB"
+    },
+    {
+      "year": 2024,
+      "rot": 3,
+      "lesson": "Dystrophies musculaires progressives.",
+      "text": "La myopathie de Becker se différencie de la myopathie de Duchenne de Boulogne par :",
+      "options": ["La protéine musculaire en cause", "L'âge de début plus tardif", "Des signes cliniques moins graves", "Le décès plus tardif"],
+      "answer": "BCD"
+    },
+    {
+      "year": 2024,
+      "rot": 3,
+      "lesson": "Myasthénie.",
+      "text": "Parmi les signes oculomoteurs suivants lesquels vont se voir au cours d'une myasthénie ?",
+      "options": ["myosis", "ptosis", "diplopie", "Nystagmus"],
+      "answer": "BC"
+    },
+    {
+      "year": 2024,
+      "rot": 3,
+      "lesson": "Sclérose latérale amyotrophique.",
+      "text": "Parmi ces examens paracliniques quel est celui qui est le plus contributif au diagnostic de la sclérose latérale amyotrophique :",
+      "options": ["L'IRM cérébrale", "l'électroencéphalographie", "l'électromyographie", "les potentiels évoqués cérébraux"],
+      "answer": "C"
+    },
+    {
+      "year": 2024,
+      "rot": 3,
+      "lesson": "Accidents vasculaires cérébraux.",
+      "text": "Qu'elle est le délai théorique pour proposer une thrombolyse en cas d'AVC ischémique :",
+      "options": ["03 heures", "03 heures et 30 minutes", "04 heures", "04 heures et 30 minutes"],
+      "answer": "D"
+    },
+    {
+      "year": 2024,
+      "rot": 3,
+      "lesson": "Accidents vasculaires cérébraux.",
+      "text": "Lesquelles de ces symptômes évoque un AIT dans le territoire carotidien :",
+      "options": ["une cécité monoculaire", "un syndrome alterne", "un vertige rotatoire", "un trouble de l'équilibre"],
+      "answer": "A"
+    },
+    {
+      "year": 2024,
+      "rot": 3,
+      "lesson": "Épilepsies.",
+      "text": "Parmi les effets secondaires suivants lequel est associé souvent à la lamotrigine ?",
+      "options": ["tremblement des extrémités", "hyponatrémie", "syndrome de Lyell", "Algodystrophie"],
+      "answer": "C"
+    },
+    {
+      "year": 2024,
+      "rot": 3,
+      "lesson": "Ataxies.",
+      "text": "Le syndrome cérébelleux se manifeste par :",
+      "options": ["un tremblement de repos", "un tremblement d'action", "une dysmétrie", "une démarche ébrieuse"],
+      "answer": "BCD"
+    },
+    {
+      "year": 2024,
+      "rot": 3,
+      "lesson": "Les syndromes topographiques.",
+      "text": "La paralysie aiguë de la 3<sup>ème</sup> paire crânienne entraîne :",
+      "options": ["un strabisme divergent", "un strabisme convergent", "une mydriase paralytique", "un ptosis"],
+      "answer": "ACD"
+    },
+    {
+      "year": 2024,
+      "rot": 3,
+      "lesson": "Encéphalites.",
+      "text": "L'encéphalite herpétique est caractérisée par :",
+      "options": ["troubles de la mémoire", "troubles du comportement", "absence de traitement spécifique", "absence de fièvre"],
+      "answer": "AB"
+    },
+    {
+      "year": 2024,
+      "rot": 3,
+      "lesson": "Accidents vasculaires cérébraux.",
+      "text": "Quels sont chez un sujet droitier, les signes rencontrés au cours d'un infarctus du territoire superficiel de l'artère sylvienne gauche ?",
+      "options": ["hémianopsie latérale homonyme droite", "paralysie de la verticalité", "aphasie de Broca", "hémiplégie droite à prédominance facio-brachiale"],
+      "answer": "ACD"
+    },
+    {
+      "year": 2024,
+      "rot": 3,
+      "lesson": "Polyneuropathies.",
+      "text": "Parmi les éléments suivants, lesquels évoquent une polyneuropathie ?",
+      "options": ["hypoesthésie « en chaussettes »", "niveau sensitif marqué", "steppage bilatéral", "abolition des réflexes achilléens"],
+      "answer": "ACD"
+    },
+    {
+      "year": 2024,
+      "rot": 3,
+      "lesson": "Les syndromes topographiques.",
+      "text": "Quels sont les signes évocateurs d'une paralysie faciale périphérique ?",
+      "options": ["préservation du territoire facial supérieur", "préservation du territoire facial inférieur", "signe de Charles Bell", "déviation de la bouche du côté sain"],
+      "answer": "CD"
+    },
+    {
+      "year": 2024,
+      "rot": 3,
+      "lesson": "Polyneuropathies.",
+      "text": "Dans la maladie de Charcot Marie Tooth, on retrouve :",
+      "options": ["Une amyotrophie distale", "Un steppage", "Une amyotrophie proximale", "Une paralysie faciale périphérique"],
+      "answer": "AB"
+    },
+    {
+      "year": 2024,
+      "rot": 3,
+      "lesson": "Comas neurologiques.",
+      "text": "Lors d'un coma l'existence de sueurs profuses et d'un signe de Babinski bilatéral doit faire évoquer :",
+      "options": ["un coma acidocétosique", "un coma éthylique", "un coma barbiturique", "un coma hypoglycémique"],
+      "answer": "D"
+    },
+    {
+      "year": 2024,
+      "rot": 3,
+      "lesson": "Céphalées et migraines.",
+      "text": "Une algie vasculaire de la face :",
+      "options": ["s'observe essentiellement chez la femme âgée", "est toujours bilatérale", "peut s'accompagner de phénomènes vasomoteurs faciaux", "est provoquée par la stimulation d'une zone gâchette"],
+      "answer": "C"
+    },
+    {
+      "year": 2024,
+      "rot": 3,
+      "lesson": "Accidents vasculaires cérébraux.",
+      "text": "Les sièges préférentiels des hémorragies intra parenchymateuses secondaires à l'HTA sont :",
+      "options": ["Lobaire temporal", "Profonde thalamique", "Superficielle", "Capsulo-lenticulaire"],
+      "answer": "BD"
+    },
+    {
+      "year": 2024,
+      "rot": 3,
+      "lesson": "Accidents vasculaires cérébraux.",
+      "text": "Le traitement de l'infarctus cérébral à la phase aiguë comprend :",
+      "options": ["Un abaissement des chiffres tensionnels", "Une thrombolyse intra-veineuse", "Le traitement de l'hyperglycémie", "L'anti agrégation plaquettaire"],
+      "answer": "BCD"
+    },
+    {
+      "year": 2024,
+      "rot": 3,
+      "lesson": "Maladie de Parkinson.",
+      "text": "La dégénérescence parkinsonienne entraîne une diminution de :",
+      "options": ["L'acétylcholine", "L'adrénaline", "La dopamine", "La noradrénaline"],
+      "answer": "C"
+    },
+    {
+      "year": 2024,
+      "rot": 3,
+      "lesson": "Démences.",
+      "text": "La maladie d'Alzheimer est due à :",
+      "options": ["Une accumulation anormale de la protéine TAU", "Une accumulation de corps de Lewy", "Une accumulation de corps de Pick", "Un développement anormal de protéines Béta-amyloïdes"],
+      "answer": "AD"
+    },
+    {
+      "year": 2024,
+      "rot": 3,
+      "lesson": "Polyneuropathies.",
+      "text": "Une polyneuropathie est une atteinte :",
+      "options": ["Symétrique et synchrone des nerfs périphériques", "Asymétrique et asynchrone des troncs nerveux", "Symétrique et synchrone des racines et des nerfs périphériques", "Asymétrique et asynchrone des racines et des nerfs périphériques"],
+      "answer": "A"
+    },
+    {
+      "year": 2024,
+      "rot": 3,
+      "lesson": "Dystrophies musculaires progressives.",
+      "text": "Dans les dystrophinopathies, les troubles moteurs sont représentés par :",
+      "options": ["Un déficit moteur proximal", "Un déficit moteur distal", "Une amyotrophie des mollets", "Une pseudohypertrophie des mollets"],
+      "answer": "AD"
+    },
+    {
+      "year": 2024,
+      "rot": 3,
+      "lesson": "Myopathies inflammatoires.",
+      "text": "Le diagnostic des polymyosites repose sur :",
+      "options": ["La vitesse de sédimentation", "Les enzymes musculaires", "L'EMG", "La biopsie musculaire"],
+      "answer": "ABCD"
+    },
+    {
+      "year": 2024,
+      "rot": 3,
+      "lesson": "Comas neurologiques.",
+      "text": "Lors de l'évaluation de la profondeur d'un coma selon le score de Glasgow :",
+      "options": ["L'ouverture spontanée des yeux correspond à la notation 3", "La réponse verbale confuse correspond à la notation 3", "La réponse motrice par la flexion non orientée au stimulus correspond à la notation 4", "Un score minimal de zéro traduit un coma dépassé"],
+      "answer": "C"
+    },
+    {
+      "year": 2025,
+      "rot": 3,
+      "lesson": "Maladie de Parkinson.",
+      "text": "Dans la maladie de Parkinson, l'hypertonie est :",
+      "options": ["Spastique", "Plastique", "Pyramidale", "Extrapyramidale"],
+      "answer": "BD"
+    },
+    {
+      "year": 2025,
+      "rot": 3,
+      "lesson": "Maladie de Parkinson.",
+      "text": "Le tremblement de la maladie de Parkinson est un tremblement :",
+      "options": ["De repos", "Lent", "D'attitude", "D'action"],
+      "answer": "AB"
+    },
+    {
+      "year": 2025,
+      "rot": 3,
+      "lesson": "Maladie de Parkinson.",
+      "text": "Dans la maladie de Parkinson, les structures anatomiques touchées par la dégénérescence sont :",
+      "options": ["La capsule interne", "Le striatum", "Le locus niger", "La capsule externe"],
+      "answer": "BC"
+    },
+    {
+      "year": 2025,
+      "rot": 3,
+      "lesson": "Maladie de Parkinson.",
+      "text": "La dégénérescence parkinsonienne entraîne une diminution de :",
+      "options": ["L'acétylcholine", "L'adrénaline", "La dopamine", "La noradrénaline"],
+      "answer": "C"
+    },
+    {
+      "year": 2025,
+      "rot": 3,
+      "lesson": "Maladie de Parkinson.",
+      "text": "La maladie de Wilson est un syndrome extrapyramidal dû à un trouble du métabolisme :",
+      "options": ["Du fer", "Du sodium", "Du potassium", "Du cuivre"],
+      "answer": "D"
+    },
+    {
+      "year": 2025,
+      "rot": 3,
+      "lesson": "Myopathies inflammatoires.",
+      "text": "Dans les polymyosites, le déficit moteur est :",
+      "options": ["Proximal", "Distal", "Proximo-distal", "Absent"],
+      "answer": "A"
+    },
+    {
+      "year": 2025,
+      "rot": 3,
+      "lesson": "Myopathies inflammatoires.",
+      "text": "Un signe de gravité peut se voir au cours des polymyosites :",
+      "options": ["Aphasie", "Dysarthrie", "Dysphonie", "Dysphagie"],
+      "answer": "D"
+    },
+    {
+      "year": 2025,
+      "rot": 3,
+      "lesson": "Céphalées et migraines.",
+      "text": "L'algie vasculaire de la face s'accompagne :",
+      "options": ["D'une aphasie", "D'une paralysie faciale", "D'un syndrome de Claude Bernard Horner", "D'un œdème de la paupière"],
+      "answer": "CD"
+    },
+    {
+      "year": 2025,
+      "rot": 3,
+      "lesson": "Céphalées et migraines.",
+      "text": "La névralgie du trijumeau est une douleur :",
+      "options": ["Neuropathique", "Vasculaire", "Inflammatoire", "Paroxystique"],
+      "answer": "AD"
+    },
+    {
+      "year": 2025,
+      "rot": 3,
+      "lesson": "Céphalées et migraines.",
+      "text": "Le traitement de la névralgie du trijumeau repose sur :",
+      "options": ["La Dépakine", "Le Tegretol", "La dihydroergotamine", "Le Relpax"],
+      "answer": "B"
+    },
+    {
+      "year": 2025,
+      "rot": 3,
+      "lesson": "Polyneuropathies.",
+      "text": "Une polyneuropathie est une atteinte :",
+      "options": ["Symétrique et synchrone des troncs nerveux", "Asymétrique et asynchrone des troncs nerveux", "Symétrique et synchrone des racines et des nerfs périphériques", "Asymétrique et asynchrone des racines et des nerfs périphériques"],
+      "answer": "A"
+    },
+    {
+      "year": 2025,
+      "rot": 3,
+      "lesson": "Myopathies inflammatoires.",
+      "text": "Le diagnostic des polymyosites repose sur :",
+      "options": ["La vitesse de sédimentation", "Les enzymes musculaires", "L'EMG", "La biopsie musculaire"],
+      "answer": "ABCD"
+    },
+    {
+      "year": 2025,
+      "rot": 3,
+      "lesson": "Démences.",
+      "text": "L'imagerie dans les démences peut montrer :",
+      "options": ["Une atrophie corticale diffuse", "Une atrophie occipitale interne", "Des hypersignaux de la substance blanche", "Des hypersignaux de la substance grise"],
+      "answer": "AC"
+    },
+    {
+      "year": 2025,
+      "rot": 3,
+      "lesson": "Démences.",
+      "text": "La maladie d'Alzheimer est due à :",
+      "options": ["Une accumulation anormale de la protéine TAU", "Une accumulation de corps de Lewy", "Une accumulation de corps de Pick", "Un développement anormal de protéines Béta-amyloïdes"],
+      "answer": "AD"
+    },
+    {
+      "year": 2025,
+      "rot": 3,
+      "lesson": "Démences.",
+      "text": "Les médicaments utilisés dans le traitement de la maladie d'Alzheimer sont :",
+      "options": ["Les anticorps monoclonaux", "Les inhibiteurs de l'acétylcholinestérase", "Les antiglutamates", "Les agonistes dopaminergiques"],
+      "answer": "BC"
+    },
+    {
+      "year": 2025,
+      "rot": 3,
+      "lesson": "Sclérose en plaques.",
+      "text": "Quels sont les médicaments pouvant être utilisés comme traitement de fond dans la sclérose en plaques ?",
+      "options": ["BETAFERON", "AVONEX", "TYSABRI", "IMUREL"],
+      "answer": "ABCD"
+    },
+    {
+      "year": 2025,
+      "rot": 3,
+      "lesson": "Myasthénie.",
+      "text": "La myasthénie auto-immune :",
+      "options": ["Peut être purement oculaire", "Est toujours généralisée", "Doit faire rechercher des anomalies de la loge thymique", "Est la conséquence d'anticorps anticanaux calciques"],
+      "answer": "AC"
+    },
+    {
+      "year": 2025,
+      "rot": 3,
+      "lesson": "Épilepsies.",
+      "text": "L'épilepsie de type petit mal pur est définie par l'une des propositions suivantes :",
+      "options": ["Myoclonies bilatérales", "Atonie avec chute", "Crise généralisée tonique pure", "Suspension brève de la conscience sans chute ni mouvements convulsifs"],
+      "answer": "D"
+    },
+    {
+      "year": 2025,
+      "rot": 3,
+      "lesson": "Polyneuropathies.",
+      "text": "Dans la maladie de Charcot Marie Tooth, on retrouve :",
+      "options": ["Une amyotrophie en jarretière", "Un steppage", "Une aphasie", "Une paralysie faciale périphérique"],
+      "answer": "AB"
+    },
+    {
+      "year": 2025,
+      "rot": 3,
+      "lesson": "Myasthénie.",
+      "text": "Parmi les signes oculomoteurs suivants lesquels peuvent se voir au cours d'une myasthénie ?",
+      "options": ["Myosis", "Ptosis", "Diplopie", "Nystagmus"],
+      "answer": "BC"
+    },
+    {
+      "year": 2025,
+      "rot": 3,
+      "lesson": "Traumatismes crânio-encéphaliques.",
+      "text": "Un hématome sous-dural chronique hémisphérique droit peut se manifester par :",
+      "options": ["Un déficit homolatéral", "Une obnubulation", "Un déficit controlatéral", "Une hémianopsie latérale homonyme droite"],
+      "answer": "BC"
+    },
+    {
+      "year": 2025,
+      "rot": 3,
+      "lesson": "Hypertension intracrânienne.",
+      "text": "Quels sont, parmi les suivants, les signes ophtalmologiques relatifs à une hypertension intracrânienne ?",
+      "options": ["Paralysie du VI", "Glaucome", "Œdème papillaire", "Nystagmus"],
+      "answer": "AC"
+    },
+    {
+      "year": 2025,
+      "rot": 3,
+      "lesson": "Hémorragies sous-arachnoïdiennes.",
+      "text": "CAS CLINIQUE – Parmi les signes suivants quels sont ceux qui sont retrouvés au cours d'un syndrome méningé ?",
+      "options": ["Vomissement", "Photophobie", "Œdème papillaire", "Raideur de la nuque"],
+      "answer": "ABD"
+    },
+    {
+      "year": 2025,
+      "rot": 3,
+      "lesson": "Hémorragies sous-arachnoïdiennes.",
+      "text": "CAS CLINIQUE – Le diagnostic d'hémorragie méningée peut être affirmé par :",
+      "options": ["La tomodensitométrie crânienne", "La radiographie du crâne", "La ponction lombaire", "L'artériographie"],
+      "answer": "AC"
+    },
+    {
+      "year": 2025,
+      "rot": 3,
+      "lesson": "Hémorragies sous-arachnoïdiennes.",
+      "text": "CAS CLINIQUE – Quelles sont les complications possibles à court terme ?",
+      "options": ["Hydrocéphalie aiguë avec hypertension intracrânienne", "Resaignement", "Vasospasme", "Hydrocéphalie à pression normale"],
+      "answer": "ABC"
+    },
+    {
+      "year": 2025,
+      "rot": 3,
+      "lesson": "Hémorragies sous-arachnoïdiennes.",
+      "text": "CAS CLINIQUE – Quel est l'examen essentiel au diagnostic étiologique ?",
+      "options": ["La tomodensitométrie crânienne", "La ponction lombaire", "L'EEG", "L'artériographie cérébrale"],
+      "answer": "D"
+    },
+    {
+      "year": 2025,
+      "rot": 2,
+      "lesson": "Céphalées et migraines.",
+      "text": "La douleur migraineuse est une douleur :",
+      "options": ["Vasculaire", "Neuropathique", "Mécanique", "Pulsatile"],
+      "answer": "AD"
+    },
+    {
+      "year": 2025,
+      "rot": 2,
+      "lesson": "Céphalées et migraines.",
+      "text": "Les signes accompagnant la douleur migraineuse sont :",
+      "options": ["Anosmie", "Nausées", "Photophobie", "Phonophobie"],
+      "answer": "BCD"
+    },
+    {
+      "year": 2025,
+      "rot": 2,
+      "lesson": "Céphalées et migraines.",
+      "text": "L'aura migraineuse peut être :",
+      "options": ["Visuelle", "Motrice", "Sensitive", "Aphasique"],
+      "answer": "ABCD"
+    },
+    {
+      "year": 2025,
+      "rot": 2,
+      "lesson": "Céphalées et migraines.",
+      "text": "Les formes cliniques des migraines sont :",
+      "options": ["Migraine basilaire", "Migraine paraplégique", "Migraine ophtalmoplégique", "Migraine ophtalmique"],
+      "answer": "ACD"
+    },
+    {
+      "year": 2025,
+      "rot": 2,
+      "lesson": "Céphalées et migraines.",
+      "text": "Les examens complémentaires confirmant la migraine sont :",
+      "options": ["L'électroencéphalographie", "Le scanner cérébral", "L'imagerie par résonnance magnétique", "Aucun"],
+      "answer": "D"
+    },
+    {
+      "year": 2025,
+      "rot": 2,
+      "lesson": "Céphalées et migraines.",
+      "text": "Le traitement de fond de la migraine comporte :",
+      "options": ["Les antalgiques", "Les anti-inflammatoires non stéroïdiens", "Les bétabloquants", "Les triptans"],
+      "answer": "C"
+    },
+    {
+      "year": 2025,
+      "rot": 2,
+      "lesson": "Céphalées et migraines.",
+      "text": "Le traitement de crise de la migraine comporte :",
+      "options": ["Les antagonistes de la sérotonine", "Le Diclofenac", "Le Sumatriptan", "L'Amitriptyline"],
+      "answer": "BC"
+    },
+    {
+      "year": 2025,
+      "rot": 2,
+      "lesson": "Céphalées et migraines.",
+      "text": "L'algie vasculaire de la face s'accompagne :",
+      "options": ["D'une aphasie", "D'une paralysie faciale", "D'un syndrome de Claude Bernard Horner", "D'un œdème de la paupière"],
+      "answer": "CD"
+    },
+    {
+      "year": 2025,
+      "rot": 2,
+      "lesson": "Céphalées et migraines.",
+      "text": "La névralgie du trijumeau est une douleur :",
+      "options": ["Neuropathique", "Vasculaire", "Inflammatoire", "Paroxystique"],
+      "answer": "AD"
+    },
+    {
+      "year": 2025,
+      "rot": 2,
+      "lesson": "Céphalées et migraines.",
+      "text": "Le traitement de la névralgie du trijumeau repose sur :",
+      "options": ["La Depakine", "Le Tegretol", "La dihydroergotamine", "Le Relpax"],
+      "answer": "B"
+    },
+    {
+      "year": 2025,
+      "rot": 2,
+      "lesson": "Sclérose latérale amyotrophique.",
+      "text": "Dans le syndrome neurogène périphérique :",
+      "options": ["Les réflexes ostéotendineux sont exagérés", "Les réflexes ostéotendineux sont abolis", "La démarche se fait à petits pas", "La démarche est talonnante"],
+      "answer": "B"
+    },
+    {
+      "year": 2025,
+      "rot": 2,
+      "lesson": "Myopathies inflammatoires.",
+      "text": "Le diagnostic des polymyosites repose sur :",
+      "options": ["La vitesse de sédimentation", "Les enzymes musculaires", "L'EMG", "La biopsie musculaire"],
+      "answer": "ABCD"
+    },
+    {
+      "year": 2025,
+      "rot": 2,
+      "lesson": "Myopathies inflammatoires.",
+      "text": "Le traitement des myopathies inflammatoires repose sur :",
+      "options": ["Les anti-inflammatoires non stéroïdiens", "Les corticoïdes", "Les antibiotiques", "Les immunosuppresseurs"],
+      "answer": "BD"
+    },
+    {
+      "year": 2025,
+      "rot": 2,
+      "lesson": "Dystrophies musculaires progressives.",
+      "text": "La myopathie de Duchenne de Boulogne est une maladie :",
+      "options": ["Héréditaire", "Congénitale", "Liée au chromosome X", "Liée au chromosome Y"],
+      "answer": "AC"
+    },
+    {
+      "year": 2025,
+      "rot": 2,
+      "lesson": "Dystrophies musculaires progressives.",
+      "text": "Dans la dystrophie de Duchenne de Boulogne, on note :",
+      "options": ["Un signe de Lhermitte", "Un signe de Claude Bernard Horner", "Un signe de Charles Bell", "Un signe de Gowers"],
+      "answer": "D"
+    },
+    {
+      "year": 2025,
+      "rot": 2,
+      "lesson": "Dystrophies musculaires progressives.",
+      "text": "Dans les dystrophinopathies, les troubles moteurs sont représentés par :",
+      "options": ["Un déficit moteur proximal", "Un déficit moteur distal", "Une amyotrophie des mollets", "Une pseudohypertrophie des mollets"],
+      "answer": "AD"
+    },
+    {
+      "year": 2025,
+      "rot": 2,
+      "lesson": "Dystrophies musculaires progressives.",
+      "text": "La myopathie de Becker se différencie de la myopathie de Duchenne de Boulogne par :",
+      "options": ["La protéine musculaire en cause", "L'âge de début plus tardif", "Des signes cliniques moins graves", "Le décès plus tardif"],
+      "answer": "BCD"
+    },
+    {
+      "year": 2025,
+      "rot": 2,
+      "lesson": "Dystrophies musculaires progressives.",
+      "text": "L'EMG des dystrophinopathies montre un tracé :",
+      "options": ["Normal", "Pauvre", "Riche", "Interférentiel"],
+      "answer": "C"
+    },
+    {
+      "year": 2025,
+      "rot": 2,
+      "lesson": "Démences.",
+      "text": "La démence est une altération des fonctions cognitives. La forme la plus fréquente des démences est :",
+      "options": ["La démence vasculaire", "La démence à corps de Lewy", "La maladie d'Alzheimer", "La démence fronto-temporale"],
+      "answer": "C"
+    },
+    {
+      "year": 2025,
+      "rot": 2,
+      "lesson": "Démences.",
+      "text": "La maladie d'Alzheimer est due à :",
+      "options": ["Une accumulation anormale de la protéine TAU", "Une accumulation de corps de Lewy", "Une accumulation de corps de Pick", "Un développement anormal de protéines Béta-amyloïdes"],
+      "answer": "AD"
+    },
+    {
+      "year": 2025,
+      "rot": 2,
+      "lesson": "Hypertension intracrânienne.",
+      "text": "Quels sont, parmi les suivants, les signes ophtalmologiques relatifs à une hypertension intracrânienne ?",
+      "options": ["Paralysie du VI", "Glaucome", "Œdème papillaire", "Nystagmus"],
+      "answer": "AC"
+    },
+    {
+      "year": 2025,
+      "rot": 2,
+      "lesson": "Hémorragies sous-arachnoïdiennes.",
+      "text": "L'étiologie la plus fréquente d'une hémorragie méningée spontanée est :",
+      "options": ["Une tumeur cérébrale", "Une MAV (malformation artérioveineuse)", "Un anévrysme intracérébral", "Un traitement par les anticoagulants"],
+      "answer": "C"
+    },
+    {
+      "year": 2025,
+      "rot": 1,
+      "lesson": "Accidents vasculaires cérébraux.",
+      "text": "Qu'elle est le délai théorique pour proposer une thrombolyse en cas d'AVC ischémique :",
+      "options": ["03 heures", "03 heures et 30 minutes", "04 heures", "04 heures et 30 minutes"],
+      "answer": "D"
+    },
+    {
+      "year": 2025,
+      "rot": 1,
+      "lesson": "Épilepsies.",
+      "text": "Parmi les signes suivants lesquels peuvent se voir en post critique d'une crise convulsive ?",
+      "options": ["La Morsure latérale de la langue", "Une paralysie de Todd", "Une émission d'urine", "Une confusion temporaire"],
+      "answer": "ABCD"
+    },
+    {
+      "year": 2025,
+      "rot": 1,
+      "lesson": "Épilepsies.",
+      "text": "Qu'elles sont les situations qui indiquent un traitement de fond anti épileptiques dès la première crise :",
+      "options": ["La découverte d'une lésion corticale à l'imagerie cérébrale", "La crise est provoquée par une hypocalcémie sévère", "L'existence d'une épilepsie familiale", "La crise se répète 2 fois au cours des 12 premières heures"],
+      "answer": "AC"
+    },
+    {
+      "year": 2025,
+      "rot": 1,
+      "lesson": "Épilepsies.",
+      "text": "Crise d'épilepsie, Qu'elles propositions sont exactes :",
+      "options": ["Il suffit d'une seule crise pour parler de maladie épileptique", "Les crises ont un caractère stéréotypé chez un même individu", "L'EEG est indispensable pour poser le diagnostic positif", "Les crises peuvent être activées par la stimulation lumineuse"],
+      "answer": "BD"
+    },
+    {
+      "year": 2025,
+      "rot": 1,
+      "lesson": "Accidents vasculaires cérébraux.",
+      "text": "Qu'elles sont les principales contre-indications d'une thrombolyse en cas d'un AVC ischémique :",
+      "options": ["Un NIHSS > 25", "Un délai de début des symptômes plus de 4 h 30", "L'âge supérieur à 65 ans", "Antécédent d'un syndrome hémorragique récent"],
+      "answer": "ABD"
+    },
+    {
+      "year": 2025,
+      "rot": 1,
+      "lesson": "Accidents vasculaires cérébraux.",
+      "text": "Lesquelles de ses symptômes évoque un AIT dans le territoire carotidien :",
+      "options": ["Cécité monoculaire", "Un syndrome alterne", "Vertige rotatoire", "Trouble de l'équilibre"],
+      "answer": "A"
+    },
+    {
+      "year": 2025,
+      "rot": 1,
+      "lesson": "Céphalées et migraines.",
+      "text": "Le traitement de la névralgie du trijumeau repose sur :",
+      "options": ["La Dépakine", "Le Tegretol", "La dihydroergotamine", "Le Relpax"],
+      "answer": "B"
+    },
+    {
+      "year": 2025,
+      "rot": 1,
+      "lesson": "Céphalées et migraines.",
+      "text": "Le traitement de fond de la migraine comporte :",
+      "options": ["Les antalgiques", "Les anti-inflammatoires non stéroïdiens", "Les bêtabloquants", "Les triptans"],
+      "answer": "C"
+    },
+    {
+      "year": 2025,
+      "rot": 1,
+      "lesson": "Hémorragies sous-arachnoïdiennes.",
+      "text": "Une hémorragie méningée d'étiologie anévrismale expose précocement aux risques majeurs de :",
+      "options": ["Resaignement massif", "Epilepsie", "Infarctus cérébral par vasospasme", "Cécité"],
+      "answer": "AC"
+    },
+    {
+      "year": 2025,
+      "rot": 1,
+      "lesson": "PRNA : Guillain-Barré.",
+      "text": "Le syndrome de Guillain Barré peut être précédé de :",
+      "options": ["Un syndrome infectieux des voies aériennes supérieures", "De douleurs gastriques", "Une vaccination post-rabique", "Une crise épileptique"],
+      "answer": "AC"
+    },
+    {
+      "year": 2025,
+      "rot": 1,
+      "lesson": "Maladie de Parkinson.",
+      "text": "Le tremblement est l'un des signes principaux de la maladie de Parkinson. Quelle est sa caractéristique ?",
+      "options": ["Tremblement de repos", "Tremblement d'action", "Tremblement d'attitude", "Tremblement intentionnel"],
+      "answer": "A"
+    },
+    {
+      "year": 2025,
+      "rot": 1,
+      "lesson": "Polyneuropathies.",
+      "text": "Dans la maladie de Charcot Marie Tooth, on retrouve :",
+      "options": ["Une amyotrophie en jarretière", "Un steppage", "Une aphasie", "Une paralysie faciale périphérique"],
+      "answer": "AB"
+    },
+    {
+      "year": 2025,
+      "rot": 1,
+      "lesson": "Dystrophies musculaires progressives.",
+      "text": "La myopathie de Becker se différencie de la myopathie de Duchenne de Boulogne par :",
+      "options": ["La protéine musculaire en cause", "L'âge de début plus tardif", "Des signes cliniques moins graves", "Le décès plus tardif"],
+      "answer": "BCD"
+    },
+    {
+      "year": 2025,
+      "rot": 1,
+      "lesson": "Comas neurologiques.",
+      "text": "Un traumatisé crânien arrive aux urgences, Il ouvre les yeux à l'appel de son nom ; répond de manière inappropriée aux questions qu'on lui pose, mais est capable sur ordre de serrer et de lâcher la main. Vous estimez le Score de Glasgow de ce patient à :",
+      "options": ["3", "5", "12", "8"],
+      "answer": "C"
+    },
+    {
+      "year": 2025,
+      "rot": 1,
+      "lesson": "Hydrocéphalies.",
+      "text": "Concernant l'hydrocéphalie :",
+      "options": ["L'hydrocéphalie aiguë est présente dans environ 20% des hémorragies sous arachnoïdiennes (HSA) d'origine anévrysmale.", "Le risque de survenue d'une hydrocéphalie est d'autant plus grand que l'HSA est associée à une hémorragie intra ventriculaire.", "La survenue d'une méningite augmente le risque de survenue d'une hydrocéphalie retardée.", "La mise en place d'une DVE permet également le monitorage de la pression intra ventriculaire et l'optimisation de la neuro-réanimation."],
+      "answer": "ABCD"
+    },
+    {
+      "year": 2025,
+      "rot": 1,
+      "lesson": "Tumeurs cérébrales.",
+      "text": "Parmi ces assertions concernant le médulloblastome de l'enfant ; quelle est la réponse fausse ?",
+      "options": ["Le médulloblastome est une tumeur maligne à point de départ habituellement médian (vermis cérébelleux)", "Se manifeste par des signes d'hypertension intracrânienne", "Se manifeste par un syndrome cérébelleux stato-cinétique", "Tumeur de malignité locale, son exérèse chirurgicale est souvent suivie d'une guérison définitive."],
+      "answer": "D"
+    },
+    {
+      "year": 2025,
+      "rot": 1,
+      "lesson": "Démences.",
+      "text": "La maladie d'Alzheimer est due à :",
+      "options": ["Une accumulation anormale de la protéine TAU", "Une accumulation de corps de Lewy", "Une accumulation de corps de Pick", "Un développement anormal de protéines Béta-amyloïdes"],
+      "answer": "AD"
+    },
+    {
+      "year": 2025,
+      "rot": 1,
+      "lesson": "Maladie de Parkinson.",
+      "text": "La dégénérescence parkinsonienne entraîne une diminution de :",
+      "options": ["L'acétylcholine", "L'adrénaline", "La dopamine", "La noradrénaline"],
+      "answer": "C"
+    },
+    {
+      "year": 2025,
+      "rot": 1,
+      "lesson": "Polyneuropathies.",
+      "text": "Parmi les éléments suivants, lesquels évoquent une polyneuropathie ?",
+      "options": ["Hypoesthésie « en chaussettes »", "Niveau sensitif marqué", "Steppage bilatéral", "Abolition des réflexes achilléens"],
+      "answer": "ACD"
+    },
+    {
+      "year": 2025,
+      "rot": 1,
+      "lesson": "Dystrophies musculaires progressives.",
+      "text": "L'EMG des dystrophinopathies montre un tracé :",
+      "options": ["Normal", "Pauvre", "Riche", "Interférentiel"],
+      "answer": "C"
+    },
+    {
+      "year": 2025,
+      "rot": 1,
+      "lesson": "Maladie de Parkinson.",
+      "text": "Dans la maladie de Parkinson, les structures anatomiques touchées par la dégénérescence sont :",
+      "options": ["La capsule interne", "Le striatum", "Le locus niger", "La capsule"],
+      "answer": "BC"
+    },
+    {
+      "year": 2025,
+      "rot": 1,
+      "lesson": "Démences.",
+      "text": "La maladie d'Alzheimer se caractérise par les signes suivants <strong>sauf un</strong> :",
+      "options": ["Aphasie", "Apraxie", "Agnosie", "Syndrome pyramidal"],
+      "answer": "D"
+    },
+    {
+      "year": 2025,
+      "rot": 1,
+      "lesson": "Accidents vasculaires cérébraux.",
+      "text": "Quels sont chez un sujet droitier, les signes rencontrés au cours d'un infarctus du territoire superficiel de l'artère sylvienne gauche ?",
+      "options": ["Hémianopsie latérale homonyme droite", "Paralysie de la verticalité", "Aphasie de Broca", "Hémiplégie droite à prédominance facio-brachiale"],
+      "answer": "ACD"
+    },
+    {
+      "year": 2025,
+      "rot": 1,
+      "lesson": "Accidents vasculaires cérébraux.",
+      "text": "Le traitement de l'infarctus cérébral à la phase aiguë comprend :",
+      "options": ["Un abaissement des chiffres tensionnels", "Une thrombolyse intra-veineuse", "Le traitement de l'hyperglycémie", "L'anti agrégation plaquettaire"],
+      "answer": "BCD"
+    },
+    {
+      "year": 2025,
+      "rot": 1,
+      "lesson": "Myopathies inflammatoires.",
+      "text": "Le diagnostic des polymyosites repose sur :",
+      "options": ["La vitesse de sédimentation", "Les enzymes musculaires", "L'EMG", "La biopsie musculaire"],
+      "answer": "ABCD"
+    },
+    {
+      "year": 2025,
+      "rot": 1,
+      "lesson": "Polyneuropathies.",
+      "text": "Une polyneuropathie est une atteinte :",
+      "options": ["Symétrique et synchrone des nerfs périphériques", "Asymétrique et asynchrone des troncs nerveux", "Symétrique et synchrone des racines et des nerfs périphériques", "Asymétrique et asynchrone des racines et des nerfs périphériques"],
+      "answer": "A"
+    },
+    {
+      "year": 2025,
+      "rot": 1,
+      "lesson": "Malformations occipito-vertébrales.",
+      "text": "L'impression basilaire :",
+      "options": ["Malformation osseuse de la charnière occipito-cervicale.", "Marquée par une hypoplasie de l'odontoïde.", "Son diagnostic est radiologique.", "Peut être de découverte fortuite"],
+      "answer": "ACD"
+    },
+    {
+      "year": 2025,
+      "rot": 1,
+      "lesson": "Accidents vasculaires cérébraux.",
+      "text": "Une hémiplégie motrice pure globale et proportionnelle correspond à une atteinte :",
+      "options": ["De la région rolandique", "De la capsule interne", "De la moelle cervicale", "De la protubérance"],
+      "answer": "B"
+    },
+    {
+      "year": 2025,
+      "rot": 1,
+      "lesson": "Hypertension intracrânienne.",
+      "text": "Quels sont parmi les suivants les signes ophtalmologiques relatifs à une hypertension intracrânienne :",
+      "options": ["Paralysie du VI", "Glaucome", "Œdème papillaire", "Nystagmus"],
+      "answer": "AC"
+    },
+    {
+      "year": 2025,
+      "rot": 1,
+      "lesson": "Traumatismes crânio-encéphaliques.",
+      "text": "Un hématome extra-dural apparait en tomodensitométrie :",
+      "options": ["Lentille bi-convexe", "Hyperostose", "Hyperdensité", "Hypodensité"],
+      "answer": "AC"
+    },
+    {
+      "year": 2026,
+      "rot": 1,
+      "lesson": "Sclérose en plaques.",
+      "text": "Tous ces signes peuvent être révélateurs d'une sclérose en plaques <strong>sauf un</strong> :",
+      "options": ["marche à petits pas", "baisse de l'acuité visuelle", "diplopie", "Fourmillement"],
+      "answer": "A"
+    },
+    {
+      "year": 2026,
+      "rot": 1,
+      "lesson": "Dystrophies musculaires progressives.",
+      "text": "La myopathie de Becker se différencie de la myopathie Duchenne de Boulogne par :",
+      "options": ["La protéine musculaire en cause", "l'âge de début plus tardif", "Des signes cliniques moins graves", "Le décès plus tardif"],
+      "answer": "B"
+    },
+    {
+      "year": 2026,
+      "rot": 1,
+      "lesson": "Accidents vasculaires cérébraux.",
+      "text": "Quel est le siège d'un infarctus cérébral annoncé par un grand vertige et s'exprimant par une atteinte du IX, du X et du V sensitif de façon homolatérale :",
+      "options": ["lobe frontal", "capsule interne", "pédoncule cérébral", "bulbe"],
+      "answer": "D"
+    },
+    {
+      "year": 2026,
+      "rot": 1,
+      "lesson": "Épilepsies.",
+      "text": "Parmi les signes suivants lesquels peuvent se voir en post critique d'une crise convulsive tonico-clonique généralisée ?",
+      "options": ["la morsure latérale de la langue", "une paralysie de Todd", "une émission d'urine", "Un coma post-critique"],
+      "answer": "ABCD"
+    },
+    {
+      "year": 2026,
+      "rot": 1,
+      "lesson": "Démences.",
+      "text": "La maladie d'Alzheimer se caractérise par les signes suivants <strong>sauf un</strong> :",
+      "options": ["aphasie", "apraxie", "agnosie", "syndrome pyramidal"],
+      "answer": "D"
+    },
+    {
+      "year": 2026,
+      "rot": 1,
+      "lesson": "Myasthénie.",
+      "text": "Tous ces traitements sont utilisés dans la myasthénie <strong>sauf un</strong> :",
+      "options": ["thymectomie", "corticothérapie", "immunosuppresseurs", "interféron Beta"],
+      "answer": "D"
+    },
+    {
+      "year": 2026,
+      "rot": 1,
+      "lesson": "Épilepsies.",
+      "text": "Quelles sont les thérapeutiques utilisées en 1<sup>ère</sup> ligne en cas d'état de mal épileptique :",
+      "options": ["le diazépam", "le midazolam", "la carbamazépine", "L'acide valproïque"],
+      "answer": "AB"
+    },
+    {
+      "year": 2026,
+      "rot": 1,
+      "lesson": "Accidents vasculaires cérébraux.",
+      "text": "Parmi ces facteurs de risque, quel est celui dont le risque relatif est le plus élevé pour les accidents vasculaires cérébraux :",
+      "options": ["tabagisme", "hypertension artérielle", "obésité", "Hypercholestérolémie"],
+      "answer": "B"
+    },
+    {
+      "year": 2026,
+      "rot": 1,
+      "lesson": "Myasthénie.",
+      "text": "Parmi les signes oculomoteurs suivants lesquels vont se voir au cours d'une myasthénie :",
+      "options": ["myosis", "ptosis", "diplopie", "Nystagmus"],
+      "answer": "BC"
+    },
+    {
+      "year": 2026,
+      "rot": 1,
+      "lesson": "Sclérose latérale amyotrophique.",
+      "text": "Parmi ces examens paracliniques quel est celui qui est le plus contributif au diagnostic de la sclérose latérale amyotrophique :",
+      "options": ["L'IRM cérébrale", "l'électroencéphalographie", "l'électromyographie", "les potentiels évoqués cérébraux"],
+      "answer": "C"
+    },
+    {
+      "year": 2026,
+      "rot": 1,
+      "lesson": "Accidents vasculaires cérébraux.",
+      "text": "Qu'elle est le délai théorique pour proposer une thrombolyse en cas d'AVC ischémique :",
+      "options": ["03 heures", "03 heures et 30 minutes", "04 heures", "04 heures et 30 minutes"],
+      "answer": "D"
+    },
+    {
+      "year": 2026,
+      "rot": 1,
+      "lesson": "Accidents vasculaires cérébraux.",
+      "text": "Lesquelles de ces symptômes évoque un AIT dans le territoire carotidien :",
+      "options": ["une cécité monoculaire", "un syndrome alterne", "un vertige rotatoire", "un trouble de l'équilibre"],
+      "answer": "A"
+    },
+    {
+      "year": 2026,
+      "rot": 1,
+      "lesson": "Épilepsies.",
+      "text": "Parmi les effets secondaires suivants lequel est associé souvent à la lamotrigine :",
+      "options": ["tremblement des extrémités", "hyponatrémie", "syndrome de Lyell", "algodystrophie"],
+      "answer": "C"
+    },
+    {
+      "year": 2026,
+      "rot": 1,
+      "lesson": "Ataxies.",
+      "text": "Le syndrome cérébelleux se manifeste par :",
+      "options": ["un tremblement de repos", "un tremblement d'action", "une dysmétrie", "une démarche ébrieuse"],
+      "answer": "BCD"
+    },
+    {
+      "year": 2026,
+      "rot": 1,
+      "lesson": "Les syndromes topographiques.",
+      "text": "La paralysie aiguë de la 3<sup>ème</sup> paire crânienne entraîne :",
+      "options": ["un strabisme divergent", "un strabisme convergent", "une mydriase paralytique", "un ptosis"],
+      "answer": "ACD"
+    },
+    {
+      "year": 2026,
+      "rot": 1,
+      "lesson": "Encéphalites.",
+      "text": "L'encéphalite herpétique est caractérisée par :",
+      "options": ["troubles de la mémoire", "troubles du comportement", "absence de traitement spécifique", "absence de fièvre"],
+      "answer": "AB"
+    },
+    {
+      "year": 2026,
+      "rot": 1,
+      "lesson": "Accidents vasculaires cérébraux.",
+      "text": "Quels sont chez un sujet droitier, les signes rencontrés au cours d'un infarctus du territoire superficiel de l'artère sylvienne gauche ?",
+      "options": ["hémi-anopsie latérale homonyme droite", "paralysie de la verticalité", "aphasie de Broca", "hémiplégie droite à prédominance facio-brachiale"],
+      "answer": "ACD"
+    },
+    {
+      "year": 2026,
+      "rot": 1,
+      "lesson": "Polyneuropathies.",
+      "text": "Parmi les éléments suivants, lesquels évoquent une polyneuropathie :",
+      "options": ["hypoesthésie « en chaussettes »", "niveau sensitif marqué", "steppage bilatéral", "abolition des réflexes achilléens"],
+      "answer": "ACD"
+    },
+    {
+      "year": 2026,
+      "rot": 1,
+      "lesson": "Les syndromes topographiques.",
+      "text": "Quels sont les signes évocateurs d'une paralysie faciale périphérique :",
+      "options": ["préservation du territoire facial supérieur", "préservation du territoire facial inférieur", "signe de Charles Bell", "déviation de la bouche du côté sain"],
+      "answer": "CD"
+    },
+    {
+      "year": 2026,
+      "rot": 1,
+      "lesson": "Polyneuropathies.",
+      "text": "Dans la maladie de Charcot Marie Tooth, on retrouve :",
+      "options": ["Une amyotrophie distale", "Un steppage", "Une amyotrophie proximale", "Une paralysie faciale périphérique"],
+      "answer": "AB"
+    },
+    {
+      "year": 2026,
+      "rot": 1,
+      "lesson": "Comas neurologiques.",
+      "text": "Lors d'un coma l'existence de sueurs profuses et d'un signe de Babinski bilatéral doit faire évoquer :",
+      "options": ["un coma acidocétosique", "un coma éthylique", "un coma barbiturique", "un coma hypoglycémique"],
+      "answer": "D"
+    },
+    {
+      "year": 2026,
+      "rot": 1,
+      "lesson": "Céphalées et migraines.",
+      "text": "Une algie vasculaire de la face :",
+      "options": ["s'observe essentiellement chez la femme âgée", "est toujours bilatérale", "peut s'accompagner de phénomènes vasomoteurs faciaux", "est provoquée par la stimulation d'une zone gâchette"],
+      "answer": "C"
+    },
+    {
+      "year": 2026,
+      "rot": 1,
+      "lesson": "Accidents vasculaires cérébraux.",
+      "text": "Les sièges préférentiels des hémorragies intra parenchymateuses secondaires à l'HTA sont :",
+      "options": ["Lobaire temporal", "Profonde thalamique", "Superficielle", "Capsulo-lenticulaire"],
+      "answer": "BD"
+    },
+    {
+      "year": 2026,
+      "rot": 1,
+      "lesson": "Accidents vasculaires cérébraux.",
+      "text": "Le traitement de l'infarctus cérébral à la phase aiguë comprend :",
+      "options": ["Un abaissement des chiffres tensionnels", "Une thrombolyse intra-veineuse", "Le traitement de l'hyperglycémie", "L'anti agrégation plaquettaire"],
+      "answer": "BCD"
+    },
+    {
+      "year": 2026,
+      "rot": 1,
+      "lesson": "Maladie de Parkinson.",
+      "text": "La dégénérescence parkinsonienne entraîne une diminution de :",
+      "options": ["L'acétylcholine", "L'adrénaline", "La dopamine", "La noradrénaline"],
+      "answer": "C"
+    },
+    {
+      "year": 2026,
+      "rot": 1,
+      "lesson": "Démences.",
+      "text": "La maladie d'Alzheimer est due à :",
+      "options": ["Une accumulation anormale de la protéine TAU", "Une accumulation de corps de Lewy", "Une accumulation de corps de Pick", "Un développement anormal de protéines Béta-amyloïdes"],
+      "answer": "AD"
+    },
+    {
+      "year": 2026,
+      "rot": 1,
+      "lesson": "Polyneuropathies.",
+      "text": "Une polyneuropathie est une atteinte :",
+      "options": ["Symétrique et synchrone des nerfs périphériques", "Asymétrique et asynchrone des troncs nerveux", "Symétrique et synchrone des racines et des nerfs périphériques", "Asymétrique et asynchrone des racines et des nerfs périphériques"],
+      "answer": "A"
+    },
+    {
+      "year": 2026,
+      "rot": 1,
+      "lesson": "Traumatismes crânio-encéphaliques.",
+      "text": "Un hématome sous-dural chronique hémisphérique droit peut se manifester par :",
+      "options": ["Des troubles confusionnels", "Une obnubilation", "Un déficit controlatéral", "Hémianopsie latérale homonyme droite"],
+      "answer": "ABC"
+    },
+    {
+      "year": 2026,
+      "rot": 1,
+      "lesson": "Traumatismes crânio-encéphaliques.",
+      "text": "L'hématome extradural est <strong>(RF)</strong> :",
+      "options": ["La conséquence de la rupture de l'artère méningée moyenne", "Caractérisé par un intervalle libre", "Une urgence neurochirurgicale", "Caractérisé par une hypodensité à lentille biconvexe au scanner"],
+      "answer": "D"
+    },
+    {
+      "year": 2026,
+      "rot": 1,
+      "lesson": "Comas neurologiques.",
+      "text": "Un traumatisé de la voie publique, inconscient qui ouvre les yeux à la stimulation douloureuse, qui est confus et a une réponse motrice localisatrice est scoré à :",
+      "options": ["11", "9", "15", "5"],
+      "answer": "A"
+    },
+    {
+      "year": 2023,
+      "rot": 3,
+      "lesson": "Céphalées et migraines.",
+      "text": "Parmi les éléments suivants, lequel impose la remise en question du diagnostic de névralgie du V essentielle :",
+      "options": ["L'abolition du réflexe cornéen", "La douleur déclenchée par une zone gâchette", "La douleur soulagée par la carbamazépine", "La douleur systématisée à une branche du nerf trijumeau"],
+      "answer": "A"
+    },
+    {
+      "year": 2023,
+      "rot": 3,
+      "lesson": "Malformations vertébro-médullaires.",
+      "text": "Le spina bifida est classé en plusieurs types :",
+      "options": ["La forme occulta est la forme la plus grave", "La forme aperta est souvent associée à une hydrocéphalie", "La myéloméningocèle est la forme la plus simple", "La malformation d'Arnold Chiari est une complication orthopédique"],
+      "answer": "B"
+    },
+    {
+      "year": 2023,
+      "rot": 3,
+      "lesson": "Malformations vertébro-médullaires.",
+      "text": "Le traitement du spina bifida aperta :",
+      "options": ["Est principalement chirurgical", "Ne nécessite qu'une surveillance clinique et radiologique", "La prise de l'acide folique est le meilleur traitement", "La chirurgie n'est proposée que pour les malades qui ont un déficit neurologique"],
+      "answer": "A"
+    },
+    {
+      "year": 2023,
+      "rot": 3,
+      "lesson": "Traumatismes crânio-encéphaliques.",
+      "text": "L'examen clinique d'un patient victime d'un traumatisme crânien comprend :",
+      "options": ["La recherche d'une notion de perte de conscience brève", "Évaluation de l'état de conscience par le score de Glasgow", "Évaluation de l'état hémodynamique", "Recherche des troubles de la ventilation"],
+      "answer": "ABCD"
+    },
+    {
+      "year": 2023,
+      "rot": 3,
+      "lesson": "Traumatismes crânio-encéphaliques.",
+      "text": "L'Hématome extradural est une complication retrouvée dans 1 à 4% des traumatismes crâniens graves :",
+      "options": ["Un trait de fracture temporal est fréquemment retrouvé à la radiographie simple", "L'IRM cérébrale est indispensable pour le diagnostic positif", "Les lésions de l'artère méningée moyenne sont fréquemment retrouvées", "Dans sa forme typique on note une perte de conscience brève suivie d'un intervalle libre puis une hémiparésie homolatérale à la lésion"],
+      "answer": "AC"
+    },
+    {
+      "year": 2023,
+      "rot": 3,
+      "lesson": "Traumatismes crânio-encéphaliques.",
+      "text": "La plaie cranio-cérébrale (PCC) est une complication des traumatismes crâniens :",
+      "options": ["Le déplacement des fragments osseux se fait toujours vers l'extérieur de la boîte crânienne", "En regard de la région rolandique, une PCC donne une aphasie motrice", "La PCC type IV s'accompagne d'une lésion de la paroi ventriculaire", "Les PCC peuvent s'accompagner d'une méningite"],
+      "answer": "CD"
+    },
+    {
+      "year": 2023,
+      "rot": 3,
+      "lesson": "Craniosténose.",
+      "text": "La brachycéphalie est :",
+      "options": ["Due à la fermeture des deux sutures coronales", "Due à la fermeture de la suture sagittale", "Caractérisée par un crâne allongé dans le sens antéro-postérieur", "Caractérisée par un crâne allongé en hauteur"],
+      "answer": "AD"
+    },
+    {
+      "year": 2023,
+      "rot": 3,
+      "lesson": "Dystrophies musculaires progressives.",
+      "text": "Dans la myopathie de Becker, on note une diminution du nombre ou de la taille d'une des protéines musculaires suivantes :",
+      "options": ["La mérosine", "Les laminines", "La dystrophine", "Les sarcoglycanes"],
+      "answer": "C"
+    },
+    {
+      "year": 2023,
+      "rot": 3,
+      "lesson": "Dystrophies musculaires progressives.",
+      "text": "La myopathie de Becker se différencie de la myopathie de Duchenne de Boulogne par :",
+      "options": ["La protéine musculaire en cause", "L'âge de début plus tardif", "Des signes cliniques moins graves", "Le décès plus tardif"],
+      "answer": "BCD"
+    },
+    {
+      "year": 2023,
+      "rot": 3,
+      "lesson": "PRNA : Guillain-Barré.",
+      "text": "Le syndrome de Guillain-Barré peut être précédé :",
+      "options": ["D'un syndrome infectieux des voies aériennes supérieures", "De douleurs gastriques", "D'une vaccination post-rabique", "D'une crise épileptique"],
+      "answer": "AC"
+    },
+    {
+      "year": 2023,
+      "rot": 3,
+      "lesson": "Polyneuropathies.",
+      "text": "Dans la maladie de Charcot-Marie-Tooth, on retrouve :",
+      "options": ["Une amyotrophie en jarretière", "Un steppage", "Une aphasie", "Une paralysie faciale périphérique"],
+      "answer": "AB"
+    },
+    {
+      "year": 2023,
+      "rot": 3,
+      "lesson": "Dystrophies musculaires progressives.",
+      "text": "Dans les dystrophinopathies, les troubles moteurs sont représentés par :",
+      "options": ["Un déficit moteur proximal", "Un déficit moteur distal", "Une amyotrophie des mollets", "Une pseudohypertrophie des mollets"],
+      "answer": "AD"
+    },
+    {
+      "year": 2023,
+      "rot": 3,
+      "lesson": "Hypertension intracrânienne.",
+      "text": "L'engagement temporal droit compliquant une hypertension intracrânienne se traduit par :",
+      "options": ["Des troubles de la conscience", "Une mydriase droite", "Une hémiplégie gauche", "Des troubles du rythme respiratoire"],
+      "answer": "ABC"
+    },
+    {
+      "year": 2023,
+      "rot": 3,
+      "lesson": "Hypertension intracrânienne.",
+      "text": "Quels sont, parmi les suivants, les signes ophtalmologiques relatifs à une hypertension intracrânienne :",
+      "options": ["La Paralysie du VI", "Le Glaucome", "L'Œdème papillaire", "Le Nystagmus"],
+      "answer": "AC"
+    },
+    {
+      "year": 2023,
+      "rot": 2,
+      "lesson": "Compressions médullaires lentes.",
+      "text": "Dans les compressions médullaires lentes le déficit moteur est irréversible, Cocher la ou les proposition(s) juste(s) :",
+      "options": ["Au stade de paraplégie flasque.", "Au stade de paraplégie spastique", "Au stade de paraplégie hyper spastique", "Dans tous les cas"],
+      "answer": "A"
+    },
+    {
+      "year": 2023,
+      "rot": 2,
+      "lesson": "Compressions médullaires lentes.",
+      "text": "Dans le contexte clinique des compressions médullaires lentes :",
+      "options": ["La douleur qui domine est de type radiculaire.", "Le syndrome rachidien peut faire partie du syndrome lésionnel.", "Le syndrome rachidien est rarement retrouvé", "Les troubles neurovégétatifs sont précoces"],
+      "answer": "AB"
+    },
+    {
+      "year": 2023,
+      "rot": 2,
+      "lesson": "Tumeurs cérébrales.",
+      "text": "Dans les tumeurs du troisième ventricule, le syndrome de BURNS est caractérisé par :",
+      "options": ["Une HIC paroxystique et intermittente", "Un dérobement des jambes", "Une démarche ébrieuse", "Des chutes à répétition"],
+      "answer": "AB"
+    },
+    {
+      "year": 2023,
+      "rot": 2,
+      "lesson": "Hydrocéphalies.",
+      "text": "La caractéristique scannographique d'une hydrocéphalie tri ventriculaire est :",
+      "options": ["Dilatation des deux ventricules latéraux", "Dilatation des deux ventricules latéraux et du troisième ventricule", "Dilatation des deux ventricules latéraux, du troisième et du quatrième ventricule", "Le collapsus ventriculaire"],
+      "answer": "B"
+    },
+    {
+      "year": 2023,
+      "rot": 2,
+      "lesson": "Hydrocéphalies.",
+      "text": "Dans l'hydrocéphalie tri ventriculaire par sténose de l'aqueduc de Sylvius, le traitement le plus approprié est :",
+      "options": ["La dérivation ventriculaire externe", "La ventriculocisternostomie endoscopique (VCS)", "La dérivation ventriculo-péritonéale", "L'abstention thérapeutique"],
+      "answer": "B"
+    },
+    {
+      "year": 2023,
+      "rot": 2,
+      "lesson": "Épilepsies.",
+      "text": "Quelles sont parmi les propositions suivantes celles en faveur d'une épilepsie idiopathique :",
+      "options": ["La normalité de la TDM encéphalique", "Les antécédents familiaux d'épilepsie", "Le bon développement psychomoteur", "La notion de pharmaco-résistance"],
+      "answer": "BC"
+    },
+    {
+      "year": 2023,
+      "rot": 2,
+      "lesson": "Accidents vasculaires cérébraux.",
+      "text": "L'infarctus cérébral est le plus souvent la conséquence d'un processus :",
+      "options": ["Thrombotique", "Thromboembolique", "Embolique", "De spasme artériel"],
+      "answer": "B"
+    },
+    {
+      "year": 2023,
+      "rot": 2,
+      "lesson": "Épilepsies.",
+      "text": "L'épilepsie petit mal de l'enfant est caractérisée par :",
+      "options": ["Des crises généralisées de type absences", "L'association de crise focale et d'absence matinale", "Sa sensibilisation à l'épreuve d'hyperventilation à l'EEG", "Sa nature idiopathique âge dépendante"],
+      "answer": "ACD"
+    },
+    {
+      "year": 2023,
+      "rot": 2,
+      "lesson": "Accidents vasculaires cérébraux.",
+      "text": "Les sièges préférentiels des hémorragies intra-parenchymateuses secondaires à l'HTA sont :",
+      "options": ["Lobaire temporal", "Profonde thalamique", "Superficielle", "Capsulo-lenticulaire"],
+      "answer": "BD"
+    },
+    {
+      "year": 2023,
+      "rot": 2,
+      "lesson": "Accidents vasculaires cérébraux.",
+      "text": "Le traitement de l'infarctus cérébral à la phase aiguë comprend :",
+      "options": ["Un abaissement des chiffres tensionnels", "Une thrombolyse IV", "Le traitement de l'hyperglycémie", "L'anti-agrégation plaquettaire"],
+      "answer": "BCD"
+    },
+    {
+      "year": 2023,
+      "rot": 2,
+      "lesson": "Accidents vasculaires cérébraux.",
+      "text": "Lesquels de ces symptômes évoquent un AIT dans le territoire carotidien :",
+      "options": ["Cécité monoculaire", "Aphasie", "Vertige rotatoire", "Trouble de l'équilibre"],
+      "answer": "AB"
+    },
+    {
+      "year": 2023,
+      "rot": 2,
+      "lesson": "Les syndromes topographiques.",
+      "text": "Parmi les propositions suivantes, lesquelles sont en rapport avec un syndrome vestibulaire :",
+      "options": ["Le vertige rotatoire paroxystique", "Nystagmus", "Romberg latéralisé", "Élargissement du polygone de la marche"],
+      "answer": "ABC"
+    },
+    {
+      "year": 2023,
+      "rot": 2,
+      "lesson": "Les syndromes topographiques.",
+      "text": "Syndrome vestibulaire périphérique :",
+      "options": ["Complet et harmonieux", "Complet et dysharmonieux", "Incomplet et harmonieux", "Incomplet et dysharmonieux"],
+      "answer": "A"
+    },
+    {
+      "year": 2023,
+      "rot": 2,
+      "lesson": "Comas neurologiques.",
+      "text": "Le score de Glasgow est très important pour l'évaluation des traumatismes crâniens :",
+      "options": ["La réponse verbale est cotée sur 04", "Un score compris entre 08/15 et 10/15 nécessite l'intubation ventilation artificielle", "La réponse motrice en décérébration est notée 02/15", "L'ouverture des yeux à la demande (à l'appel) est cotée 03/04"],
+      "answer": "D"
+    },
+    {
+      "year": 2023,
+      "rot": 2,
+      "lesson": "Traumatismes crânio-encéphaliques.",
+      "text": "L'hématome sous-dural chronique est une complication tardive des traumatismes crâniens :",
+      "options": ["Elle touche de prédilection les patients jeunes de sexe masculin", "Au scanner on note une collection en forme de lentille biconvexe", "Dans sa forme hémisphérique droite chez un gaucher on note un déficit sensitivo-moteur de l'hémicorps gauche avec aphasie", "Un traumatisme violent est indispensable car la dure-mère colle à la table interne chez le sujet âgé"],
+      "answer": "C"
+    },
+    {
+      "year": 2023,
+      "rot": 2,
+      "lesson": "Traumatismes crânio-encéphaliques.",
+      "text": "Les traumatismes crâniens peuvent se compliquer d'infections variées pouvant être sévères :",
+      "options": ["L'antibioprophylaxie doit être instaurée systématiquement dans tous les traumatismes crâniens", "L'empyème est une collection de sang liquéfié xanthochromique siégeant en extracérébral", "L'abcès cérébral compressif nécessite un drainage chirurgical", "L'ostéite comme les méningites post-traumatiques ne sont diagnostiquées que par l'IRM"],
+      "answer": "C"
+    },
+    {
+      "year": 2023,
+      "rot": 2,
+      "lesson": "Hémorragies sous-arachnoïdiennes.",
+      "text": "Dans l'hémorragie méningée, une atteinte du nerf oculomoteur gauche est fortement évocatrice :",
+      "options": ["D'un anévrisme d'artère sylvienne gauche", "Une malformation artério-veineuse", "Un anévrisme de l'artère communicante postérieure gauche", "Un cavernome pariétal gauche"],
+      "answer": "C"
+    },
+    {
+      "year": 2023,
+      "rot": 2,
+      "lesson": "Maladie de Parkinson.",
+      "text": "La dégénérescence parkinsonienne entraîne une diminution de :",
+      "options": ["L'acétylcholine", "L'adrénaline", "La dopamine", "La noradrénaline"],
+      "answer": "C"
+    },
+    {
+      "year": 2023,
+      "rot": 2,
+      "lesson": "Maladie de Parkinson.",
+      "text": "Le tremblement est l'un des signes principaux de la maladie de Parkinson :",
+      "options": ["Tremblement de repos", "Tremblement d'action", "Tremblement d'attitude", "Tremblement intentionnel"],
+      "answer": "A"
+    },
+    {
+      "year": 2023,
+      "rot": 2,
+      "lesson": "Démences.",
+      "text": "La maladie d'Alzheimer est due à :",
+      "options": ["Une accumulation anormale de la protéine TAU", "Une accumulation de corps de Lewy", "Une accumulation de corps de Pick", "Une accumulation anormale de protéines B-amyloïdes"],
+      "answer": "AD"
+    },
+    {
+      "year": 2023,
+      "rot": 2,
+      "lesson": "Polyneuropathies.",
+      "text": "Une polyneuropathie est une atteinte :",
+      "options": ["Symétrique et synchrone des nerfs périphériques", "Asymétrique et asynchrone des troncs nerveux", "Symétrique et synchrone des racines et des nerfs périphériques", "Asymétrique et asynchrone des racines et des nerfs périphériques"],
+      "answer": "A"
+    },
+    {
+      "year": 2023,
+      "rot": 2,
+      "lesson": "Craniosténose.",
+      "text": "Lors d'une scaphocéphalie (cochez les réponses fausses) :",
+      "options": ["La suture coronale est fermée", "La suture sagittale est fermée", "Le crâne est allongé dans le sens transversal", "Le crâne est allongé dans le sens de la hauteur"],
+      "answer": "AD"
+    },
+    {
+      "year": 2023,
+      "rot": 2,
+      "lesson": "Craniosténose.",
+      "text": "Le bilan d'une craniosténose comporte les examens suivants (cochez la réponse fausse) :",
+      "options": ["Une radiographie du crâne", "Une angiographie cérébrale", "Une TDM cérébrale avec reconstruction 3D", "Un examen ophtalmologique avec fond d'œil"],
+      "answer": "B"
+    },
+    {
+      "year": 2023,
+      "rot": 2,
+      "lesson": "Craniosténose.",
+      "text": "Concernant l'oxycéphalie, cocher la proposition juste :",
+      "options": ["C'est la craniosténose la plus fréquente", "C'est une forme bénigne", "C'est une forme particulièrement fréquente au Maghreb", "Elle ne comporte aucun risque de cécité ni de retard intellectuel"],
+      "answer": "C"
+    },
+    {
+      "year": 2023,
+      "rot": 2,
+      "lesson": "Hypertension intracrânienne.",
+      "text": "La triade symptomatique de l'hypertension intracrânienne associe :",
+      "options": ["Céphalées, vomissements, troubles visuels", "Céphalées, vertiges, acouphènes", "Céphalées, nausées, somnolence", "Céphalées, vomissements, crises d'épilepsie"],
+      "answer": "A"
+    },
+    {
+      "year": 2023,
+      "rot": 2,
+      "lesson": "Traumatismes crânio-encéphaliques.",
+      "text": "Concernant l'hématome extradural (HED) aigu, cochez la ou les proposition(s) juste(s) :",
+      "options": ["Un trait de fracture temporal est fréquemment retrouvé", "Le scanner objective une image spontanément hyperdense en forme de boule de canon", "Il touche avec prédilection le sujet âgé", "Dans sa forme typique on note une perte de conscience brève suivie d'un intervalle libre puis des signes de localisation controlatéraux"],
+      "answer": "AD"
+    },
+    {
+      "year": 2023,
+      "rot": 2,
+      "lesson": "Traumatismes crânio-encéphaliques.",
+      "text": "L'embarrure est une complication des traumatismes crâniens :",
+      "options": ["Le déplacement des fragments osseux se fait vers l'extérieur de la boîte crânienne", "En regard de la région rolandique, une embarrure donne une aphasie motrice", "L'embarrure siège du côté opposé au point d'impact (en contre coup)", "Les embarrures en balle de ping pong représentent la forme typique chez le nourrisson"],
+      "answer": "D"
+    },
+    {
+      "year": 2023,
+      "rot": 2,
+      "lesson": "Hypertension intracrânienne.",
+      "text": "L'engagement temporal droit compliquant une hypertension intracrânienne se traduit par (cochez les réponses justes) :",
+      "options": ["Des troubles de la conscience.", "Une mydriase droite.", "Une hémiplégie gauche.", "Des troubles du rythme respiratoire."],
+      "answer": "ABC"
+    },
+    {
+      "year": 2023,
+      "rot": 2,
+      "lesson": "Hypertension intracrânienne.",
+      "text": "En cas d'hypertension intracrânienne, le fond d'œil peut montrer (cochez les réponses justes) :",
+      "options": ["Un œdème papillaire.", "Une atrophie optique.", "Une papille normale.", "Une papille hypertrophique."],
+      "answer": "ABC"
+    },
+    {
+      "year": 2023,
+      "rot": 2,
+      "lesson": "Hypertension intracrânienne.",
+      "text": "L'hypertension intracrânienne peut être secondaire à (cochez les réponses justes) :",
+      "options": ["Une hydrocéphalie tri ventriculaire.", "Une tumeur du vermis cérébelleux.", "Fistule de LCR.", "Un hématome extradural."],
+      "answer": "ABD"
+    },
+    {
+      "year": 2023,
+      "rot": 1,
+      "lesson": "Épilepsies.",
+      "text": "Quelles sont parmi les propositions suivantes celles en faveur d'une épilepsie idiopathique :",
+      "options": ["La normalité de la TDM encéphalique", "Les antécédents familiaux d'épilepsie", "Le bon développement psychomoteur", "La notion de pharmaco-résistance"],
+      "answer": "ABC"
+    },
+    {
+      "year": 2023,
+      "rot": 1,
+      "lesson": "Accidents vasculaires cérébraux.",
+      "text": "L'infarctus cérébral est le plus souvent la conséquence d'un processus :",
+      "options": ["Thrombotique", "Thromboembolique", "Embolique", "De spasme artériel"],
+      "answer": "B"
+    },
+    {
+      "year": 2023,
+      "rot": 1,
+      "lesson": "Épilepsies.",
+      "text": "L'épilepsie petit mal de l'enfant est caractérisée par :",
+      "options": ["Des crises généralisées de type absences", "L'association de crise focale et d'absence matinale", "Sa sensibilisation à l'épreuve d'hyperventilation à l'EEG", "Sa nature idiopathique âge dépendante"],
+      "answer": "ACD"
+    },
+    {
+      "year": 2023,
+      "rot": 1,
+      "lesson": "Accidents vasculaires cérébraux.",
+      "text": "Les sièges préférentiels des hémorragies intra-parenchymateuses secondaires à l'HTA sont :",
+      "options": ["Lobaire temporal", "Profonde thalamique", "Superficielle", "Capsulo-lenticulaire"],
+      "answer": "BD"
+    },
+    {
+      "year": 2023,
+      "rot": 1,
+      "lesson": "Accidents vasculaires cérébraux.",
+      "text": "Le traitement de l'infarctus cérébral à la phase aiguë comprend :",
+      "options": ["Un abaissement des chiffres tensionnels", "Une thrombolyse IV", "Le traitement de l'hyperglycémie", "L'anti-agrégation plaquettaire"],
+      "answer": "BCD"
+    },
+    {
+      "year": 2023,
+      "rot": 1,
+      "lesson": "Accidents vasculaires cérébraux.",
+      "text": "Lesquels de ces symptômes évoquent un AIT dans le territoire carotidien :",
+      "options": ["Cécité monoculaire", "Aphasie", "Vertige rotatoire", "Trouble de l'équilibre"],
+      "answer": "AB"
+    },
+    {
+      "year": 2023,
+      "rot": 1,
+      "lesson": "Les syndromes topographiques.",
+      "text": "Parmi les propositions suivantes, lesquelles sont en rapport avec un syndrome vestibulaire :",
+      "options": ["Le vertige rotatoire paroxystique", "Nystagmus", "Romberg latéralisé", "Élargissement du polygone de la marche"],
+      "answer": "ABC"
+    },
+    {
+      "year": 2023,
+      "rot": 1,
+      "lesson": "Les syndromes topographiques.",
+      "text": "Syndrome vestibulaire périphérique :",
+      "options": ["Complet et harmonieux", "Complet et dysharmonieux", "Incomplet et harmonieux", "Incomplet et dysharmonieux"],
+      "answer": "A"
+    },
+    {
+      "year": 2023,
+      "rot": 1,
+      "lesson": "Comas neurologiques.",
+      "text": "Le score de Glasgow est très important pour l'évaluation des traumatismes crâniens :",
+      "options": ["La réponse verbale est cotée sur 04", "Un score compris entre 08/15 et 10/15 nécessite l'intubation ventilation artificielle", "La réponse motrice en décérébration est notée 02/15", "L'ouverture des yeux à la demande (à l'appel) est cotée 03/04"],
+      "answer": "D"
+    },
+    {
+      "year": 2023,
+      "rot": 1,
+      "lesson": "Traumatismes crânio-encéphaliques.",
+      "text": "L'hématome sous-dural chronique est une complication tardive des traumatismes crâniens :",
+      "options": ["Elle touche de prédilection les patients jeunes de sexe masculin", "Au scanner on note une collection en forme de lentille biconvexe", "Dans sa forme hémisphérique droite chez un gaucher on note un déficit sensitivo-moteur de l'hémicorps gauche avec aphasie", "Un traumatisme violent est indispensable car la dure-mère colle à la table interne chez le sujet âgé"],
+      "answer": "C"
+    },
+    {
+      "year": 2023,
+      "rot": 1,
+      "lesson": "Traumatismes crânio-encéphaliques.",
+      "text": "Les traumatismes crâniens peuvent se compliquer d'infections variées pouvant être sévères :",
+      "options": ["L'antibioprophylaxie doit être instaurée systématiquement dans tous les traumatismes crâniens", "L'empyème est une collection de sang liquéfié xanthochromique siégeant en extracérébral", "L'abcès cérébral compressif nécessite un drainage chirurgical", "L'ostéite comme les méningites post-traumatiques ne sont diagnostiquées que par l'IRM"],
+      "answer": "C"
+    },
+    {
+      "year": 2023,
+      "rot": 1,
+      "lesson": "Hémorragies sous-arachnoïdiennes.",
+      "text": "Dans l'hémorragie méningée, une atteinte du nerf oculomoteur gauche est fortement évocatrice :",
+      "options": ["D'un anévrisme d'artère sylvienne gauche", "Une malformation artério-veineuse", "Un anévrisme de l'artère communicante postérieure gauche", "Un cavernome pariétal gauche"],
+      "answer": "C"
+    },
+    {
+      "year": 2023,
+      "rot": 1,
+      "lesson": "Hypertension intracrânienne.",
+      "text": "Sur le plan clinique, une HTIC se manifeste par une triade :",
+      "options": ["Céphalée en casque avec vomissement et hémiparésie", "Céphalée fronto-occipitale avec vomissement et trouble d'état de conscience", "Strabisme convergent avec vomissement et une hémiplégie", "Céphalées intenses avec nausée et œdème papillaire au fond d'œil"],
+      "answer": "D"
+    },
+    {
+      "year": 2023,
+      "rot": 1,
+      "lesson": "Craniosténose.",
+      "text": "Lors d'une scaphocéphalie (cochez les réponses fausses) :",
+      "options": ["La suture coronale est fermée", "La suture sagittale est fermée", "La suture métopique est fermée", "Un traitement chirurgical par la technique de H et O est pratiqué"],
+      "answer": "AC"
+    },
+    {
+      "year": 2023,
+      "rot": 1,
+      "lesson": "Maladie de Parkinson.",
+      "text": "La dégénérescence parkinsonienne entraîne une diminution de :",
+      "options": ["L'acétylcholine", "L'adrénaline", "La dopamine", "La noradrénaline"],
+      "answer": "C"
+    },
+    {
+      "year": 2023,
+      "rot": 1,
+      "lesson": "Maladie de Parkinson.",
+      "text": "Le tremblement est l'un des signes principaux de la maladie de Parkinson :",
+      "options": ["Tremblement de repos", "Tremblement d'action", "Tremblement d'attitude", "Tremblement intentionnel"],
+      "answer": "A"
+    },
+    {
+      "year": 2023,
+      "rot": 1,
+      "lesson": "Démences.",
+      "text": "La maladie d'Alzheimer est due à :",
+      "options": ["Une accumulation anormale de la protéine TAU", "Une accumulation de corps de Lewy", "Une accumulation de corps de Pick", "Une accumulation anormale de protéines B-amyloïdes"],
+      "answer": "AD"
+    },
+    {
+      "year": 2023,
+      "rot": 1,
+      "lesson": "Myopathies inflammatoires.",
+      "text": "Dans les polymyosites, le déficit moteur est :",
+      "options": ["Proximal", "Distal", "Proximo-distal", "Absent"],
+      "answer": "A"
+    },
+    {
+      "year": 2023,
+      "rot": 1,
+      "lesson": "Polyneuropathies.",
+      "text": "Une polyneuropathie est une atteinte :",
+      "options": ["Symétrique et synchrone des nerfs périphériques", "Asymétrique et asynchrone des troncs nerveux", "Symétrique et synchrone des racines et des nerfs périphériques", "Asymétrique et asynchrone des racines et des nerfs périphériques"],
+      "answer": "A"
+    },
+    {
+      "year": 2023,
+      "rot": 1,
+      "lesson": "Hypertension intracrânienne.",
+      "text": "L'engagement temporal droit compliquant une hypertension intracrânienne se traduit par (les réponses justes) :",
+      "options": ["Des troubles de la conscience", "Une mydriase droite et hémiplégie gauche", "Des crises comitiales généralisées", "Des troubles du rythme respiratoire"],
+      "answer": "AB"
+    }
+  ]
+}
