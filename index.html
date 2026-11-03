@@ -5,11 +5,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" id="meta-desc" content="QCMify · Banque de QCM médicaux">
 <title>QCMify · Banque de QCM</title>
+<link rel="canonical" href="https://abdraoufbenabbes.github.io/qcmify-data/">
+<meta name="theme-color" id="theme-color-meta" content="#fbfbfd">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="QCMify">
+<meta property="og:title" id="og-title" content="QCMify · Banque de QCM">
+<meta property="og:description" id="og-desc" content="Banque de QCM médicaux, de la 1ère à la 6ème année : révisez par année, module, appareil et cours.">
+<meta property="og:url" content="https://abdraoufbenabbes.github.io/qcmify-data/">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" id="tw-title" content="QCMify · Banque de QCM">
+<meta name="twitter:description" id="tw-desc" content="Banque de QCM médicaux, de la 1ère à la 6ème année : révisez par année, module, appareil et cours.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%2334c759' rx='20'/><text x='50' y='60' font-family='Arial,sans-serif' font-weight='900' font-size='42' fill='white' text-anchor='middle' letter-spacing='-2'>Q</text></svg>">
-<script>(function(){try{if(localStorage.getItem('qcm-theme')==='dark')document.documentElement.classList.add('theme-dark');}catch(e){}})();</script>
+<script>(function(){try{var s=localStorage.getItem('qcm-theme');if(s==='dark'||(!s&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('theme-dark');}catch(e){}})();</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"QCMify","alternateName":"QCMify · Banque de QCM","url":"https://abdraoufbenabbes.github.io/qcmify-data/","description":"Banque de QCM médicaux pour les étudiants en médecine, organisée par année, module et cours.","inLanguage":["fr","en"],"isAccessibleForFree":true}
+</script>
+<!-- The original Inter webfont, back on purpose: the logo mark is a text glyph,
+     so it is drawn in this family too. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon.svg">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -28,15 +47,13 @@
   color-scheme:light;
   --icon-calendar-down: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2386868b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='18' rx='2' ry='2'/><line x1='16' y1='2' x2='16' y2='6'/><line x1='8' y1='2' x2='8' y2='6'/><line x1='3' y1='10' x2='21' y2='10'/><path d='M9 14l3 3 3-3'/></svg>");
   --icon-calendar-up:   url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2386868b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='18' rx='2' ry='2'/><line x1='16' y1='2' x2='16' y2='6'/><line x1='8' y1='2' x2='8' y2='6'/><line x1='3' y1='10' x2='21' y2='10'/><path d='M9 17l3-3 3 3'/></svg>");
-  --icon-sort-az:       url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2386868b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M3 16l4 4 4-4'/><path d='M7 20V4'/><path d='M11 4h4'/><path d='M11 8h7'/><path d='M11 12h10'/></svg>");
-  --icon-sort-za:       url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2386868b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M3 8l4-4 4 4'/><path d='M7 4v16'/><path d='M11 12h10'/><path d='M11 16h7'/><path d='M11 20h4'/></svg>");
 }
 html.theme-dark{
   --bg:#0a0611;--bg-2:#120a1e;--card:#180e26;
   --text:#f5f0ff;--text-2:#c9bce0;--text-3:#9184a8;--text-4:#8c7fa3;
   --border:rgba(168,85,247,.14);--border-2:rgba(168,85,247,.32);
   --accent:#a855f7;--accent-hover:#c084fc;--accent-soft:rgba(147,51,234,.14);--accent-text:#c084fc;--accent-btn:#7e22ce;--accent-btn-hover:#6b21a8;
-  --success:#22d3ee;--success-soft:rgba(34,211,238,.10);--success-border:rgba(34,211,238,.42);--success-text:#22d3ee;
+  --success:#34d399;--success-soft:rgba(52,211,153,.12);--success-border:rgba(52,211,153,.42);--success-text:#6ee7b7;
   --danger:#ec4899;--danger-soft:rgba(236,72,153,.14);--danger-border:rgba(236,72,153,.42);--danger-text:#f472b6;
   --warning:#fbbf24;--warning-soft:rgba(251,191,36,.12);--warning-border:rgba(251,191,36,.40);--warning-text:#fbbf24;
   --shadow-sm:0 1px 2px rgba(0,0,0,.4);
@@ -45,8 +62,6 @@ html.theme-dark{
   color-scheme:dark;
   --icon-calendar-down: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239184a8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='18' rx='2' ry='2'/><line x1='16' y1='2' x2='16' y2='6'/><line x1='8' y1='2' x2='8' y2='6'/><line x1='3' y1='10' x2='21' y2='10'/><path d='M9 14l3 3 3-3'/></svg>");
   --icon-calendar-up:   url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239184a8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='18' rx='2' ry='2'/><line x1='16' y1='2' x2='16' y2='6'/><line x1='8' y1='2' x2='8' y2='6'/><line x1='3' y1='10' x2='21' y2='10'/><path d='M9 17l3-3 3 3'/></svg>");
-  --icon-sort-az:       url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239184a8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M3 16l4 4 4-4'/><path d='M7 20V4'/><path d='M11 4h4'/><path d='M11 8h7'/><path d='M11 12h10'/></svg>");
-  --icon-sort-za:       url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239184a8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M3 8l4-4 4 4'/><path d='M7 4v16'/><path d='M11 12h10'/><path d='M11 16h7'/><path d='M11 20h4'/></svg>");
 }
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;background:var(--bg);transition:background-color .2s var(--ease)}
 body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter",Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.5;letter-spacing:-.011em;min-height:100vh;min-height:100dvh;background-image:radial-gradient(ellipse 90% 60% at 50% -10%,rgba(52,199,89,.04),transparent 60%),radial-gradient(ellipse 50% 40% at 90% 20%,rgba(255,149,0,.03),transparent 50%);background-attachment:fixed;transition:background-color .2s var(--ease),color .2s var(--ease)}
@@ -171,7 +186,7 @@ html.theme-dark .back-btn:hover{background:rgba(255,255,255,.10)}
 
 .controls{position:relative;z-index:50;padding:12px 0 14px;background:var(--bg);border-bottom:1px solid var(--border)}
 .search-wrap{position:relative;margin-bottom:10px}
-.search-wrap svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--text-3);pointer-events:none;width:16px;height:16px}
+.search-wrap > svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--text-3);pointer-events:none;width:16px;height:16px}
 .search-wrap input{width:100%;padding:10px 14px 10px 40px;background:rgba(0,0,0,.04);border:1px solid transparent;border-radius:var(--radius-sm);font-family:inherit;font-size:14px;color:var(--text);outline:none;transition:all .2s var(--ease)}
 html.theme-dark .search-wrap input{background:rgba(255,255,255,.06)}
 .search-wrap input:focus{background:var(--card);border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
@@ -213,8 +228,6 @@ html.theme-dark .sort-select{background-color:rgba(255,255,255,.06);background-i
 .sort-select option{background:var(--card);color:var(--text);font-size:13px}
 #sort-year:has(option:checked[value="desc"])   {--sort-icon: var(--icon-calendar-down)}
 #sort-year:has(option:checked[value="asc"])    {--sort-icon: var(--icon-calendar-up)}
-#sort-lesson:has(option:checked[value="asc"])  {--sort-icon: var(--icon-sort-az)}
-#sort-lesson:has(option:checked[value="desc"]) {--sort-icon: var(--icon-sort-za)}
 .result-count{margin-left:auto;font-size:12.5px;color:var(--text-3);font-weight:500;min-height:1em}
 .result-count b{color:var(--text);font-weight:600}
 
@@ -271,6 +284,9 @@ html.theme-dark .clear-btn:hover{background:rgba(255,255,255,.10)}
 .welcome-icon svg{width:34px;height:34px}
 .welcome h2{font-size:clamp(1.4rem,2.6vw,1.75rem);font-weight:700;letter-spacing:-.03em;margin-bottom:8px}
 .welcome p{font-size:14.5px;color:var(--text-2);max-width:440px;margin:0 auto;line-height:1.55}
+.welcome-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.welcome-actions .btn{padding:10px 18px;font-size:13.5px;font-weight:600}
+.welcome-actions .btn svg{width:15px;height:15px;flex-shrink:0}
 
 .load-more-wrap{text-align:center;padding:20px 0 8px}
 .btn-load-more{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;background:var(--card);border:1px solid var(--border-2);border-radius:var(--radius-pill);font-family:inherit;font-size:13.5px;font-weight:600;color:var(--text);cursor:pointer;transition:all .2s var(--ease);box-shadow:var(--shadow-sm)}
@@ -328,6 +344,92 @@ footer b{color:var(--text-2);font-weight:600}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .route-loading{padding:96px 20px;text-align:center;color:var(--text-3);font-size:14px;font-weight:500}
 @media (pointer:coarse){.search-wrap input,.sort-select{font-size:16px}}
+
+/* ── v1.7.0 additions ── */
+.skip-link{position:absolute;left:-9999px;top:0;z-index:4000;padding:10px 16px;background:var(--card);color:var(--text);border:1px solid var(--border-2);border-radius:0 0 var(--radius-sm) 0;font-size:14px;font-weight:600;text-decoration:none}
+.skip-link:focus{left:0;outline:2px solid var(--accent);outline-offset:2px}
+main:focus{outline:none}
+
+.opt.missed{background:var(--success-soft);border-color:var(--success-border);border-style:dashed}
+.opt.missed .letter{color:var(--success-text)}
+.opt.missed .text{color:var(--text-2)}
+.opt .missed-mark{display:none;font-weight:700;font-size:13px;flex-shrink:0;margin-left:auto;color:var(--success-text);opacity:.55}
+.opt.missed .missed-mark{display:inline-block}
+
+.toast.actionable{pointer-events:auto;cursor:pointer;border-color:var(--accent);color:var(--accent-text)}
+.toast.actionable:hover{box-shadow:0 12px 40px rgba(0,0,0,.16),0 0 0 3px var(--accent-soft)}
+.toast.actionable:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.toast .toast-retry{font-weight:700;text-decoration:underline;text-underline-offset:2px}
+
+.mod-progress{margin-top:10px;display:flex;align-items:center;gap:10px;max-width:340px}
+.mod-progress[hidden]{display:none}
+.mod-progress-bar{flex:1;height:6px;border-radius:var(--radius-pill);background:rgba(0,0,0,.07);overflow:hidden}
+html.theme-dark .mod-progress-bar{background:rgba(255,255,255,.10)}
+.mod-progress-bar span{display:block;height:100%;border-radius:var(--radius-pill);background:linear-gradient(90deg,var(--accent),#20b2aa);transition:width .45s var(--ease-out)}
+.mod-progress-text{font-size:11.5px;font-weight:600;color:var(--text-3);white-space:nowrap;font-variant-numeric:tabular-nums}
+.progress-reset{margin-top:2px;padding:0;background:none;border:none;font-family:inherit;font-size:11.5px;font-weight:600;color:var(--text-3);cursor:pointer;text-decoration:underline;text-underline-offset:2px;transition:color .2s var(--ease)}
+.progress-reset:hover{color:var(--danger-text)}
+.progress-reset[hidden]{display:none}
+
+.btn[aria-pressed="true"].btn-mistakes{background:var(--warning-soft);color:var(--warning-text);box-shadow:inset 0 0 0 1px var(--warning-border)}
+.btn-mistakes b{font-weight:700;font-variant-numeric:tabular-nums}
+
+.footer-about{max-width:560px;font-size:12.5px;line-height:1.6;color:var(--text-3);margin:0}
+html.theme-dark .footer-about{color:var(--text-3)}
+
+/* ── v1.8.0 prototype additions ── */
+.search-clear{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:26px;height:26px;display:flex;align-items:center;justify-content:center;padding:0;background:transparent;border:none;border-radius:50%;color:var(--text-3);cursor:pointer;transition:background .15s var(--ease),color .15s var(--ease)}
+.search-clear:hover{background:rgba(0,0,0,.07);color:var(--text)}
+.search-clear:focus-visible{outline:2px solid var(--accent);outline-offset:1px;color:var(--text)}
+html.theme-dark .search-clear:hover{background:rgba(255,255,255,.09)}
+.search-clear[hidden]{display:none}
+/* the search field's icon rule must not reach the icon inside this button */
+.search-clear svg{position:static;left:auto;top:auto;transform:none;width:13px;height:13px;pointer-events:none}
+.search-wrap input{padding-right:42px}
+
+.ms-meta{margin-left:auto;font-size:11px;font-weight:600;color:var(--text-3);font-variant-numeric:tabular-nums;flex-shrink:0}
+.ms-option.checked .ms-meta{color:var(--accent-text)}
+
+.q-head-right{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.q-report,.q-link{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;color:var(--text-4);background:transparent;border:none;cursor:pointer;text-decoration:none;transition:background .15s var(--ease),color .15s var(--ease)}
+.q-report:hover,.q-link:hover{background:rgba(0,0,0,.06);color:var(--text)}
+html.theme-dark .q-report:hover,html.theme-dark .q-link:hover{background:rgba(255,255,255,.08)}
+.q-report svg,.q-link svg{width:13px;height:13px}
+.q-focus{box-shadow:0 0 0 3px var(--accent-soft),0 0 0 1px var(--accent)}
+
+.exam-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:10px;padding:10px 12px;background:var(--accent-soft);border:1px solid var(--success-border);border-radius:var(--radius-sm)}
+.exam-bar[hidden]{display:none}
+.exam-bar label{font-size:12px;font-weight:600;color:var(--text-2)}
+.exam-bar select{padding:6px 10px;border-radius:8px;border:1px solid var(--border-2);background:var(--card);color:var(--text);font-family:inherit;font-size:12.5px;font-weight:500}
+.exam-bar .btn{padding:6px 12px;font-size:12.5px}
+.exam-setup{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.exam-setup[hidden]{display:none}
+.exam-live{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.exam-live[hidden]{display:none}
+.exam-clock{font-variant-numeric:tabular-nums;font-weight:700;font-size:13px;color:var(--accent-text)}
+.exam-clock.low{color:var(--danger-text)}
+.exam-progress{font-size:12.5px;font-weight:600;color:var(--text-2)}
+#controls.exam-active .search-wrap,#controls.exam-active .filters-row,#controls.exam-active .toolbar{display:none}
+
+.exam-summary{margin:0 0 14px;padding:18px 20px;background:var(--card);border:1px solid var(--accent);border-radius:var(--radius-lg);box-shadow:var(--shadow-md)}
+.exam-summary[hidden]{display:none}
+.exam-summary h2{font-size:17px;font-weight:700;letter-spacing:-.02em;margin-bottom:6px}
+.exam-summary p{font-size:14px;color:var(--text-2)}
+.exam-summary b{font-size:22px;font-variant-numeric:tabular-nums;color:var(--text)}
+.exam-actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.btn-primary{background:var(--accent-btn);color:#fff}
+.btn-primary:hover:not(:disabled){background:var(--accent-btn-hover)}
+
+@media print{
+  .site-header,.controls,.back-to-filters,footer,.load-more-wrap,.exam-bar,.exam-actions,.empty,.skip-link,.route-loading{display:none !important}
+  body{background:#fff;color:#000;background-image:none}
+  .container{max-width:none;padding:0}
+  main{padding:0}
+  .q-card{break-inside:avoid;page-break-inside:avoid;border:1px solid #ddd;box-shadow:none;margin-bottom:10px;padding:12px;animation:none !important}
+  .q-text{font-size:12.5pt}
+  .opt{border:1px solid #e2e2e2;background:#fff}
+  .feedback{border:1px solid #999}
+}
 </style>
 
 <!-- Google tag (gtag.js) -->
@@ -342,6 +444,7 @@ footer b{color:var(--text-2);font-weight:600}
 
 </head>
 <body>
+<a class="skip-link" id="skip-link" href="#main-home"></a>
 <noscript><p style="padding:40px 20px;text-align:center;font-family:sans-serif">QCMify nécessite JavaScript · QCMify requires JavaScript.</p></noscript>
 <div id="sr-status" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
 
@@ -357,8 +460,8 @@ footer b{color:var(--text-2);font-weight:600}
         <button id="lang-en" data-lang="en" aria-pressed="false">EN</button>
       </div>
       <button class="theme-btn" id="theme-btn" aria-label="Changer de thème">
-        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
-        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+        <svg class="moon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        <svg class="sun" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
       </button>
     </div>
   </div>
@@ -367,6 +470,7 @@ footer b{color:var(--text-2);font-weight:600}
 <div id="route-loading" class="route-loading" style="display:none" role="status"></div>
 
 <div id="view-home">
+  <main id="main-home" tabindex="-1">
   <section class="hero">
     <div class="container">
       <div class="eyebrow"><span class="eyebrow-dot"></span><span id="hero-badge"></span></div>
@@ -422,13 +526,14 @@ footer b{color:var(--text-2);font-weight:600}
       <div id="modules-grid"></div>
     </div>
   </section>
+  </main>
 </div>
 
 <div id="view-module" style="display:none">
   <section class="module-hero">
     <div class="container">
       <button class="back-btn" data-action="back-from-module">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
         <span id="back-label"></span>
       </button>
       <div class="module-header">
@@ -436,6 +541,8 @@ footer b{color:var(--text-2);font-weight:600}
         <div>
           <h1 id="mod-title-view"></h1>
           <p id="mod-meta-view"></p>
+          <div class="mod-progress" id="mod-progress" hidden></div>
+          <button class="progress-reset" id="progress-reset" data-action="reset-progress" type="button" hidden></button>
         </div>
       </div>
     </div>
@@ -444,8 +551,11 @@ footer b{color:var(--text-2);font-weight:600}
   <div class="controls" id="controls">
     <div class="container">
       <div class="search-wrap">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
         <input type="text" id="f-search" autocomplete="off" aria-label="Rechercher dans les questions">
+        <button class="search-clear" id="search-clear" type="button" hidden aria-label="Effacer la recherche">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
       </div>
       <div class="filters-row">
         <div class="multiselect" id="ms-year"></div>
@@ -455,35 +565,68 @@ footer b{color:var(--text-2);font-weight:600}
       </div>
       <div class="toolbar">
         <button class="btn btn-secondary" data-action="reset-filters" id="reset-label"></button>
+        <button class="btn btn-secondary btn-mistakes" id="btn-mistakes" type="button" aria-pressed="false" data-action="toggle-mistakes"></button>
+        <button class="btn btn-secondary" id="btn-exam" type="button" data-action="toggle-exam" aria-expanded="false" aria-controls="exam-bar"></button>
         <div class="sort-group">
           <select class="sort-select" id="sort-year" aria-label="Trier par année">
             <option value="desc">Récentes</option>
             <option value="asc">Anciennes</option>
           </select>
-          <select class="sort-select" id="sort-lesson" aria-label="Trier par cours">
-            <option value="asc">Cours A→Z</option>
-            <option value="desc">Cours Z→A</option>
-          </select>
         </div>
         <div class="result-count" id="result-count" role="status" aria-live="polite" aria-atomic="true"></div>
+      </div>
+      <div class="exam-bar" id="exam-bar" hidden>
+        <div class="exam-setup" id="exam-setup">
+          <label for="exam-count" id="exam-count-label"></label>
+          <select id="exam-count">
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="0">Tout</option>
+          </select>
+          <label for="exam-time" id="exam-time-label"></label>
+          <select id="exam-time">
+            <option value="0">Sans chrono</option>
+            <option value="10">10 min</option>
+            <option value="15">15 min</option>
+            <option value="30">30 min</option>
+          </select>
+          <button class="btn btn-primary" id="exam-start" type="button" data-action="exam-start"></button>
+        </div>
+        <div class="exam-live" id="exam-live" hidden>
+          <span class="exam-progress" id="exam-progress"></span>
+          <span class="exam-clock" id="exam-clock"></span>
+          <button class="btn btn-secondary" id="exam-finish" type="button" data-action="exam-finish"></button>
+        </div>
       </div>
     </div>
   </div>
 
-  <main>
+  <main id="main-module" tabindex="-1">
     <div class="container">
+      <div class="exam-summary" id="exam-summary" hidden></div>
       <div class="welcome" id="module-welcome">
         <div class="welcome-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
         </div>
         <h2 id="module-welcome-title"></h2>
         <p id="module-welcome-sub"></p>
+        <div class="welcome-actions">
+          <button class="btn btn-primary" type="button" data-action="show-all">
+            <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></svg>
+            <span id="welcome-show-all-label"></span>
+          </button>
+          <button class="btn btn-secondary" type="button" data-action="randomize">
+            <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M4 20 21 3"/><path d="M21 16v5h-5"/><path d="m15 15 6 6"/><path d="m4 4 5 5"/></svg>
+            <span id="welcome-randomize-label"></span>
+          </button>
+        </div>
       </div>
 
       <div id="questions-container"></div>
 
       <div class="empty" id="empty" style="display:none">
-        <div class="empty-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
+        <div class="empty-icon"><svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
         <h3 id="empty-title"></h3>
         <p id="empty-sub"></p>
       </div>
@@ -495,26 +638,57 @@ footer b{color:var(--text-2);font-weight:600}
   </main>
 
   <button class="back-to-filters" id="back-to-filters" type="button" aria-label="Retour aux filtres">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
     <span id="back-to-filters-label"></span>
   </button>
 </div>
 
 <footer>
   <a class="footer-contact" href="https://t.me/abdrraovf" target="_blank" rel="noopener noreferrer">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
     <span id="footer-contact-text"></span>
   </a>
+  <p class="footer-about" id="footer-about">QCMify est une banque de QCM médicaux en accès libre, organisée par année (1ère à 6ème), par module et par cours, avec les sujets d'examen classés par année et par rotation. Aucun compte n'est nécessaire : vos réponses sont enregistrées sur votre appareil.</p>
   <p><b>QCMify</b> · <span id="footer-tag">Banque de QCM</span> · 2026</p>
 </footer>
 
 <script>
 'use strict';
 
-const APP_VERSION = "1.6.2";
+/* ════════════════════════════════════════════════════════════════
+   QCMify · single-file revision app
+   v1.7.0 — security/data-quality/perf pass:
+     · rich-text sanitiser for question stems (whitelisted inline tags)
+     · duplicate questions collapsed, answers clamped to existing options
+     · content-hash question IDs (stable across JSON edits)
+     · progress persisted per module in localStorage (content-signature guarded)
+     · "my mistakes" filter + per-module progress indicator
+     · retry-able load-error toast, semester-aware back navigation
+     · guarded history.replaceState, smaller prefetch bursts, versioned data URLs
+     · real h1/main landmarks, decorative icons hidden, OG/Twitter/JSON-LD metadata
+   v1.7.1 — the year-1 semester cards are no longer rebuilt (and re-animated)
+            when switching between semester 1 and semester 2
+   ════════════════════════════════════════════════════════════════ */
+
+const APP_VERSION = "1.8.1-proto";
 const DATA_BASE = "https://abdraoufbenabbes.github.io/qcmify-data/";
+/* Bump DATA_VERSION only when the question banks change: the app version must not
+   force every returning client to re-download ~1.3 MB of JSON after a code patch. */
+const DATA_VERSION = '1';
+const DATA_VERSION_QS = '?v=' + DATA_VERSION;
+const MANIFEST_URL = DATA_BASE + 'manifest.json' + DATA_VERSION_QS;
 const PAGE_SIZE = 20;
 const FETCH_TIMEOUT_MS = 12000;
+/* ?debug in the URL enables the informational logs (warnings stay on) */
+const DEBUG = /[?&]debug\b/.test(window.location.search);
+const PROGRESS_PREFIX = 'qcm-progress:';
+const PROGRESS_VERSION = 1;
+const MAX_FETCH_CONCURRENCY = 4;
+/* how many normalized modules stay in memory before the least recently used one is dropped */
+const MODULE_CACHE_MAX = 6;
+/* Reports go to a direct chat with the maintainer: a username link honours ?text=,
+   so the message is already written in the composer (group links drop it). */
+const REPORT_CHAT = 'https://t.me/abdrraovf';
 
 /* ════════════ ICONS ════════════ */
 const ICONS = {
@@ -542,12 +716,19 @@ const ICONS = {
   arrow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>'
 };
 
+/* every icon here is decorative: hide it from assistive tech and the tab order */
+const icon = (name) => (ICONS[name] || ICONS.flask)
+  .replace('<svg ', '<svg aria-hidden="true" focusable="false" ');
+const ICON_ARROW = icon('arrow');
+const ICON_CLOCK = icon('clock');
+
 /* ════════════ i18n ════════════ */
 const T = {
   fr: {
     heroBadge: 'Banque de QCM',
     docTitle: 'QCMify · Banque de QCM',
     metaDesc: 'QCMify · Banque de QCM médicaux',
+    ogDesc: "Banque de QCM médicaux, de la 1ère à la 6ème année : révisez par année, module, appareil et cours.",
     searchLabel: 'Rechercher dans les questions',
     loading: 'Chargement…',
     qLabel: 'Question',
@@ -579,7 +760,6 @@ const T = {
     verify: 'Vérifier', clear: 'Effacer',
     correct: 'Correct', incorrect: 'Incorrect', partial: 'Partielle',
     sortYearDesc: 'Récentes', sortYearAsc: 'Anciennes',
-    sortLessonAsc: 'Cours A→Z', sortLessonDesc: 'Cours Z→A',
     emptyTitle: 'Aucun résultat',
     emptySub: 'Essayez de modifier vos filtres.',
     comingSoon: 'Bientôt disponible',
@@ -589,20 +769,51 @@ const T = {
     loadError: 'Chargement impossible · touchez pour réessayer',
     unitsHeader: 'Unités', modulesHeader: 'Modules',
     footerTag: 'Banque de QCM',
-    themeLabel: 'Changer de thème', sortYearLabel: 'Trier par année', sortLessonLabel: 'Trier par cours',
+    themeLabel: 'Changer de thème', sortYearLabel: 'Trier par année',
     welcomeTitle: 'Prêt à réviser ?',
-    welcomeSub: (n) => `${n} questions disponibles · utilisez les filtres ci-dessus pour commencer.`,
+    welcomeSub: (n) => `${n} questions disponibles · filtrez ci-dessus, ou partez directement :`,
+    showAll: 'Tout afficher',
+    randomPick: 'Au hasard',
     loadMore: 'Afficher plus',
     loadMoreRemaining: (n) => `${n} restante${n > 1 ? 's' : ''}`,
     yearLabel: (y) => y === 1 ? '1ère Année' : `${y}ème Année`,
     modCount: (n) => `${n} module${n > 1 ? 's' : ''}`,
     msAll: 'Tout',
-    msNone: 'Effacer'
+    msNone: 'Effacer',
+    skipToContent: 'Aller au contenu',
+    footerAbout: "QCMify est une banque de QCM médicaux en accès libre, organisée par année (1ère à 6ème), par module et par cours, avec les sujets d'examen classés par année et par rotation. Aucun compte n'est nécessaire : vos réponses sont enregistrées sur votre appareil.",
+    myMistakes: 'Mes erreurs',
+    myMistakesTitle: "Aucune erreur pour l'instant",
+    myMistakesSub: "Répondez à quelques questions : celles que vous ratez apparaîtront ici.",
+    progressLabel: (answered, total, correct) => `${answered}/${total} répondues · ${correct} juste${correct > 1 ? 's' : ''}`,
+    progressReset: 'Réinitialiser ma progression',
+    progressCleared: 'Progression réinitialisée',
+    expectedAnswer: 'réponse attendue',
+    copyLink: 'Copier le lien',
+    linkCopied: 'Lien copié',
+    reportError: 'Signaler une erreur',
+    examMode: 'Mode examen',
+    examCount: 'Questions',
+    examTime: 'Durée',
+    examAll: 'Tout',
+    examNone: 'Sans chrono',
+    examStart: 'Commencer',
+    examFinish: 'Terminer',
+    examProgress: (a, n) => `${a}/${n} répondues`,
+    examDone: 'Examen terminé',
+    examTimeUp: 'Temps écoulé',
+    examScoreLabel: 'justes',
+    examAnswered: 'répondues',
+    examAgain: 'Nouvelle série',
+    examQuit: 'Quitter',
+    examEmpty: 'Aucune question dans ce filtre',
+    updateReady: 'Nouvelle version disponible · touchez pour recharger'
   },
   en: {
     heroBadge: 'QCM Bank',
     docTitle: 'QCMify · QCM Bank',
     metaDesc: 'QCMify · Medical QCM bank',
+    ogDesc: 'Medical MCQ bank for years 1–6: revise by year, module, system and course.',
     searchLabel: 'Search questions',
     loading: 'Loading…',
     qLabel: 'Question',
@@ -634,7 +845,6 @@ const T = {
     verify: 'Check', clear: 'Clear',
     correct: 'Correct', incorrect: 'Incorrect', partial: 'Partial',
     sortYearDesc: 'Recent', sortYearAsc: 'Oldest',
-    sortLessonAsc: 'Course A→Z', sortLessonDesc: 'Course Z→A',
     emptyTitle: 'No results',
     emptySub: 'Try adjusting your filters.',
     comingSoon: 'Coming soon',
@@ -644,15 +854,45 @@ const T = {
     loadError: 'Could not load · tap to retry',
     unitsHeader: 'Units', modulesHeader: 'Modules',
     footerTag: 'QCM Bank',
-    themeLabel: 'Toggle theme', sortYearLabel: 'Sort by year', sortLessonLabel: 'Sort by course',
+    themeLabel: 'Toggle theme', sortYearLabel: 'Sort by year',
     welcomeTitle: 'Ready to review?',
-    welcomeSub: (n) => `${n} questions available · use the filters above to start.`,
+    welcomeSub: (n) => `${n} questions available · filter above, or jump straight in:`,
+    showAll: 'Show all',
+    randomPick: 'Random',
     loadMore: 'Load more',
     loadMoreRemaining: (n) => `${n} remaining`,
     yearLabel: (y) => y === 1 ? '1st Year' : `Year ${y}`,
     modCount: (n) => `${n} module${n > 1 ? 's' : ''}`,
     msAll: 'All',
-    msNone: 'Clear'
+    msNone: 'Clear',
+    skipToContent: 'Skip to content',
+    footerAbout: 'QCMify is a free medical MCQ bank, organised by year (1st to 6th), module and course, with past exam papers sorted by exam year and rotation. No account needed: your answers are stored on this device.',
+    myMistakes: 'My mistakes',
+    myMistakesTitle: 'No mistakes yet',
+    myMistakesSub: 'Answer a few questions — the ones you get wrong will show up here.',
+    progressLabel: (answered, total, correct) => `${answered}/${total} answered · ${correct} correct`,
+    progressReset: 'Reset my progress',
+    progressCleared: 'Progress cleared',
+    expectedAnswer: 'expected answer',
+    copyLink: 'Copy link',
+    linkCopied: 'Link copied',
+    reportError: 'Report an error',
+    examMode: 'Exam mode',
+    examCount: 'Questions',
+    examTime: 'Duration',
+    examAll: 'All',
+    examNone: 'No timer',
+    examStart: 'Start',
+    examFinish: 'Finish',
+    examProgress: (a, n) => `${a}/${n} answered`,
+    examDone: 'Exam finished',
+    examTimeUp: "Time's up",
+    examScoreLabel: 'correct',
+    examAnswered: 'answered',
+    examAgain: 'New set',
+    examQuit: 'Leave',
+    examEmpty: 'No question in this filter',
+    updateReady: 'New version available · tap to reload'
   }
 };
 
@@ -756,6 +996,45 @@ const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>'
 const t = k => T[state.lang][k];
 const LETTERS = ['A','B','C','D','E'];
 const fold = s => String(s).normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/œ/g, 'oe').replace(/æ/g, 'ae');
+const stripTags = s => String(s).replace(/<[^>]*>/g, ' ');
+
+/* Question stems are authored with light inline HTML (<strong>, <sup>…).
+   Everything else is dropped, every attribute is stripped, text is preserved. */
+const RICH_TAGS = { STRONG: 1, EM: 1, B: 1, I: 1, U: 1, SUP: 1, SUB: 1, BR: 1, SMALL: 1, SPAN: 1 };
+function richText(value) {
+  const s = String(value == null ? '' : value);
+  if (s.indexOf('<') === -1) return esc(s);
+  try {
+    const doc = new DOMParser().parseFromString('<div>' + s + '</div>', 'text/html');
+    const root = doc.body && doc.body.firstChild;
+    if (!root) return esc(s);
+    const clean = (node) => {
+      [...node.children].forEach(el => {
+        if (!RICH_TAGS[el.tagName]) { el.replaceWith(doc.createTextNode(el.textContent || '')); return; }
+        [...el.attributes].forEach(a => el.removeAttribute(a.name));
+        clean(el);
+      });
+    };
+    clean(root);
+    return root.innerHTML;
+  } catch (e) {
+    return esc(s);
+  }
+}
+
+/* 32-bit FNV-1a — stable content hash used for question IDs and progress signatures */
+function fnv1a(str) {
+  let h = 0x811c9dc5;
+  for (let i = 0; i < str.length; i++) {
+    h ^= str.charCodeAt(i);
+    h = (h + ((h << 1) + (h << 4) + (h << 7) + (h << 8) + (h << 24))) >>> 0;
+  }
+  return h.toString(36);
+}
+
+function questionKey(q) {
+  return fnv1a(q.text + '\u0000' + q.options.join('\u0000') + '\u0000' + q.answer);
+}
 
 const prefersReducedMotion = () => !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
 const smoothBehavior = () => prefersReducedMotion() ? 'auto' : 'smooth';
@@ -774,8 +1053,8 @@ function rotName(r) {
   return `${r}${suffix} Rotation`;
 }
 
-function questionId(slug, q, idx) {
-  return `${slug}-${q.year}-${idx}`;
+function questionId(slug, q) {
+  return slug + '-' + (q._key || questionKey(q));
 }
 
 function moduleHasData(slug) {
@@ -807,9 +1086,75 @@ function sortByStatus(list) {
 const DATA_STATE = {};
 const DATA_PROMISES = {};
 
+/* ── manifest: availability + counts, without downloading the question banks ── */
+const MANIFEST = { data: null, promise: null };
+
+function ensureManifest() {
+  if (MANIFEST.promise) return MANIFEST.promise;
+  const load = fetch(MANIFEST_URL)
+    .then(r => (r.ok ? r.json() : null))
+    .then(raw => {
+      if (raw && typeof raw === 'object' && !Array.isArray(raw)) MANIFEST.data = raw;
+      return MANIFEST.data;
+    })
+    .catch(() => null);
+  /* never let a slow manifest hold up the year grid: after 2.5 s we fall back
+     to the eager prefetch, and a late answer is still stored for later routes */
+  const timeout = new Promise(resolve => setTimeout(() => resolve(null), 2500));
+  MANIFEST.promise = Promise.race([load, timeout]);
+  return MANIFEST.promise;
+}
+
+function manifestEntry(slug) {
+  const m = MANIFEST.data && MANIFEST.data[slug];
+  return (m && typeof m === 'object') ? m : null;
+}
+
 function moduleStatus(slug) {
   if (moduleHasData(slug)) return 'ready';
-  return DATA_STATE[slug] || 'unknown';
+  const known = DATA_STATE[slug];
+  if (known) return known;
+  const entry = manifestEntry(slug);
+  if (entry) return Number(entry.q) > 0 ? 'pending' : 'missing';
+  return 'unknown';
+}
+
+function moduleCounts(slug) {
+  const d = MODULE_DATA[slug];
+  if (d) return { questions: d.questions.length, lessons: d.lessons.length };
+  const entry = manifestEntry(slug);
+  if (entry && Number(entry.q) > 0) {
+    return { questions: Number(entry.q), lessons: Number(entry.l) || 0 };
+  }
+  return null;
+}
+
+/* single source of truth for the line under a module name */
+function moduleStatsMarkup(slug) {
+  const status = moduleStatus(slug);
+  if (status === 'missing') return `<p>${t('comingSoonSub')}</p>`;
+  if (status === 'error') return `<p>${t('loadError')}</p>`;
+  const counts = moduleCounts(slug);
+  if (!counts) return '<p>…</p>';
+  return `<p>${counts.questions} ${t('questions')} · ${counts.lessons} ${t('courses')}</p>`;
+}
+
+/* ── LRU window over normalized modules (keeps memory flat while browsing) ── */
+const moduleOrder = [];
+
+function touchModule(slug) {
+  const i = moduleOrder.indexOf(slug);
+  if (i !== -1) moduleOrder.splice(i, 1);
+  moduleOrder.push(slug);
+  const current = state.currentModule && state.currentModule.slug;
+  while (moduleOrder.length > MODULE_CACHE_MAX) {
+    const idx = moduleOrder.findIndex(s => s !== current);
+    if (idx === -1) return;
+    const [drop] = moduleOrder.splice(idx, 1);
+    delete MODULE_DATA[drop];
+    delete DATA_STATE[drop];
+    delete DATA_PROMISES[drop];
+  }
 }
 
 function normalizeModuleData(raw, slug) {
@@ -819,35 +1164,52 @@ function normalizeModuleData(raw, slug) {
     e.empty = true;
     throw e;
   }
-  let dropped = 0;
+  let dropped = 0, duplicates = 0, clamped = 0;
   const questions = [];
+  const seen = new Set();
   raw.questions.forEach(q => {
     if (!q || typeof q !== 'object' || !Array.isArray(q.options)) { dropped++; return; }
     const year = Number(q.year);
     const rot = q.rot == null ? 0 : Number(q.rot);
-    const text = String(q.text == null ? '' : q.text);
-    const options = q.options.slice(0, LETTERS.length).map(o => String(o == null ? '' : o));
-    while (options.length && !options[options.length - 1].trim()) options.pop();
-    const answer = [...new Set(String(q.answer || '').toUpperCase().replace(/[^A-Z]/g, ''))].join('');
-    const ok = Number.isFinite(year) && Number.isFinite(rot) && text.trim()
-      && options.length >= 2 && options.every(o => o.trim())
-      && answer && answer.split('').every(c => LETTERS.indexOf(c) !== -1 && LETTERS.indexOf(c) < options.length);
+    const text = String(q.text == null ? '' : q.text).trim();
+    const options = q.options.slice(0, LETTERS.length).map(o => String(o == null ? '' : o).trim());
+    while (options.length && !options[options.length - 1]) options.pop();
+    const rawAnswer = String(q.answer || '').toUpperCase().replace(/[^A-Z]/g, '');
+    const answer = [...new Set(rawAnswer.split(''))]
+      .filter(c => LETTERS.indexOf(c) !== -1 && LETTERS.indexOf(c) < options.length)
+      .sort().join('');
+    if (rawAnswer && rawAnswer.length !== answer.length) clamped++;
+    const ok = Number.isFinite(year) && Number.isFinite(rot) && text
+      && options.length >= 2 && options.every(Boolean) && answer.length > 0;
     if (!ok) { dropped++; return; }
-    questions.push({
+    const item = {
       year, rot,
       unit: String(q.unit == null ? '' : q.unit).trim(),
       lesson: String(q.lesson == null ? '' : q.lesson).trim() || '—',
-      text, options, answer,
-      _hay: fold(text + '\n' + options.join('\n'))
-    });
+      text, options, answer
+    };
+    item._key = questionKey(item);
+    /* A question asked in two different exam sessions is real data, not a
+       duplicate — the year/rotation filters depend on those rows existing.
+       Rows are only flagged when year, rotation AND content are identical. */
+    const rowKey = item._key + '|' + item.year + '|' + item.rot;
+    if (seen.has(rowKey)) duplicates++;
+    seen.add(rowKey);
+    item._hay = fold(stripTags(text) + '\n' + options.join('\n'));
+    questions.push(item);
   });
+  if (clamped) console.warn('[QCMify] ' + (slug || 'module') + '.json: ' + clamped + ' answer(s) referenced a non-existent option — trimmed');
   if (dropped) console.warn('[QCMify] ' + (slug || 'module') + '.json: ' + dropped + ' invalid question(s) skipped');
+  if (duplicates) console.warn('[QCMify] ' + (slug || 'module') + '.json: ' + duplicates + ' identical row(s) (same year + rotation + content) — check the source data');
   if (!questions.length) throw new Error('no valid questions after normalisation');
   return {
     lessons: [...new Set(questions.map(q => q.lesson))],
     questions,
     rotCount: new Set(questions.map(q => q.rot)).size,
-    unitCount: new Set(questions.map(q => q.unit).filter(Boolean)).size
+    unitCount: new Set(questions.map(q => q.unit).filter(Boolean)).size,
+    /* changes whenever the content changes → progress saved for an older
+       version of a module is discarded instead of being shown against the wrong question */
+    signature: fnv1a(questions.map(q => q._key).join('|'))
   };
 }
 
@@ -858,7 +1220,8 @@ function loadModule(slug) {
   DATA_STATE[slug] = 'loading';
   const ctrl = (typeof AbortController === 'function') ? new AbortController() : null;
   const timer = ctrl ? setTimeout(() => ctrl.abort(), FETCH_TIMEOUT_MS) : null;
-  DATA_PROMISES[slug] = fetch(DATA_BASE + slug + '.json', ctrl ? { cache: 'no-cache', signal: ctrl.signal } : { cache: 'no-cache' })
+  const url = DATA_BASE + slug + '.json' + DATA_VERSION_QS;
+  DATA_PROMISES[slug] = fetch(url, ctrl ? { signal: ctrl.signal } : undefined)
     .then(r => {
       if (r.status === 404) { const e = new Error('HTTP 404'); e.notFound = true; throw e; }
       if (!r.ok) throw new Error('HTTP ' + r.status);
@@ -867,7 +1230,8 @@ function loadModule(slug) {
     .then(raw => {
       MODULE_DATA[slug] = normalizeModuleData(raw, slug);
       DATA_STATE[slug] = 'ready';
-      console.info('[QCMify] ' + slug + '.json loaded: '
+      touchModule(slug);
+      if (DEBUG) console.info('[QCMify] ' + slug + '.json loaded: '
         + MODULE_DATA[slug].questions.length + ' questions · '
         + MODULE_DATA[slug].lessons.length + ' lessons');
     })
@@ -880,8 +1244,21 @@ function loadModule(slug) {
   return DATA_PROMISES[slug];
 }
 
+/* Prefetch is paced: a year can hold a dozen modules and several hundred KB each,
+   so we keep a small pool instead of firing every request at once (and go gentler
+   when the browser reports Data Saver). */
 function ensureModules(slugs) {
-  return Promise.all([...new Set(slugs)].map(loadModule));
+  const queue = [...new Set(slugs)];
+  if (!queue.length) return Promise.resolve();
+  const saveData = !!(navigator.connection && navigator.connection.saveData);
+  const limit = Math.max(1, Math.min(saveData ? 2 : MAX_FETCH_CONCURRENCY, queue.length));
+  let next = 0;
+  const worker = () => {
+    if (next >= queue.length) return Promise.resolve();
+    const slug = queue[next++];
+    return loadModule(slug).then(worker);
+  };
+  return Promise.all(Array.from({ length: limit }, worker));
 }
 
 function allSlugsForYear(y) {
@@ -904,17 +1281,7 @@ function refreshVisibleModuleCards() {
     const status = moduleStatus(slug);
     const missing = status === 'missing';
 
-    let stats;
-    if (status === 'ready') {
-      const d = MODULE_DATA[slug];
-      stats = `<p>${d.questions.length} ${t('questions')} · ${d.lessons.length} ${t('courses')}</p>`;
-    } else if (missing) {
-      stats = `<p>${t('comingSoonSub')}</p>`;
-    } else if (status === 'error') {
-      stats = `<p>${t('loadError')}</p>`;
-    } else {
-      stats = `<p>…</p>`;
-    }
+    const stats = moduleStatsMarkup(slug);
     const p = card.querySelector('.module-info p');
     if (p) p.outerHTML = stats;
 
@@ -922,7 +1289,7 @@ function refreshVisibleModuleCards() {
       card.classList.add('coming-soon');
       if (!card.querySelector('.badge-soon')) {
         card.querySelector('.module-info h3').insertAdjacentHTML('beforeend',
-          `<span class="badge-soon">${ICONS.clock}${t('comingSoon')}</span>`);
+          `<span class="badge-soon">${ICON_CLOCK}${t('comingSoon')}</span>`);
       }
     } else {
       card.classList.remove('coming-soon');
@@ -945,17 +1312,16 @@ function refreshVisibleModuleCards() {
 
   document.querySelectorAll('.semester-card.pending').forEach((card, i) => {
     card.classList.remove('pending');
-    card.style.animationDelay = `${i * 300}ms`;
+    card.style.animationDelay = `${i * 45}ms`;
     card.classList.add('animate-in');
   });
 
-  const moduleStartDelay = (state.selectedYear === 1 && state.selectedSemester === null) ? 1000 : 0;
   document.querySelectorAll('.modules-grid').forEach(grid => {
     if (grid.offsetParent === null) return;
     const cards = [...grid.querySelectorAll('.module-card')];
     cards.forEach(card => {
       card.classList.remove('pending');
-      card.style.animationDelay = `${moduleStartDelay + globalIndex * 300}ms`;
+      card.style.animationDelay = `${globalIndex * 45}ms`;
       card.classList.add('animate-in');
       globalIndex++;
     });
@@ -974,17 +1340,22 @@ const state = {
   filterUnit: [],
   filterLesson: [],
   filterSearch: '',
+  filterMistakes: false,
   sortYear: 'desc',
   sortLesson: 'asc',
   userAnswers: {},
   checkedQuestions: {},
   modulePhase: 'welcome',
-  visibleCount: PAGE_SIZE
+  visibleCount: PAGE_SIZE,
+  exam: null
 };
 
 let msYear = null, msRot = null, msUnit = null, msLesson = null;
 let lastModuleSlug = null;
 let routeGeneration = 0;
+let lastCardQid = null;
+/* signature of the module+language the filter widgets were built for */
+let filtersBuiltFor = '';
 
 /* ════════════ HELPERS ════════════ */
 function getSemesterModules(y, semId) {
@@ -1034,10 +1405,168 @@ function shouldShowUnit(slug) {
   return !!d && d.unitCount >= 2;
 }
 
+/* ════════════ PROGRESS (persisted locally) ════════════ */
+let progressSaveTimer = null;
+
+const progressKey = slug => PROGRESS_PREFIX + slug;
+const qidFor = (slug, q) => slug + '-' + q._key;
+
+function currentModuleData() {
+  return state.currentModule ? MODULE_DATA[state.currentModule.slug] : null;
+}
+
+/* Answers are keyed by content hash, not by position, so editing/reordering a
+   module's JSON does not shift saved answers onto the wrong question. */
+function restoreProgress(slug, data) {
+  state.userAnswers = {};
+  state.checkedQuestions = {};
+  if (!data || !data.signature) return false;
+  let saved = null;
+  try { saved = JSON.parse(localStorage.getItem(progressKey(slug)) || 'null'); } catch (e) { return false; }
+  if (!saved || saved.v !== PROGRESS_VERSION || saved.sig !== data.signature) return false;
+  const valid = new Set(data.questions.map(q => q._key));
+  const answers = saved.a || {}, checked = saved.c || {};
+  Object.keys(answers).forEach(key => {
+    if (!valid.has(key)) return;
+    const letters = String(answers[key] || '').split('').filter(c => LETTERS.includes(c));
+    if (letters.length) state.userAnswers[slug + '-' + key] = new Set(letters);
+  });
+  Object.keys(checked).forEach(key => {
+    if (!valid.has(key)) return;
+    if (state.userAnswers[slug + '-' + key]) state.checkedQuestions[slug + '-' + key] = true;
+  });
+  return true;
+}
+
+function persistProgress() {
+  const m = state.currentModule;
+  const data = currentModuleData();
+  if (!m || !data) return;
+  const prefix = m.slug + '-';
+  const answers = {}, checked = {};
+  Object.keys(state.userAnswers).forEach(qid => {
+    if (qid.indexOf(prefix) !== 0) return;
+    const set = state.userAnswers[qid];
+    if (set && set.size) answers[qid.slice(prefix.length)] = [...set].sort().join('');
+  });
+  Object.keys(state.checkedQuestions).forEach(qid => {
+    if (qid.indexOf(prefix) === 0) checked[qid.slice(prefix.length)] = 1;
+  });
+  try {
+    if (!Object.keys(answers).length && !Object.keys(checked).length) localStorage.removeItem(progressKey(m.slug));
+    else localStorage.setItem(progressKey(m.slug), JSON.stringify({
+      v: PROGRESS_VERSION, sig: data.signature, a: answers, c: checked
+    }));
+  } catch (e) { /* private mode or quota exceeded — progress simply stays in memory */ }
+}
+
+function schedulePersist() {
+  clearTimeout(progressSaveTimer);
+  progressSaveTimer = setTimeout(persistProgress, 250);
+}
+
+function moduleStats() {
+  const data = currentModuleData();
+  if (!data || !state.currentModule) return null;
+  const slug = state.currentModule.slug;
+  let answered = 0, correct = 0, mistakes = 0;
+  data.questions.forEach(q => {
+    const qid = qidFor(slug, q);
+    if (!state.checkedQuestions[qid]) return;
+    answered++;
+    if (classifyAnswer(state.userAnswers[qid], q.answer.split('')) === 'correct') correct++;
+    else mistakes++;
+  });
+  return { answered, correct, mistakes, total: data.questions.length };
+}
+
+function updateProgressUI() {
+  const wrap = $('mod-progress');
+  const resetBtn = $('progress-reset');
+  const stats = moduleStats();
+  if (!wrap) return;
+  if (!stats) {
+    wrap.hidden = true;
+    wrap.innerHTML = '';
+    if (resetBtn) resetBtn.hidden = true;
+    return;
+  }
+  const pct = stats.total ? Math.round(stats.answered / stats.total * 100) : 0;
+  const label = t('progressLabel')(stats.answered, stats.total, stats.correct);
+  wrap.hidden = false;
+  wrap.innerHTML =
+    `<div class="mod-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="${stats.total}" aria-valuenow="${stats.answered}" aria-label="${esc(label)}"><span style="width:${pct}%"></span></div>` +
+    `<div class="mod-progress-text">${esc(label)}</div>`;
+  if (resetBtn) resetBtn.hidden = stats.answered === 0;
+}
+
+function updateMistakesButton() {
+  const btn = $('btn-mistakes');
+  if (!btn) return;
+  const stats = moduleStats();
+  const count = stats ? stats.mistakes : 0;
+  btn.setAttribute('aria-pressed', String(!!state.filterMistakes));
+  btn.innerHTML = `${esc(t('myMistakes'))}${count ? ` <b>${count}</b>` : ''}`;
+  /* stays enabled even at 0: clicking it explains how mistakes show up
+     (better than a dead disabled button nobody can interpret) */
+}
+
+/* Called after every answer mutation: repaint card + counters + persist. */
+function afterAnswerChange(qid) {
+  updateCard(qid);
+  updateProgressUI();
+  updateMistakesButton();
+  refreshLessonMeta();
+  schedulePersist();
+}
+
+/* A selection toggle doesn't need a full card rebuild: only classes, aria and the
+   two action buttons change. Cheaper, and it keeps the user's focus in place. */
+function updateSelectionUI(qid) {
+  const cards = document.querySelectorAll(`.q-card[data-qid="${CSS.escape(qid)}"]`);
+  if (!cards.length) return;
+  const uAns = state.userAnswers[qid] || new Set();
+  cards.forEach(card => {
+    card.querySelectorAll('[data-opt-qid]').forEach(btn => {
+      const on = uAns.has(btn.dataset.letter);
+      btn.classList.toggle('selected', on);
+      btn.setAttribute('aria-pressed', String(on));
+    });
+    const validate = card.querySelector('[data-validate-qid]');
+    if (validate) validate.disabled = uAns.size === 0;
+    const clear = card.querySelector('[data-clear-qid]');
+    if (clear) clear.style.display = uAns.size === 0 ? 'none' : '';
+  });
+}
+
 /* ════════════ ROUTER ════════════ */
+let suppressHashRoute = false;
+
 function replaceRoute(hash) {
-  history.replaceState(null, '', window.location.pathname + window.location.search + (hash ? '#' + hash : ''));
+  const url = window.location.pathname + window.location.search + (hash ? '#' + hash : '');
+  try {
+    history.replaceState(null, '', url);
+  } catch (e) {
+    /* file:// and opaque origins can refuse replaceState — fall back to the hash API
+       and only swallow the hashchange when the hash actually moved (that event fires
+       asynchronously, so applyRoute() below must still be the one that renders) */
+    const before = window.location.hash;
+    suppressHashRoute = true;
+    try { window.location.hash = hash || ''; } catch (e2) {}
+    if (window.location.hash === before) suppressHashRoute = false;
+  }
   return applyRoute();
+}
+
+/* Re-fetches a module that failed to load, then opens it. */
+function retryModule(slug, year) {
+  delete DATA_PROMISES[slug];
+  DATA_STATE[slug] = 'unknown';
+  loadModule(slug).then(() => {
+    if (moduleHasData(slug)) { window.location.hash = 'module=' + slug; return; }
+    showToast(`<b>${t('loadError')}</b>`, () => retryModule(slug, year));
+    replaceRoute('year=' + year);
+  });
 }
 
 async function applyRoute() {
@@ -1047,6 +1576,7 @@ async function applyRoute() {
   const moduleSlug = params.get('module');
   const yearStr = params.get('year');
   const semStr = params.get('sem');
+  const qKey = params.get('q');
 
   if (moduleSlug) {
     const found = findModuleBySlug(moduleSlug);
@@ -1071,24 +1601,35 @@ async function applyRoute() {
 
     if (moduleHasData(moduleSlug)) {
       if (lastModuleSlug !== moduleSlug) {
+        clearExamState();
+        /* filter widgets must be rebuilt for the module we are entering, otherwise
+           the previous visit's selections stay visible while the state is empty */
+        filtersBuiltFor = '';
         state.filterYear = [];
         state.filterRot = [];
         state.filterUnit = [];
         state.filterLesson = [];
         state.filterSearch = '';
+        state.filterMistakes = false;
         state.sortYear = 'desc';
         state.sortLesson = 'asc';
         state.userAnswers = {};
         state.checkedQuestions = {};
         state.modulePhase = 'welcome';
         state.visibleCount = PAGE_SIZE;
+        restoreProgress(moduleSlug, MODULE_DATA[moduleSlug]);
       }
       lastModuleSlug = moduleSlug;
       renderModuleView();
       scrollInstantTop();
+      if (qKey) focusQuestion(qKey);
       return;
     } else {
-      showToast(`<b>${t(DATA_STATE[moduleSlug] === 'error' ? 'loadError' : 'comingSoonToast')}</b>`);
+      const failed = DATA_STATE[moduleSlug] === 'error';
+      showToast(
+        `<b>${t(failed ? 'loadError' : 'comingSoonToast')}</b>`,
+        failed ? () => retryModule(moduleSlug, found.year) : null
+      );
       return replaceRoute('year=' + found.year);
     }
   }
@@ -1105,11 +1646,22 @@ async function applyRoute() {
       sem = Number(semStr);
       if (y !== 1 || (sem !== 1 && sem !== 2)) return replaceRoute('year=' + y);
     }
+    /* Only tear down the grids whose content actually changes. Rebuilding the
+       semester cards on every semester click re-created the DOM nodes, which
+       replayed their entry animation a second time. */
+    /* one small request decides whether we can paint counts without downloading
+       any question bank at all (falls back to eager fetch when there is no manifest) */
+    await ensureManifest();
+    if (gen !== routeGeneration) return;
+
+    const sameYear = state.selectedYear === y;
     state.selectedYear = y;
     state.selectedSemester = sem;
 
-    $('semester-grid').innerHTML = '';
-    $('other-grid').innerHTML = '';
+    if (!sameYear) {
+      $('semester-grid').innerHTML = '';
+      $('other-grid').innerHTML = '';
+    }
     $('modules-grid').innerHTML = '';
 
     renderHome(false, true);
@@ -1133,10 +1685,19 @@ async function applyRoute() {
       slugs = allSlugsForYear(y);
     }
 
-    ensureModules(slugs).then(() => {
-      if (gen !== routeGeneration) return;
-      refreshVisibleModuleCards();
-    });
+    if (MANIFEST.data) {
+      /* counts and "coming soon" states are already known: download nothing until
+         a card is actually opened */
+      requestAnimationFrame(() => {
+        if (gen !== routeGeneration) return;
+        refreshVisibleModuleCards();
+      });
+    } else {
+      ensureModules(slugs).then(() => {
+        if (gen !== routeGeneration) return;
+        refreshVisibleModuleCards();
+      });
+    }
   } else {
     state.selectedYear = null;
     state.selectedSemester = null;
@@ -1151,14 +1712,14 @@ async function applyRoute() {
 
 /* ════════════ MULTISELECT ════════════ */
 function createMultiselect(rootEl, opts) {
-  const { stateKey, allLabel, pluralLabel, items, parseValue } = opts;
+  const { stateKey, allLabel, pluralLabel, items, parseValue, onOpen } = opts;
   const uid = 'ms-' + stateKey;
 
   rootEl.innerHTML = `
-    <button class="ms-trigger" type="button" aria-haspopup="true" aria-expanded="false" id="${uid}-trigger">
+    <button class="ms-trigger" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="${uid}-panel" id="${uid}-trigger">
       <span class="ms-label">${allLabel}</span>
     </button>
-    <div class="ms-panel" role="group" aria-labelledby="${uid}-trigger">
+    <div class="ms-panel" id="${uid}-panel" role="group" aria-labelledby="${uid}-trigger">
       <div class="ms-actions">
         <button type="button" data-ms-all>${t('msAll')}</button>
         <button type="button" data-ms-none>${t('msNone')}</button>
@@ -1167,7 +1728,7 @@ function createMultiselect(rootEl, opts) {
         ${items.map(item => `
           <label class="ms-option" data-value="${esc(item.value)}">
             <input type="checkbox" value="${esc(item.value)}">
-            <span>${esc(item.label)}</span>
+            <span>${esc(item.label)}</span>${item.meta ? `<span class="ms-meta">${esc(item.meta)}</span>` : ''}
           </label>
         `).join('')}
       </div>
@@ -1207,7 +1768,13 @@ function createMultiselect(rootEl, opts) {
     });
   }
 
-  function openPanel() { closeAllPanels(panel); syncCheckboxes(); panel.classList.add('open'); trigger.setAttribute('aria-expanded', 'true'); }
+  function openPanel() {
+    closeAllPanels(panel);
+    if (typeof onOpen === 'function') onOpen();
+    syncCheckboxes();
+    panel.classList.add('open');
+    trigger.setAttribute('aria-expanded', 'true');
+  }
   function closePanel() { panel.classList.remove('open'); trigger.setAttribute('aria-expanded', 'false'); }
   function refresh() { syncCheckboxes(); updateLabel(); }
 
@@ -1257,20 +1824,53 @@ function updateBarVisibility() {
 }
 
 /* ════════════ TOAST ════════════ */
-let toastTimeout;
-function showToast(msg) {
+let toastTimeout, toastAction = null;
+
+function clearToastAction(toast) {
+  toastAction = null;
+  if (!toast) return;
+  toast.classList.remove('actionable');
+  toast.removeAttribute('tabindex');
+  toast.setAttribute('role', 'status');
+}
+
+/* msg is trusted markup (static strings + escaped names); action makes the toast
+   tappable, which is what the "tap to retry" copy always promised. */
+function showToast(msg, action) {
   let toast = $('toast');
   if (!toast) {
     toast = document.createElement('div');
     toast.id = 'toast';
     toast.className = 'toast';
+    toast.setAttribute('role', 'status');
+    toast.setAttribute('aria-live', 'polite');
     document.body.appendChild(toast);
   }
   toast.innerHTML = msg;
+  clearTimeout(toastTimeout);
+  toastAction = typeof action === 'function' ? action : null;
+  if (toastAction) {
+    toast.classList.add('actionable');
+    toast.setAttribute('role', 'button');
+    toast.setAttribute('tabindex', '0');
+  } else {
+    clearToastAction(toast);
+  }
   void toast.offsetHeight;
   toast.classList.add('show');
-  clearTimeout(toastTimeout);
-  toastTimeout = setTimeout(() => toast.classList.remove('show'), 2400);
+  toastTimeout = setTimeout(() => {
+    toast.classList.remove('show');
+    clearToastAction(toast);
+  }, toastAction ? 7000 : 2600);
+}
+
+function runToastAction() {
+  const fn = toastAction;
+  if (!fn) return;
+  const toast = $('toast');
+  clearToastAction(toast);
+  if (toast) toast.classList.remove('show');
+  fn();
 }
 
 /* ════════════ PAGE CHROME (language-dependent, view-independent) ════════════ */
@@ -1278,8 +1878,19 @@ function renderChrome() {
   const L = state.lang;
   document.documentElement.lang = L;
   document.title = t('docTitle');
-  const md = $('meta-desc');
-  if (md) md.setAttribute('content', t('metaDesc'));
+  const syncMeta = (id, value) => { const el = $(id); if (el) el.setAttribute('content', value); };
+  syncMeta('meta-desc', t('metaDesc'));
+  syncMeta('og-title', t('docTitle'));
+  syncMeta('og-desc', t('ogDesc'));
+  syncMeta('tw-title', t('docTitle'));
+  syncMeta('tw-desc', t('ogDesc'));
+  const skip = $('skip-link');
+  if (skip) {
+    skip.textContent = t('skipToContent');
+    skip.href = state.view === 'module' ? '#main-module' : '#main-home';
+  }
+  const about = $('footer-about');
+  if (about) about.textContent = t('footerAbout');
   $('footer-contact-text').textContent = t('footerContact');
   $('footer-tag').textContent = t('footerTag');
   $('theme-btn').setAttribute('aria-label', t('themeLabel'));
@@ -1335,7 +1946,7 @@ function renderYears(animate = true, pending = false) {
     const isActive = state.selectedYear === y ? ' active' : '';
     const pendingClass = pending ? ' pending' : '';
     const animClass = (!pending && animate) ? ' animate-in' : '';
-    const delay = (!pending && animate) ? ` style="animation-delay:${i*300}ms"` : '';
+    const delay = (!pending && animate) ? ` style="animation-delay:${i*45}ms"` : '';
     return `<button class="year-card${animClass}${isActive}${pendingClass}"${delay} data-year="${y}">
       <span class="year-big">${y}</span>
       <span class="year-info">
@@ -1374,7 +1985,7 @@ function renderSemesters(animate = true, pending = false) {
     const isActive = state.selectedSemester === s ? ' active' : '';
     const pendingClass = pending ? ' pending' : '';
     const animClass = (!pending && animate) ? ' animate-in' : '';
-    const delay = (!pending && animate) ? ` style="animation-delay:${i*300}ms"` : '';
+    const delay = (!pending && animate) ? ` style="animation-delay:${i*45}ms"` : '';
     return `<button class="semester-card${animClass}${isActive}${pendingClass}"${delay} data-semester="${s}">
       <div class="semester-badge">S${s}</div>
       <h3>${label}</h3>
@@ -1468,72 +2079,100 @@ function renderModuleCard(m, i, animate = true, pending = false) {
   const missing = status === 'missing';
   const cs = missing ? ' coming-soon' : '';
   const badge = missing
-    ? `<span class="badge-soon">${ICONS.clock}${t('comingSoon')}</span>`
+    ? `<span class="badge-soon">${ICON_CLOCK}${t('comingSoon')}</span>`
     : '';
-  let stats;
-  if (status === 'ready') {
-    const d = MODULE_DATA[m.slug];
-    stats = `<p>${d.questions.length} ${t('questions')} · ${d.lessons.length} ${t('courses')}</p>`;
-  } else if (missing) {
-    stats = `<p>${t('comingSoonSub')}</p>`;
-  } else if (status === 'error') {
-    stats = `<p>${t('loadError')}</p>`;
-  } else {
-    stats = `<p>…</p>`;
-  }
+  const stats = moduleStatsMarkup(m.slug);
   const pendingClass = pending ? ' pending' : '';
   const animClass = (!pending && animate) ? ' animate-in' : '';
-  const delay = (!pending && animate) ? ` style="animation-delay:${i * 300}ms"` : '';
+  const delay = (!pending && animate) ? ` style="animation-delay:${i * 45}ms"` : '';
   return `<button class="module-card${animClass}${cs}${pendingClass}"${delay} data-module-slug="${m.slug}" data-module-name="${esc(name)}">
-    <div class="module-icon">${ICONS[m.icon] || ICONS.flask}</div>
+    <div class="module-icon">${icon(m.icon)}</div>
     <div class="module-info">
       <h3>${esc(name)} ${badge}</h3>
       ${stats}
     </div>
-    <span class="module-arrow">${ICONS.arrow}</span>
+    <span class="module-arrow">${ICON_ARROW}</span>
   </button>`;
 }
 
 /* ════════════ MODULE VIEW ════════════ */
 function renderModuleView(preserveVisibleCount = false) {
   const m = state.currentModule;
+  const data = MODULE_DATA[m.slug];
+  if (!data) return;
+
   $('route-loading').style.display = 'none';
   $('view-home').style.display = 'none';
   $('view-module').style.display = 'block';
+
+  renderChrome();
+
+  const name = state.lang === 'fr' ? m.name.fr : m.name.en;
+  document.title = name + ' · QCMify';
 
   $('back-label').textContent = t('back');
   $('back-to-filters-label').textContent = t('backToFilters');
   $('back-to-filters').setAttribute('aria-label', t('backToFilters'));
   $('sort-year').setAttribute('aria-label', t('sortYearLabel'));
-  $('sort-lesson').setAttribute('aria-label', t('sortLessonLabel'));
   $('reset-label').textContent = t('reset');
   $('empty-title').textContent = t('emptyTitle');
   $('empty-sub').textContent = t('emptySub');
   $('f-search').placeholder = t('searchPlaceholder');
   $('f-search').value = state.filterSearch;
+  $('progress-reset').textContent = t('progressReset');
+  $('welcome-show-all-label').textContent = t('showAll');
+  $('welcome-randomize-label').textContent = t('randomPick');
+  renderExamControls();
+  syncSearchClear();
 
-  const name = state.lang === 'fr' ? m.name.fr : m.name.en;
-  const data = MODULE_DATA[m.slug];
   $('mod-title-view').textContent = name;
   $('mod-meta-view').textContent = `${data.questions.length} ${t('questions')} · ${data.lessons.length} ${t('courses')} · ${t('yearLabel')(state.selectedYear)}`;
-  $('mod-icon-view').innerHTML = ICONS[m.icon] || ICONS.flask;
+  $('mod-icon-view').innerHTML = icon(m.icon);
 
   rebuildFilterOptions();
   renderModuleBody(preserveVisibleCount);
+  updateProgressUI();
+  updateMistakesButton();
   updateBarVisibility();
+}
+
+/* per-lesson progress, shown as "answered/total" inside the course filter */
+function lessonProgressMap() {
+  const data = state.currentModule ? MODULE_DATA[state.currentModule.slug] : null;
+  const map = new Map();
+  if (!data) return map;
+  const slug = state.currentModule.slug;
+  data.questions.forEach(q => {
+    const s = map.get(q.lesson) || { answered: 0, total: 0 };
+    s.total++;
+    if (state.checkedQuestions[slug + '-' + q._key]) s.answered++;
+    map.set(q.lesson, s);
+  });
+  return map;
+}
+
+function refreshLessonMeta() {
+  const root = $('ms-lesson');
+  if (!root) return;
+  const map = lessonProgressMap();
+  root.querySelectorAll('.ms-option').forEach(opt => {
+    const meta = opt.querySelector('.ms-meta');
+    if (!meta) return;
+    const s = map.get(opt.dataset.value);
+    meta.textContent = s ? `${s.answered}/${s.total}` : '';
+  });
 }
 
 function rebuildFilterOptions() {
   const data = MODULE_DATA[state.currentModule.slug];
+  const buildKey = state.currentModule.slug + '|' + state.lang + '|' + data.signature;
+  if (filtersBuiltFor === buildKey && msLesson) return;
+  filtersBuiltFor = buildKey;
 
   $('sort-year').innerHTML =
     `<option value="desc">${t('sortYearDesc')}</option>` +
     `<option value="asc">${t('sortYearAsc')}</option>`;
   $('sort-year').value = state.sortYear;
-  $('sort-lesson').innerHTML =
-    `<option value="asc">${t('sortLessonAsc')}</option>` +
-    `<option value="desc">${t('sortLessonDesc')}</option>`;
-  $('sort-lesson').value = state.sortLesson;
 
   const yearVals = [...new Set(data.questions.map(q => q.year))].sort((a, b) => b - a);
   msYear = createMultiselect($('ms-year'), {
@@ -1579,13 +2218,18 @@ function rebuildFilterOptions() {
     msUnit = null;
   }
 
+  const lessonMap = lessonProgressMap();
   const lessonVals = sortLessons([...new Set(data.questions.map(q => q.lesson))]);
   msLesson = createMultiselect($('ms-lesson'), {
     stateKey: 'filterLesson',
     allLabel: t('filterLesson'),
     pluralLabel: state.lang === 'fr' ? 'cours' : 'courses',
-    items: lessonVals.map(l => ({ value: l, label: l })),
-    parseValue: v => v
+    items: lessonVals.map(l => {
+      const s = lessonMap.get(l);
+      return { value: l, label: l, meta: s ? `${s.answered}/${s.total}` : '' };
+    }),
+    parseValue: v => v,
+    onOpen: refreshLessonMeta
   });
 }
 
@@ -1616,27 +2260,80 @@ function onFilterChange() {
   }
 }
 
+/* ── welcome-screen shortcuts ── */
+/* Shows the whole module from the first question, still 20 at a time: the
+   "Afficher plus" button at the bottom loads the next page. */
+function showAllQuestions() {
+  if (!state.currentModule) return;
+  state.filterMistakes = false;
+  state.modulePhase = 'results';
+  state.visibleCount = PAGE_SIZE;
+  renderModuleBody();
+  updateBarVisibility();
+}
+
+/* Picks a random question and filters on its dimensions: year, rotation (when the
+   module has that filter) and course. The drawn question is always part of the
+   result, so the slice can never be empty. */
+function randomizeFilters() {
+  const data = currentModuleData();
+  if (!data || !state.currentModule || !data.questions.length) return;
+
+  const showRot = shouldShowRotation(state.selectedYear, state.currentModule.slug);
+  const seed = data.questions[Math.floor(Math.random() * data.questions.length)];
+
+  state.filterYear = [seed.year];
+  state.filterRot = showRot ? [seed.rot || 0] : [];
+  state.filterUnit = [];
+  state.filterLesson = [seed.lesson];
+  state.filterMistakes = false;
+
+  msYear?.refresh();
+  msRot?.refresh();
+  msUnit?.refresh();
+  msLesson?.refresh();
+
+  state.modulePhase = 'results';
+  state.visibleCount = PAGE_SIZE;
+  renderModuleBody();
+  updateMistakesButton();
+  updateBarVisibility();
+}
+
 function getFilteredQuestions() {
   if (!state.currentModule) return [];
   const data = MODULE_DATA[state.currentModule.slug];
+  const slug = state.currentModule.slug;
   const search = fold(state.filterSearch.trim());
-  return data.questions
-    .map((q, idx) => ({ ...q, _idx: idx }))
-    .filter(q => {
-      if (state.filterYear.length && !state.filterYear.includes(q.year)) return false;
-      if (state.filterRot.length && !state.filterRot.includes(q.rot || 0)) return false;
-      if (state.filterUnit.length && !state.filterUnit.includes(q.unit || '')) return false;
-      if (state.filterLesson.length && !state.filterLesson.includes(q.lesson)) return false;
-      if (search && !q._hay.includes(search)) return false;
-      return true;
-    })
-    .sort(compareQuestions);
+  const out = [];
+  /* filter first, copy only the survivors: no full-array clone per keystroke */
+  for (let idx = 0; idx < data.questions.length; idx++) {
+    const q = data.questions[idx];
+    if (state.exam && !state.exam.rows.has(idx)) continue;
+    if (state.filterYear.length && !state.filterYear.includes(q.year)) continue;
+    if (state.filterRot.length && !state.filterRot.includes(q.rot || 0)) continue;
+    if (state.filterUnit.length && !state.filterUnit.includes(q.unit || '')) continue;
+    if (state.filterLesson.length && !state.filterLesson.includes(q.lesson)) continue;
+    if (search && !q._hay.includes(search)) continue;
+    if (state.filterMistakes) {
+      const qid = slug + '-' + q._key;
+      if (!state.checkedQuestions[qid]) continue;
+      if (classifyAnswer(state.userAnswers[qid], q.answer.split('')) === 'correct') continue;
+    }
+    out.push({ ...q, _idx: idx });
+  }
+  if (state.exam) {
+    const order = state.exam.order;
+    return out.sort((a, b) => (order.get(a._idx) || 0) - (order.get(b._idx) || 0));
+  }
+  return out.sort(compareQuestions);
 }
 
 function compareQuestions(a, b) {
   const yearCmp = state.sortYear === 'asc' ? a.year - b.year : b.year - a.year;
   if (yearCmp !== 0) return yearCmp;
-  return state.sortLesson === 'desc' ? lessonCompare(b.lesson, a.lesson) : lessonCompare(a.lesson, b.lesson);
+  const lessonCmp = state.sortLesson === 'desc' ? lessonCompare(b.lesson, a.lesson) : lessonCompare(a.lesson, b.lesson);
+  return lessonCmp !== 0 ? lessonCmp : a._idx - b._idx;
 }
 
 function renderQuestions(reset, append = false) {
@@ -1648,10 +2345,14 @@ function renderQuestions(reset, append = false) {
 
   if (!n) {
     $('questions-container').innerHTML = '';
+    $('empty-title').textContent = state.filterMistakes ? t('myMistakesTitle') : t('emptyTitle');
+    $('empty-sub').textContent = state.filterMistakes ? t('myMistakesSub') : t('emptySub');
     $('empty').style.display = 'block';
     $('load-more-wrap').style.display = 'none';
     return;
   }
+  $('empty-title').textContent = t('emptyTitle');
+  $('empty-sub').textContent = t('emptySub');
   $('empty').style.display = 'none';
   renderVisibleQuestions(list, append);
 }
@@ -1663,7 +2364,7 @@ function renderVisibleQuestions(list, append = false) {
 
   const html = visible.slice(start).map((q, i) => {
     const idx = start + i;
-    const qid = questionId(state.currentModule.slug, q, q._idx);
+    const qid = questionId(state.currentModule.slug, q);
     return `<div class="q-card" data-qid="${qid}" data-idx="${q._idx}" data-pos="${idx}">${renderQuestionCard(q, idx, qid)}</div>`;
   }).join('');
 
@@ -1696,16 +2397,22 @@ function renderQuestionCard(q, idx, qid) {
     const isSel = uAns.has(L);
     const isCor = correctAns.includes(L);
     let cls = 'opt';
-    let icon = '';
+    let mark = '';
+    let sr = '';
     if (isChecked) {
-      if (isCor && isSel) { cls += ' correct'; icon = '<span class="check">✓</span>'; }
-      else if (isCor && !isSel && result === 'partial') { cls += ' partial'; icon = '<span class="half">◐</span>'; }
-      else if (isCor && !isSel) { cls += ' correct'; icon = '<span class="check">✓</span>'; }
-      else if (!isCor && isSel) { cls += ' incorrect'; icon = '<span class="cross">✕</span>'; }
+      if (isCor && isSel) { cls += ' correct'; mark = '<span class="check" aria-hidden="true">✓</span>'; }
+      else if (isCor && !isSel && result === 'partial') { cls += ' partial'; mark = '<span class="half" aria-hidden="true">◐</span>'; }
+      else if (isCor && !isSel) {
+        /* right answer, not picked: shown as "missed", never as a tick the user earned */
+        cls += ' missed';
+        mark = '<span class="missed-mark" aria-hidden="true">✓</span>';
+        sr = `<span class="sr-only">(${esc(t('expectedAnswer'))})</span>`;
+      }
+      else if (!isCor && isSel) { cls += ' incorrect'; mark = '<span class="cross" aria-hidden="true">✕</span>'; }
     } else if (isSel) cls += ' selected';
     return `<button class="${cls}" data-opt-qid="${qid}" data-letter="${L}" aria-pressed="${isSel}" ${isChecked ? 'disabled' : ''}>
       <span class="letter">${L}</span>
-      <span class="text">${esc(c)}</span>${icon}
+      <span class="text">${richText(c)}${sr}</span>${mark}
     </button>`;
   }).join('');
 
@@ -1716,6 +2423,8 @@ function renderQuestionCard(q, idx, qid) {
   }
   const clearStyle = (!isChecked && uAns.size === 0) ? 'style="display:none"' : '';
 
+  const reportHref = reportUrl(q);
+
   return `<div class="q-head">
       <div class="q-meta">
         <span class="tag tag-year">${q.year}</span>
@@ -1723,9 +2432,17 @@ function renderQuestionCard(q, idx, qid) {
         ${showUnit && q.unit ? `<span class="tag tag-unit">${esc(q.unit)}</span>` : ''}
         <span class="tag tag-lesson">${esc(q.lesson)}</span>
       </div>
-      <span class="q-index">${String(idx + 1).padStart(2, '0')}</span>
+      <div class="q-head-right">
+        <button class="q-link" type="button" data-link-qid="${qid}" title="${esc(t('copyLink'))}" aria-label="${esc(t('copyLink'))}">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        </button>
+        <a class="q-report" href="${reportHref}" target="_blank" rel="noopener noreferrer" title="${esc(t('reportError'))}" aria-label="${esc(t('reportError'))}">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+        </a>
+        <span class="q-index">${String(idx + 1).padStart(2, '0')}</span>
+      </div>
     </div>
-    <div class="q-text">${esc(q.text)}</div>
+    <div class="q-text">${richText(q.text)}</div>
     <div class="options">${opts}</div>
     <div class="q-footer">
       <div class="action-btns">
@@ -1744,26 +2461,34 @@ function classifyAnswer(userSet, correctAns) {
   return 'partial';
 }
 
+/* A question can legitimately appear in several rows (one per exam session), so
+   every card sharing its content key is refreshed together. */
 function updateCard(qid) {
-  const card = document.querySelector(`.q-card[data-qid="${CSS.escape(qid)}"]`);
-  if (!card) return;
-  const q = MODULE_DATA[state.currentModule.slug].questions[+card.dataset.idx];
-  if (!q) return;
+  const cards = document.querySelectorAll(`.q-card[data-qid="${CSS.escape(qid)}"]`);
+  if (!cards.length) return;
+  const questions = MODULE_DATA[state.currentModule.slug].questions;
 
-  // remember what had keyboard focus so it survives the innerHTML swap
+  /* remember what had keyboard focus so it survives the innerHTML swap */
   const ae = document.activeElement;
+  let activeCard = null;
   let prefs = null;
-  if (ae && card.contains(ae)) {
+  cards.forEach(card => {
+    if (!ae || !card.contains(ae)) return;
+    activeCard = card;
     if (ae.dataset && ae.dataset.letter) prefs = ['[data-letter="' + ae.dataset.letter + '"]', '.opt:not(:disabled)'];
     else if (ae.hasAttribute('data-validate-qid')) prefs = ['[data-validate-qid]', '.clear-btn', '.opt:not(:disabled)'];
     else if (ae.hasAttribute('data-clear-qid')) prefs = ['.opt:not(:disabled)'];
-  }
+  });
 
-  card.innerHTML = renderQuestionCard(q, +card.dataset.pos, qid);
+  cards.forEach(card => {
+    const q = questions[+card.dataset.idx];
+    if (!q) return;
+    card.innerHTML = renderQuestionCard(q, +card.dataset.pos, qid);
+  });
 
-  if (prefs) {
+  if (activeCard && prefs) {
     for (const sel of prefs) {
-      const el = card.querySelector(sel);
+      const el = activeCard.querySelector(sel);
       if (el && !el.disabled && el.offsetParent !== null) { el.focus({ preventScroll: true }); break; }
     }
   }
@@ -1831,11 +2556,31 @@ function goToYearGrid() {
   }
 }
 
+function semesterOfModule(slug) {
+  const c = CURRICULUM[1];
+  if (!c || !c.semesters) return null;
+  for (const s of c.semesters) if (s.modules.some(m => m.slug === slug)) return s.id;
+  return null;
+}
+
+function navigate(hash) {
+  if (window.location.hash === '#' + hash) runRoute();
+  else window.location.hash = hash;
+}
+
 function goBackFromModule() {
+  const m = state.currentModule;
+  /* a year-1 module lives in a semester: "back" should land on its module list,
+     not on the semester picker it was never opened from */
+  if (state.selectedYear === 1 && m) {
+    const sem = semesterOfModule(m.slug);
+    navigate(sem ? 'year=1&sem=' + sem : 'year=1');
+    return;
+  }
   if (state.selectedYear) {
-    window.location.hash = 'year=' + state.selectedYear;
+    navigate('year=' + state.selectedYear);
   } else {
-    window.location.hash = '';
+    navigate('');
   }
 }
 
@@ -1846,31 +2591,65 @@ function resetFilters() {
   state.filterUnit = [];
   state.filterLesson = [];
   state.filterSearch = '';
+  state.filterMistakes = false;
   state.sortYear = 'desc';
   state.sortLesson = 'asc';
   state.modulePhase = 'welcome';
   state.visibleCount = PAGE_SIZE;
-  state.userAnswers = {};
-  state.checkedQuestions = {};
   $('f-search').value = '';
   $('sort-year').value = 'desc';
-  $('sort-lesson').value = 'asc';
   msYear?.refresh();
   msRot?.refresh();
   msUnit?.refresh();
   msLesson?.refresh();
   renderModuleBody();
+  updateProgressUI();
+  updateMistakesButton();
   updateBarVisibility();
+}
+
+/* Filters reset must not wipe progress any more — that is a separate, explicit action. */
+function toggleMistakes() {
+  if (!state.currentModule) return;
+  state.filterMistakes = !state.filterMistakes;
+  state.modulePhase = 'results';
+  state.visibleCount = PAGE_SIZE;
+  renderModuleBody();
+  updateMistakesButton();
+  updateBarVisibility();
+  if (state.filterMistakes) announce(t('myMistakes'));
+}
+
+function resetProgress() {
+  const m = state.currentModule;
+  if (!m) return;
+  const prefix = m.slug + '-';
+  Object.keys(state.userAnswers).forEach(qid => { if (qid.indexOf(prefix) === 0) delete state.userAnswers[qid]; });
+  Object.keys(state.checkedQuestions).forEach(qid => { if (qid.indexOf(prefix) === 0) delete state.checkedQuestions[qid]; });
+  try { localStorage.removeItem(progressKey(m.slug)); } catch (e) {}
+  state.filterMistakes = false;
+  renderModuleBody(true);
+  updateProgressUI();
+  updateMistakesButton();
+  showToast(`<b>${esc(t('progressCleared'))}</b>`);
 }
 
 /* ════════════ THEME ════════════ */
 const THEME_KEY = 'qcm-theme';
 let activeThemeVT = null;
+
+function syncThemeColor() {
+  const meta = $('theme-color-meta');
+  if (!meta) return;
+  meta.setAttribute('content', document.documentElement.classList.contains('theme-dark') ? '#0a0611' : '#fbfbfd');
+}
+
 function toggleTheme(btn) {
   const apply = () => {
     const isDark = document.documentElement.classList.contains('theme-dark');
     document.documentElement.classList.toggle('theme-dark', !isDark);
     try { localStorage.setItem(THEME_KEY, isDark ? 'light' : 'dark'); } catch(e) {}
+    syncThemeColor();
   };
   const canVT = typeof document.startViewTransition === 'function'
     && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1900,8 +2679,329 @@ function toggleTheme(btn) {
   }
 }
 
+/* ════════════ SEARCH CLEAR ════════════ */
+function syncSearchClear() {
+  const btn = $('search-clear');
+  const input = $('f-search');
+  if (!btn || !input) return;
+  btn.hidden = input.value.length === 0;
+}
+
+function clearSearch() {
+  const input = $('f-search');
+  if (!input) return;
+  input.value = '';
+  state.filterSearch = '';
+  syncSearchClear();
+  onFilterChange();
+  input.focus();
+}
+
+/* ════════════ PERMALINKS ════════════ */
+function questionByQid(qid) {
+  const data = currentModuleData();
+  if (!data || !state.currentModule) return null;
+  const slug = state.currentModule.slug;
+  return data.questions.find(q => qidFor(slug, q) === qid) || null;
+}
+
+function questionPermalink(q) {
+  const base = (location.origin && location.origin !== 'null')
+    ? location.origin + location.pathname
+    : location.href.split('#')[0];
+  return base + '#module=' + encodeURIComponent(state.currentModule.slug)
+    + '&q=' + encodeURIComponent(q._key);
+}
+
+function copyToClipboard(text) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    return navigator.clipboard.writeText(text);
+  }
+  return new Promise((resolve, reject) => {
+    try {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.cssText = 'position:fixed;top:-1000px;opacity:0';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      ta.remove();
+      resolve();
+    } catch (e) { reject(e); }
+  });
+}
+
+function copyQuestionLink(qid) {
+  const q = questionByQid(qid);
+  if (!q) return;
+  const url = questionPermalink(q);
+  copyToClipboard(url).then(
+    () => showToast(`<b>${esc(t('linkCopied'))}</b>`),
+    () => showToast(`<b>${esc(url)}</b>`)
+  );
+}
+
+/* Formatted report: module, exam, course, stem and (optionally) the permalink. */
+function questionReport(q, withLink) {
+  const m = state.currentModule;
+  const name = (m.name && (m.name[state.lang] || m.name.fr)) || m.slug;
+  const showRot = shouldShowRotation(state.selectedYear, m.slug);
+  const lines = [
+    'QCMify · erreur signalée',
+    'Module : ' + name + ' (' + m.slug + ')',
+    'Examen : ' + q.year + (showRot ? ' · ' + rotName(q.rot || 0) : ''),
+    'Cours : ' + q.lesson
+  ];
+  if (q.unit) lines.push('Appareil : ' + q.unit);
+  lines.push('Question : « ' + stripTags(q.text).trim().replace(/\s+/g, ' ') + ' »');
+  if (withLink !== false) lines.push('Lien : ' + questionPermalink(q));
+  return lines.join('\n');
+}
+
+/* Opens the chat with the report already in the composer, permalink included. */
+function reportUrl(q) {
+  return REPORT_CHAT + '?text=' + encodeURIComponent(questionReport(q, true));
+}
+
+/* Deep link #module=x&q=<key>: reveal the page that holds it and highlight it. */
+function focusQuestion(key) {
+  const data = currentModuleData();
+  if (!data) return;
+  state.modulePhase = 'results';
+  const list = getFilteredQuestions();
+  const pos = list.findIndex(q => q._key === key);
+  if (pos === -1) return;
+  state.visibleCount = Math.max(PAGE_SIZE, pos + 1);
+  renderModuleBody(true);
+  requestAnimationFrame(() => {
+    const qid = state.currentModule.slug + '-' + key;
+    const card = document.querySelector(`.q-card[data-qid="${CSS.escape(qid)}"]`);
+    if (!card) return;
+    card.classList.add('q-focus');
+    card.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth', block: 'center' });
+  });
+}
+
+/* ════════════ KEYBOARD ════════════ */
+function moveCardFocus(dir) {
+  const cards = [...document.querySelectorAll('.q-card')];
+  if (!cards.length) return;
+  const idx = cards.findIndex(c => c.dataset.qid === lastCardQid);
+  const next = Math.max(0, Math.min(cards.length - 1, (idx === -1 ? 0 : idx + dir)));
+  const card = cards[next];
+  lastCardQid = card.dataset.qid;
+  card.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth', block: 'center' });
+  const first = card.querySelector('.opt:not(:disabled)');
+  if (first) first.focus({ preventScroll: true });
+}
+
+/* ════════════ EXAM MODE (randomised timed set) ════════════ */
+let examTicker = null;
+
+function setExamActiveUI(active) {
+  const controls = $('controls');
+  if (controls) controls.classList.toggle('exam-active', active);
+  if ($('exam-setup')) $('exam-setup').hidden = active;
+  if ($('exam-live')) $('exam-live').hidden = !active;
+  if ($('exam-bar')) $('exam-bar').hidden = false;
+  const btn = $('btn-exam');
+  if (btn) btn.setAttribute('aria-expanded', String(active));
+}
+
+function renderExamControls() {
+  const countSel = $('exam-count');
+  const timeSel = $('exam-time');
+  if (!countSel || !timeSel) return;
+  $('exam-count-label').textContent = t('examCount');
+  $('exam-time-label').textContent = t('examTime');
+  $('exam-start').textContent = t('examStart');
+  $('exam-finish').textContent = t('examFinish');
+  $('btn-exam').textContent = t('examMode');
+  [...countSel.options].forEach(o => { if (o.value === '0') o.textContent = t('examAll'); });
+  [...timeSel.options].forEach(o => { if (o.value === '0') o.textContent = t('examNone'); });
+}
+
+function toggleExamSetup() {
+  if (state.exam) return;
+  const bar = $('exam-bar');
+  const open = bar.hidden;
+  bar.hidden = !open;
+  $('btn-exam').setAttribute('aria-expanded', String(open));
+}
+
+function examAnsweredCount() {
+  if (!state.exam || !state.currentModule) return 0;
+  const data = currentModuleData();
+  if (!data) return 0;
+  const slug = state.currentModule.slug;
+  let n = 0;
+  state.exam.rows.forEach(idx => {
+    const q = data.questions[idx];
+    if (q && state.checkedQuestions[slug + '-' + q._key]) n++;
+  });
+  return n;
+}
+
+function updateExamUI() {
+  const ex = state.exam;
+  if (!ex) return;
+  if ($('exam-progress')) $('exam-progress').textContent = t('examProgress')(examAnsweredCount(), ex.total);
+  const clock = $('exam-clock');
+  if (!clock) return;
+  if (!ex.deadline || ex.finished) { clock.hidden = true; return; }
+  const left = Math.max(0, ex.deadline - Date.now());
+  const mm = String(Math.floor(left / 60000)).padStart(2, '0');
+  const ss = String(Math.floor((left % 60000) / 1000)).padStart(2, '0');
+  clock.hidden = false;
+  clock.textContent = mm + ':' + ss;
+  clock.classList.toggle('low', left <= 60000);
+}
+
+function startExam() {
+  const data = currentModuleData();
+  if (!data) return;
+  /* draw from the filtered pool, ignoring the exam currently on screen.
+     Rows are de-duplicated by content first: a question asked in three sessions
+     must not eat three slots of a 20-question exam. */
+  const previousExam = state.exam;
+  state.exam = null;
+  const drawnKeys = new Set();
+  const pool = getFilteredQuestions().filter(q => {
+    if (drawnKeys.has(q._key)) return false;
+    drawnKeys.add(q._key);
+    return true;
+  });
+  state.exam = previousExam;
+  if (!pool.length) { showToast(`<b>${esc(t('examEmpty'))}</b>`); return; }
+
+  const count = Number($('exam-count').value) || 0;
+  const minutes = Number($('exam-time').value) || 0;
+  const shuffled = pool.slice();
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  const picked = count > 0 ? shuffled.slice(0, count) : shuffled;
+
+  const rows = new Set(), order = new Map(), snapshot = new Map();
+  picked.forEach((q, i) => {
+    rows.add(q._idx);
+    order.set(q._idx, i);
+    const qid = qidFor(state.currentModule.slug, q);
+    /* remember the previous state, so an abandoned attempt can be undone */
+    snapshot.set(qid, {
+      answers: state.userAnswers[qid] ? new Set(state.userAnswers[qid]) : null,
+      checked: !!state.checkedQuestions[qid]
+    });
+    delete state.checkedQuestions[qid];     // a fresh attempt
+    delete state.userAnswers[qid];
+  });
+
+  state.exam = { rows, order, snapshot, total: picked.length, deadline: minutes ? Date.now() + minutes * 60000 : 0, finished: false };
+  state.modulePhase = 'results';
+  state.filterMistakes = false;
+  state.visibleCount = picked.length;
+  $('exam-summary').hidden = true;
+  $('exam-summary').innerHTML = '';
+  $('exam-finish').hidden = false;
+  setExamActiveUI(true);
+  renderModuleBody(true);
+  updateProgressUI();
+  updateMistakesButton();
+  updateExamUI();
+  window.scrollTo({ top: 0, behavior: smoothBehavior() });
+  clearInterval(examTicker);
+  examTicker = setInterval(() => {
+    if (!state.exam) { clearInterval(examTicker); examTicker = null; return; }
+    if (state.exam.finished) return;
+    updateExamUI();
+    if (state.exam.deadline && Date.now() >= state.exam.deadline) finishExam(true);
+  }, 1000);
+}
+
+function finishExam(auto) {
+  const ex = state.exam;
+  const data = currentModuleData();
+  if (!ex || !data) return;
+  clearInterval(examTicker);
+  examTicker = null;
+  const slug = state.currentModule.slug;
+  let correct = 0, partial = 0, wrong = 0, answered = 0;
+  ex.rows.forEach(idx => {
+    const q = data.questions[idx];
+    if (!q) return;
+    const qid = slug + '-' + q._key;
+    if (!state.checkedQuestions[qid]) return;
+    answered++;
+    const verdict = classifyAnswer(state.userAnswers[qid], q.answer.split(''));
+    if (verdict === 'correct') correct++;
+    else if (verdict === 'partial') partial++;
+    else wrong++;
+  });
+  ex.finished = true;
+  ex.result = { correct, partial, wrong, answered };
+
+  const summary = $('exam-summary');
+  summary.hidden = false;
+  summary.innerHTML = `
+    <h2>${esc(auto ? t('examTimeUp') : t('examDone'))}</h2>
+    <p><b>${correct}</b>/${ex.total} ${esc(t('examScoreLabel'))} · ${answered}/${ex.total} ${esc(t('examAnswered'))}
+      ${partial ? ' · ' + partial + ' ' + esc(t('partial')) : ''}</p>
+    <div class="exam-actions">
+      <button class="btn btn-primary" type="button" data-action="exam-again">${esc(t('examAgain'))}</button>
+      <button class="btn btn-secondary" type="button" data-action="exam-quit">${esc(t('examQuit'))}</button>
+      <button class="btn btn-secondary" type="button" data-action="exam-mistakes">${esc(t('myMistakes'))}</button>
+    </div>`;
+  if ($('exam-finish')) $('exam-finish').hidden = true;
+  if ($('exam-clock')) $('exam-clock').hidden = true;
+  if ($('exam-progress')) $('exam-progress').textContent = `${correct}/${ex.total} · ${t('examDone')}`;
+  updateProgressUI();
+  updateMistakesButton();
+  summary.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth', block: 'start' });
+}
+
+function clearExamState() {
+  const ex = state.exam;
+  /* an abandoned (never finished) attempt gives the previous answers back */
+  if (ex && !ex.finished && ex.snapshot) {
+    ex.snapshot.forEach((prev, qid) => {
+      if (prev.answers) state.userAnswers[qid] = prev.answers;
+      else delete state.userAnswers[qid];
+      if (prev.checked) state.checkedQuestions[qid] = true;
+      else delete state.checkedQuestions[qid];
+    });
+    schedulePersist();
+  }
+  clearInterval(examTicker);
+  examTicker = null;
+  state.exam = null;
+  const summary = $('exam-summary');
+  if (summary) { summary.hidden = true; summary.innerHTML = ''; }
+  if ($('exam-bar')) $('exam-bar').hidden = true;
+  if ($('exam-finish')) $('exam-finish').hidden = false;
+  if ($('exam-setup')) $('exam-setup').hidden = false;
+  if ($('exam-live')) $('exam-live').hidden = true;
+  const controls = $('controls');
+  if (controls) controls.classList.remove('exam-active');
+  const btn = $('btn-exam');
+  if (btn) btn.setAttribute('aria-expanded', 'false');
+}
+
+function quitExam() {
+  clearExamState();
+  state.visibleCount = PAGE_SIZE;
+  renderModuleBody(true);
+  updateProgressUI();
+  updateMistakesButton();
+}
+
 /* ════════════ EVENTS ════════════ */
 document.addEventListener('click', (e) => {
+  const toastEl = e.target.closest('#toast.actionable');
+  if (toastEl) { runToastAction(); return; }
+  const cardHit = e.target.closest('.q-card');
+  if (cardHit && cardHit.dataset.qid) lastCardQid = cardHit.dataset.qid;
   if (!e.target.closest('.multiselect')) closeAllPanels();
   const langBtn = e.target.closest('[data-lang]');
   if (langBtn) { setLang(langBtn.dataset.lang); return; }
@@ -1909,9 +3009,23 @@ document.addEventListener('click', (e) => {
   const themeBtn = e.target.closest('#theme-btn');
   if (themeBtn) { toggleTheme(themeBtn); return; }
 
+  if (e.target.closest('#search-clear')) { clearSearch(); return; }
+  const linkBtn = e.target.closest('[data-link-qid]');
+  if (linkBtn) { copyQuestionLink(linkBtn.dataset.linkQid); return; }
+
   if (e.target.closest('[data-action="home"]')) { goToYearGrid(); return; }
   if (e.target.closest('[data-action="back-from-module"]')) { goBackFromModule(); return; }
   if (e.target.closest('[data-action="reset-filters"]')) { resetFilters(); return; }
+  if (e.target.closest('[data-action="toggle-mistakes"]')) { toggleMistakes(); return; }
+  if (e.target.closest('[data-action="reset-progress"]')) { resetProgress(); return; }
+  if (e.target.closest('[data-action="show-all"]')) { showAllQuestions(); return; }
+  if (e.target.closest('[data-action="randomize"]')) { randomizeFilters(); return; }
+  if (e.target.closest('[data-action="toggle-exam"]')) { toggleExamSetup(); return; }
+  if (e.target.closest('[data-action="exam-start"]')) { startExam(); return; }
+  if (e.target.closest('[data-action="exam-finish"]')) { finishExam(false); return; }
+  if (e.target.closest('[data-action="exam-quit"]')) { quitExam(); return; }
+  if (e.target.closest('[data-action="exam-again"]')) { startExam(); return; }
+  if (e.target.closest('[data-action="exam-mistakes"]')) { quitExam(); toggleMistakes(); return; }
 
   const yearCard = e.target.closest('[data-year]');
   if (yearCard) { selectYear(+yearCard.dataset.year); return; }
@@ -1936,7 +3050,9 @@ document.addEventListener('click', (e) => {
     if (!state.userAnswers[qid]) state.userAnswers[qid] = new Set();
     if (state.userAnswers[qid].has(letter)) state.userAnswers[qid].delete(letter);
     else state.userAnswers[qid].add(letter);
-    updateCard(qid);
+    lastCardQid = qid;
+    updateSelectionUI(qid);
+    schedulePersist();
     return;
   }
   const v = e.target.closest('[data-validate-qid]');
@@ -1944,7 +3060,7 @@ document.addEventListener('click', (e) => {
     const qid = v.dataset.validateQid;
     if (state.userAnswers[qid] && state.userAnswers[qid].size > 0) {
       state.checkedQuestions[qid] = true;
-      updateCard(qid);
+      afterAnswerChange(qid);
       announceResult(qid);
     }
     return;
@@ -1954,20 +3070,19 @@ document.addEventListener('click', (e) => {
     const qid = c.dataset.clearQid;
     state.userAnswers[qid] = new Set();
     delete state.checkedQuestions[qid];
-    updateCard(qid);
+    afterAnswerChange(qid);
     return;
   }
 });
 
 document.addEventListener('change', (e) => {
-  const id = e.target.id;
-  if (id === 'sort-year') { state.sortYear = e.target.value; onFilterChange(); }
-  else if (id === 'sort-lesson') { state.sortLesson = e.target.value; onFilterChange(); }
+  if (e.target.id === 'sort-year') { state.sortYear = e.target.value; onFilterChange(); }
 });
 
 let searchTimeout;
 document.addEventListener('input', (e) => {
   if (e.target.id !== 'f-search') return;
+  syncSearchClear();
   clearTimeout(searchTimeout);
   searchTimeout = setTimeout(() => {
     state.filterSearch = e.target.value;
@@ -1976,7 +3091,52 @@ document.addEventListener('input', (e) => {
 });
 
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeAllPanels();
+  const active = document.activeElement;
+  if (e.key === 'Escape') {
+    closeAllPanels();
+    if (active && active.id === 'f-search' && active.value) clearSearch();
+    return;
+  }
+  const toast = $('toast');
+  if (toast && toast.classList.contains('actionable') && active === toast
+      && (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar')) {
+    e.preventDefault();
+    runToastAction();
+    return;
+  }
+
+  /* shortcuts: 1–5 pick an option, Enter validates, j/k jump between questions */
+  if (!state.currentModule || state.modulePhase !== 'results') return;
+  const tag = (e.target.tagName || '').toLowerCase();
+  if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
+  if (e.metaKey || e.ctrlKey || e.altKey) return;
+
+  if (/^[1-5]$/.test(e.key)) {
+    if (!lastCardQid || state.checkedQuestions[lastCardQid]) return;
+    const card = document.querySelector(`.q-card[data-qid="${CSS.escape(lastCardQid)}"]`);
+    const btn = card && card.querySelector(`[data-letter="${'ABCDE'[Number(e.key) - 1]}"]`);
+    if (!btn || btn.disabled) return;
+    e.preventDefault();
+    btn.click();
+    return;
+  }
+  if (e.key === 'Enter') {
+    if (tag === 'button' || tag === 'a') return;   // native activation
+    if (!lastCardQid) return;
+    const card = document.querySelector(`.q-card[data-qid="${CSS.escape(lastCardQid)}"]`);
+    const v = card && card.querySelector('[data-validate-qid]');
+    if (v && !v.disabled) { e.preventDefault(); v.click(); }
+    return;
+  }
+  if (e.key === 'j' || e.key === 'k') {
+    e.preventDefault();
+    moveCardFocus(e.key === 'j' ? 1 : -1);
+  }
+});
+
+document.addEventListener('focusin', (e) => {
+  const card = e.target.closest && e.target.closest('.q-card');
+  if (card && card.dataset.qid) lastCardQid = card.dataset.qid;
 });
 
 $('back-to-filters').addEventListener('click', () => {
@@ -1993,13 +3153,36 @@ $('btn-load-more').addEventListener('click', () => {
 
 window.addEventListener('scroll', updateBarVisibility, { passive: true });
 
+/* ════════════ OFFLINE (service worker) ════════════ */
+function registerServiceWorker() {
+  if (!('serviceWorker' in navigator) || location.protocol !== 'https:') return;
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').then(reg => {
+      reg.addEventListener('updatefound', () => {
+        const next = reg.installing;
+        if (!next) return;
+        next.addEventListener('statechange', () => {
+          if (next.state === 'installed' && navigator.serviceWorker.controller) {
+            showToast(`<b>${esc(t('updateReady'))}</b>`, () => window.location.reload());
+          }
+        });
+      });
+    }).catch(() => {});
+  });
+}
+
 /* ════════════ INIT ════════════ */
-function runRoute() { return applyRoute().catch(err => console.error('[QCMify] route error', err)); }
+function runRoute() {
+  if (suppressHashRoute) { suppressHashRoute = false; return Promise.resolve(); }
+  return applyRoute().catch(err => console.error('[QCMify] route error', err));
+}
 window.addEventListener('hashchange', runRoute);
 renderChrome();
+syncThemeColor();
 runRoute();
+registerServiceWorker();
 
-console.info('[QCMify] v' + APP_VERSION + ' · data source: ' + DATA_BASE);
+if (DEBUG) console.info('[QCMify] v' + APP_VERSION + ' · data source: ' + DATA_BASE);
 </script>
 </body>
 </html>
