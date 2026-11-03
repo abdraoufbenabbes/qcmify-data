@@ -670,7 +670,7 @@ html.theme-dark .q-report:hover,html.theme-dark .q-link:hover{background:rgba(25
             when switching between semester 1 and semester 2
    ════════════════════════════════════════════════════════════════ */
 
-const APP_VERSION = "1.8.4";
+const APP_VERSION = "1.8.5";
 const DATA_BASE = "https://abdraoufbenabbes.github.io/qcmify-data/";
 /* Banks live in questions/year<N>/<slug>.json — the study year comes from CURRICULUM. */
 const DATA_DIR = 'questions/';
@@ -680,6 +680,9 @@ const DATA_VERSION = '1';
 const DATA_VERSION_QS = '?v=' + DATA_VERSION;
 const MANIFEST_URL = DATA_BASE + DATA_DIR + 'manifest.json' + DATA_VERSION_QS;
 const PAGE_SIZE = 20;
+/* Delay between two cards entering, in ms: the "one by one" cascade.
+   Lower it (~120) for a snappier feel, raise it for a slower parade. */
+const CARD_STAGGER = 300;
 const FETCH_TIMEOUT_MS = 12000;
 /* ?debug in the URL enables the informational logs (warnings stay on) */
 const DEBUG = /[?&]debug\b/.test(window.location.search);
@@ -1329,7 +1332,7 @@ function refreshVisibleModuleCards() {
 
   document.querySelectorAll('.semester-card.pending').forEach((card, i) => {
     card.classList.remove('pending');
-    card.style.animationDelay = `${i * 45}ms`;
+    card.style.animationDelay = `${i * CARD_STAGGER}ms`;
     card.classList.add('animate-in');
   });
 
@@ -1338,7 +1341,7 @@ function refreshVisibleModuleCards() {
     const cards = [...grid.querySelectorAll('.module-card')];
     cards.forEach(card => {
       card.classList.remove('pending');
-      card.style.animationDelay = `${globalIndex * 45}ms`;
+      card.style.animationDelay = `${globalIndex * CARD_STAGGER}ms`;
       card.classList.add('animate-in');
       globalIndex++;
     });
@@ -1967,7 +1970,7 @@ function renderYears(animate = true, pending = false) {
     const isActive = state.selectedYear === y ? ' active' : '';
     const pendingClass = pending ? ' pending' : '';
     const animClass = (!pending && animate) ? ' animate-in' : '';
-    const delay = (!pending && animate) ? ` style="animation-delay:${i*45}ms"` : '';
+    const delay = (!pending && animate) ? ` style="animation-delay:${i*CARD_STAGGER}ms"` : '';
     return `<button class="year-card${animClass}${isActive}${pendingClass}"${delay} data-year="${y}">
       <span class="year-big">${y}</span>
       <span class="year-info">
@@ -2006,7 +2009,7 @@ function renderSemesters(animate = true, pending = false) {
     const isActive = state.selectedSemester === s ? ' active' : '';
     const pendingClass = pending ? ' pending' : '';
     const animClass = (!pending && animate) ? ' animate-in' : '';
-    const delay = (!pending && animate) ? ` style="animation-delay:${i*45}ms"` : '';
+    const delay = (!pending && animate) ? ` style="animation-delay:${i*CARD_STAGGER}ms"` : '';
     return `<button class="semester-card${animClass}${isActive}${pendingClass}"${delay} data-semester="${s}">
       <div class="semester-badge">S${s}</div>
       <h3>${label}</h3>
@@ -2105,7 +2108,7 @@ function renderModuleCard(m, i, animate = true, pending = false) {
   const stats = moduleStatsMarkup(m.slug);
   const pendingClass = pending ? ' pending' : '';
   const animClass = (!pending && animate) ? ' animate-in' : '';
-  const delay = (!pending && animate) ? ` style="animation-delay:${i * 45}ms"` : '';
+  const delay = (!pending && animate) ? ` style="animation-delay:${i * CARD_STAGGER}ms"` : '';
   return `<button class="module-card${animClass}${cs}${pendingClass}"${delay} data-module-slug="${m.slug}" data-module-name="${esc(name)}">
     <div class="module-icon">${icon(m.icon)}</div>
     <div class="module-info">
