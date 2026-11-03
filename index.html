@@ -375,6 +375,7 @@ html.theme-dark .mod-progress-bar{background:rgba(255,255,255,.10)}
 
 .footer-about{max-width:560px;font-size:12.5px;line-height:1.6;color:var(--text-3);margin:0}
 html.theme-dark .footer-about{color:var(--text-3)}
+.app-version{font-size:11px;color:var(--text-4);font-variant-numeric:tabular-nums;opacity:.85}
 
 /* ── v1.8.0 prototype additions ── */
 .search-clear{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:26px;height:26px;display:flex;align-items:center;justify-content:center;padding:0;background:transparent;border:none;border-radius:50%;color:var(--text-3);cursor:pointer;transition:background .15s var(--ease),color .15s var(--ease)}
@@ -648,7 +649,7 @@ html.theme-dark .q-report:hover,html.theme-dark .q-link:hover{background:rgba(25
     <span id="footer-contact-text"></span>
   </a>
   <p class="footer-about" id="footer-about">QCMify est une banque de QCM médicaux en accès libre, organisée par année (1ère à 6ème), par module et par cours, avec les sujets d'examen classés par année et par rotation. Aucun compte n'est nécessaire : vos réponses sont enregistrées sur votre appareil.</p>
-  <p><b>QCMify</b> · <span id="footer-tag">Banque de QCM</span> · 2026</p>
+  <p><b>QCMify</b> · <span id="footer-tag">Banque de QCM</span> · 2026 · <span class="app-version" id="footer-version"></span></p>
 </footer>
 
 <script>
@@ -669,7 +670,7 @@ html.theme-dark .q-report:hover,html.theme-dark .q-link:hover{background:rgba(25
             when switching between semester 1 and semester 2
    ════════════════════════════════════════════════════════════════ */
 
-const APP_VERSION = "1.8.1-proto";
+const APP_VERSION = "1.8.2";
 const DATA_BASE = "https://abdraoufbenabbes.github.io/qcmify-data/";
 /* Bump DATA_VERSION only when the question banks change: the app version must not
    force every returning client to re-download ~1.3 MB of JSON after a code patch. */
@@ -3157,6 +3158,9 @@ function registerServiceWorker() {
   if (!('serviceWorker' in navigator) || location.protocol !== 'https:') return;
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('sw.js').then(reg => {
+      /* The worker serves the shell network-first, so a new build is already in
+         place on the next load — no forced reload here (that would just reload a
+         page that is already up to date). The toast is an optional nudge. */
       reg.addEventListener('updatefound', () => {
         const next = reg.installing;
         if (!next) return;
@@ -3178,6 +3182,7 @@ function runRoute() {
 window.addEventListener('hashchange', runRoute);
 renderChrome();
 syncThemeColor();
+$('footer-version').textContent = 'v' + APP_VERSION;   // support: "which build do you see?"
 runRoute();
 registerServiceWorker();
 
