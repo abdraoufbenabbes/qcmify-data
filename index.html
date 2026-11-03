@@ -670,13 +670,15 @@ html.theme-dark .q-report:hover,html.theme-dark .q-link:hover{background:rgba(25
             when switching between semester 1 and semester 2
    ════════════════════════════════════════════════════════════════ */
 
-const APP_VERSION = "1.8.2";
+const APP_VERSION = "1.8.4";
 const DATA_BASE = "https://abdraoufbenabbes.github.io/qcmify-data/";
+/* Banks live in questions/year<N>/<slug>.json — the study year comes from CURRICULUM. */
+const DATA_DIR = 'questions/';
 /* Bump DATA_VERSION only when the question banks change: the app version must not
    force every returning client to re-download ~1.3 MB of JSON after a code patch. */
 const DATA_VERSION = '1';
 const DATA_VERSION_QS = '?v=' + DATA_VERSION;
-const MANIFEST_URL = DATA_BASE + 'manifest.json' + DATA_VERSION_QS;
+const MANIFEST_URL = DATA_BASE + DATA_DIR + 'manifest.json' + DATA_VERSION_QS;
 const PAGE_SIZE = 20;
 const FETCH_TIMEOUT_MS = 12000;
 /* ?debug in the URL enables the informational logs (warnings stay on) */
@@ -990,6 +992,16 @@ const CURRICULUM = {
 /* ════════════ LIVE DATA CACHE ════════════ */
 const MODULE_DATA = {};
 
+/* slug → study year, so a bank can be looked up in questions/year<N>/
+   (built here because CURRICULUM is complete; allSlugsForYear is hoisted) */
+const MODULE_YEAR = (() => {
+  const map = new Map();
+  for (const y of [1, 2, 3, 4, 5, 6]) {
+    allSlugsForYear(y).forEach(slug => map.set(slug, y));
+  }
+  return map;
+})();
+
 /* ════════════ UTILS ════════════ */
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -1212,6 +1224,12 @@ function normalizeModuleData(raw, slug) {
   };
 }
 
+/* questions/year<N>/<slug>.json; falls back to the flat folder for unknown slugs */
+function bankUrl(slug) {
+  const year = MODULE_YEAR.get(slug);
+  return DATA_BASE + DATA_DIR + (year ? 'year' + year + '/' : '') + slug + '.json' + DATA_VERSION_QS;
+}
+
 function loadModule(slug) {
   if (moduleHasData(slug)) return Promise.resolve();
   if (DATA_PROMISES[slug]) return DATA_PROMISES[slug];
@@ -1219,7 +1237,7 @@ function loadModule(slug) {
   DATA_STATE[slug] = 'loading';
   const ctrl = (typeof AbortController === 'function') ? new AbortController() : null;
   const timer = ctrl ? setTimeout(() => ctrl.abort(), FETCH_TIMEOUT_MS) : null;
-  const url = DATA_BASE + slug + '.json' + DATA_VERSION_QS;
+  const url = bankUrl(slug);
   DATA_PROMISES[slug] = fetch(url, ctrl ? { signal: ctrl.signal } : undefined)
     .then(r => {
       if (r.status === 404) { const e = new Error('HTTP 404'); e.notFound = true; throw e; }
