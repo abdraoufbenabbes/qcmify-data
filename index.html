@@ -678,7 +678,7 @@ html.theme-dark .q-report:hover,html.theme-dark .q-link:hover{background:rgba(25
             when switching between semester 1 and semester 2
    ════════════════════════════════════════════════════════════════ */
 
-const APP_VERSION = "1.8.6";
+const APP_VERSION = "1.8.7";
 const DATA_BASE = "https://abdraoufbenabbes.github.io/qcmify-data/";
 /* Banks live in questions/year<N>/<slug>.json — the study year comes from CURRICULUM. */
 const DATA_DIR = 'questions/';
@@ -2674,6 +2674,15 @@ function resetProgress() {
 /* Everything is synthesised — no audio files to download. The tap is a short
    band-passed noise burst (close to an iOS keyboard tick); the answer motifs are
    two short notes: rising = right, matching = partial, falling = wrong. */
+/* Tap timbre: 'pop' (round, pitched — default), 'tick' (dry and very short),
+   'tock' (lower, wooden). Audition them without touching the code:
+   index.html?tap=tick  ·  index.html?tap=tock  ·  index.html?tap=pop */
+const TAP_STYLES = ['pop', 'tick', 'tock'];
+const TAP_STYLE = (() => {
+  let v = null;
+  try { v = new URLSearchParams(location.search).get('tap'); } catch (e) { /* very old browser */ }
+  return TAP_STYLES.includes(v) ? v : 'pop';
+})();
 const SOUND_KEY = 'qcm-sound';
 let audioCtx = null;
 let clickNoise = null;
@@ -2712,27 +2721,57 @@ function tone(ctx, freq, at, dur, peak, type) {
   osc.stop(at + dur + 0.02);
 }
 
+/* a sine that falls in pitch and dies quickly — the body of a tap */
+function pluck(ctx, at, f0, f1, dur, peak) {
+  const osc = ctx.createOscillator();
+  const gain = ctx.createGain();
+  osc.type = 'sine';
+  osc.frequency.setValueAtTime(f0, at);
+  osc.frequency.exponentialRampToValueAtTime(f1, at + dur);
+  gain.gain.setValueAtTime(0.0001, at);
+  gain.gain.exponentialRampToValueAtTime(peak, at + 0.005);
+  gain.gain.exponentialRampToValueAtTime(0.0001, at + dur);
+  osc.connect(gain).connect(ctx.destination);
+  osc.start(at);
+  osc.stop(at + dur + 0.02);
+}
+
+/* a breath of low-passed noise — the contact edge, not the sound itself */
+function noiseTick(ctx, at, cutoff, dur, peak) {
+  const src = ctx.createBufferSource();
+  src.buffer = noiseBuffer(ctx);
+  const lp = ctx.createBiquadFilter();
+  lp.type = 'lowpass';
+  lp.frequency.value = cutoff;
+  const gain = ctx.createGain();
+  gain.gain.setValueAtTime(0.0001, at);
+  gain.gain.exponentialRampToValueAtTime(peak, at + 0.003);
+  gain.gain.exponentialRampToValueAtTime(0.0001, at + dur);
+  src.connect(lp).connect(gain).connect(ctx.destination);
+  src.start(at);
+  src.stop(at + dur + 0.02);
+}
+
 function playClick() {
   if (!state.sound) return;
   const ctx = ensureAudio();
   if (!ctx) return;
   const t = ctx.currentTime;
 
-  const src = ctx.createBufferSource();
-  src.buffer = noiseBuffer(ctx);
-  const bp = ctx.createBiquadFilter();
-  bp.type = 'bandpass';
-  bp.frequency.value = 2100;
-  bp.Q.value = 0.9;
-  const gain = ctx.createGain();
-  gain.gain.setValueAtTime(0.0001, t);
-  gain.gain.exponentialRampToValueAtTime(0.16, t + 0.004);
-  gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.045);
-  src.connect(bp).connect(gain).connect(ctx.destination);
-  src.start(t);
-  src.stop(t + 0.06);
-
-  tone(ctx, 2800, t, 0.028, 0.04);
+  if (TAP_STYLE === 'tick') {
+    /* dry, almost inaudible pitch — closest to a keyboard */
+    tone(ctx, 1700, t, 0.018, 0.07);
+    return;
+  }
+  if (TAP_STYLE === 'tock') {
+    /* lower and woodier */
+    pluck(ctx, t, 300, 205, 0.07, 0.13);
+    noiseTick(ctx, t, 700, 0.04, 0.05);
+    return;
+  }
+  /* default: a soft round pop */
+  pluck(ctx, t, 640, 430, 0.055, 0.12);
+  noiseTick(ctx, t, 1200, 0.03, 0.035);
 }
 
 function playResult(kind) {
