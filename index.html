@@ -359,7 +359,6 @@ main:focus{outline:none}
 .toast.actionable{pointer-events:auto;cursor:pointer;border-color:var(--accent);color:var(--accent-text)}
 .toast.actionable:hover{box-shadow:0 12px 40px rgba(0,0,0,.16),0 0 0 3px var(--accent-soft)}
 .toast.actionable:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.toast .toast-retry{font-weight:700;text-decoration:underline;text-underline-offset:2px}
 
 .mod-progress{margin-top:10px;display:flex;align-items:center;gap:10px;max-width:340px}
 .mod-progress[hidden]{display:none}
@@ -1053,9 +1052,8 @@ function rotName(r) {
   return `${r}${suffix} Rotation`;
 }
 
-function questionId(slug, q) {
-  return slug + '-' + (q._key || questionKey(q));
-}
+/* single source of truth for a question's state key: "<slug>-<content hash>" */
+const qidFor = (slug, q) => slug + '-' + (q._key || questionKey(q));
 
 function moduleHasData(slug) {
   return !!MODULE_DATA[slug]
@@ -1342,7 +1340,6 @@ const state = {
   filterSearch: '',
   filterMistakes: false,
   sortYear: 'desc',
-  sortLesson: 'asc',
   userAnswers: {},
   checkedQuestions: {},
   modulePhase: 'welcome',
@@ -1409,7 +1406,6 @@ function shouldShowUnit(slug) {
 let progressSaveTimer = null;
 
 const progressKey = slug => PROGRESS_PREFIX + slug;
-const qidFor = (slug, q) => slug + '-' + q._key;
 
 function currentModuleData() {
   return state.currentModule ? MODULE_DATA[state.currentModule.slug] : null;
@@ -1612,7 +1608,6 @@ async function applyRoute() {
         state.filterSearch = '';
         state.filterMistakes = false;
         state.sortYear = 'desc';
-        state.sortLesson = 'asc';
         state.userAnswers = {};
         state.checkedQuestions = {};
         state.modulePhase = 'welcome';
@@ -1620,6 +1615,7 @@ async function applyRoute() {
         restoreProgress(moduleSlug, MODULE_DATA[moduleSlug]);
       }
       lastModuleSlug = moduleSlug;
+      touchModule(moduleSlug);   // keep the LRU window honest when reopening
       renderModuleView();
       scrollInstantTop();
       if (qKey) focusQuestion(qKey);
@@ -1635,6 +1631,7 @@ async function applyRoute() {
   }
 
   lastModuleSlug = null;
+  clearExamState();          // leaving the module abandons any running exam
   state.view = 'home';
   state.currentModule = null;
 
@@ -1669,9 +1666,14 @@ async function applyRoute() {
     requestAnimationFrame(() => {
       const target = (y === 1 && !state.selectedSemester) ? 'semester-section' : 'modules-section';
       const el = $(target);
-      if (el && el.style.display !== 'none') {
-        el.scrollIntoView({ behavior: smoothBehavior(), block: 'center' });
-      }
+      if (!el || el.style.display === 'none') return;
+      /* Land on the section *title*, just under the sticky header. Centring the
+         section (the old block:'center') pushed the title and the first modules
+         off-screen whenever the list was taller than the phone viewport. */
+      const header = document.querySelector('.site-header');
+      const headerH = header ? header.offsetHeight : 60;
+      const top = el.getBoundingClientRect().top + window.scrollY - headerH - 12;
+      window.scrollTo({ top: Math.max(0, top), behavior: smoothBehavior() });
     });
 
     let slugs = [];
@@ -2269,6 +2271,7 @@ function showAllQuestions() {
   state.modulePhase = 'results';
   state.visibleCount = PAGE_SIZE;
   renderModuleBody();
+  updateMistakesButton();
   updateBarVisibility();
 }
 
@@ -2332,7 +2335,9 @@ function getFilteredQuestions() {
 function compareQuestions(a, b) {
   const yearCmp = state.sortYear === 'asc' ? a.year - b.year : b.year - a.year;
   if (yearCmp !== 0) return yearCmp;
-  const lessonCmp = state.sortLesson === 'desc' ? lessonCompare(b.lesson, a.lesson) : lessonCompare(a.lesson, b.lesson);
+  /* courses are always listed A→Z (TD/Sim/TP last); the order is stable, the
+     invert control was removed */
+  const lessonCmp = lessonCompare(a.lesson, b.lesson);
   return lessonCmp !== 0 ? lessonCmp : a._idx - b._idx;
 }
 
@@ -2364,7 +2369,7 @@ function renderVisibleQuestions(list, append = false) {
 
   const html = visible.slice(start).map((q, i) => {
     const idx = start + i;
-    const qid = questionId(state.currentModule.slug, q);
+    const qid = qidFor(state.currentModule.slug, q);
     return `<div class="q-card" data-qid="${qid}" data-idx="${q._idx}" data-pos="${idx}">${renderQuestionCard(q, idx, qid)}</div>`;
   }).join('');
 
@@ -2593,7 +2598,6 @@ function resetFilters() {
   state.filterSearch = '';
   state.filterMistakes = false;
   state.sortYear = 'desc';
-  state.sortLesson = 'asc';
   state.modulePhase = 'welcome';
   state.visibleCount = PAGE_SIZE;
   $('f-search').value = '';
@@ -2971,21 +2975,16 @@ function clearExamState() {
       if (prev.checked) state.checkedQuestions[qid] = true;
       else delete state.checkedQuestions[qid];
     });
-    schedulePersist();
+    persistProgress();   // synchronous: the module context may be gone by the next tick
   }
   clearInterval(examTicker);
   examTicker = null;
   state.exam = null;
   const summary = $('exam-summary');
   if (summary) { summary.hidden = true; summary.innerHTML = ''; }
-  if ($('exam-bar')) $('exam-bar').hidden = true;
   if ($('exam-finish')) $('exam-finish').hidden = false;
-  if ($('exam-setup')) $('exam-setup').hidden = false;
-  if ($('exam-live')) $('exam-live').hidden = true;
-  const controls = $('controls');
-  if (controls) controls.classList.remove('exam-active');
-  const btn = $('btn-exam');
-  if (btn) btn.setAttribute('aria-expanded', 'false');
+  setExamActiveUI(false);
+  if ($('exam-bar')) $('exam-bar').hidden = true;
 }
 
 function quitExam() {
