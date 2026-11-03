@@ -1,0 +1,22 @@
+{
+  "name": "QCMify · Banque de QCM",
+  "short_name": "QCMify",
+  "description": "Banque de QCM médicaux, de la 1ère à la 6ème année : révisez par année, module, appareil et cours.",
+  "lang": "fr",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#fbfbfd",
+  "theme_color": "#34c759",
+  "categories": ["education", "medical"],
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
