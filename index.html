@@ -14,10 +14,20 @@
 <meta property="og:url" content="https://abdraoufbenabbes.github.io/qcmify-data/">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:locale:alternate" content="en_US">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://abdraoufbenabbes.github.io/qcmify-data/og-image.png">
+<meta property="og:image:secure_url" content="https://abdraoufbenabbes.github.io/qcmify-data/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="QCMify · Banque de QCM médicaux">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" id="tw-title" content="QCMify · Banque de QCM">
 <meta name="twitter:description" id="tw-desc" content="Banque de QCM médicaux, de la 1ère à la 6ème année : révisez par année, module, appareil et cours.">
+<meta name="twitter:image" content="https://abdraoufbenabbes.github.io/qcmify-data/og-image.png">
+<meta name="twitter:image:alt" content="QCMify · Banque de QCM médicaux">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%2334c759' rx='20'/><text x='50' y='60' font-family='Arial,sans-serif' font-weight='900' font-size='42' fill='white' text-anchor='middle' letter-spacing='-2'>Q</text></svg>">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
 <script>(function(){try{var s=localStorage.getItem('qcm-theme');if(s==='dark'||(!s&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('theme-dark');}catch(e){}})();</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"QCMify","alternateName":"QCMify · Banque de QCM","url":"https://abdraoufbenabbes.github.io/qcmify-data/","description":"Banque de QCM médicaux pour les étudiants en médecine, organisée par année, module et cours.","inLanguage":["fr","en"],"isAccessibleForFree":true}
@@ -28,7 +38,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="apple-touch-icon" href="icon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="QCMify">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -449,7 +462,15 @@ html.theme-dark .q-report:hover,html.theme-dark .q-link:hover{background:rgba(25
 </head>
 <body>
 <a class="skip-link" id="skip-link" href="#main-home"></a>
-<noscript><p style="padding:40px 20px;text-align:center;font-family:sans-serif">QCMify nécessite JavaScript · QCMify requires JavaScript.</p></noscript>
+<noscript>
+  <div class="container" style="padding:32px 24px;max-width:760px">
+    <h1 style="font-size:1.7rem;margin-bottom:12px">QCMify · Banque de QCM médicaux</h1>
+    <p style="margin-bottom:12px">Banque de QCM médicaux pour les étudiants en médecine, de la 1ère à la 6ème année, organisée par année, module, appareil et cours.</p>
+    <p style="margin-bottom:12px">Cette application utilise JavaScript pour charger les banques de questions et conserver votre progression sur votre appareil. Activez JavaScript pour l'utiliser.</p>
+    <p style="margin-bottom:12px"><a href="https://t.me/abdrraovf" rel="noopener noreferrer">Contacter QCMify sur Telegram</a></p>
+    <p style="color:#55555a;font-size:14px">QCMify is a French medical multiple-choice question bank for years 1–6. It needs JavaScript to load question banks and save progress locally.</p>
+  </div>
+</noscript>
 <div id="sr-status" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
 
 <header class="site-header">
@@ -610,7 +631,7 @@ html.theme-dark .q-report:hover,html.theme-dark .q-link:hover{background:rgba(25
     </div>
   </div>
 
-  <main id="main-module" tabindex="-1">
+  <main id="main-module" tabindex="-1" hidden>
     <div class="container">
       <div class="exam-summary" id="exam-summary" hidden></div>
       <div class="welcome" id="module-welcome">
@@ -669,17 +690,34 @@ html.theme-dark .q-report:hover,html.theme-dark .q-link:hover{background:rgba(25
      · rich-text sanitiser for question stems (whitelisted inline tags)
      · duplicate questions collapsed, answers clamped to existing options
      · content-hash question IDs (stable across JSON edits)
-     · progress persisted per module in localStorage (content-signature guarded)
+     · progress persisted per module in localStorage (content-key guarded)
      · "my mistakes" filter + per-module progress indicator
      · retry-able load-error toast, semester-aware back navigation
      · guarded history.replaceState, smaller prefetch bursts, versioned data URLs
      · real h1/main landmarks, decorative icons hidden, OG/Twitter/JSON-LD metadata
    v1.7.1 — the year-1 semester cards are no longer rebuilt (and re-animated)
             when switching between semester 1 and semester 2
+   v1.9.0 — release hygiene + robustness pass:
+     · progress survives data edits: answers are kept per content key instead of
+       being discarded when the module signature changes
+     · pending progress is flushed before a module switch (250 ms debounce race)
+     · relative data path (works on localhost, preview hosts and custom domains)
+     · manifest fetch retries after a transient failure
+     · 64-bit fallback hashes on the (rare) 32-bit question-key collision
+     · clipboard fallback, focus return for closed filter panels, sound only on
+       interactive elements, service worker enabled on localhost, SW network timeout
+     · PNG/maskable/apple icons and social preview image (og:image)
    ════════════════════════════════════════════════════════════════ */
 
-const APP_VERSION = "1.8.7";
-const DATA_BASE = "https://abdraoufbenabbes.github.io/qcmify-data/";
+const APP_VERSION = "1.9.0";
+/* Relative on purpose: the app, questions/ and manifest.json ship from the same
+   origin. Absolute URLs made previews/localhost fetch cross-origin, which the
+   service worker then refused to cache, so banks were not available offline.
+   `file://` cannot fetch sibling files, so a direct-open copy uses the published
+   data root instead (the documented "open index.html" workflow). */
+const DATA_BASE = location.protocol === 'file:'
+  ? 'https://abdraoufbenabbes.github.io/qcmify-data/'
+  : './';
 /* Banks live in questions/year<N>/<slug>.json — the study year comes from CURRICULUM. */
 const DATA_DIR = 'questions/';
 /* Bump DATA_VERSION only when the question banks change: the app version must not
@@ -1055,8 +1093,40 @@ function fnv1a(str) {
   return h.toString(36);
 }
 
+function questionContent(q) {
+  return q.text + '\u0000' + q.options.join('\u0000') + '\u0000' + q.answer;
+}
+
 function questionKey(q) {
-  return fnv1a(q.text + '\u0000' + q.options.join('\u0000') + '\u0000' + q.answer);
+  return fnv1a(questionContent(q));
+}
+
+/* A second, independent 32-bit lane gives ~64 bits when the 32-bit key collides.
+   Only used for the colliding row, so existing saved keys stay stable. */
+function fnv1a64(str) {
+  let a = 0x811c9dc5, b = 0x9e3779b9;
+  for (let i = 0; i < str.length; i++) {
+    const c = str.charCodeAt(i);
+    a ^= c; a = Math.imul(a, 0x01000193) >>> 0;
+    b ^= c; b = Math.imul(b, 0x85ebca6b) >>> 0;
+  }
+  return a.toString(36) + b.toString(36);
+}
+
+/* Same content (a question asked in several sessions) keeps one key on purpose.
+   Different content that happens to share a 32-bit hash gets a salted 64-bit key. */
+function uniqueQuestionKey(q, used) {
+  const content = questionContent(q);
+  let key = questionKey(q);
+  if (used.has(key) && used.get(key) !== content) {
+    let salt = 0;
+    do {
+      key = fnv1a64(content + '#' + salt);
+      salt++;
+    } while (used.has(key) && used.get(key) !== content);
+  }
+  used.set(key, content);
+  return key;
 }
 
 const prefersReducedMotion = () => !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
@@ -1109,21 +1179,40 @@ const DATA_STATE = {};
 const DATA_PROMISES = {};
 
 /* ── manifest: availability + counts, without downloading the question banks ── */
-const MANIFEST = { data: null, promise: null };
+const MANIFEST = { data: null, promise: null, inflight: null, failedAt: 0 };
 
-function ensureManifest() {
-  if (MANIFEST.promise) return MANIFEST.promise;
-  const load = fetch(MANIFEST_URL)
+/* One shared request. A failure is remembered for 15 s instead of being cached
+   for the whole session, so a transient offline blip can recover on a later route. */
+function fetchManifest() {
+  if (MANIFEST.inflight) return MANIFEST.inflight;
+  MANIFEST.inflight = fetch(MANIFEST_URL)
     .then(r => (r.ok ? r.json() : null))
     .then(raw => {
-      if (raw && typeof raw === 'object' && !Array.isArray(raw)) MANIFEST.data = raw;
+      if (raw && typeof raw === 'object' && !Array.isArray(raw)) {
+        MANIFEST.data = raw;
+        MANIFEST.failedAt = 0;
+      } else if (!MANIFEST.data) {
+        MANIFEST.failedAt = Date.now();
+      }
       return MANIFEST.data;
     })
-    .catch(() => null);
+    .catch(() => {
+      if (!MANIFEST.data) MANIFEST.failedAt = Date.now();
+      return MANIFEST.data;
+    })
+    .finally(() => { MANIFEST.inflight = null; });
+  return MANIFEST.inflight;
+}
+
+function ensureManifest() {
+  if (MANIFEST.data) return Promise.resolve(MANIFEST.data);
+  if (MANIFEST.promise) return MANIFEST.promise;
+  if (MANIFEST.failedAt && Date.now() - MANIFEST.failedAt < 15000) return Promise.resolve(null);
   /* never let a slow manifest hold up the year grid: after 2.5 s we fall back
      to the eager prefetch, and a late answer is still stored for later routes */
+  const load = fetchManifest();
   const timeout = new Promise(resolve => setTimeout(() => resolve(null), 2500));
-  MANIFEST.promise = Promise.race([load, timeout]);
+  MANIFEST.promise = Promise.race([load, timeout]).finally(() => { MANIFEST.promise = null; });
   return MANIFEST.promise;
 }
 
@@ -1189,6 +1278,7 @@ function normalizeModuleData(raw, slug) {
   let dropped = 0, duplicates = 0, clamped = 0;
   const questions = [];
   const seen = new Set();
+  const usedKeys = new Map();
   raw.questions.forEach(q => {
     if (!q || typeof q !== 'object' || !Array.isArray(q.options)) { dropped++; return; }
     const year = Number(q.year);
@@ -1210,7 +1300,7 @@ function normalizeModuleData(raw, slug) {
       lesson: String(q.lesson == null ? '' : q.lesson).trim() || '—',
       text, options, answer
     };
-    item._key = questionKey(item);
+    item._key = uniqueQuestionKey(item, usedKeys);
     /* A question asked in two different exam sessions is real data, not a
        duplicate — the year/rotation filters depend on those rows existing.
        Rows are only flagged when year, rotation AND content are identical. */
@@ -1443,14 +1533,17 @@ function currentModuleData() {
 }
 
 /* Answers are keyed by content hash, not by position, so editing/reordering a
-   module's JSON does not shift saved answers onto the wrong question. */
+   module's JSON does not shift saved answers onto the wrong question. The
+   per-key check below is what makes that safe: add/remove/rewrite questions and
+   only the affected answers change. A whole-module signature guard is *not*
+   applied here — it would erase every answer whenever one question was added. */
 function restoreProgress(slug, data) {
   state.userAnswers = {};
   state.checkedQuestions = {};
-  if (!data || !data.signature) return false;
+  if (!data || !Array.isArray(data.questions)) return false;
   let saved = null;
   try { saved = JSON.parse(localStorage.getItem(progressKey(slug)) || 'null'); } catch (e) { return false; }
-  if (!saved || saved.v !== PROGRESS_VERSION || saved.sig !== data.signature) return false;
+  if (!saved || saved.v !== PROGRESS_VERSION) return false;
   const valid = new Set(data.questions.map(q => q._key));
   const answers = saved.a || {}, checked = saved.c || {};
   Object.keys(answers).forEach(key => {
@@ -1465,11 +1558,13 @@ function restoreProgress(slug, data) {
   return true;
 }
 
-function persistProgress() {
-  const m = state.currentModule;
-  const data = currentModuleData();
-  if (!m || !data) return;
-  const prefix = m.slug + '-';
+/* slug/data can be passed explicitly so a module that is being left (or an
+   abandoned exam) is saved under its own key, not under the route we just opened. */
+function persistProgress(slug, data) {
+  const targetSlug = slug || (state.currentModule && state.currentModule.slug);
+  const targetData = data || (targetSlug ? MODULE_DATA[targetSlug] : null);
+  if (!targetSlug || !targetData) return;
+  const prefix = targetSlug + '-';
   const answers = {}, checked = {};
   Object.keys(state.userAnswers).forEach(qid => {
     if (qid.indexOf(prefix) !== 0) return;
@@ -1480,16 +1575,19 @@ function persistProgress() {
     if (qid.indexOf(prefix) === 0) checked[qid.slice(prefix.length)] = 1;
   });
   try {
-    if (!Object.keys(answers).length && !Object.keys(checked).length) localStorage.removeItem(progressKey(m.slug));
-    else localStorage.setItem(progressKey(m.slug), JSON.stringify({
-      v: PROGRESS_VERSION, sig: data.signature, a: answers, c: checked
+    if (!Object.keys(answers).length && !Object.keys(checked).length) localStorage.removeItem(progressKey(targetSlug));
+    else localStorage.setItem(progressKey(targetSlug), JSON.stringify({
+      v: PROGRESS_VERSION, sig: targetData.signature, a: answers, c: checked
     }));
   } catch (e) { /* private mode or quota exceeded — progress simply stays in memory */ }
 }
 
 function schedulePersist() {
   clearTimeout(progressSaveTimer);
-  progressSaveTimer = setTimeout(persistProgress, 250);
+  /* capture the slug: if the route changes before the debounce fires, the answer
+     still belongs to the module that was on screen when it was clicked */
+  const slug = state.currentModule && state.currentModule.slug;
+  progressSaveTimer = setTimeout(() => persistProgress(slug), 250);
 }
 
 function moduleStats() {
@@ -1628,7 +1726,12 @@ async function applyRoute() {
 
     if (moduleHasData(moduleSlug)) {
       if (lastModuleSlug !== moduleSlug) {
+        /* clear/undo a running exam (it saves under its own stored slug), then
+           flush the module we are leaving before its answers are reset below */
         clearExamState();
+        if (lastModuleSlug) persistProgress(lastModuleSlug, MODULE_DATA[lastModuleSlug]);
+        clearTimeout(progressSaveTimer);
+        progressSaveTimer = null;
         /* filter widgets must be rebuilt for the module we are entering, otherwise
            the previous visit's selections stay visible while the state is empty */
         filtersBuiltFor = '';
@@ -1941,6 +2044,9 @@ function renderHome(animate = true, pending = false) {
   $('route-loading').style.display = 'none';
   $('view-home').style.display = 'block';
   $('view-module').style.display = 'none';
+  /* only one <main> may be exposed at a time */
+  $('main-home').hidden = false;
+  $('main-module').hidden = true;
 
   $('hero-badge').textContent = t('heroBadge');
   $('hero-title').innerHTML = t('heroTitle');
@@ -2138,6 +2244,8 @@ function renderModuleView(preserveVisibleCount = false) {
   $('route-loading').style.display = 'none';
   $('view-home').style.display = 'none';
   $('view-module').style.display = 'block';
+  $('main-home').hidden = true;
+  $('main-module').hidden = false;
 
   renderChrome();
 
@@ -2890,10 +2998,7 @@ function questionPermalink(q) {
     + '&q=' + encodeURIComponent(q._key);
 }
 
-function copyToClipboard(text) {
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    return navigator.clipboard.writeText(text);
-  }
+function legacyCopy(text) {
   return new Promise((resolve, reject) => {
     try {
       const ta = document.createElement('textarea');
@@ -2902,11 +3007,21 @@ function copyToClipboard(text) {
       ta.style.cssText = 'position:fixed;top:-1000px;opacity:0';
       document.body.appendChild(ta);
       ta.select();
-      document.execCommand('copy');
+      const ok = document.execCommand('copy');
       ta.remove();
-      resolve();
+      if (ok) resolve();
+      else reject(new Error('copy command refused'));
     } catch (e) { reject(e); }
   });
+}
+
+function copyToClipboard(text) {
+  /* A present but rejecting clipboard API (permissions, insecure context) falls
+     back to the old command instead of just failing. */
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    return navigator.clipboard.writeText(text).catch(() => legacyCopy(text));
+  }
+  return legacyCopy(text);
 }
 
 function copyQuestionLink(qid) {
@@ -3075,7 +3190,10 @@ function startExam() {
     delete state.userAnswers[qid];
   });
 
-  state.exam = { rows, order, snapshot, total: picked.length, deadline: minutes ? Date.now() + minutes * 60000 : 0, finished: false };
+  state.exam = {
+    slug: state.currentModule.slug, rows, order, snapshot,
+    total: picked.length, deadline: minutes ? Date.now() + minutes * 60000 : 0, finished: false
+  };
   state.modulePhase = 'results';
   state.filterMistakes = false;
   state.visibleCount = picked.length;
@@ -3148,7 +3266,8 @@ function clearExamState() {
       if (prev.checked) state.checkedQuestions[qid] = true;
       else delete state.checkedQuestions[qid];
     });
-    persistProgress();   // synchronous: the module context may be gone by the next tick
+    /* explicit slug: the route may already point at another module by now */
+    persistProgress(ex.slug, MODULE_DATA[ex.slug]);
   }
   clearInterval(examTicker);
   examTicker = null;
@@ -3169,13 +3288,14 @@ function quitExam() {
 }
 
 /* ════════════ EVENTS ════════════ */
-/* One tick per tap, including taps on empty space (capture, so it fires before
-   any handler can stop propagation). The validate button is skipped: it gets the
-   answer motif instead of a click. */
+/* One tick per tap on an interactive element (capture, so it fires before any
+   handler can stop propagation). Empty space stays silent: a stray click should
+   not make noise. The validate button is skipped — it gets the answer motif instead. */
 document.addEventListener('click', (e) => {
   if (!state.sound) return;
   if (!e.target || !e.target.closest) return;
   if (e.target.closest('[data-validate-qid]') || e.target.closest('#sound-btn')) return;
+  if (!e.target.closest('button, a, label, select, input, [role="button"], summary')) return;
   playClick();
 }, true);
 
@@ -3279,8 +3399,12 @@ document.addEventListener('input', (e) => {
 document.addEventListener('keydown', (e) => {
   const active = document.activeElement;
   if (e.key === 'Escape') {
+    const openPanel = document.querySelector('.ms-panel.open');
+    const trigger = openPanel && openPanel.closest('.multiselect')?.querySelector('.ms-trigger');
     closeAllPanels();
-    if (active && active.id === 'f-search' && active.value) clearSearch();
+    /* do not strand keyboard focus inside a panel that just closed */
+    if (openPanel && trigger) trigger.focus();
+    else if (active && active.id === 'f-search' && active.value) clearSearch();
     return;
   }
   const toast = $('toast');
@@ -3341,7 +3465,9 @@ window.addEventListener('scroll', updateBarVisibility, { passive: true });
 
 /* ════════════ OFFLINE (service worker) ════════════ */
 function registerServiceWorker() {
-  if (!('serviceWorker' in navigator) || location.protocol !== 'https:') return;
+  /* isSecureContext is true for https and for http://localhost/127.0.0.1,
+     which is where the e2e suite and local previews run. */
+  if (!('serviceWorker' in navigator) || !window.isSecureContext) return;
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('sw.js').then(reg => {
       /* The worker serves the shell network-first, so a new build is already in
