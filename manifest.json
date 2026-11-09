@@ -1,0 +1,26 @@
+{
+  "cardiologie": {
+    "q": 546,
+    "l": 33
+  },
+  "infectieuses": {
+    "q": 417,
+    "l": 27
+  },
+  "neurologie": {
+    "q": 232,
+    "l": 25
+  },
+  "gynecologie": {
+    "q": 300,
+    "l": 33
+  },
+  "locomoteur": {
+    "q": 824,
+    "l": 45
+  },
+  "pediatrie": {
+    "q": 1257,
+    "l": 47
+  }
+}
