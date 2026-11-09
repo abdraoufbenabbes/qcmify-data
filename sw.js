@@ -1,6 +1,6 @@
 /* QCMify service worker — offline app shell + question banks.
  *
- * Strategy v1.9.0:
+ * Strategy v1.12.0:
  *
  *   · navigations + shell files → NETWORK FIRST, revalidated with `no-cache`,
  *     with a short network timeout. The cache is only the offline fallback.
@@ -20,7 +20,7 @@
  *
  * Bump CACHE on every deploy so activate() drops the previous one.
  */
-const CACHE = 'qcmify-v1.9.0';
+const CACHE = 'qcmify-v1.12.0';
 const SHELL = [
   './',
   './index.html',
