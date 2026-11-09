@@ -77,7 +77,7 @@ html.theme-dark{
   --icon-calendar-up:   url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239184a8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='18' rx='2' ry='2'/><line x1='16' y1='2' x2='16' y2='6'/><line x1='8' y1='2' x2='8' y2='6'/><line x1='3' y1='10' x2='21' y2='10'/><path d='M9 17l3-3 3 3'/></svg>");
 }
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;background:var(--bg);transition:background-color .2s var(--ease)}
-body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter",Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.5;letter-spacing:-.011em;min-height:100vh;min-height:100dvh;background-image:radial-gradient(ellipse 90% 60% at 50% -10%,rgba(52,199,89,.04),transparent 60%),radial-gradient(ellipse 50% 40% at 90% 20%,rgba(255,149,0,.03),transparent 50%);background-attachment:fixed;transition:background-color .2s var(--ease),color .2s var(--ease)}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter",Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.5;letter-spacing:-.011em;min-height:100vh;min-height:100dvh;background-image:radial-gradient(ellipse 90% 60% at 50% -10%,rgba(52,199,89,.04),transparent 60%),radial-gradient(ellipse 50% 40% at 90% 20%,rgba(255,149,0,.03),transparent 50%);transition:background-color .2s var(--ease),color .2s var(--ease)}
 html.theme-dark body{background-image:radial-gradient(ellipse 90% 60% at 50% -10%,rgba(147,51,234,.16),transparent 60%),radial-gradient(ellipse 50% 40% at 90% 20%,rgba(236,72,153,.08),transparent 55%)}
 
 ::view-transition-old(root){animation:none;mix-blend-mode:normal}
@@ -89,7 +89,7 @@ html.theme-dark body{background-image:radial-gradient(ellipse 90% 60% at 50% -10
 svg{display:block}
 button{font-family:inherit}
 
-.site-header{position:sticky;top:0;z-index:100;background:color-mix(in srgb,var(--bg) 78%,transparent);-webkit-backdrop-filter:saturate(180%) blur(24px);backdrop-filter:saturate(180%) blur(24px);border-bottom:1px solid var(--border)}
+.site-header{position:sticky;top:0;z-index:100;background:color-mix(in srgb,var(--bg) 94%,transparent);border-bottom:1px solid var(--border)}
 @supports not (background:color-mix(in srgb,red,blue)){.site-header{background:var(--bg)}}
 .site-header .container{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
 .logo{display:flex;align-items:center;gap:10px;color:var(--text);cursor:pointer;background:none;border:none;padding:0}
@@ -110,8 +110,8 @@ html.theme-dark .theme-btn .moon{display:none}
 
 .hero{padding:56px 0 40px;text-align:center}
 .hero h1{font-size:clamp(1.9rem,4.5vw,2.8rem);font-weight:700;letter-spacing:-.04em;line-height:1.05;margin-bottom:12px}
-.hero h1 span{background:linear-gradient(135deg,var(--accent),#20b2aa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-html.theme-dark .hero h1 span{background:linear-gradient(135deg,#c084fc,#9333ea 55%,#22d3ee);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero h1 span{background:linear-gradient(135deg,var(--accent),#20b2aa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 10px rgba(52,199,89,.30))}
+html.theme-dark .hero h1 span{background:linear-gradient(135deg,#c084fc,#9333ea 55%,#22d3ee);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 12px rgba(192,132,252,.45))}
 .hero p{font-size:1rem;color:var(--text-2);max-width:560px;margin:0 auto}
 .eyebrow{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;background:var(--accent-soft);color:var(--accent-text);border-radius:var(--radius-pill);font-size:12px;font-weight:600;margin-bottom:18px}
 .eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);animation:pulse 2s var(--ease) infinite}
@@ -178,6 +178,19 @@ html.theme-dark .hero h1 span{background:linear-gradient(135deg,#c084fc,#9333ea 
 .tag-unit{background:var(--accent-soft);color:var(--accent-text);font-weight:500}
 .tag-lesson{background:rgba(0,0,0,.05);color:var(--text-2);font-weight:500}
 html.theme-dark .tag-lesson{background:rgba(255,255,255,.06)}
+.tag-repeat{background:rgba(255,204,0,.16);color:#7a5b00;border:1px solid rgba(255,204,0,.50);font-family:inherit;cursor:pointer;gap:5px;text-align:left;transition:background .15s var(--ease),border-color .15s var(--ease)}
+.tag-repeat:hover{background:rgba(255,204,0,.30)}
+.tag-repeat[aria-expanded="true"]{background:rgba(255,204,0,.30);border-color:#7a5b00}
+html.theme-dark .tag-repeat{background:rgba(250,204,21,.14);color:#fde047;border-color:rgba(250,204,21,.45)}
+html.theme-dark .tag-repeat:hover,html.theme-dark .tag-repeat[aria-expanded="true"]{background:rgba(250,204,21,.24);border-color:#fde047}
+.tag-repeat.diff{background:var(--danger-soft);color:var(--danger-text);border-color:var(--danger-border)}
+.tag-repeat.diff:hover,.tag-repeat.diff[aria-expanded="true"]{background:var(--danger-border);border-color:var(--danger-text)}
+html.theme-dark .tag-repeat.diff{background:var(--danger-soft);color:var(--danger-text);border-color:var(--danger-border)}
+html.theme-dark .tag-repeat.diff:hover,html.theme-dark .tag-repeat.diff[aria-expanded="true"]{background:var(--danger-border);border-color:var(--danger-text)}
+.tag-repeat-count{display:inline-flex;align-items:center;justify-content:center;min-width:15px;height:15px;padding:0 4px;border-radius:var(--radius-pill);background:rgba(0,0,0,.08);font-size:10px;font-weight:700;font-variant-numeric:tabular-nums}
+html.theme-dark .tag-repeat-count{background:rgba(255,255,255,.14)}
+.tag-repeat-warn{font-weight:800;font-size:11px}
+.tag-repeat:focus-visible,.repeat-arrow:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
 .btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:var(--radius-pill);font-size:13.5px;font-weight:500;border:1px solid transparent;cursor:pointer;transition:all .2s var(--ease);white-space:nowrap}
 .btn-secondary{background:rgba(0,0,0,.04);color:var(--text)}
@@ -245,16 +258,32 @@ html.theme-dark .sort-select{background-color:rgba(255,255,255,.06);background-i
 .result-count b{color:var(--text);font-weight:600}
 
 main{padding:14px 0 80px}
-.q-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:22px;margin-bottom:12px;transition:border-color .2s var(--ease),box-shadow .2s var(--ease);animation:cardIn .5s var(--ease-out) both}
+.q-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:22px;margin-bottom:12px;transition:border-color .2s var(--ease),box-shadow .2s var(--ease);animation:cardIn .5s var(--ease-out) both;content-visibility:auto;contain-intrinsic-size:auto 280px}
+.q-card.q-card-static{animation:none}
 .q-card:hover{border-color:var(--border-2);box-shadow:var(--shadow-md)}
 .q-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:12px;flex-wrap:wrap}
 .q-meta{display:flex;gap:6px;flex-wrap:wrap}
 .q-index{font-size:11.5px;color:var(--text-4);font-weight:500;font-variant-numeric:tabular-nums;flex-shrink:0;padding-top:3px}
+.repeat-nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:-2px 0 12px;padding:7px 10px;border:1px dashed rgba(255,204,0,.55);border-radius:var(--radius-sm);background:rgba(255,204,0,.16);font-size:12px;color:#7a5b00}
+.repeat-nav[hidden]{display:none}
+html.theme-dark .repeat-nav{background:rgba(250,204,21,.14);border-color:rgba(250,204,21,.45);color:#fde047}
+.repeat-nav.diff{border-color:var(--danger-border);background:var(--danger-soft);color:var(--danger-text)}
+html.theme-dark .repeat-nav.diff{border-color:var(--danger-border);background:var(--danger-soft);color:var(--danger-text)}
+.repeat-arrow{width:26px;height:26px;display:inline-flex;align-items:center;justify-content:center;border:1px solid currentColor;border-radius:50%;background:var(--card);color:inherit;cursor:pointer;transition:transform .15s var(--ease),background .15s var(--ease)}
+.repeat-arrow:hover{transform:translateY(-1px);background:rgba(255,255,255,.55)}
+html.theme-dark .repeat-arrow{background:rgba(255,255,255,.06)}
+.repeat-arrow:active{transform:translateY(0)}
+.repeat-arrow:disabled,.repeat-arrow:disabled:hover{opacity:.35;cursor:default;transform:none;background:var(--card)}
+.repeat-arrow svg{width:13px;height:13px}
+.repeat-count{font-weight:700;font-variant-numeric:tabular-nums}
+.repeat-diff{font-weight:700;margin-left:auto}
+@media (max-width:520px){.repeat-diff{width:100%;margin-left:0}}
 .q-text{font-size:15.5px;font-weight:500;line-height:1.55;letter-spacing:-.015em;margin-bottom:14px;white-space:pre-wrap}
 .options{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
-.opt{display:flex;align-items:flex-start;gap:11px;padding:10px 13px;background:rgba(0,0,0,.02);border:1px solid transparent;border-radius:var(--radius-sm);font-family:inherit;font-size:14px;color:var(--text);line-height:1.5;text-align:left;width:100%;transition:all .15s var(--ease);cursor:pointer;user-select:none}
+.opt{display:flex;align-items:flex-start;gap:11px;padding:10px 13px;background:rgba(0,0,0,.02);border:1px solid transparent;border-radius:var(--radius-sm);font-family:inherit;font-size:14px;color:var(--text);line-height:1.5;text-align:left;width:100%;transition:all .15s var(--ease);cursor:pointer;user-select:text;-webkit-user-select:text}
 html.theme-dark .opt{background:rgba(255,255,255,.03)}
-.opt .letter{font-weight:600;color:var(--text-3);min-width:15px;flex-shrink:0;font-size:13px;transition:color .15s var(--ease)}
+.opt .letter{font-weight:600;color:var(--text-3);min-width:15px;flex-shrink:0;font-size:13px;transition:color .15s var(--ease);user-select:none;-webkit-user-select:none}
+.opt .check,.opt .cross,.opt .half,.opt .missed-mark{user-select:none;-webkit-user-select:none}
 .opt .text{flex:1}
 .opt:hover:not(:disabled){background:rgba(0,0,0,.05)}
 html.theme-dark .opt:hover:not(:disabled){background:rgba(255,255,255,.06)}
@@ -301,10 +330,6 @@ html.theme-dark .clear-btn:hover{background:rgba(255,255,255,.10)}
 .welcome-actions .btn{padding:10px 18px;font-size:13.5px;font-weight:600}
 .welcome-actions .btn svg{width:15px;height:15px;flex-shrink:0}
 
-.load-more-wrap{text-align:center;padding:20px 0 8px}
-.btn-load-more{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;background:var(--card);border:1px solid var(--border-2);border-radius:var(--radius-pill);font-family:inherit;font-size:13.5px;font-weight:600;color:var(--text);cursor:pointer;transition:all .2s var(--ease);box-shadow:var(--shadow-sm)}
-.btn-load-more:hover{border-color:var(--accent);color:var(--accent-text);transform:translateY(-1px);box-shadow:var(--shadow-md)}
-.btn-load-more:active{transform:translateY(0)}
 
 .empty{text-align:center;padding:70px 20px}
 .empty-icon{width:60px;height:60px;margin:0 auto 18px;background:rgba(0,0,0,.04);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--text-3)}
@@ -312,11 +337,11 @@ html.theme-dark .empty-icon{background:rgba(255,255,255,.05)}
 .empty h3{font-size:18px;font-weight:600;margin-bottom:6px}
 .empty p{font-size:14px;color:var(--text-2)}
 
-.toast{position:fixed;bottom:32px;left:50%;transform:translate(-50%,20px);padding:12px 20px;background:var(--card);border:1px solid var(--border-2);border-radius:var(--radius-pill);box-shadow:var(--shadow-lg);font-size:13px;font-weight:500;color:var(--text);opacity:0;pointer-events:none;transition:opacity .3s var(--ease),transform .3s var(--ease);z-index:3000;max-width:calc(100vw - 48px);text-align:center}
+.toast{position:fixed;top:calc(env(safe-area-inset-top, 0px) + 16px);bottom:auto;left:50%;transform:translate(-50%,-20px);padding:12px 20px;background:var(--card);border:1px solid var(--border-2);border-radius:var(--radius-pill);box-shadow:var(--shadow-lg);font-size:13px;font-weight:500;color:var(--text);opacity:0;pointer-events:none;transition:opacity .3s var(--ease),transform .3s var(--ease);z-index:3000;max-width:calc(100vw - 48px);text-align:center}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 .toast b{color:var(--accent-text)}
 
-.back-to-filters{position:fixed;bottom:24px;left:50%;z-index:60;display:inline-flex;align-items:center;gap:8px;padding:12px 20px;background:color-mix(in srgb,var(--card) 92%,transparent);-webkit-backdrop-filter:blur(20px) saturate(180%);backdrop-filter:blur(20px) saturate(180%);border:1px solid var(--border-2);border-radius:var(--radius-pill);box-shadow:0 8px 32px rgba(0,0,0,.14),0 2px 8px rgba(0,0,0,.06);font-family:inherit;font-size:14px;font-weight:600;color:var(--text);cursor:pointer;visibility:hidden;opacity:0;pointer-events:none;transform:translate(-50%,calc(100% + 24px));transition:transform .45s cubic-bezier(.16,1,.3,1),opacity .3s var(--ease),visibility 0s linear .45s,border-color .2s var(--ease),box-shadow .2s var(--ease)}
+.back-to-filters{position:fixed;bottom:24px;left:50%;z-index:60;display:inline-flex;align-items:center;gap:8px;padding:12px 20px;background:var(--card);border:1px solid var(--border-2);border-radius:var(--radius-pill);box-shadow:0 8px 32px rgba(0,0,0,.14),0 2px 8px rgba(0,0,0,.06);font-family:inherit;font-size:14px;font-weight:600;color:var(--text);cursor:pointer;visibility:hidden;opacity:0;pointer-events:none;transform:translate(-50%,calc(100% + 24px));transition:transform .45s cubic-bezier(.16,1,.3,1),opacity .3s var(--ease),visibility 0s linear .45s,border-color .2s var(--ease),box-shadow .2s var(--ease)}
 @supports not (background:color-mix(in srgb,red,blue)){.back-to-filters{background:var(--card)}}
 .back-to-filters svg{width:16px;height:16px;flex-shrink:0;color:var(--accent-text)}
 .back-to-filters:hover{border-color:var(--accent);transform:translate(-50%,-2px);box-shadow:0 12px 40px rgba(0,0,0,.18),0 0 24px var(--accent-soft)}
@@ -404,11 +429,12 @@ html.theme-dark .search-clear:hover{background:rgba(255,255,255,.09)}
 .ms-option.checked .ms-meta{color:var(--accent-text)}
 
 .q-head-right{display:flex;align-items:center;gap:6px;flex-shrink:0}
-.q-report,.q-link{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;color:var(--text-4);background:transparent;border:none;cursor:pointer;text-decoration:none;transition:background .15s var(--ease),color .15s var(--ease)}
-.q-report:hover,.q-link:hover{background:rgba(0,0,0,.06);color:var(--text)}
-html.theme-dark .q-report:hover,html.theme-dark .q-link:hover{background:rgba(255,255,255,.08)}
-.q-report svg,.q-link svg{width:13px;height:13px}
-.q-focus{box-shadow:0 0 0 3px var(--accent-soft),0 0 0 1px var(--accent)}
+.q-copy{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;color:var(--text-4);background:transparent;border:none;cursor:pointer;transition:background .15s var(--ease),color .15s var(--ease)}
+.q-copy:hover{background:rgba(0,0,0,.06);color:var(--text)}
+html.theme-dark .q-copy:hover{background:rgba(255,255,255,.08)}
+.q-copy svg{width:13px;height:13px}
+.q-copy:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.q-focus{box-shadow:0 0 0 3px var(--accent-soft),0 0 0 1px var(--accent);content-visibility:visible}
 
 .exam-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:10px;padding:10px 12px;background:var(--accent-soft);border:1px solid var(--success-border);border-radius:var(--radius-sm)}
 .exam-bar[hidden]{display:none}
@@ -438,11 +464,11 @@ html.theme-dark .q-report:hover,html.theme-dark .q-link:hover{background:rgba(25
 #sound-btn[aria-pressed="false"] .sound-off{display:block}
 
 @media print{
-  .site-header,.controls,.back-to-filters,footer,.load-more-wrap,.exam-bar,.exam-actions,.empty,.skip-link,.route-loading{display:none !important}
+  .site-header,.controls,.back-to-filters,footer,.exam-bar,.exam-actions,.empty,.skip-link,.route-loading,.tag-repeat,.repeat-nav,.q-copy{display:none !important}
   body{background:#fff;color:#000;background-image:none}
   .container{max-width:none;padding:0}
   main{padding:0}
-  .q-card{break-inside:avoid;page-break-inside:avoid;border:1px solid #ddd;box-shadow:none;margin-bottom:10px;padding:12px;animation:none !important}
+  .q-card{break-inside:avoid;page-break-inside:avoid;border:1px solid #ddd;box-shadow:none;margin-bottom:10px;padding:12px;animation:none !important;content-visibility:visible}
   .q-text{font-size:12.5pt}
   .opt{border:1px solid #e2e2e2;background:#fff}
   .feedback{border:1px solid #999}
@@ -660,9 +686,6 @@ html.theme-dark .q-report:hover,html.theme-dark .q-link:hover{background:rgba(25
         <p id="empty-sub"></p>
       </div>
 
-      <div class="load-more-wrap" id="load-more-wrap" style="display:none">
-        <button class="btn-load-more" id="btn-load-more" type="button"></button>
-      </div>
     </div>
   </main>
 
@@ -704,12 +727,35 @@ html.theme-dark .q-report:hover,html.theme-dark .q-link:hover{background:rgba(25
      · relative data path (works on localhost, preview hosts and custom domains)
      · manifest fetch retries after a transient failure
      · 64-bit fallback hashes on the (rare) 32-bit question-key collision
-     · clipboard fallback, focus return for closed filter panels, sound only on
-       interactive elements, service worker enabled on localhost, SW network timeout
+     · focus return for closed filter panels, sound only on interactive
+       elements, service worker enabled on localhost, SW network timeout
      · PNG/maskable/apple icons and social preview image (og:image)
+   v1.10.0 — repeated questions + a leaner card:
+     · repetitions use two OR conditions: (1) nearly identical stem plus at
+       least 2 identical choices, or (2) all choices but one identical (3/4,
+       4/5), which catches inverted stems; answers are no longer shared between
+       occurrences and each row is answered independently
+     · yellow “Répétée” tag, red when the occurrences disagree, with ↑/↓ to jump
+       between visible occurrences (up/down in the displayed order, no wrapping)
+     · removed the per-question copy-link and Telegram report buttons; screenshots
+       are the intended way to flag a question
+   v1.11.0 — all matches, progressively + performance pass:
+     · every filter result is rendered (the “Afficher plus” pager is gone);
+       cards are appended in small time-budgeted batches, with only the first 24
+       animated, and repeat/deep-link targets are revealed once appended
+     · cached sanitised stem/option markup, qid lookup map, one stats pass per
+       answer, throttled scroll, content-visibility on cards, and no fixed/
+       backdrop-filter backgrounds
+   v1.12.0 — copy + interaction polish:
+     · a small copy button on each card copies the plain-text block
+       Question / Les Choix / La Réponse and shows a “copiée” toast
+     · repeat arrows follow the displayed order, are disabled at the ends, and
+       long jumps center the target reliably
+     · tap sound on every click, selectable option text, top-screen toast, and a
+       theme-matched glow on “intelligemment”
    ════════════════════════════════════════════════════════════════ */
 
-const APP_VERSION = "1.9.0";
+const APP_VERSION = "1.12.0";
 /* Relative on purpose: the app, questions/ and manifest.json ship from the same
    origin. Absolute URLs made previews/localhost fetch cross-origin, which the
    service worker then refused to cache, so banks were not available offline.
@@ -725,10 +771,8 @@ const DATA_DIR = 'questions/';
 const DATA_VERSION = '1';
 const DATA_VERSION_QS = '?v=' + DATA_VERSION;
 const MANIFEST_URL = DATA_BASE + DATA_DIR + 'manifest.json' + DATA_VERSION_QS;
-const PAGE_SIZE = 20;
-/* Delay between two cards entering, in ms: the "one by one" cascade.
-   Lower it (~120) for a snappier feel, raise it for a slower parade. */
-const CARD_STAGGER = 300;
+/* Delay between two cards entering, in ms. 60 ms keeps the cascade snappy. */
+const CARD_STAGGER = 60;
 const FETCH_TIMEOUT_MS = 12000;
 /* ?debug in the URL enables the informational logs (warnings stay on) */
 const DEBUG = /[?&]debug\b/.test(window.location.search);
@@ -737,9 +781,6 @@ const PROGRESS_VERSION = 1;
 const MAX_FETCH_CONCURRENCY = 4;
 /* how many normalized modules stay in memory before the least recently used one is dropped */
 const MODULE_CACHE_MAX = 6;
-/* Reports go to a direct chat with the maintainer: a username link honours ?text=,
-   so the message is already written in the composer (group links drop it). */
-const REPORT_CHAT = 'https://t.me/abdrraovf';
 
 /* ════════════ ICONS ════════════ */
 const ICONS = {
@@ -764,7 +805,9 @@ const ICONS = {
   ear: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8.5a6.5 6.5 0 1 1 13 0c0 6-6 6-6 10a3.5 3.5 0 1 1-7 0"/><path d="M15 8.5a2.5 2.5 0 0 0-5 0v1a2 2 0 1 1 0 4"/></svg>',
   activity: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg>',
   clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>',
-  arrow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>'
+  arrow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>',
+  chevronUp: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>',
+  chevronDown: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>'
 };
 
 /* every icon here is decorative: hide it from assistive tech and the tab order */
@@ -772,6 +815,8 @@ const icon = (name) => (ICONS[name] || ICONS.flask)
   .replace('<svg ', '<svg aria-hidden="true" focusable="false" ');
 const ICON_ARROW = icon('arrow');
 const ICON_CLOCK = icon('clock');
+const ICON_UP = icon('chevronUp');
+const ICON_DOWN = icon('chevronDown');
 
 /* ════════════ i18n ════════════ */
 const T = {
@@ -825,8 +870,6 @@ const T = {
     welcomeSub: (n) => `${n} questions disponibles · filtrez ci-dessus, ou partez directement :`,
     showAll: 'Tout afficher',
     randomPick: 'Au hasard',
-    loadMore: 'Afficher plus',
-    loadMoreRemaining: (n) => `${n} restante${n > 1 ? 's' : ''}`,
     yearLabel: (y) => y === 1 ? '1ère Année' : `${y}ème Année`,
     modCount: (n) => `${n} module${n > 1 ? 's' : ''}`,
     msAll: 'Tout',
@@ -840,9 +883,19 @@ const T = {
     progressReset: 'Réinitialiser ma progression',
     progressCleared: 'Progression réinitialisée',
     expectedAnswer: 'réponse attendue',
-    copyLink: 'Copier le lien',
-    linkCopied: 'Lien copié',
-    reportError: 'Signaler une erreur',
+    copyQuestion: 'Copier la question',
+    questionCopied: 'La question a été copiée',
+    copyFailed: 'Copie impossible',
+
+    repeated: 'Répétée',
+    repeatTitle: 'Cette question apparaît plusieurs fois',
+    repeatDiff: 'Réponses différentes',
+    repeatDiffTitle: 'Les occurrences de cette question ont des réponses différentes',
+    repeatPrev: 'Occurrence précédente',
+    repeatNext: 'Occurrence suivante',
+    repeatNavLabel: 'Comparer les occurrences de cette question',
+    repeatFiltersAdjusted: 'Filtres ajustés pour afficher cette occurrence',
+    repeatUnavailable: 'Cette occurrence est masquée',
     examMode: 'Mode examen',
     examCount: 'Questions',
     examTime: 'Durée',
@@ -910,8 +963,6 @@ const T = {
     welcomeSub: (n) => `${n} questions available · filter above, or jump straight in:`,
     showAll: 'Show all',
     randomPick: 'Random',
-    loadMore: 'Load more',
-    loadMoreRemaining: (n) => `${n} remaining`,
     yearLabel: (y) => y === 1 ? '1st Year' : `Year ${y}`,
     modCount: (n) => `${n} module${n > 1 ? 's' : ''}`,
     msAll: 'All',
@@ -925,9 +976,19 @@ const T = {
     progressReset: 'Reset my progress',
     progressCleared: 'Progress cleared',
     expectedAnswer: 'expected answer',
-    copyLink: 'Copy link',
-    linkCopied: 'Link copied',
-    reportError: 'Report an error',
+    copyQuestion: 'Copy question',
+    questionCopied: 'Question copied',
+    copyFailed: 'Could not copy',
+
+    repeated: 'Repeated',
+    repeatTitle: 'This question appears more than once',
+    repeatDiff: 'Different answers',
+    repeatDiffTitle: 'Occurrences of this question have different answers',
+    repeatPrev: 'Previous occurrence',
+    repeatNext: 'Next occurrence',
+    repeatNavLabel: 'Compare occurrences of this question',
+    repeatFiltersAdjusted: 'Filters adjusted to show this occurrence',
+    repeatUnavailable: 'This occurrence is hidden',
     examMode: 'Exam mode',
     examCount: 'Questions',
     examTime: 'Duration',
@@ -1101,32 +1162,123 @@ function questionKey(q) {
   return fnv1a(questionContent(q));
 }
 
-/* A second, independent 32-bit lane gives ~64 bits when the 32-bit key collides.
-   Only used for the colliding row, so existing saved keys stay stable. */
-function fnv1a64(str) {
-  let a = 0x811c9dc5, b = 0x9e3779b9;
-  for (let i = 0; i < str.length; i++) {
-    const c = str.charCodeAt(i);
-    a ^= c; a = Math.imul(a, 0x01000193) >>> 0;
-    b ^= c; b = Math.imul(b, 0x85ebca6b) >>> 0;
-  }
-  return a.toString(36) + b.toString(36);
+/* Repeated-question detection. A pair is repeated when EITHER condition holds:
+     1. the stems are nearly identical (fuzzy weighted Jaccard after stopword
+        removal, light stemming and the synonym map below) AND at least 2 answer
+        choices are identical after canonicalisation (order, accents, case and
+        punctuation ignored);
+     2. all choices but one are identical (based on the larger option set, so
+        4 options require 3, 5 options require 4), even when the stem is inverted
+        (“which is true” vs “which is false”). This is what catches the
+        inverted-question copies.
+   It is not an embedding model: an unseen synonym must be added to
+   REPEAT_SYNONYMS, or condition 1 may miss it. */
+const REPEAT_MIN_SHARED_OPTIONS = 2;
+const REPEAT_TEXT_THRESHOLD = 0.72; // condition 1: “nearly identical”
+const REPEAT_INVERTED_MIN_OPTIONS = 3; // condition 2: 3 options → 2 shared, 4 → 3, 5 → 4
+const REPEAT_INVERTED_TEXT_FLOOR = 0.20; // condition 2: reject totally unrelated stems
+
+const REPEAT_STOPWORDS = new Set(`
+  le la les un une des de du et ou en dans sur pour par avec sans est sont ete etre
+  a au aux ce cet cette ces son sa ses il elle ils elles on nous vous je tu se ne
+  pas plus moins tres chez lors apres avant entre sous vers ainsi comme aussi mais
+  donc or ni car quel quelle quels quelles que qui quoi dont comment pourquoi combien
+  concernant propos suivant suivante suivants suivantes parmi peut peuvent doit doivent
+  permet permettent fait font egalement
+  the of and or in on for with without is are was were be been to from by this that
+  these those which what how does do did
+`.trim().split(/\s+/));
+
+/* Only common reformulations. Keep keys unaccented and lowercase (the text goes
+   through fold() first). Extend this map when the content uses a new synonym. */
+const REPEAT_SYNONYMS = {
+  premiere: 'premier', premier: 'premier', initiale: 'premier', initial: 'premier',
+  initie: 'premier', initient: 'premier',
+  principale: 'principal', principales: 'principal', principal: 'principal',
+  majeure: 'principal', majeures: 'principal', majeur: 'principal', majeurs: 'principal',
+  essentiel: 'principal', essentielle: 'principal', essentiels: 'principal', essentielles: 'principal',
+  glycolytique: 'glycolyse',
+  mecanisme: 'mecanisme', mecanismes: 'mecanisme', physiopathologie: 'mecanisme',
+  physiopathologique: 'mecanisme', pathogenie: 'mecanisme', pathogenique: 'mecanisme',
+  traitement: 'traitement', traitements: 'traitement', therapeutique: 'traitement',
+  therapeutiques: 'traitement', therapie: 'traitement',
+  retrouve: 'observer', retrouvent: 'observer', observe: 'observer', observent: 'observer',
+  constate: 'observer', constatent: 'observer',
+  provoque: 'causer', provoquent: 'causer', entraine: 'causer', entrainent: 'causer',
+  declenche: 'causer', declenchent: 'causer',
+  caracterise: 'definir', caracterisent: 'definir', definit: 'definir', definissent: 'definir',
+  correspond: 'definir', correspondent: 'definir', designe: 'definir', designent: 'definir',
+  comporte: 'contenir', comportent: 'contenir', contient: 'contenir', contiennent: 'contenir',
+  comprend: 'contenir', comprennent: 'contenir', renferme: 'contenir', renferment: 'contenir',
+  enzyme: 'enzyme', enzymes: 'enzyme', enzymatique: 'enzyme', enzymatiques: 'enzyme',
+  carbone: 'carbone', carbones: 'carbone',
+  complication: 'complication', complications: 'complication'
+};
+
+function canonOption(value) {
+  return fold(stripTags(String(value == null ? '' : value)))
+    .replace(/[^a-z0-9]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
-/* Same content (a question asked in several sessions) keeps one key on purpose.
-   Different content that happens to share a 32-bit hash gets a salted 64-bit key. */
-function uniqueQuestionKey(q, used) {
-  const content = questionContent(q);
-  let key = questionKey(q);
-  if (used.has(key) && used.get(key) !== content) {
-    let salt = 0;
-    do {
-      key = fnv1a64(content + '#' + salt);
-      salt++;
-    } while (used.has(key) && used.get(key) !== content);
-  }
-  used.set(key, content);
-  return key;
+function repeatTokens(value) {
+  const out = new Set();
+  let s = fold(stripTags(String(value == null ? '' : value)))
+    .replace(/[^a-z0-9]+/g, ' ')
+    .replace(/\bprise en charge\b/g, 'traitement')
+    .replace(/\bpris en charge\b/g, 'traitement')
+    .replace(/\s+/g, ' ')
+    .trim();
+  if (!s) return out;
+  s.split(' ').forEach(raw => {
+    if (!raw || REPEAT_STOPWORDS.has(raw)) return;
+    let w = raw;
+    /* French/English plural: drop one trailing s. This keeps “maladie” and
+       “maladies” together instead of producing “maladi”. */
+    if (w.length > 4 && w.endsWith('s')) w = w.slice(0, -1);
+    w = REPEAT_SYNONYMS[w] || w;
+    if (w.length > 1 && !REPEAT_STOPWORDS.has(w)) out.add(w);
+  });
+  return out;
+}
+
+/* Length-weighted Jaccard: a long technical word that only appears in one stem
+   lowers the score much more than a common short word. */
+function repeatTextScore(a, b) {
+  const A = a._repTokens, B = b._repTokens;
+  if (!A || !B || !A.size || !B.size) return 0;
+  let shared = 0, total = 0;
+  A.forEach(t => {
+    total += t.length;
+    if (B.has(t)) shared += t.length;
+  });
+  B.forEach(t => { if (!A.has(t)) total += t.length; });
+  return total ? shared / total : 0;
+}
+
+function sharedOptionCount(a, b) {
+  const A = a._repOptionSet, B = b._repOptionSet;
+  if (!A || !B) return 0;
+  const [small, big] = A.size <= B.size ? [A, B] : [B, A];
+  let shared = 0;
+  small.forEach(o => { if (big.has(o)) shared++; });
+  return shared;
+}
+
+function isRepeatedPair(a, b) {
+  const shared = sharedOptionCount(a, b);
+  if (shared < REPEAT_MIN_SHARED_OPTIONS) return false;
+  const score = repeatTextScore(a, b);
+  /* Condition 1: nearly identical context + at least 2 shared choices. */
+  if (score >= REPEAT_TEXT_THRESHOLD) return true;
+  /* Condition 2: all choices minus one. The wording may be inverted, so only a
+     very low stem-overlap floor is required to avoid grouping unrelated
+     questions that merely share a generic option set. */
+  const maxOptions = Math.max(a._repOptions.length, b._repOptions.length);
+  return maxOptions >= REPEAT_INVERTED_MIN_OPTIONS
+    && shared >= maxOptions - 1
+    && score >= REPEAT_INVERTED_TEXT_FLOOR;
 }
 
 const prefersReducedMotion = () => !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
@@ -1227,6 +1379,9 @@ function moduleStatus(slug) {
   if (known) return known;
   const entry = manifestEntry(slug);
   if (entry) return Number(entry.q) > 0 ? 'pending' : 'missing';
+  /* A loaded manifest is authoritative: a slug it does not list has no bank.
+     This lets the manifest list only the modules that actually have data. */
+  if (MANIFEST.data) return 'missing';
   return 'unknown';
 }
 
@@ -1277,8 +1432,8 @@ function normalizeModuleData(raw, slug) {
   }
   let dropped = 0, duplicates = 0, clamped = 0;
   const questions = [];
-  const seen = new Set();
-  const usedKeys = new Map();
+  const rowCounts = new Map();
+  const identicalRows = new Set();
   raw.questions.forEach(q => {
     if (!q || typeof q !== 'object' || !Array.isArray(q.options)) { dropped++; return; }
     const year = Number(q.year);
@@ -1300,27 +1455,115 @@ function normalizeModuleData(raw, slug) {
       lesson: String(q.lesson == null ? '' : q.lesson).trim() || '—',
       text, options, answer
     };
-    item._key = uniqueQuestionKey(item, usedKeys);
+    /* Every row gets its own occurrence key. The answer state is NOT shared
+       between repeated rows any more: each card is answered independently.
+       The key stays stable when questions are reordered because it is derived
+       from the content and the session, not from the array position. */
+    item._base = questionKey(item);
+    const rowBase = item._base + '|' + item.year + '|' + item.rot;
+    const occurrence = (rowCounts.get(rowBase) || 0) + 1;
+    rowCounts.set(rowBase, occurrence);
+    item._key = rowBase + '|' + occurrence;
     /* A question asked in two different exam sessions is real data, not a
        duplicate — the year/rotation filters depend on those rows existing.
        Rows are only flagged when year, rotation AND content are identical. */
-    const rowKey = item._key + '|' + item.year + '|' + item.rot;
-    if (seen.has(rowKey)) duplicates++;
-    seen.add(rowKey);
+    if (identicalRows.has(rowBase)) duplicates++;
+    identicalRows.add(rowBase);
     item._hay = fold(stripTags(text) + '\n' + options.join('\n'));
+    /* Sanitised markup is cached per question: a card can be re-rendered after
+       every answer, and re-parsing the stem/options each time is wasted work. */
+    item._textHtml = richText(text);
+    item._optionHtml = options.map(o => richText(o));
+    item._answerLetters = answer.split('');
+    item._repOptions = [...new Set(options.map(canonOption).filter(Boolean))];
+    item._repOptionSet = new Set(item._repOptions);
+    item._repTokens = repeatTokens(text);
+    item._idx = questions.length;
     questions.push(item);
+  });
+  /* Candidate pairs share at least 2 canonical choices. Bucketing by every
+     2-combination avoids comparing all pairs in a large module; the full pair
+     condition is only evaluated inside those buckets. */
+  const parent = questions.map((_, i) => i);
+  const findRoot = (i) => {
+    while (parent[i] !== i) {
+      parent[i] = parent[parent[i]];
+      i = parent[i];
+    }
+    return i;
+  };
+  const unite = (a, b) => {
+    a = findRoot(a);
+    b = findRoot(b);
+    if (a !== b) parent[b] = a;
+  };
+  const optionBuckets = new Map();
+  questions.forEach((q, qi) => {
+    const opts = q._repOptions;
+    if (!opts || opts.length < REPEAT_MIN_SHARED_OPTIONS) return;
+    const sorted = [...opts].sort();
+    for (let i = 0; i < sorted.length - 1; i++) {
+      for (let j = i + 1; j < sorted.length; j++) {
+        const key = sorted[i] + '\u0000' + sorted[j];
+        const bucket = optionBuckets.get(key);
+        if (bucket) bucket.push(qi);
+        else optionBuckets.set(key, [qi]);
+      }
+    }
+  });
+  const seenPairs = new Set();
+  optionBuckets.forEach(bucket => {
+    for (let i = 0; i < bucket.length; i++) {
+      for (let j = i + 1; j < bucket.length; j++) {
+        const pairKey = bucket[i] * questions.length + bucket[j];
+        if (seenPairs.has(pairKey)) continue;
+        seenPairs.add(pairKey);
+        if (isRepeatedPair(questions[bucket[i]], questions[bucket[j]])) {
+          unite(bucket[i], bucket[j]);
+        }
+      }
+    }
+  });
+  const repeatGroups = new Map();
+  questions.forEach((q, i) => {
+    const root = findRoot(i);
+    const group = repeatGroups.get(root);
+    if (group) group.push(q);
+    else repeatGroups.set(root, [q]);
+  });
+  let conflicts = 0;
+  repeatGroups.forEach(group => {
+    if (group.length < 2) return;
+    group.sort((a, b) =>
+      (a.year - b.year)
+      || ((a.rot || 0) - (b.rot || 0))
+      || lessonCompare(a.lesson, b.lesson)
+      || (a._idx - b._idx));
+    const answers = [...new Set(group.map(q => q.answer))];
+    if (answers.length > 1) conflicts++;
+    const groupKey = 'rep-' + group[0]._key;
+    group.forEach((q, i) => {
+      q._repKey = groupKey;
+      q._repPos = i;
+      q._repCount = group.length;
+      q._repDiff = answers.length > 1;
+    });
   });
   if (clamped) console.warn('[QCMify] ' + (slug || 'module') + '.json: ' + clamped + ' answer(s) referenced a non-existent option — trimmed');
   if (dropped) console.warn('[QCMify] ' + (slug || 'module') + '.json: ' + dropped + ' invalid question(s) skipped');
   if (duplicates) console.warn('[QCMify] ' + (slug || 'module') + '.json: ' + duplicates + ' identical row(s) (same year + rotation + content) — check the source data');
+  if (conflicts) console.warn('[QCMify] ' + (slug || 'module') + '.json: ' + conflicts + ' repeated question(s) have different answer keys');
   if (!questions.length) throw new Error('no valid questions after normalisation');
+  const byQid = new Map();
+  questions.forEach(q => byQid.set(qidFor(slug, q), q));
   return {
     lessons: [...new Set(questions.map(q => q.lesson))],
     questions,
+    byQid,
     rotCount: new Set(questions.map(q => q.rot)).size,
     unitCount: new Set(questions.map(q => q.unit).filter(Boolean)).size,
-    /* changes whenever the content changes → progress saved for an older
-       version of a module is discarded instead of being shown against the wrong question */
+    /* changes whenever the content or a session row changes → filter widgets
+       and answers saved against a different shape can be refreshed */
     signature: fnv1a(questions.map(q => q._key).join('|'))
   };
 }
@@ -1463,7 +1706,7 @@ const state = {
   userAnswers: {},
   checkedQuestions: {},
   modulePhase: 'welcome',
-  visibleCount: PAGE_SIZE,
+  visibleCount: 0,
   exam: null,
   sound: (function () { try { return localStorage.getItem('qcm-sound') !== 'off'; } catch (e) { return true; } })()
 };
@@ -1472,6 +1715,8 @@ let msYear = null, msRot = null, msUnit = null, msLesson = null;
 let lastModuleSlug = null;
 let routeGeneration = 0;
 let lastCardQid = null;
+/* qid of the card whose “Répétée” arrows are currently open (null = closed) */
+let repeatOpenQid = null;
 /* signature of the module+language the filter widgets were built for */
 let filtersBuiltFor = '';
 
@@ -1532,11 +1777,12 @@ function currentModuleData() {
   return state.currentModule ? MODULE_DATA[state.currentModule.slug] : null;
 }
 
-/* Answers are keyed by content hash, not by position, so editing/reordering a
-   module's JSON does not shift saved answers onto the wrong question. The
-   per-key check below is what makes that safe: add/remove/rewrite questions and
-   only the affected answers change. A whole-module signature guard is *not*
-   applied here — it would erase every answer whenever one question was added. */
+/* Answers are keyed per row, not by position, so editing/reordering a module's
+   JSON does not shift saved answers onto the wrong question. Repeated rows are
+   independent: answering one occurrence no longer fills the others. The old
+   content-only keys from earlier versions are migrated to the first matching
+   row, so existing progress is not lost. A whole-module signature guard is not
+   applied — it would erase every answer whenever one question was added. */
 function restoreProgress(slug, data) {
   state.userAnswers = {};
   state.checkedQuestions = {};
@@ -1545,15 +1791,24 @@ function restoreProgress(slug, data) {
   try { saved = JSON.parse(localStorage.getItem(progressKey(slug)) || 'null'); } catch (e) { return false; }
   if (!saved || saved.v !== PROGRESS_VERSION) return false;
   const valid = new Set(data.questions.map(q => q._key));
+  const byBase = new Map();
+  data.questions.forEach(q => { if (!byBase.has(q._base)) byBase.set(q._base, q); });
+  const resolveKey = (key) => {
+    if (valid.has(key)) return key;
+    const legacy = byBase.get(key);
+    return legacy ? legacy._key : null;
+  };
   const answers = saved.a || {}, checked = saved.c || {};
   Object.keys(answers).forEach(key => {
-    if (!valid.has(key)) return;
+    const resolved = resolveKey(key);
+    if (!resolved) return;
     const letters = String(answers[key] || '').split('').filter(c => LETTERS.includes(c));
-    if (letters.length) state.userAnswers[slug + '-' + key] = new Set(letters);
+    if (letters.length) state.userAnswers[slug + '-' + resolved] = new Set(letters);
   });
   Object.keys(checked).forEach(key => {
-    if (!valid.has(key)) return;
-    if (state.userAnswers[slug + '-' + key]) state.checkedQuestions[slug + '-' + key] = true;
+    const resolved = resolveKey(key);
+    if (!resolved) return;
+    if (state.userAnswers[slug + '-' + resolved]) state.checkedQuestions[slug + '-' + resolved] = true;
   });
   return true;
 }
@@ -1599,16 +1854,15 @@ function moduleStats() {
     const qid = qidFor(slug, q);
     if (!state.checkedQuestions[qid]) return;
     answered++;
-    if (classifyAnswer(state.userAnswers[qid], q.answer.split('')) === 'correct') correct++;
+    if (classifyAnswer(state.userAnswers[qid], q._answerLetters || q.answer.split('')) === 'correct') correct++;
     else mistakes++;
   });
   return { answered, correct, mistakes, total: data.questions.length };
 }
 
-function updateProgressUI() {
+function updateProgressUI(stats = moduleStats()) {
   const wrap = $('mod-progress');
   const resetBtn = $('progress-reset');
-  const stats = moduleStats();
   if (!wrap) return;
   if (!stats) {
     wrap.hidden = true;
@@ -1625,10 +1879,9 @@ function updateProgressUI() {
   if (resetBtn) resetBtn.hidden = stats.answered === 0;
 }
 
-function updateMistakesButton() {
+function updateMistakesButton(stats = moduleStats()) {
   const btn = $('btn-mistakes');
   if (!btn) return;
-  const stats = moduleStats();
   const count = stats ? stats.mistakes : 0;
   btn.setAttribute('aria-pressed', String(!!state.filterMistakes));
   btn.innerHTML = `${esc(t('myMistakes'))}${count ? ` <b>${count}</b>` : ''}`;
@@ -1639,9 +1892,12 @@ function updateMistakesButton() {
 /* Called after every answer mutation: repaint card + counters + persist. */
 function afterAnswerChange(qid) {
   updateCard(qid);
-  updateProgressUI();
-  updateMistakesButton();
-  refreshLessonMeta();
+  /* One stats pass for both counters. The lesson panel refreshes itself when
+     opened; only refresh it after an answer if it is actually open. */
+  const stats = moduleStats();
+  updateProgressUI(stats);
+  updateMistakesButton(stats);
+  if ($('ms-lesson')?.querySelector('.ms-panel.open')) refreshLessonMeta();
   schedulePersist();
 }
 
@@ -1745,7 +2001,8 @@ async function applyRoute() {
         state.userAnswers = {};
         state.checkedQuestions = {};
         state.modulePhase = 'welcome';
-        state.visibleCount = PAGE_SIZE;
+        state.visibleCount = 0;
+        repeatOpenQid = null;
         restoreProgress(moduleSlug, MODULE_DATA[moduleSlug]);
       }
       lastModuleSlug = moduleSlug;
@@ -2044,6 +2301,10 @@ function renderHome(animate = true, pending = false) {
   $('route-loading').style.display = 'none';
   $('view-home').style.display = 'block';
   $('view-module').style.display = 'none';
+  cancelQuestionRender();
+  pendingRevealQid = null;
+  state.visibleCount = 0;
+  repeatOpenQid = null;
   /* only one <main> may be exposed at a time */
   $('main-home').hidden = false;
   $('main-module').hidden = true;
@@ -2236,7 +2497,7 @@ function renderModuleCard(m, i, animate = true, pending = false) {
 }
 
 /* ════════════ MODULE VIEW ════════════ */
-function renderModuleView(preserveVisibleCount = false) {
+function renderModuleView() {
   const m = state.currentModule;
   const data = MODULE_DATA[m.slug];
   if (!data) return;
@@ -2272,9 +2533,10 @@ function renderModuleView(preserveVisibleCount = false) {
   $('mod-icon-view').innerHTML = icon(m.icon);
 
   rebuildFilterOptions();
-  renderModuleBody(preserveVisibleCount);
-  updateProgressUI();
-  updateMistakesButton();
+  renderModuleBody();
+  const stats = moduleStats();
+  updateProgressUI(stats);
+  updateMistakesButton(stats);
   updateBarVisibility();
 }
 
@@ -2375,27 +2637,30 @@ function rebuildFilterOptions() {
   });
 }
 
-function renderModuleBody(preserveVisibleCount = false) {
+function renderModuleBody() {
   const w = $('module-welcome');
   if (state.modulePhase === 'welcome') {
+    cancelQuestionRender();
+    pendingRevealQid = null;
+    state.visibleCount = 0;
     w.style.display = '';
     $('questions-container').innerHTML = '';
     $('empty').style.display = 'none';
-    $('load-more-wrap').style.display = 'none';
     $('result-count').innerHTML = '';
     const data = MODULE_DATA[state.currentModule.slug];
     $('module-welcome-title').textContent = t('welcomeTitle');
     $('module-welcome-sub').textContent = t('welcomeSub')(data.questions.length);
   } else {
     w.style.display = 'none';
-    renderQuestions(!preserveVisibleCount);
+    renderQuestions();
   }
 }
 
 function onFilterChange() {
   const wasWelcome = state.modulePhase === 'welcome';
+  repeatOpenQid = null;
   state.modulePhase = 'results';
-  state.visibleCount = PAGE_SIZE;
+  state.visibleCount = 0;
   renderModuleBody();
   if (wasWelcome && window.scrollY > 120) {
     window.scrollTo({ top: 0, behavior: smoothBehavior() });
@@ -2403,13 +2668,14 @@ function onFilterChange() {
 }
 
 /* ── welcome-screen shortcuts ── */
-/* Shows the whole module from the first question, still 20 at a time: the
-   "Afficher plus" button at the bottom loads the next page. */
+/* Shows the whole module from the first question. Every matching card is
+   appended progressively, so the list is complete without a pager. */
 function showAllQuestions() {
   if (!state.currentModule) return;
+  repeatOpenQid = null;
   state.filterMistakes = false;
   state.modulePhase = 'results';
-  state.visibleCount = PAGE_SIZE;
+  state.visibleCount = 0;
   renderModuleBody();
   updateMistakesButton();
   updateBarVisibility();
@@ -2421,6 +2687,7 @@ function showAllQuestions() {
 function randomizeFilters() {
   const data = currentModuleData();
   if (!data || !state.currentModule || !data.questions.length) return;
+  repeatOpenQid = null;
 
   const showRot = shouldShowRotation(state.selectedYear, state.currentModule.slug);
   const seed = data.questions[Math.floor(Math.random() * data.questions.length)];
@@ -2437,7 +2704,7 @@ function randomizeFilters() {
   msLesson?.refresh();
 
   state.modulePhase = 'results';
-  state.visibleCount = PAGE_SIZE;
+  state.visibleCount = 0;
   renderModuleBody();
   updateMistakesButton();
   updateBarVisibility();
@@ -2461,15 +2728,33 @@ function getFilteredQuestions() {
     if (state.filterMistakes) {
       const qid = slug + '-' + q._key;
       if (!state.checkedQuestions[qid]) continue;
-      if (classifyAnswer(state.userAnswers[qid], q.answer.split('')) === 'correct') continue;
+      if (classifyAnswer(state.userAnswers[qid], q._answerLetters || q.answer.split('')) === 'correct') continue;
     }
-    out.push({ ...q, _idx: idx });
+    out.push(q);
   }
-  if (state.exam) {
-    const order = state.exam.order;
-    return out.sort((a, b) => (order.get(a._idx) || 0) - (order.get(b._idx) || 0));
-  }
-  return out.sort(compareQuestions);
+  const sorted = state.exam
+    ? out.sort((a, b) => (state.exam.order.get(a._idx) || 0) - (state.exam.order.get(b._idx) || 0))
+    : out.sort(compareQuestions);
+  assignRepeatNavPositions(sorted);
+  return sorted;
+}
+
+/* Up/down follows the order the user can actually see (current sort + filters),
+   not the occurrence order inside the source bank. */
+function assignRepeatNavPositions(list) {
+  const groups = new Map();
+  list.forEach(q => {
+    if (!q._repKey) return;
+    const group = groups.get(q._repKey);
+    if (group) group.push(q);
+    else groups.set(q._repKey, [q]);
+  });
+  groups.forEach(group => {
+    group.forEach((q, i) => {
+      q._navPos = i;
+      q._navCount = group.length;
+    });
+  });
 }
 
 function compareQuestions(a, b) {
@@ -2481,62 +2766,149 @@ function compareQuestions(a, b) {
   return lessonCmp !== 0 ? lessonCmp : a._idx - b._idx;
 }
 
-function renderQuestions(reset, append = false) {
+/* ════════════ PROGRESSIVE QUESTION RENDER ════════════ */
+/* A filter can match hundreds of questions. Appending all of them in one
+   innerHTML blocks layout and animation, so cards are appended in small
+   time-budgeted batches on animation frames. The total count appears at once,
+   every matching card is eventually rendered, and there is no “load more” page. */
+const RENDER_FRAME_BUDGET_MS = 8;
+const RENDER_MAX_PER_FRAME = 12;
+/* only the first cards animate; animating hundreds of entries is expensive */
+const RENDER_ANIMATE_LIMIT = 24;
+
+let questionRenderToken = 0;
+let questionRenderTimer = null;
+let pendingRevealQid = null;
+
+function cancelQuestionRender() {
+  questionRenderToken++;
+  if (questionRenderTimer !== null) {
+    clearTimeout(questionRenderTimer);
+    questionRenderTimer = null;
+  }
+}
+
+function questionCardMarkup(q, idx) {
+  const qid = qidFor(state.currentModule.slug, q);
+  const cls = idx < RENDER_ANIMATE_LIMIT ? 'q-card' : 'q-card q-card-static';
+  return `<div class="${cls}" data-qid="${qid}" data-idx="${q._idx}" data-pos="${idx}">${renderQuestionCard(q, idx, qid)}</div>`;
+}
+
+function centerCardInView(card) {
+  if (!card.isConnected) return;
+  const rect = card.getBoundingClientRect();
+  const header = document.querySelector('.site-header');
+  const headerH = header ? header.offsetHeight : 0;
+  const viewport = window.innerHeight;
+  const top = rect.height >= viewport - headerH - 16
+    ? window.scrollY + rect.top - headerH - 12
+    : window.scrollY + rect.top - Math.max(0, (viewport - rect.height) / 2);
+  /* Force an instant jump: html{scroll-behavior:smooth} otherwise turns
+     behavior:'auto' into a long animation that can be interrupted. */
+  const root = document.documentElement;
+  const previous = root.style.scrollBehavior;
+  root.style.scrollBehavior = 'auto';
+  window.scrollTo({ top: Math.max(0, top), behavior: 'auto' });
+  root.style.scrollBehavior = previous;
+}
+
+function focusQuestionCard(qid) {
+  const card = document.querySelector(`.q-card[data-qid="${CSS.escape(qid)}"]`);
+  if (!card) return false;
+  document.querySelectorAll('.q-card.q-focus').forEach(c => c.classList.remove('q-focus'));
+  card.classList.add('q-focus');
+
+  /* A long smooth scroll can be interrupted by cards still being appended (or
+     by content-visibility laying them out), leaving the target off-centre.
+     Short hops stay smooth; long travel jumps instantly and then corrects. */
+  const rect = card.getBoundingClientRect();
+  const far = Math.abs(rect.top + rect.height / 2 - window.innerHeight / 2) > window.innerHeight * 1.5;
+  if (far || prefersReducedMotion()) {
+    centerCardInView(card);
+    requestAnimationFrame(() => requestAnimationFrame(() => centerCardInView(card)));
+    setTimeout(() => centerCardInView(card), 80);
+  } else {
+    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(() => centerCardInView(card), 420);
+  }
+  if (repeatOpenQid === qid) syncRepeatNav();
+  return true;
+}
+
+function startQuestionRender(list) {
+  cancelQuestionRender();
+  const token = questionRenderToken;
+  const container = $('questions-container');
+  container.innerHTML = '';
+  state.visibleCount = 0;
+  let cursor = 0;
+
+  const pump = () => {
+    if (token !== questionRenderToken || state.modulePhase !== 'results') return;
+    const frameStart = performance.now();
+    let html = '';
+    let batch = 0;
+    while (cursor < list.length
+           && batch < RENDER_MAX_PER_FRAME
+           && (batch === 0 || performance.now() - frameStart < RENDER_FRAME_BUDGET_MS)) {
+      html += questionCardMarkup(list[cursor], cursor);
+      cursor++;
+      batch++;
+    }
+    if (html) container.insertAdjacentHTML('beforeend', html);
+    state.visibleCount = cursor;
+
+    if (pendingRevealQid && focusQuestionCard(pendingRevealQid)) {
+      pendingRevealQid = null;
+    }
+    if (cursor < list.length) {
+      questionRenderTimer = setTimeout(pump, 16);
+    } else {
+      questionRenderTimer = null;
+    }
+  };
+  questionRenderTimer = setTimeout(pump, 16);
+}
+
+function renderQuestions() {
   if (state.modulePhase !== 'results') return;
   const list = getFilteredQuestions();
-  if (reset) state.visibleCount = PAGE_SIZE;
   const n = list.length;
   $('result-count').innerHTML = `<b>${n}</b> ${n > 1 ? t('resultsPlural') : t('results')}`;
 
   if (!n) {
+    cancelQuestionRender();
+    pendingRevealQid = null;
+    state.visibleCount = 0;
     $('questions-container').innerHTML = '';
     $('empty-title').textContent = state.filterMistakes ? t('myMistakesTitle') : t('emptyTitle');
     $('empty-sub').textContent = state.filterMistakes ? t('myMistakesSub') : t('emptySub');
     $('empty').style.display = 'block';
-    $('load-more-wrap').style.display = 'none';
     return;
   }
   $('empty-title').textContent = t('emptyTitle');
   $('empty-sub').textContent = t('emptySub');
   $('empty').style.display = 'none';
-  renderVisibleQuestions(list, append);
-}
-
-function renderVisibleQuestions(list, append = false) {
-  const container = $('questions-container');
-  const visible = list.slice(0, state.visibleCount);
-  const start = append ? Math.max(0, state.visibleCount - PAGE_SIZE) : 0;
-
-  const html = visible.slice(start).map((q, i) => {
-    const idx = start + i;
-    const qid = qidFor(state.currentModule.slug, q);
-    return `<div class="q-card" data-qid="${qid}" data-idx="${q._idx}" data-pos="${idx}">${renderQuestionCard(q, idx, qid)}</div>`;
-  }).join('');
-
-  if (append) container.insertAdjacentHTML('beforeend', html);
-  else        container.innerHTML = html;
-
-  updateLoadMoreButton(list.length);
-}
-
-function updateLoadMoreButton(total) {
-  const remaining = total - state.visibleCount;
-  if (remaining > 0) {
-    $('load-more-wrap').style.display = 'block';
-    $('btn-load-more').textContent = `${t('loadMore')} (${t('loadMoreRemaining')(remaining)})`;
-  } else {
-    $('load-more-wrap').style.display = 'none';
-  }
+  pendingRevealQid = null;   // callers that need a target set it after this returns
+  startQuestionRender(list);
 }
 
 function renderQuestionCard(q, idx, qid) {
   const isChecked = !!state.checkedQuestions[qid];
   const uAns = state.userAnswers[qid] || new Set();
-  const correctAns = q.answer.split('').filter(c => LETTERS.includes(c));
+  const correctAns = q._answerLetters || q.answer.split('').filter(c => LETTERS.includes(c));
   const result = isChecked ? classifyAnswer(uAns, correctAns) : null;
   const showRot = shouldShowRotation(state.selectedYear, state.currentModule.slug);
   const showUnit = shouldShowUnit(state.currentModule.slug);
+  const showRepeat = q._repCount > 1 && !state.exam;
+  const repeatOpen = showRepeat && repeatOpenQid === qid;
+  const repeatId = 'repeat-' + String(qid).replace(/\|/g, '-');
+  const navPos = q._navPos != null ? q._navPos : (q._repPos || 0);
+  const navCount = q._navCount != null ? q._navCount : (q._repCount || 1);
+  const canGoUp = navPos > 0;
+  const canGoDown = navPos < navCount - 1;
 
+  const optionHtml = q._optionHtml || q.options.map(o => richText(o));
   const opts = q.options.map((c, j) => {
     const L = LETTERS[j];
     const isSel = uAns.has(L);
@@ -2557,7 +2929,7 @@ function renderQuestionCard(q, idx, qid) {
     } else if (isSel) cls += ' selected';
     return `<button class="${cls}" data-opt-qid="${qid}" data-letter="${L}" aria-pressed="${isSel}" ${isChecked ? 'disabled' : ''}>
       <span class="letter">${L}</span>
-      <span class="text">${richText(c)}${sr}</span>${mark}
+      <span class="text">${optionHtml[j]}${sr}</span>${mark}
     </button>`;
   }).join('');
 
@@ -2568,26 +2940,30 @@ function renderQuestionCard(q, idx, qid) {
   }
   const clearStyle = (!isChecked && uAns.size === 0) ? 'style="display:none"' : '';
 
-  const reportHref = reportUrl(q);
-
   return `<div class="q-head">
       <div class="q-meta">
         <span class="tag tag-year">${q.year}</span>
         ${showRot ? `<span class="tag tag-rot">${rotName(q.rot || 0)}</span>` : ''}
         ${showUnit && q.unit ? `<span class="tag tag-unit">${esc(q.unit)}</span>` : ''}
         <span class="tag tag-lesson">${esc(q.lesson)}</span>
+        ${showRepeat ? `<button class="tag tag-repeat${q._repDiff ? ' diff' : ''}" type="button" data-repeat-toggle="${esc(qid)}" aria-expanded="${repeatOpen}" aria-controls="${repeatId}" title="${esc(t(q._repDiff ? 'repeatDiffTitle' : 'repeatTitle'))}">
+          <span>${esc(t('repeated'))}</span><span class="tag-repeat-count">×${q._repCount}</span>${q._repDiff ? `<span class="tag-repeat-warn" aria-hidden="true">!</span><span class="sr-only">${esc(t('repeatDiff'))}</span>` : ''}
+        </button>` : ''}
       </div>
       <div class="q-head-right">
-        <button class="q-link" type="button" data-link-qid="${qid}" title="${esc(t('copyLink'))}" aria-label="${esc(t('copyLink'))}">
-          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        <button class="q-copy" type="button" data-copy-qid="${qid}" title="${esc(t('copyQuestion'))}" aria-label="${esc(t('copyQuestion'))}">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
         </button>
-        <a class="q-report" href="${reportHref}" target="_blank" rel="noopener noreferrer" title="${esc(t('reportError'))}" aria-label="${esc(t('reportError'))}">
-          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
-        </a>
         <span class="q-index">${String(idx + 1).padStart(2, '0')}</span>
       </div>
     </div>
-    <div class="q-text">${richText(q.text)}</div>
+    ${showRepeat ? `<div class="repeat-nav${q._repDiff ? ' diff' : ''}" id="${repeatId}" data-repeat-nav="${esc(qid)}" role="group" aria-label="${esc(t('repeatNavLabel'))}" ${repeatOpen ? '' : 'hidden'}>
+      <button class="repeat-arrow" type="button" data-repeat-qid="${esc(qid)}" data-repeat-dir="-1" aria-label="${esc(t('repeatPrev'))}" title="${esc(t('repeatPrev'))}" ${canGoUp ? '' : 'disabled'}>${ICON_UP}</button>
+      <span class="repeat-count">${navPos + 1}/${navCount}</span>
+      <button class="repeat-arrow" type="button" data-repeat-qid="${esc(qid)}" data-repeat-dir="1" aria-label="${esc(t('repeatNext'))}" title="${esc(t('repeatNext'))}" ${canGoDown ? '' : 'disabled'}>${ICON_DOWN}</button>
+      ${q._repDiff ? `<span class="repeat-diff">${esc(t('repeatDiff'))}</span>` : ''}
+    </div>` : ''}
+    <div class="q-text">${q._textHtml != null ? q._textHtml : richText(q.text)}</div>
     <div class="options">${opts}</div>
     <div class="q-footer">
       <div class="action-btns">
@@ -2606,8 +2982,9 @@ function classifyAnswer(userSet, correctAns) {
   return 'partial';
 }
 
-/* A question can legitimately appear in several rows (one per exam session), so
-   every card sharing its content key is refreshed together. */
+/* Cards are keyed per occurrence now, so this normally refreshes one card. The
+   loop stays because a card can be rendered more than once in edge cases and
+   because focus restoration is handled per card. */
 function updateCard(qid) {
   const cards = document.querySelectorAll(`.q-card[data-qid="${CSS.escape(qid)}"]`);
   if (!cards.length) return;
@@ -2651,7 +3028,7 @@ function announceResult(qid) {
   if (!card) return;
   const q = MODULE_DATA[state.currentModule.slug].questions[+card.dataset.idx];
   if (!q) return;
-  const res = classifyAnswer(state.userAnswers[qid], q.answer.split(''));
+  const res = classifyAnswer(state.userAnswers[qid], q._answerLetters || q.answer.split(''));
   announce(`${t('qLabel')} ${+card.dataset.pos + 1} · ${t(res)}`);
 }
 
@@ -2664,7 +3041,7 @@ function setLang(lang) {
   if (state.view === 'home') {
     renderHome(false);
   } else if (state.currentModule && moduleHasData(state.currentModule.slug)) {
-    renderModuleView(true);
+    renderModuleView();
   }
   // else: the in-flight applyRoute() renders the module (in the new language) once loaded
 }
@@ -2730,6 +3107,7 @@ function goBackFromModule() {
 }
 
 function resetFilters() {
+  repeatOpenQid = null;
   closeAllPanels();
   state.filterYear = [];
   state.filterRot = [];
@@ -2739,7 +3117,7 @@ function resetFilters() {
   state.filterMistakes = false;
   state.sortYear = 'desc';
   state.modulePhase = 'welcome';
-  state.visibleCount = PAGE_SIZE;
+  state.visibleCount = 0;
   $('f-search').value = '';
   $('sort-year').value = 'desc';
   msYear?.refresh();
@@ -2747,17 +3125,19 @@ function resetFilters() {
   msUnit?.refresh();
   msLesson?.refresh();
   renderModuleBody();
-  updateProgressUI();
-  updateMistakesButton();
+  const stats = moduleStats();
+  updateProgressUI(stats);
+  updateMistakesButton(stats);
   updateBarVisibility();
 }
 
 /* Filters reset must not wipe progress any more — that is a separate, explicit action. */
 function toggleMistakes() {
   if (!state.currentModule) return;
+  repeatOpenQid = null;
   state.filterMistakes = !state.filterMistakes;
   state.modulePhase = 'results';
-  state.visibleCount = PAGE_SIZE;
+  state.visibleCount = 0;
   renderModuleBody();
   updateMistakesButton();
   updateBarVisibility();
@@ -2771,10 +3151,12 @@ function resetProgress() {
   Object.keys(state.userAnswers).forEach(qid => { if (qid.indexOf(prefix) === 0) delete state.userAnswers[qid]; });
   Object.keys(state.checkedQuestions).forEach(qid => { if (qid.indexOf(prefix) === 0) delete state.checkedQuestions[qid]; });
   try { localStorage.removeItem(progressKey(m.slug)); } catch (e) {}
+  repeatOpenQid = null;
   state.filterMistakes = false;
-  renderModuleBody(true);
-  updateProgressUI();
-  updateMistakesButton();
+  renderModuleBody();
+  const stats = moduleStats();
+  updateProgressUI(stats);
+  updateMistakesButton(stats);
   showToast(`<b>${esc(t('progressCleared'))}</b>`);
 }
 
@@ -2796,10 +3178,7 @@ let audioCtx = null;
 let clickNoise = null;
 
 function ensureAudio() {
-  if (audioCtx) {
-    if (audioCtx.state === 'suspended') audioCtx.resume().catch(() => {});
-    return audioCtx;
-  }
+  if (audioCtx) return audioCtx;
   const Ctx = window.AudioContext || window.webkitAudioContext;
   if (!Ctx) return null;
   try { audioCtx = new Ctx(); } catch (e) { return null; }
@@ -2860,43 +3239,58 @@ function noiseTick(ctx, at, cutoff, dur, peak) {
   src.stop(at + dur + 0.02);
 }
 
-function playClick() {
+/* Play only once the AudioContext is running. Scheduling while it is
+   suspended was the intermittent “no click sound” bug on mobile. */
+function withAudio(run) {
   if (!state.sound) return;
   const ctx = ensureAudio();
   if (!ctx) return;
-  const t = ctx.currentTime;
+  if (ctx.state === 'suspended') {
+    const resumed = ctx.resume();
+    if (resumed && typeof resumed.then === 'function') {
+      resumed.then(() => { if (state.sound) run(ctx); }).catch(() => {});
+    } else {
+      run(ctx);
+    }
+  } else {
+    run(ctx);
+  }
+}
 
-  if (TAP_STYLE === 'tick') {
-    /* dry, almost inaudible pitch — closest to a keyboard */
-    tone(ctx, 1700, t, 0.018, 0.07);
-    return;
-  }
-  if (TAP_STYLE === 'tock') {
-    /* lower and woodier */
-    pluck(ctx, t, 300, 205, 0.07, 0.13);
-    noiseTick(ctx, t, 700, 0.04, 0.05);
-    return;
-  }
-  /* default: a soft round pop */
-  pluck(ctx, t, 640, 430, 0.055, 0.12);
-  noiseTick(ctx, t, 1200, 0.03, 0.035);
+function playClick() {
+  withAudio(ctx => {
+    const t = ctx.currentTime;
+    if (TAP_STYLE === 'tick') {
+      /* dry, almost inaudible pitch — closest to a keyboard */
+      tone(ctx, 1700, t, 0.018, 0.07);
+      return;
+    }
+    if (TAP_STYLE === 'tock') {
+      /* lower and woodier */
+      pluck(ctx, t, 300, 205, 0.07, 0.13);
+      noiseTick(ctx, t, 700, 0.04, 0.05);
+      return;
+    }
+    /* default: a soft round pop */
+    pluck(ctx, t, 640, 430, 0.055, 0.12);
+    noiseTick(ctx, t, 1200, 0.03, 0.035);
+  });
 }
 
 function playResult(kind) {
-  if (!state.sound) return;
-  const ctx = ensureAudio();
-  if (!ctx) return;
-  const t = ctx.currentTime + 0.01;
-  if (kind === 'correct') {
-    tone(ctx, 660, t, 0.13, 0.12);
-    tone(ctx, 990, t + 0.09, 0.2, 0.1);
-  } else if (kind === 'partial') {
-    tone(ctx, 560, t, 0.15, 0.1, 'triangle');
-    tone(ctx, 560, t + 0.12, 0.15, 0.08, 'triangle');
-  } else {
-    tone(ctx, 300, t, 0.16, 0.11, 'triangle');
-    tone(ctx, 190, t + 0.09, 0.24, 0.09, 'triangle');
-  }
+  withAudio(ctx => {
+    const t = ctx.currentTime + 0.01;
+    if (kind === 'correct') {
+      tone(ctx, 660, t, 0.13, 0.12);
+      tone(ctx, 990, t + 0.09, 0.2, 0.1);
+    } else if (kind === 'partial') {
+      tone(ctx, 560, t, 0.15, 0.1, 'triangle');
+      tone(ctx, 560, t + 0.12, 0.15, 0.08, 'triangle');
+    } else {
+      tone(ctx, 300, t, 0.16, 0.11, 'triangle');
+      tone(ctx, 190, t + 0.09, 0.24, 0.09, 'triangle');
+    }
+  });
 }
 
 function syncSoundButton() {
@@ -2982,20 +3376,55 @@ function clearSearch() {
   input.focus();
 }
 
-/* ════════════ PERMALINKS ════════════ */
+/* ════════════ QUESTION HELPERS ════════════ */
 function questionByQid(qid) {
   const data = currentModuleData();
   if (!data || !state.currentModule) return null;
-  const slug = state.currentModule.slug;
-  return data.questions.find(q => qidFor(slug, q) === qid) || null;
+  if (data.byQid) {
+    const hit = data.byQid.get(qid);
+    if (hit) return hit;
+  }
+  /* fallback for tests/old shapes */
+  return data.questions.find(q => qidFor(state.currentModule.slug, q) === qid) || null;
 }
 
-function questionPermalink(q) {
-  const base = (location.origin && location.origin !== 'null')
-    ? location.origin + location.pathname
-    : location.href.split('#')[0];
-  return base + '#module=' + encodeURIComponent(state.currentModule.slug)
-    + '&q=' + encodeURIComponent(q._key);
+/* Plain text for the clipboard: tags are stripped, entities decoded and <br>
+   kept as line breaks. Used only on an explicit copy click, never per card. */
+function questionPlainText(value) {
+  const raw = String(value == null ? '' : value).replace(/<br\s*\/?>/gi, '\n');
+  let text = raw;
+  if (raw.indexOf('<') !== -1 || raw.indexOf('&') !== -1) {
+    try {
+      const doc = new DOMParser().parseFromString('<div>' + raw + '</div>', 'text/html');
+      const root = doc.body && doc.body.firstChild;
+      if (root) text = root.textContent || '';
+    } catch (e) { /* keep the raw text */ }
+  }
+  return text
+    .replace(/[ \t\f\v]+/g, ' ')
+    .replace(/\s*\n\s*/g, '\n')
+    .trim();
+}
+
+/* Clipboard payload: Question / Les Choix / La Réponse. */
+function questionClipboardText(q) {
+  const choices = q.options.map((opt, i) => `${LETTERS[i]}. ${questionPlainText(opt)}`).join('\n');
+  const letters = q._answerLetters || q.answer.split('').filter(letter => LETTERS.includes(letter));
+  const answers = letters.map(letter => {
+    const idx = LETTERS.indexOf(letter);
+    const opt = idx >= 0 && idx < q.options.length ? questionPlainText(q.options[idx]) : '';
+    return opt ? `${letter}. ${opt}` : letter;
+  });
+  return [
+    'Question',
+    questionPlainText(q.text),
+    '',
+    'Les Choix',
+    choices,
+    '',
+    'La Réponse',
+    answers.join('\n')
+  ].join('\n');
 }
 
 function legacyCopy(text) {
@@ -3015,64 +3444,151 @@ function legacyCopy(text) {
   });
 }
 
-function copyToClipboard(text) {
-  /* A present but rejecting clipboard API (permissions, insecure context) falls
-     back to the old command instead of just failing. */
+function copyText(text) {
   if (navigator.clipboard && navigator.clipboard.writeText) {
     return navigator.clipboard.writeText(text).catch(() => legacyCopy(text));
   }
   return legacyCopy(text);
 }
 
-function copyQuestionLink(qid) {
+function copyQuestion(qid) {
   const q = questionByQid(qid);
   if (!q) return;
-  const url = questionPermalink(q);
-  copyToClipboard(url).then(
-    () => showToast(`<b>${esc(t('linkCopied'))}</b>`),
-    () => showToast(`<b>${esc(url)}</b>`)
+  copyText(questionClipboardText(q)).then(
+    () => showToast(`<b>${esc(t('questionCopied'))}</b>`),
+    () => showToast(`<b>${esc(t('copyFailed'))}</b>`)
   );
 }
 
-/* Formatted report: module, exam, course, stem and (optionally) the permalink. */
-function questionReport(q, withLink) {
-  const m = state.currentModule;
-  const name = (m.name && (m.name[state.lang] || m.name.fr)) || m.slug;
-  const showRot = shouldShowRotation(state.selectedYear, m.slug);
-  const lines = [
-    'QCMify · erreur signalée',
-    'Module : ' + name + ' (' + m.slug + ')',
-    'Examen : ' + q.year + (showRot ? ' · ' + rotName(q.rot || 0) : ''),
-    'Cours : ' + q.lesson
-  ];
-  if (q.unit) lines.push('Appareil : ' + q.unit);
-  lines.push('Question : « ' + stripTags(q.text).trim().replace(/\s+/g, ' ') + ' »');
-  if (withLink !== false) lines.push('Lien : ' + questionPermalink(q));
-  return lines.join('\n');
-}
-
-/* Opens the chat with the report already in the composer, permalink included. */
-function reportUrl(q) {
-  return REPORT_CHAT + '?text=' + encodeURIComponent(questionReport(q, true));
-}
-
-/* Deep link #module=x&q=<key>: reveal the page that holds it and highlight it. */
-function focusQuestion(key) {
-  const data = currentModuleData();
-  if (!data) return;
-  state.modulePhase = 'results';
-  const list = getFilteredQuestions();
-  const pos = list.findIndex(q => q._key === key);
-  if (pos === -1) return;
-  state.visibleCount = Math.max(PAGE_SIZE, pos + 1);
-  renderModuleBody(true);
-  requestAnimationFrame(() => {
-    const qid = state.currentModule.slug + '-' + key;
-    const card = document.querySelector(`.q-card[data-qid="${CSS.escape(qid)}"]`);
-    if (!card) return;
-    card.classList.add('q-focus');
-    card.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth', block: 'center' });
+/* The tag and its ↑/↓ row are rendered with the card; this only toggles the
+   current one, so a card re-render keeps the same panel open. */
+function syncRepeatNav() {
+  /* Close only the panel(s) that are actually open and open the current one.
+     Scanning every card here was noticeable with hundreds of questions. */
+  document.querySelectorAll('[data-repeat-nav]:not([hidden])').forEach(nav => {
+    nav.hidden = true;
+    const tag = nav.closest('.q-card')?.querySelector('[data-repeat-toggle]');
+    if (tag) tag.setAttribute('aria-expanded', 'false');
   });
+  if (!repeatOpenQid) return;
+  const card = document.querySelector(`.q-card[data-qid="${CSS.escape(repeatOpenQid)}"]`);
+  if (!card) return;
+  const tag = card.querySelector('[data-repeat-toggle]');
+  const nav = card.querySelector('[data-repeat-nav]');
+  if (tag) tag.setAttribute('aria-expanded', 'true');
+  if (nav) nav.hidden = false;
+}
+
+/* Repeated occurrences can have different years, rotations or courses. If the
+   current filters hide the target, clear only the filters that block it so the
+   comparison can continue without discarding the whole selection. */
+function clearFiltersHiding(q) {
+  if (state.exam) return false;
+  let changed = false;
+  const search = fold(state.filterSearch.trim());
+  if (search && !q._hay.includes(search)) {
+    state.filterSearch = '';
+    const input = $('f-search');
+    if (input) input.value = '';
+    syncSearchClear();
+    changed = true;
+  }
+  if (state.filterYear.length && !state.filterYear.includes(q.year)) { state.filterYear = []; changed = true; }
+  if (state.filterRot.length && !state.filterRot.includes(q.rot || 0)) { state.filterRot = []; changed = true; }
+  if (state.filterUnit.length && !state.filterUnit.includes(q.unit || '')) { state.filterUnit = []; changed = true; }
+  if (state.filterLesson.length && !state.filterLesson.includes(q.lesson)) { state.filterLesson = []; changed = true; }
+  if (state.filterMistakes) {
+    const qid = qidFor(state.currentModule.slug, q);
+    const isMistake = state.checkedQuestions[qid]
+      && classifyAnswer(state.userAnswers[qid], q._answerLetters || q.answer.split('')) !== 'correct';
+    if (!isMistake) {
+      state.filterMistakes = false;
+      updateMistakesButton();
+      changed = true;
+    }
+  }
+  if (changed) {
+    msYear?.refresh();
+    msRot?.refresh();
+    msUnit?.refresh();
+    msLesson?.refresh();
+  }
+  return changed;
+}
+
+/* Reveal one occurrence in the results list, regardless of page/filters. Returns
+   false when it cannot be shown (for example during a running exam). */
+function revealQuestion(target, opts = {}) {
+  const data = currentModuleData();
+  if (!data || !state.currentModule) return false;
+  if (typeof target === 'string') {
+    target = data.questions.find(q => q._key === target)
+      || data.questions.find(q => q._base === target);
+  }
+  if (!target) return false;
+  if (!opts.keepRepeat) repeatOpenQid = null;
+  pendingRevealQid = null;
+
+  let filtersChanged = false;
+  let list = getFilteredQuestions();
+  if (!list.some(q => q._key === target._key)) {
+    filtersChanged = clearFiltersHiding(target);
+    if (!filtersChanged) {
+      if (!opts.quiet) showToast(`<b>${esc(t('repeatUnavailable'))}</b>`);
+      return false;
+    }
+    if (!opts.quiet) showToast(`<b>${esc(t('repeatFiltersAdjusted'))}</b>`);
+    list = getFilteredQuestions();
+  }
+  const pos = list.findIndex(q => q._key === target._key);
+  if (pos === -1) return false;
+
+  const qid = qidFor(state.currentModule.slug, target);
+  state.modulePhase = 'results';
+  updateBarVisibility();
+
+  /* Already rendered: just scroll to it. */
+  if (document.querySelector(`.q-card[data-qid="${CSS.escape(qid)}"]`)) {
+    focusQuestionCard(qid);
+    return true;
+  }
+
+  /* An existing stream is still filling the list: let it reach the target and
+     scroll there automatically instead of restarting from the top. */
+  if (!filtersChanged && questionRenderTimer !== null && pos >= state.visibleCount) {
+    pendingRevealQid = qid;
+    return true;
+  }
+
+  /* Filters changed or rendering finished unexpectedly: restart the progressive
+     render; the pump focuses the target when it appends it. */
+  renderQuestions();
+  pendingRevealQid = qid;
+  return true;
+}
+
+function goToRepeat(qid, dir) {
+  const q = questionByQid(qid);
+  if (!q || !q._repKey) return;
+  /* Use the list exactly as displayed (current sort/filters). Up means the
+     occurrence above, down the one below; no wrapping at either end. */
+  const list = getFilteredQuestions();
+  const group = list.filter(x => x._repKey === q._repKey);
+  const i = group.findIndex(x => x._key === q._key);
+  if (i === -1) return;
+  const target = group[i + dir];
+  if (!target) return;
+  repeatOpenQid = qidFor(state.currentModule.slug, target);
+  if (!revealQuestion(target, { keepRepeat: true })) {
+    repeatOpenQid = null;
+    syncRepeatNav();
+  }
+}
+
+/* Deep link #module=x&q=<key>: reveal the exact occurrence and highlight it.
+   Old content-only links are resolved to their first matching occurrence. */
+function focusQuestion(key) {
+  revealQuestion(key, { quiet: true });
 }
 
 /* ════════════ KEYBOARD ════════════ */
@@ -3154,14 +3670,16 @@ function startExam() {
   const data = currentModuleData();
   if (!data) return;
   /* draw from the filtered pool, ignoring the exam currently on screen.
-     Rows are de-duplicated by content first: a question asked in three sessions
-     must not eat three slots of a 20-question exam. */
+     Rows are de-duplicated by the repetition key first: a question asked in
+     three sessions (even with conflicting answer keys) must not eat three slots
+     of a 20-question exam. */
   const previousExam = state.exam;
   state.exam = null;
   const drawnKeys = new Set();
   const pool = getFilteredQuestions().filter(q => {
-    if (drawnKeys.has(q._key)) return false;
-    drawnKeys.add(q._key);
+    const key = q._repKey || q._key;
+    if (drawnKeys.has(key)) return false;
+    drawnKeys.add(key);
     return true;
   });
   state.exam = previousExam;
@@ -3194,16 +3712,18 @@ function startExam() {
     slug: state.currentModule.slug, rows, order, snapshot,
     total: picked.length, deadline: minutes ? Date.now() + minutes * 60000 : 0, finished: false
   };
+  repeatOpenQid = null;
   state.modulePhase = 'results';
   state.filterMistakes = false;
-  state.visibleCount = picked.length;
+  state.visibleCount = 0;
   $('exam-summary').hidden = true;
   $('exam-summary').innerHTML = '';
   $('exam-finish').hidden = false;
   setExamActiveUI(true);
-  renderModuleBody(true);
-  updateProgressUI();
-  updateMistakesButton();
+  renderModuleBody();
+  const stats = moduleStats();
+  updateProgressUI(stats);
+  updateMistakesButton(stats);
   updateExamUI();
   window.scrollTo({ top: 0, behavior: smoothBehavior() });
   clearInterval(examTicker);
@@ -3229,7 +3749,7 @@ function finishExam(auto) {
     const qid = slug + '-' + q._key;
     if (!state.checkedQuestions[qid]) return;
     answered++;
-    const verdict = classifyAnswer(state.userAnswers[qid], q.answer.split(''));
+    const verdict = classifyAnswer(state.userAnswers[qid], q._answerLetters || q.answer.split(''));
     if (verdict === 'correct') correct++;
     else if (verdict === 'partial') partial++;
     else wrong++;
@@ -3251,8 +3771,9 @@ function finishExam(auto) {
   if ($('exam-finish')) $('exam-finish').hidden = true;
   if ($('exam-clock')) $('exam-clock').hidden = true;
   if ($('exam-progress')) $('exam-progress').textContent = `${correct}/${ex.total} · ${t('examDone')}`;
-  updateProgressUI();
-  updateMistakesButton();
+  const stats = moduleStats();
+  updateProgressUI(stats);
+  updateMistakesButton(stats);
   summary.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth', block: 'start' });
 }
 
@@ -3272,6 +3793,7 @@ function clearExamState() {
   clearInterval(examTicker);
   examTicker = null;
   state.exam = null;
+  repeatOpenQid = null;
   const summary = $('exam-summary');
   if (summary) { summary.hidden = true; summary.innerHTML = ''; }
   if ($('exam-finish')) $('exam-finish').hidden = false;
@@ -3281,21 +3803,21 @@ function clearExamState() {
 
 function quitExam() {
   clearExamState();
-  state.visibleCount = PAGE_SIZE;
-  renderModuleBody(true);
-  updateProgressUI();
-  updateMistakesButton();
+  state.visibleCount = 0;
+  renderModuleBody();
+  const stats = moduleStats();
+  updateProgressUI(stats);
+  updateMistakesButton(stats);
 }
 
 /* ════════════ EVENTS ════════════ */
-/* One tick per tap on an interactive element (capture, so it fires before any
-   handler can stop propagation). Empty space stays silent: a stray click should
-   not make noise. The validate button is skipped — it gets the answer motif instead. */
+/* One tick per tap, anywhere on the page (capture, so it fires before any
+   handler can stop propagation). The validate button is skipped — it gets the
+   answer motif instead. */
 document.addEventListener('click', (e) => {
   if (!state.sound) return;
   if (!e.target || !e.target.closest) return;
   if (e.target.closest('[data-validate-qid]') || e.target.closest('#sound-btn')) return;
-  if (!e.target.closest('button, a, label, select, input, [role="button"], summary')) return;
   playClick();
 }, true);
 
@@ -3304,6 +3826,20 @@ document.addEventListener('click', (e) => {
   if (toastEl) { runToastAction(); return; }
   const cardHit = e.target.closest('.q-card');
   if (cardHit && cardHit.dataset.qid) lastCardQid = cardHit.dataset.qid;
+  const repeatToggle = e.target.closest('[data-repeat-toggle]');
+  if (repeatToggle) {
+    const qid = repeatToggle.dataset.repeatToggle;
+    repeatOpenQid = repeatOpenQid === qid ? null : qid;
+    syncRepeatNav();
+    return;
+  }
+  const repeatArrow = e.target.closest('[data-repeat-dir]');
+  if (repeatArrow) {
+    goToRepeat(repeatArrow.dataset.repeatQid, Number(repeatArrow.dataset.repeatDir) || 1);
+    return;
+  }
+  const copyBtn = e.target.closest('[data-copy-qid]');
+  if (copyBtn) { copyQuestion(copyBtn.dataset.copyQid); return; }
   if (!e.target.closest('.multiselect')) closeAllPanels();
   const langBtn = e.target.closest('[data-lang]');
   if (langBtn) { setLang(langBtn.dataset.lang); return; }
@@ -3314,8 +3850,6 @@ document.addEventListener('click', (e) => {
   if (e.target.closest('#sound-btn')) { toggleSound(); return; }
 
   if (e.target.closest('#search-clear')) { clearSearch(); return; }
-  const linkBtn = e.target.closest('[data-link-qid]');
-  if (linkBtn) { copyQuestionLink(linkBtn.dataset.linkQid); return; }
 
   if (e.target.closest('[data-action="home"]')) { goToYearGrid(); return; }
   if (e.target.closest('[data-action="back-from-module"]')) { goBackFromModule(); return; }
@@ -3367,7 +3901,7 @@ document.addEventListener('click', (e) => {
       afterAnswerChange(qid);
       announceResult(qid);
       const q = questionByQid(qid);
-      if (q) playResult(classifyAnswer(state.userAnswers[qid], q.answer.split('')));
+      if (q) playResult(classifyAnswer(state.userAnswers[qid], q._answerLetters || q.answer.split('')));
     }
     return;
   }
@@ -3399,6 +3933,13 @@ document.addEventListener('input', (e) => {
 document.addEventListener('keydown', (e) => {
   const active = document.activeElement;
   if (e.key === 'Escape') {
+    if (repeatOpenQid) {
+      const openCard = document.querySelector(`.q-card[data-qid="${CSS.escape(repeatOpenQid)}"]`);
+      const repeatTag = openCard && openCard.querySelector('[data-repeat-toggle]');
+      repeatOpenQid = null;
+      syncRepeatNav();
+      if (repeatTag) repeatTag.focus({ preventScroll: true });
+    }
     const openPanel = document.querySelector('.ms-panel.open');
     const trigger = openPanel && openPanel.closest('.multiselect')?.querySelector('.ms-trigger');
     closeAllPanels();
@@ -3456,12 +3997,18 @@ $('back-to-filters').addEventListener('click', () => {
   window.scrollTo({ top: y, behavior: smoothBehavior() });
 });
 
-$('btn-load-more').addEventListener('click', () => {
-  state.visibleCount += PAGE_SIZE;
-  renderQuestions(false, true);
-});
-
-window.addEventListener('scroll', updateBarVisibility, { passive: true });
+/* Coalesce scroll work to one layout read per frame: calling
+   getBoundingClientRect() on every scroll event can make long lists feel rough. */
+let barScrollQueued = false;
+function onBarScroll() {
+  if (barScrollQueued) return;
+  barScrollQueued = true;
+  requestAnimationFrame(() => {
+    barScrollQueued = false;
+    updateBarVisibility();
+  });
+}
+window.addEventListener('scroll', onBarScroll, { passive: true });
 
 /* ════════════ OFFLINE (service worker) ════════════ */
 function registerServiceWorker() {
