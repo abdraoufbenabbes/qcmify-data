@@ -1,0 +1,16 @@
+{
+  "name": "qcmify-prototype",
+  "version": "1.12.0",
+  "private": true,
+  "description": "QCMify revision app — dev tooling only (the app itself has no runtime dependencies)",
+  "scripts": {
+    "test": "node tests/run.mjs",
+    "test:e2e": "playwright test -c tests/e2e",
+    "server": "node tests/e2e/server.mjs",
+    "manifest": "node tools/build-manifest.mjs",
+    "validate": "node tools/validate-data.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.47.0"
+  }
+}
